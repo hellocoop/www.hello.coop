@@ -30,13 +30,24 @@
           rgba(0, 0, 0, 0.4) 100%
         );
       }
+      .ruler-right::after{
+        content: "";
+        position: absolute;
+        right: 0;
+        height: 1334px;
+        top:-120px;
+        margin-right: 10px;
+        width: 1px;
+        background: #30303016;
+      }
     </style>
   </head>
   <body>
     <div class="mx-auto">
       <main>
         <section
-          class="hero-section h-4/6 bg-no-repeat bg-right bg-contain"
+          class="hero-section bg-no-repeat bg-right bg-contain"
+          style="height: 36rem"
           style="background-image: url(./assets/bg.svg)"
         >
           <div class="relative h-full container max-w-5xl mx-auto text-white">
@@ -101,8 +112,9 @@
         </section>
 
         <section
-          class="relative h-1/4"
+          class="relative"
           style="
+            height: 12rem;
             background: linear-gradient(90deg, #fff 21px, transparent 1%) center,
               linear-gradient(#fff 21px, transparent 1%) center,
               rgba(0, 0, 0, 0.5);
@@ -276,7 +288,7 @@
           <ul
             class="container max-w-5xl mx-auto mt-12 flex justify-between pb-4"
           >
-            <li class="w-1/4">
+            <li class="relative ruler-right w-1/4">
               <h3 class="font-medium inline-flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -296,7 +308,7 @@
                 <span class="ml-1">Registration</span>
               </h3>
             </li>
-            <li class="w-1/4">
+            <li class="relative ruler-right w-1/4">
               <h3 class="font-medium inline-flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -314,7 +326,7 @@
                 </span>
               </h3>
             </li>
-            <li class="w-1/4">
+            <li class="relative ruler-right w-1/4">
               <h3 class="font-medium inline-flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="#303030">
                   <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
@@ -323,7 +335,12 @@
               </h3>
             </li>
             <li class="w-1/4">
-              <h3 class="font-medium">Access</h3>
+              <h3 class="font-medium inline-flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="#303030">
+                  <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="ml-1">Access</span>
+              </h3>
             </li>
           </ul>
 
@@ -394,8 +411,8 @@
         </section>
 
         <section class="container text-center max-w-5xl mx-auto mt-20">
-          <h2 class="text-2xl">Who we are</h2>
-          <div class="mt-10 mb-24 flex justify-center space-x-32">
+          <!-- <h2 class="text-2xl">Who we are</h2> -->
+          <div class="mb-24 flex justify-center space-x-32">
             <div class="mt-4 flex w-96">
               <img
                 src="https://avatars.githubusercontent.com/u/688982?v=4"
@@ -411,6 +428,20 @@
                   </p>
                 </div>
                 <div class="text-sm inline-flex items-center space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="white"
+                    style="filter: invert(60%)"
+                  >
+                    <path
+                      d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                    />
+                    <path
+                      d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                    />
+                  </svg>
                   <img
                     src="./assets/twitter.svg"
                     class="h-4 w-4"
@@ -442,6 +473,20 @@
                   </p>
                 </div>
                 <div class="text-sm inline-flex items-center space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="white"
+                    style="filter: invert(60%)"
+                  >
+                    <path
+                      d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                    />
+                    <path
+                      d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                    />
+                  </svg>
                   <img
                     src="./assets/twitter.svg"
                     class="h-4 w-4"
@@ -461,7 +506,7 @@
         </section>
 
         <footer
-          class="border-t border-gray-200 text-sm container pb-20 max-w-5xl mx-auto py-4 flex justify-between"
+          class="border-t border-gray-200 text-sm container pb-16 max-w-5xl mx-auto py-4 flex justify-between"
         > 
           <div class="flex flex-col">
             <span>© 2021 Hellō Cooperation.</span>
