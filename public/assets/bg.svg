@@ -7,7 +7,7 @@ d="M239.512.186c11.814 41.205 49.16 66.634 67.262 104.128 14.481 30.255 6.097 65
     stroke-width: 0.5;
     stroke-miterlimit: 700;
     stroke-dasharray: 400;
-    animation: squiggle 42s linear infinite;
+    animation: squiggle 32s linear infinite;
   }
   @keyframes squiggle {
     to {
@@ -19,7 +19,7 @@ d="M239.512.186c11.814 41.205 49.16 66.634 67.262 104.128 14.481 30.255 6.097 65
     stroke-width: 0.5;
     stroke-miterlimit: 0;
     stroke-dasharray: 160;
-    animation: squiggle2 48s linear infinite;
+    animation: squiggle2 38s linear infinite;
   }
   @keyframes squiggle2 {
     to {
@@ -31,7 +31,7 @@ d="M239.512.186c11.814 41.205 49.16 66.634 67.262 104.128 14.481 30.255 6.097 65
     stroke-width: 0.5;
     stroke-miterlimit: 0;
     stroke-dasharray: 100;
-    animation: squiggle3 38s linear infinite;
+    animation: squiggle3 36s linear infinite;
   }
   @keyframes squiggle3 {
     to {
@@ -42,7 +42,7 @@ d="M239.512.186c11.814 41.205 49.16 66.634 67.262 104.128 14.481 30.255 6.097 65
     stroke-width: 0.5;
     stroke-miterlimit: 0;
     stroke-dasharray: 200;
-    animation: squiggle4 44s linear infinite;
+    animation: squiggle4 34s linear infinite;
   }
   @keyframes squiggle4 {
     to {
@@ -53,7 +53,7 @@ d="M239.512.186c11.814 41.205 49.16 66.634 67.262 104.128 14.481 30.255 6.097 65
     stroke-width: 0.5;
     stroke-miterlimit: 0;
     stroke-dasharray: 200;
-    animation: squiggle5 34s linear infinite;
+    animation: squiggle5 30s linear infinite;
   }
   @keyframes squiggle5 {
     to {

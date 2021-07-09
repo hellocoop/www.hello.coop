@@ -5,6 +5,8 @@
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <style>
       body {
@@ -186,12 +188,14 @@
         </section>
 
         <section class="mt-12 container max-w-5xl mx-auto space-y-10 mb-10">
-          <div class="flex space-x-10 justify-between">
+          <div data-aos="fade-up" class="flex space-x-10 justify-between">
             <p class="text-2xl w-1/2">
               Online identity today is similar to the world before credit cards.
               Proving who you are online is tedious and dangerous, just as
               managing an account at each merchant was tedious, and carrying
               cash was risky.
+
+              <a href="" class="block mt-10 underline">Learn more ↗</a>
             </p>
             <div
               class="w-96 h-96 flex justify-center items-center" style="
@@ -204,13 +208,14 @@
             <img src="./assets/p-one.svg" alt="paragrah one graphic" class="h-64"></div>
           </div>
 
-          <div class="flex space-x-10 justify-between">
+          <div data-aos="fade-up" class="flex space-x-10 justify-between">
             <p class="text-2xl w-1/2">
               A group of innovative banks chose to cooperate to transform global
               payments by creating the payment interchange, Visa. In the same
               way, a group of visionary leaders are choosing to cooperate to
               transform global identity by creating an identity interchange,
               Hellō.
+              <a href="" class="block mt-10 underline">Learn more ↗</a>
             </p>
             <div
               class="w-96 h-96 bg-red-200 flex justify-center items-center"
@@ -226,12 +231,13 @@
           </div>
           </div>
 
-          <div class="flex space-x-10 justify-between">
+          <div data-aos="fade-up" class="flex space-x-10 justify-between">
             <p class="text-2xl w-1/2">
               Visa enabled billions of customers to make simple and safe
               purchases from millions of merchants. Hellō will give billions of
               users a simple and safe way to prove who they are to millions of
               developers.
+              <a href="" class="block mt-10 underline">Learn more ↗</a>
             </p>
             <div
               class="w-96 h-96 bg-red-200 flex justify-center items-center"   
@@ -388,7 +394,8 @@
         </section>
 
         <section class="container text-center max-w-5xl mx-auto mt-20">
-          <div class="mb-24 flex justify-center space-x-32">
+          <h2 class="text-2xl">Who we are</h2>
+          <div class="mt-10 mb-24 flex justify-center space-x-32">
             <div class="mt-4 flex w-96">
               <img
                 src="https://avatars.githubusercontent.com/u/688982?v=4"
@@ -397,19 +404,25 @@
               />
               <div class="ml-4 flex flex-col justify-between">
                 <div class="text-left">
-                  <span>Dick Hardt</span>
+                  <span>Dick Hardt, Co-founder</span>
                   <p class="text-sm opacity-80">
                     Previously founder ActiveState, Sxip, Bubbler. Ex-AMZN,
                     ex-MSFT. OAuth 2.0 instigator. Identity 2.0 champion
                   </p>
                 </div>
-                <div class="text-sm">
+                <div class="text-sm inline-flex items-center space-x-2">
                   <img
                     src="./assets/twitter.svg"
                     class="h-4 w-4"
                     alt="open twitter profile"
                     style="filter: invert(60%)"
                   />
+                  <img
+                  src="./assets/linkedin.svg"
+                  class="h-4 w-4"
+                  alt="open twitter profile"
+                  style="filter: invert(60%)"
+                />
                 </div>
               </div>
             </div>
@@ -422,19 +435,25 @@
               />
               <div class="ml-4 flex flex-col justify-between">
                 <div class="text-left">
-                  <span>Dan Grimm</span>
+                  <span>Dan Grimm, Co-founder</span>
                   <p class="text-sm opacity-80">
                     Previously founder ActiveState, Sxip, Bubbler. Ex-AMZN,
                     ex-MSFT. OAuth 2.0 instigator. Identity 2.0 champion
                   </p>
                 </div>
-                <div class="text-sm">
+                <div class="text-sm inline-flex items-center space-x-2">
                   <img
                     src="./assets/twitter.svg"
                     class="h-4 w-4"
                     alt="open twitter profile"
                     style="filter: invert(60%)"
                   />
+                  <img
+                  src="./assets/linkedin.svg"
+                  class="h-4 w-4"
+                  alt="open twitter profile"
+                  style="filter: invert(60%)"
+                />
                 </div>
               </div>
             </div>
@@ -443,8 +462,60 @@
 
         <footer
           class="border-t border-gray-200 text-sm container pb-20 max-w-5xl mx-auto py-4 flex justify-between"
-        >
-          <span>© 2021 Hellō Cooperation.</span>
+        > 
+          <div class="flex flex-col">
+            <span>© 2021 Hellō Cooperation.</span>
+            <ul class="mt-2 flex space-x-2 items-center opacity-80">
+              <li>
+                <a href="" target="_blank">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="white"
+                    style="filter: invert(60%)"
+                  >
+                    <path
+                      d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                    />
+                    <path
+                      d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="" target="_blank">
+                  <img
+                    src="./assets/twitter.svg"
+                    alt="open twitter"
+                    class="w-4 h-4"
+                    style="filter: invert(60%)"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="" target="_blank">
+                  <img
+                    src="./assets/facebook.svg"
+                    alt="open facebook"
+                    class="w-4 h-4"
+                    style="filter: invert(60%)"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="" target="_blank">
+                  <img
+                    src="./assets/linkedin.svg"
+                    alt="open linkedin"
+                    class="w-4 h-4"
+                    style="filter: invert(60%)"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
           <ul class="flex space-x-2">
             <li><a href="" class="underline">Privacy Policy</a></li>
             <li><a href="" class="underline">Terms of service</a></li>
@@ -453,4 +524,17 @@
       </main>
     </div>
   </body>
+
+  <script>
+    AOS.init({
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 2000, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});
+  </script>
 </html>
