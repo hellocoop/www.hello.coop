@@ -25,10 +25,13 @@
          content="A cooperative of industry leaders transforming personal identity."
          />
       <meta property="twitter:image" content="" />
-      <link
-         href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-         rel="stylesheet"
-         />
+
+      <!-- Flip Web Component -->
+      <script defer src='./assets/bundle.js'></script>
+
+      <!-- Tailwind -->
+      <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
+         
       <link rel="icon" type="image/png" href="./assets/favicon.svg" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <style>
@@ -41,7 +44,7 @@
          .phone-img{
           animation: float 5s infinite;
          }
-         @keyframes float {
+          @keyframes float {
            0%, 100% {
             transform: translatey(0px);
            }
@@ -49,13 +52,35 @@
             transform: translatey(-10px);
            }
          }
+         .flip{
+            position: absolute;
+            animation-name: anim;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            transform-style: preserve-3d;
+         }
+         @keyframes anim{
+            0%{
+               transform: rotateX(90deg) translateZ(-20px);
+            }
+            50%{
+               transform: rotateX(0deg) translateZ(0px);
+            }
+            100%{
+               transform: rotateX(-90deg) translateZ(-20px);
+            }
+         }
       </style>
    </head>
    <body style="background: #F6F6F6;" class="text-charcoal">
       <header class="container max-w-5xl mx-auto p-4 my-4 flex items-center justify-between">
-         <div>
-            <span class="font-bold">say Hellō with</span>
-            <span class="font-bold ml-1">email@example.com</span>
+         <div class="inline-flex items-center">
+            <!-- <span class="text-4xl font-bold" id="say-hello-with"></span> -->
+            <flip-anim class="-mt-12 md:mt-0"></flip-anim>
+            <!-- <span id="dynamic-logos-container" class="inline-flex items-center">
+            </span> -->
+            <!-- <img src="" alt="" id="dynamic-logo" class="h-6 ml-2 test"> -->
          </div>
          <div class="inline-flex items-center space-x-2">
             <a href="mailto:contact@hello.coop">
@@ -100,8 +125,8 @@
             </a>
          </div>
       </header>
-      <main class="container max-w-5xl mx-auto p-4 my-6">
-         <section class="flex flex-col md:flex-row space-x-0 space-y-10 md:space-y-0 md:space-x-10 bg-charcoal rounded-md text-white px-4 py-8 md:-mx-4">
+      <main class="container max-w-5xl mx-auto p-4 my-12 md:my-6">
+         <section class="flex flex-col md:flex-row space-x-0 space-y-10 md:space-y-0 md:space-x-10 bg-charcoal rounded-md text-white px-4 py-8">
             <div class="w-full md:w-1/3">
                <h3 class="font-medium">Hellō for Users</h3>
                <p class="mt-2 opacity-60">Login how you want without being tracked.</p>
@@ -125,7 +150,7 @@
             <h2 class="text-3xl font-bold opacity-60 mt-4">A cooperative of industry leaders transforming personal identity.</h2>
             <div class="mt-20 flex flex-col md:flex-row items-center">
                <div class="inline-flex items-center justify-center flex-shrink-0 h-64 md:h-80 w-full md:w-1/3 bg-charcoal rounded-md">
-                  <img src="./assets/p-one.png" alt="paragraph one graphic" class="w-3/5 md:w-3/4">
+                  <img src="./assets/p-one.png" alt="paragraph one graphic" class="h-full md:h-auto py-4 md:py-0 md:w-3/4">
                </div>
                <p class="text-xl w-full md:w-1/2 mt-4 md:mt-0 md:ml-20">
                   Online identity today is similar to the world before credit cards. Proving who you are online is tedious and dangerous, just as managing an account at each merchant was tedious, and carrying cash was risky.
@@ -133,7 +158,7 @@
             </div>
             <div class="mt-10 flex flex-col md:flex-row items-center">
                <div class="inline-flex items-center justify-center flex-shrink-0 h-64 md:h-80 w-full md:w-1/3 bg-charcoal rounded-md">
-                  <img src="./assets/p-two.png" alt="paragraph two graphic" class="w-3/5 md:w-3/4">
+                  <img src="./assets/p-two.png" alt="paragraph two graphic" class="h-full md:h-auto py-4 md:py-0 md:w-3/4">
                </div>
                <p class="text-xl w-full md:w-1/2 mt-4 md:mt-0 md:ml-20">
                   A group of innovative banks chose to cooperate to transform global payments by creating the payment interchange, Visa. In the same way, a group of visionary leaders are choosing to cooperate to transform global identity by creating an identity interchange, Hellō.
@@ -141,7 +166,7 @@
             </div>
             <div class="mt-10 flex flex-col md:flex-row items-center">
                <div class="inline-flex items-center justify-center flex-shrink-0 h-64 md:h-80 w-full md:w-1/3 bg-charcoal rounded-md">
-                  <img src="./assets/p-three.png" alt="paragraph three graphic" class="w-3/5 md:w-3/4">
+                  <img src="./assets/p-three.png" alt="paragraph three graphic" class="h-full md:h-auto py-4 md:py-0 md:w-3/4">
                </div>
                <p class="text-xl w-full md:w-1/2 mt-4 md:mt-0 md:ml-20">
                   Visa enabled billions of customers to make simple and safe purchases from millions of merchants. Hellō will give billions of users a simple and safe way to prove who they are to millions of developers.
@@ -192,10 +217,10 @@
             </form>
          </section>
          <footer class="flex flex-col-reverse md:flex-row space-y-4 md:space-y-0 justify-between border-t border-gray-400 mt-20 text-sm py-4">
-            <span class="w-full md:w-1/3 mt-4 md:mt-0">© <span id="copyright-year"></span> Hello Cooperative</span>
-            <div class="w-full md:w-1/3 md:text-center">
-               <a href="/privacy-policy.html" class="underline">Privacy Policy</a>
-               <a href="/terms-of-service.html" class="underline ml-4">Terms of Service</a>
+            <span class="w-full md:w-1/3 mt-8 md:mt-0 text-right md:text-left">© <span id="copyright-year"></span> Hello Cooperative</span>
+            <div class="w-full md:w-1/3 text-center">
+               <a href="privacy-policy.html" class="underline">Privacy Policy</a>
+               <a href="terms-of-service.html" class="underline ml-4">Terms of Service</a>
             </div>
             <div class="w-full md:w-1/3 inline-flex items-center md:justify-end space-x-2">
                <a href="mailto:contact@hello.coop">
@@ -243,13 +268,16 @@
       </main>
    </body>
    <script type="text/javascript">
+      //Copyright Year
       const year = new Date().getFullYear();
       document.getElementById("copyright-year").innerText = year;
+
+      //Form Submission
       const form = document.getElementById("form");
       form.addEventListener("submit", submitForm)
       async function submitForm(e){
         e.preventDefault();
-        await fetch('https://www.google.com', {
+        await fetch('https://hello.us1.list-manage.com/subscribe/post?u=43014a20da13d76ea6a7891c1&id=e3164fa95f', {
           method: 'POST',
           body: new FormData(document.getElementById("form"))
         })
@@ -257,6 +285,115 @@
           alert('Form submitted successfully!');
         })
       }
+
+      //Typewriter effect
+      // const span = document.getElementById('say-hello-with');
+      // const customNodeCreator = (character) => {
+      //   return document.createTextNode(character);
+      // }
+      // const typewriter = new Typewriter(span, {
+      //   loop: false,
+      //   delay: 60,
+      //   onCreateTextNode: customNodeCreator,
+      // });
+
+      // typewriter
+      //   .typeString('say Hellō with')
+      //   .start()
+      //   .callFunction(state =>{
+      //    state.elements.cursor.style.visibility = 'hidden';
+         // generateLogos();
+        // })
+
+      const logos = [
+         {
+            "link": "./assets/yahoo.png",
+            "alt": "Yahoo"
+         },
+         {
+            "link": "./assets/email.png",
+            "alt": "Email"
+         },
+         {
+            "link": "./assets/phone.png",
+            "alt": "Phone"
+         },
+         {
+            "link": "./assets/amazon.png",
+            "alt": "Amazon"
+         },
+         {
+            "link": "./assets/apple.png",
+            "alt": "Apple"
+         },
+         {
+            "link": "./assets/facebook.png",
+            "alt": "Facebook"
+         },
+         {
+            "link": "./assets/google.png",
+            "alt": "Google"
+         },
+         {
+            "link": "./assets/microsoft.png",
+            "alt": "Microsoft"
+         },
+         {
+            "link": "./assets/discord.png",
+            "alt": "Discord"
+         },
+         {
+            "link": "./assets/github.png",
+            "alt": "Github"
+         },
+         {
+            "link": "./assets/grab.png",
+            "alt": "Grab"
+         },
+         {
+            "link": "./assets/line.png",
+            "alt": "Line"
+         },
+         {
+            "link": "./assets/linkedin.png",
+            "alt": "Linkedin"
+         },
+         {
+            "link": "./assets/metamask.png",
+            "alt": "Metamask"
+         },
+         {
+            "link": "./assets/paypal.png",
+            "alt": "Paypal"
+         },
+         {
+            "link": "./assets/snapchat.png",
+            "alt": "Snapchat"
+         },
+         {
+            "link": "./assets/twitch.png",
+            "alt": "Twitch"
+         },
+         {
+            "link": "./assets/wechat.png",
+            "alt": "Wechat"
+         }
+      ]
+
+      let component = document.getElementsByTagName("flip-anim")[0];
+      component.setAttribute("data", JSON.stringify(logos));
+
+      // function generateLogos(){
+      //    for(let i=0; i<logos.length; i++){
+      //       const node = document.createElement("img");
+      //       node.src = logos[i].link;
+      //       node.alt = logos[i].alt;
+      //       node.className = "h-6 ml-2 flip";
+      //       node.style.animationDelay = i +"s";
+      //       node.style.transform = "rotateX(-90deg) translateZ(-20px)";
+      //       document.getElementById("dynamic-logos-container").appendChild(node);
+      //    }
+      // }
    </script>
 </html>
 
