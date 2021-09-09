@@ -33,6 +33,11 @@
       <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
          
       <link rel="icon" type="image/png" href="./assets/favicon.svg" />
+
+      <!-- AOS -->
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <style>
          .bg-charcoal{
@@ -74,7 +79,7 @@
       </style>
    </head>
    <body style="background: #F6F6F6;" class="text-charcoal">
-      <header class="container max-w-5xl mx-auto p-4 my-4 flex items-center justify-between">
+      <header class="z-50 fixed top-0 w-full left-0 right-0 container max-w-5xl mx-auto px-4 pt-8 pb-16 md:pb-8 flex items-center justify-between" style="background: #F6F6F6;">
          <div class="inline-flex items-center">
             <!-- <span class="text-4xl font-bold" id="say-hello-with"></span> -->
             <flip-anim class="-mt-12 md:mt-0"></flip-anim>
@@ -125,7 +130,7 @@
             </a>
          </div>
       </header>
-      <main class="container max-w-5xl mx-auto p-4 my-12 md:my-6">
+      <main class="container max-w-5xl mx-auto p-4 my-28">
          <section class="flex flex-col md:flex-row space-x-0 space-y-10 md:space-y-0 md:space-x-10 bg-charcoal rounded-md text-white px-4 py-8">
             <div class="w-full md:w-1/3">
                <h3 class="font-medium">Hellō for Users</h3>
@@ -146,9 +151,11 @@
             <button onclick="document.getElementById('form-section').scrollIntoView({behavior: 'smooth', block: 'center'})" class="bg-white text-charcoal rounded-md h-12 text-xl font-medium w-56">email us</button>
          </section>
          <section class="mt-20">
-            <h1 class="text-3xl font-bold">Hello: VISA for digital identity.</h1>
-            <h2 class="text-3xl font-bold opacity-60 mt-4">A cooperative of industry leaders transforming personal identity.</h2>
-            <div class="mt-20 flex flex-col md:flex-row items-center">
+            <div data-aos="fade-up">
+               <h1 class="text-3xl font-bold">Hello: VISA for digital identity.</h1>
+               <h2 class="text-3xl font-bold opacity-60 mt-4">A cooperative of industry leaders transforming personal identity.</h2>
+            </div>
+            <div class="mt-20 flex flex-col md:flex-row items-center" data-aos="fade-up">
                <div class="inline-flex items-center justify-center flex-shrink-0 h-64 md:h-80 w-full md:w-1/3 bg-charcoal rounded-md">
                   <img src="./assets/p-one.png" alt="paragraph one graphic" class="h-full md:h-auto py-4 md:py-0 md:w-3/4">
                </div>
@@ -156,7 +163,7 @@
                   Online identity today is similar to the world before credit cards. Proving who you are online is tedious and dangerous, just as managing an account at each merchant was tedious, and carrying cash was risky.
                </p>
             </div>
-            <div class="mt-10 flex flex-col md:flex-row items-center">
+            <div class="mt-10 flex flex-col md:flex-row items-center" data-aos="fade-up">
                <div class="inline-flex items-center justify-center flex-shrink-0 h-64 md:h-80 w-full md:w-1/3 bg-charcoal rounded-md">
                   <img src="./assets/p-two.png" alt="paragraph two graphic" class="h-full md:h-auto py-4 md:py-0 md:w-3/4">
                </div>
@@ -164,7 +171,7 @@
                   A group of innovative banks chose to cooperate to transform global payments by creating the payment interchange, Visa. In the same way, a group of visionary leaders are choosing to cooperate to transform global identity by creating an identity interchange, Hellō.
                </p>
             </div>
-            <div class="mt-10 flex flex-col md:flex-row items-center">
+            <div class="mt-10 flex flex-col md:flex-row items-center" data-aos="fade-up">
                <div class="inline-flex items-center justify-center flex-shrink-0 h-64 md:h-80 w-full md:w-1/3 bg-charcoal rounded-md">
                   <img src="./assets/p-three.png" alt="paragraph three graphic" class="h-full md:h-auto py-4 md:py-0 md:w-3/4">
                </div>
@@ -174,27 +181,27 @@
             </div>
          </section>
          <section class="container max-w-5xl mx-auto mt-20">
-            <h1 class="text-3xl font-bold">Frequently Asked Questions</h1>
+            <h1 class="text-3xl font-bold" data-aos="fade-up">Frequently Asked Questions</h1>
             <ul class="mt-10 text-xl font-medium space-y-10">
-               <li>
+               <li data-aos="fade-up">
                   <h3>A cooperative of industry leaders transforming personal identity?</h3>
                   <p class="opacity-60 mt-4">A cooperative of industry leaders transforming personal identity. A cooperative of industry leaders transforming personal identity. A cooperative of industry leaders transforming personal identity. </p>
                </li>
-               <li>
+               <li data-aos="fade-up">
                   <h3>A cooperative of industry leaders transforming personal identity?</h3>
                   <p class="opacity-60 mt-4">A cooperative of industry leaders transforming personal identity. A cooperative of industry leaders transforming personal identity. A cooperative of industry leaders transforming personal identity. </p>
                </li>
-               <li>
+               <li data-aos="fade-up">
                   <h3>A cooperative of industry leaders transforming personal identity?</h3>
                   <p class="opacity-60 mt-4">A cooperative of industry leaders transforming personal identity. A cooperative of industry leaders transforming personal identity. A cooperative of industry leaders transforming personal identity. </p>
                </li>
-               <li>
+               <li data-aos="fade-up">
                   <h3>A cooperative of industry leaders transforming personal identity?</h3>
                   <p class="opacity-60 mt-4">A cooperative of industry leaders transforming personal identity. A cooperative of industry leaders transforming personal identity. A cooperative of industry leaders transforming personal identity. </p>
                </li>
             </ul>
          </section>
-         <section id="form-section" class="bg-charcoal rounded-md mt-20 text-white px-4 py-8 text-center">
+         <section id="form-section" class="bg-charcoal rounded-md mt-20 text-white px-4 py-8 text-center" data-aos="fade-up">
             <h3 class="text-xl font-bold">
             another really cool one-liner here</h1>
             <form id="form" class="max-w-md mx-auto my-10">
@@ -268,6 +275,16 @@
       </main>
    </body>
    <script type="text/javascript">
+      AOS.init({
+         offset: 120, // offset (in px) from the original trigger point
+         delay: 0, // values from 0 to 3000, with step 50ms
+         duration: 800, // values from 0 to 3000, with step 50ms
+         easing: "ease", // default easing for AOS animations
+         once: false, // whether animation should happen only once - while scrolling down
+         mirror: false, // whether elements should animate out while scrolling past them
+         anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+      });
+
       //Copyright Year
       const year = new Date().getFullYear();
       document.getElementById("copyright-year").innerText = year;
@@ -285,25 +302,6 @@
           alert('Form submitted successfully!');
         })
       }
-
-      //Typewriter effect
-      // const span = document.getElementById('say-hello-with');
-      // const customNodeCreator = (character) => {
-      //   return document.createTextNode(character);
-      // }
-      // const typewriter = new Typewriter(span, {
-      //   loop: false,
-      //   delay: 60,
-      //   onCreateTextNode: customNodeCreator,
-      // });
-
-      // typewriter
-      //   .typeString('say Hellō with')
-      //   .start()
-      //   .callFunction(state =>{
-      //    state.elements.cursor.style.visibility = 'hidden';
-         // generateLogos();
-        // })
 
       const logos = [
          {
@@ -382,18 +380,6 @@
 
       let component = document.getElementsByTagName("flip-anim")[0];
       component.setAttribute("data", JSON.stringify(logos));
-
-      // function generateLogos(){
-      //    for(let i=0; i<logos.length; i++){
-      //       const node = document.createElement("img");
-      //       node.src = logos[i].link;
-      //       node.alt = logos[i].alt;
-      //       node.className = "h-6 ml-2 flip";
-      //       node.style.animationDelay = i +"s";
-      //       node.style.transform = "rotateX(-90deg) translateZ(-20px)";
-      //       document.getElementById("dynamic-logos-container").appendChild(node);
-      //    }
-      // }
    </script>
 </html>
 
