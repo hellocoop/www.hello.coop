@@ -89,15 +89,16 @@ function outwards(node, params) {
 }
 </script>
 
-<div class="flex">
+<div class="flex flex-col items-center">
 	{#if !startEndAnim}
-		<h1 bind:this={ref} id="say-hello-with" class="text-2xl md:text-4xl absolute font-bold text-charcoal" out:outwards={{duration: 200}}> </h1>
+		<h1 bind:this={ref} id="say-hello-with" class="text-2xl md:text-4xl absolute font-bold" style="color: #303030;" out:outwards={{duration: 200}}> </h1>
 	{:else}
-		<h1 class="text-2xl md:text-4xl font-bold absolute text-charcoal" in:inwards={{type:"text"}}>say Hellō how you want</h1>
+		<h1 class="text-2xl md:text-4xl font-bold absolute" style="color: #303030;" in:inwards={{type:"text"}}>say Hellō how</h1>
+		<h1 class="text-2xl md:text-4xl font-bold absolute mt-8 md:mt-12" style="color: #303030;" in:inwards={{type:"text"}}>you want</h1>
 	{/if}
 	{#if logos.length && startLogoFlip}
 		{#key i}
-			<img src={logos[i].link} alt="{logos[i].alt}" in:inwards out:outwards class="margin absolute mt-0.5 h-6 md:h-8" />
+			<img src={logos[i].link} alt="{logos[i].alt}" in:inwards out:outwards class="mt-10 md:mt-12 absolute h-6 md:h-8" />
 		{/key}
 	{/if}
 </div>
@@ -107,13 +108,5 @@ function outwards(node, params) {
 <style>
 	img{
 		transform-style: preserve-3d;
-	}
-	.margin{
-		margin-left:  15.5rem;
-	}
-	@media screen and (max-width: 992px) {
-	  .margin {
-	    margin-left: 10.4rem;
-	  }
 	}
 </style>

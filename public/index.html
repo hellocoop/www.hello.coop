@@ -57,37 +57,18 @@
             transform: translatey(-10px);
            }
          }
-         .flip{
-            position: absolute;
-            animation-name: anim;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease;
-            transform-style: preserve-3d;
-         }
-         @keyframes anim{
-            0%{
-               transform: rotateX(90deg) translateZ(-20px);
-            }
-            50%{
-               transform: rotateX(0deg) translateZ(0px);
-            }
-            100%{
-               transform: rotateX(-90deg) translateZ(-20px);
+         @media screen and (max-width: 432px){
+            .social-links{
+               margin-top: -6.4rem;
             }
          }
       </style>
    </head>
    <body style="background: #F6F6F6;" class="text-charcoal">
-      <header class="z-50 md:fixed top-0 w-full left-0 right-0 container max-w-5xl mx-auto px-4 h-28 flex items-center justify-between" style="background: #F6F6F6;">
-         <div class="inline-flex items-center">
-            <!-- <span class="text-4xl font-bold" id="say-hello-with"></span> -->
-            <flip-anim class="mt-0 md:-mt-12"></flip-anim>
-            <!-- <span id="dynamic-logos-container" class="inline-flex items-center">
-            </span> -->
-            <!-- <img src="" alt="" id="dynamic-logo" class="h-6 ml-2 test"> -->
-         </div>
-         <div class="inline-flex items-center space-x-2 -mt-16 md:mt-0">
+      <header class="z-50 container max-w-5xl mx-auto mt-6 md:mt-0 px-4 h-28 flex items-center justify-between" style="background: #F6F6F6;">
+         <div class="w-1/3"></div>
+         <flip-anim class="w-1/3 -mt-16"></flip-anim>
+         <div class="social-links inline-flex w-1/3 items-center justify-end space-x-2 mt-4">
             <a href="mailto:contact@hello.coop?subject=Hellō Inquiry">
                <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +111,7 @@
             </a>
          </div>
       </header>
-      <main class="container max-w-5xl mx-auto p-4 my-4 md:my-28">
+      <main class="container max-w-5xl mx-auto p-4 my-4 md:my-8">
          <section class="flex flex-col md:flex-row space-x-0 space-y-10 md:space-y-0 md:space-x-10 bg-charcoal rounded-md text-white px-4 py-8">
             <div class="w-full md:w-1/3">
                <h3 class="font-medium">Hellō for Users</h3>
@@ -289,24 +270,16 @@
 
       const logos = [
          {
-            "link": "./assets/yahoo.png",
-            "alt": "Yahoo"
-         },
-         {
-            "link": "./assets/email.png",
-            "alt": "Email"
-         },
-         {
-            "link": "./assets/phone.png",
-            "alt": "Phone"
-         },
-         {
             "link": "./assets/amazon.png",
             "alt": "Amazon"
          },
          {
             "link": "./assets/apple.png",
             "alt": "Apple"
+         },
+         {
+            "link": "./assets/discord.png",
+            "alt": "Discord"
          },
          {
             "link": "./assets/facebook.png",
@@ -317,14 +290,6 @@
             "alt": "Google"
          },
          {
-            "link": "./assets/microsoft.png",
-            "alt": "Microsoft"
-         },
-         {
-            "link": "./assets/discord.png",
-            "alt": "Discord"
-         },
-         {
             "link": "./assets/github.png",
             "alt": "Github"
          },
@@ -332,13 +297,17 @@
             "link": "./assets/grab.png",
             "alt": "Grab"
          },
-         {
+          {
             "link": "./assets/line.png",
             "alt": "Line"
          },
          {
             "link": "./assets/linkedin.png",
             "alt": "Linkedin"
+         },
+         {
+            "link": "./assets/microsoft.png",
+            "alt": "Microsoft"
          },
          {
             "link": "./assets/metamask.png",
@@ -359,7 +328,19 @@
          {
             "link": "./assets/wechat.png",
             "alt": "Wechat"
-         }
+         },
+         {
+            "link": "./assets/yahoo.png",
+            "alt": "Yahoo"
+         },
+          {
+            "link": "./assets/email.png",
+            "alt": "Email"
+         },
+         {
+            "link": "./assets/phone.png",
+            "alt": "Phone"
+         },
       ]
 
       let component = document.getElementsByTagName("flip-anim")[0];
