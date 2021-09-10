@@ -89,7 +89,7 @@ function outwards(node, params) {
 }
 </script>
 
-<div class="inline-flex flex-col md:ml-0 md:flex-row items-start md:items-center justify-start">
+<div class="flex">
 	{#if !startEndAnim}
 		<h1 bind:this={ref} id="say-hello-with" class="text-2xl md:text-4xl absolute font-bold text-charcoal" out:outwards={{duration: 200}}> </h1>
 	{:else}
@@ -97,7 +97,7 @@ function outwards(node, params) {
 	{/if}
 	{#if logos.length && startLogoFlip}
 		{#key i}
-			<img src={logos[i].link} alt="{logos[i].alt}" in:inwards out:outwards class="margin absolute h-6 md:h-8 mt-12 md:mt-0" />
+			<img src={logos[i].link} alt="{logos[i].alt}" in:inwards out:outwards class="margin absolute mt-0.5 h-6 md:h-8" />
 		{/key}
 	{/if}
 </div>
@@ -111,9 +111,9 @@ function outwards(node, params) {
 	.margin{
 		margin-left:  15.5rem;
 	}
-	@media (max-width: 768px) { 
-		.margin{
-			margin-left: 0rem;
-		}
+	@media screen and (max-width: 992px) {
+	  .margin {
+	    margin-left: 10.4rem;
+	  }
 	}
 </style>
