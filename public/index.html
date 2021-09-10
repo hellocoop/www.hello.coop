@@ -49,6 +49,12 @@
          .phone-img{
           animation: float 5s infinite;
          }
+         a{
+            text-decoration: underline;
+         }
+         .question{
+            font-style: italic;
+         }
           @keyframes float {
            0%, 100% {
             transform: translatey(0px);
@@ -129,7 +135,7 @@
          <img src="./assets/mockup.png" alt="continue with hello mockup" class="phone-img md:w-1/2 mx-auto my-12 md:my-20" />
          <section class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10 bg-charcoal rounded-md text-white px-4 py-10">
             <h1 class="text-3xl font-bold text-center">Say Hellō</h1>
-            <a href="mailto:contact@hello.coop?subject=Hellō Inquiry" class="inline-flex items-center justify-center bg-white text-charcoal rounded-md h-12 text-xl font-medium w-56">contact@hello.coop</a>
+            <a href="mailto:contact@hello.coop?subject=Hellō Inquiry" class="inline-flex items-center justify-center bg-white text-charcoal rounded-md h-12 text-xl font-medium w-56 no-underline">contact@hello.coop</a>
          </section>
          <section class="mt-20">
             <div data-aos="fade-up">
@@ -165,23 +171,23 @@
             <h1 class="text-3xl font-bold" data-aos="fade-up">Frequently Asked Questions</h1>
             <ul class="mt-10 text-xl font-medium space-y-10">
                <li data-aos="fade-up">
-                  <h3>Why is Hellō a cooperative?</h3>
+                  <h3 class="question">Why is Hellō a cooperative?</h3>
                   <p class="opacity-60 mt-4">We think it’s crucial that Hellō is mission oriented rather than profit oriented. Cooperatives are owned and controlled by their members.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3>Why is Hellō not a regular corporation?</h3>
+                  <h3 class="question">Why is Hellō not a regular corporation?</h3>
                   <p class="opacity-60 mt-4">Corporations are owned and controlled by shareholders for the purpose of maximizing shareholder value.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3>Why is Hellō not a 501c3 non-profit?</h3>
+                  <h3 class="question">Why is Hellō not a 501c3 non-profit?</h3>
                   <p class="opacity-60 mt-4">A 501c3 non-profit lacks ownership and control by the same members who benefit from its services, an important feature to ensure Hellō stays focused on benefiting user and corporate members.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3>Is Hellō a standards organization? </h3>
+                  <h3 class="question">Is Hellō a standards organization? </h3>
                   <p class="opacity-60 mt-4">No, Hellō is not a standards organization. If we require functionality that is not standardized, we will participate in standards organizations such as the OpenID Foundation (<a href="https://openid.net/">OIDF</a>) or the Internet Engineering Task Force (<a href="https://www.ietf.org/">IETF</a>).</p>
                </li>
                <li data-aos="fade-up">
-                  <h3>Who can be a member of Hellō?</h3>
+                  <h3 class="question">Who can be a member of Hellō?</h3>
                   <p class="opacity-60 mt-4">Hellō is a multi-stakeholder cooperative where both users and corporations are members. Any human that signs up and uses Hellō is a user member. Any corporation with an interest in transforming personal identity can join Hellō as a corporate member. Both users and corporations have representation on the board.</p>
                </li>
             </ul>
@@ -189,7 +195,7 @@
         
          <section class="flex flex-col md:flex-row justify-center items-center mt-20 space-y-6 md:space-y-0 md:space-x-10 bg-charcoal rounded-md text-white px-4 py-10">
             <h1 class="text-3xl font-bold text-center">Say Hellō</h1>
-            <a href="mailto:contact@hello.coop?subject=Hellō Inquiry" class="inline-flex items-center justify-center bg-white text-charcoal rounded-md h-12 text-xl font-medium w-56">contact@hello.coop</a>
+            <a href="mailto:contact@hello.coop?subject=Hellō Inquiry" class="inline-flex items-center justify-center bg-white text-charcoal rounded-md h-12 text-xl font-medium w-56 no-underline">contact@hello.coop</a>
          </section>
 
          <footer class="flex flex-col-reverse md:flex-row space-y-4 md:space-y-0 justify-between border-t border-gray-400 mt-20 text-sm py-4">
