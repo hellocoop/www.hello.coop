@@ -264,20 +264,6 @@
       const year = new Date().getFullYear();
       document.getElementById("copyright-year").innerText = year;
 
-      //Form Submission
-      const form = document.getElementById("form");
-      // form.addEventListener("submit", submitForm)
-      async function submitForm(e){
-        e.preventDefault();
-        await fetch('https://hello.us1.list-manage.com/subscribe/post?u=43014a20da13d76ea6a7891c1&id=e3164fa95f', {
-          method: 'POST',
-          body: new FormData(document.getElementById("form"))
-        })
-        .then(()=>{
-          alert('Form submitted successfully!');
-        })
-      }
-
       const logos = [
          {
             "link": "./assets/email.png",
