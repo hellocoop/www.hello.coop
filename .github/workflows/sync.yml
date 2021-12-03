@@ -21,7 +21,7 @@ jobs:
 
     - name: Copy files to www.hello.coop website with the AWS CLI
       run: |
-        aws s3 sync public/ s3://www-hello-coop
+        aws s3 sync S3/ s3://www-hello-coop
 
     # - name: Invalidate CloudFront cache for www.hello.coop
     #   run: |
