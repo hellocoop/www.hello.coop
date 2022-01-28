@@ -33,7 +33,7 @@
       <!-- Tailwind -->
       <link href="./assets/tailwind.css" rel="stylesheet"/>
          
-      <link rel="icon" type="image/png" href="./assets/favicon.svg" />
+      <link id="favicon" rel="icon" type="image/png" href="https://cdn.hello.coop/images/favicon-light.png" />
 
       <!-- AOS -->
       <link href="./assets/aos.css" rel="stylesheet" />
@@ -260,6 +260,23 @@
          once: false, // whether animation should happen only once - while scrolling down
          mirror: false, // whether elements should animate out while scrolling past them
          anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+      });
+
+      // Change favicon dark mode/light mode
+      const favicon = document.getElementById("favicon");
+
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+         favicon.setAttribute("href", "https://cdn.hello.coop/images/favicon-dark.png"); 
+      }
+
+      window.addEventListener('load',function(){
+         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+            if(event.matches){
+               favicon.setAttribute("href", "https://cdn.hello.coop/images/favicon-dark.png"); 
+            } else{
+               favicon.setAttribute("href", "https://cdn.hello.coop/images/favicon-light.png"); 
+            }
+         });
       });
 
       //Copyright Year
