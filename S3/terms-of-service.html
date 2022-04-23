@@ -35,11 +35,24 @@
       <link id="favicon" rel="icon" type="image/png" href="./assets/favicon.svg" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <style>
-         body {
-         color: #303030;
-         }
          .hero-section {
          background-color: #303030;
+         }
+         @media (prefers-color-scheme: dark) {
+            body{
+               background-color: #151515;
+               color: #D4D4D4;
+            }       
+            #hero-section{
+             color: #D4D4D4;
+            }
+         }
+
+         @media (prefers-color-scheme: light) {
+            body{
+               background-color: white;
+               color: #303030;
+            }   
          }
       </style>
 

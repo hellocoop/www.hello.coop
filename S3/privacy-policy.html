@@ -36,11 +36,24 @@
      <link id="favicon" rel="icon" type="image/png" href="./assets/favicon.svg" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <style>
-        body {
-        color: #303030;
-        }
         .hero-section {
-        background-color: #303030;
+         background-color: #303030;
+        }
+        @media (prefers-color-scheme: dark) {
+           body{
+              background-color: #151515;
+              color: #D4D4D4;
+           }       
+           #hero-section{
+            color: #D4D4D4;
+           }
+        }
+
+        @media (prefers-color-scheme: light) {
+           body{
+              background-color: white;
+              color: #303030;
+           }   
         }
      </style>
 
@@ -54,7 +67,7 @@
               style="height: 20rem"
               >
               <div
-                 class="relative h-full px-6 container max-w-5xl mx-auto text-white"
+                 class="relative h-full px-6 container max-w-5xl mx-auto"
                  >
                  <nav
                     class="py-6 border-b border-gray-600 flex items-center justify-between"
@@ -115,7 +128,7 @@
                        </li>
                     </ul>
                  </nav>
-                 <h1 class="text-5xl w-3/4 pt-12 pb-4 text-white">Privacy Policy</h1>
+                 <h1 class="text-5xl w-3/4 pt-12 pb-4">Privacy Policy</h1>
                  <h2 class="opacity-80">
                     Last Updated and Effective: June 15, 2021
                  </h2>
