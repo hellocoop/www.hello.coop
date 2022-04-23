@@ -87,18 +87,22 @@ function outwards(node, params) {
 		css: t => `transform: rotateX(${(t*90)-90}deg)  translateZ(${(t*30)-30}px)`
 	}
 }
+
+const inverts = ['Email', 'Phone', 'GitHub']
 </script>
 
 <div class="flex flex-col items-center">
 	{#if !startEndAnim}
-		<h1 bind:this={ref} id="say-hello-with" class="text-2xl md:text-4xl absolute font-bold" style="color: #303030;" out:outwards={{duration: 200}}> </h1>
+		<h1 bind:this={ref} class="typewriter-text text-2xl md:text-4xl absolute font-bold" out:outwards={{duration: 200}}> </h1>
 	{:else}
-		<h1 class="text-2xl md:text-4xl font-bold absolute" style="color: #303030;" in:inwards={{type:"text"}}>say Hellō how</h1>
-		<h1 class="text-2xl md:text-4xl font-bold absolute mt-8 md:mt-12" style="color: #303030;" in:inwards={{type:"text"}}>you want</h1>
+		<h1 class="typewriter-text text-2xl md:text-4xl font-bold absolute" in:inwards={{type:"text"}}>say Hellō how</h1>
+		<h1 class="typewriter-text text-2xl md:text-4xl font-bold absolute mt-8 md:mt-12" in:inwards={{type:"text"}}>you want</h1>
 	{/if}
 	{#if logos.length && startLogoFlip}
 		{#key i}
-			<img src={logos[i].link} alt="{logos[i].alt}" in:inwards out:outwards class="mt-10 md:mt-12 absolute h-6 md:h-8" />
+			<img src={logos[i].link} alt="{logos[i].alt}" in:inwards out:outwards class="mt-10 md:mt-12 absolute h-6 md:h-8"
+				class:invert={inverts.includes(logos[i].alt)}
+			/>
 		{/key}
 	{/if}
 </div>
@@ -108,5 +112,20 @@ function outwards(node, params) {
 <style>
 	img{
 		transform-style: preserve-3d;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.typewriter-text{
+			color: #D4D4D4;
+		}
+		.invert{
+			filter: invert(100%);
+		}
+	}
+
+	@media (prefers-color-scheme: light) {
+		.typewriter-text{
+			color: #303030;
+		}
 	}
 </style>
