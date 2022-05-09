@@ -68,11 +68,24 @@
          html {
             scroll-behavior: smooth;
          }
-         
          a:hover{
             text-decoration: underline;
          }
-
+         ol {
+            counter-reset: list;
+         }
+         ol > li {
+            list-style: none;
+         }
+         ol > li > p {
+            margin-left: 25px;
+         }
+         ol > li:before {
+            content: counter(list, decimal) ") ";
+            counter-increment: list;
+            font-weight: bold;
+            font-style: italic;
+         }  
          .bg-charcoal{
           background-color: #303030;
          }
@@ -306,86 +319,86 @@
          
          <section id="user-faqs" class="container max-w-5xl mx-auto pt-20 md:pt-24 px-4">
             <h1 class="text-2xl md:text-4xl font-bold" data-aos="fade-up">User FAQs</h1>
-            <ul class="mt-10 text-xl font-medium space-y-4 list-decimal list-inside">
+            <ol class="mt-10 text-xl font-bold space-y-4 list-inside">
                <li data-aos="fade-up">
-                  <h3 class="italic inline">What is Hellō?</h3>
-                  <p class="opacity-75 mt-2">Hellō is a service for registering and logging into applications that support Hellō. You get the convenience and security of social login providers, without being tracked.</p>
+                  <h3 class="italic inline font-semibold">What is Hellō?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">Hellō is a service for registering and logging into applications that support Hellō. You get the convenience and security of social login providers, without being tracked.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">How does Hellō prevent me from being tracked?</h3>
-                  <p class="opacity-75 mt-2">Hellō sits between the application and your chosen login provider such as Google. The application does not know which login provider you have selected, and your login provider does not know which applications you are using.</p>
+                  <h3 class="italic inline font-semibold">How does Hellō prevent me from being tracked?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">Hellō sits between the application and your chosen login provider such as Google. The application does not know which login provider you have selected, and your login provider does not know which applications you are using.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">Is Hellō tracking me then?</h3>
-                  <p class="opacity-75 mt-2">Yes, we track where you go to inform you of who and where you have shared your information. 
+                  <h3 class="italic inline font-semibold">Is Hellō tracking me then?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">Yes, we track where you go to inform you of who and where you have shared your information. 
                      We do NOT provide your activity to other parties. Our business model is NOT to sell your activity, or to profile you, but to verify statements (claims) about you, and charge developers when you release these verified claims to them. Hellō is free to users.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">What is a login provider? </h3>
-                  <p class="opacity-75 mt-2">Any service or software that provides a unique identifier that you can control. 
+                  <h3 class="italic inline font-semibold">What is a login provider? </h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">Any service or software that provides a unique identifier that you can control. 
                      Hellō currently supports popular social login providers (Apple, Facebook, Google, LINE, Microsoft, and Twitch, Yahoo!), crypto wallets supported by WalletConnect, the MetaMask browser extension, as well as sending one time codes to email or phone. 
                      You will select one login provider as your preferred provider, and that is how you will login to Hellō.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">What if I lose access to my preferred login provider? </h3>
-                  <p class="opacity-75 mt-2">You will need to log in with at two recovery providers to recovery your Hellō account and then select a new preferred provider. We encourage all users to configure at least two recovery providers.</p>
+                  <h3 class="italic inline font-semibold">What if I lose access to my preferred login provider? </h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">You will need to log in with at two recovery providers to recovery your Hellō account and then select a new preferred provider. We encourage all users to configure at least two recovery providers.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">Why should I trust Hellō?</h3>
-                  <p class="opacity-75 mt-2">User data and privacy are sacred to Hellō, a mission oriented, multi-stakeholder co-operative where users, corporations, and employees are members. Hellō is governed by directors elected by its members rather than shareholders wanting to maximize profits.
+                  <h3 class="italic inline font-semibold">Why should I trust Hellō?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">User data and privacy are sacred to Hellō, a mission oriented, multi-stakeholder co-operative where users, corporations, and employees are members. Hellō is governed by directors elected by its members rather than shareholders wanting to maximize profits.
                      </p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">What is the governance of Hellō?</h3>
-                  <p class="opacity-75 mt-2">User members elect three directors (1 @ 100M users, 2 @ 500M users, 3 @ 1B users), corporate members elect three directors, and employees elect one director, providing a board of directors with seven members when Hellō has been broadly adopted.</p>
+                  <h3 class="italic inline font-semibold">What is the governance of Hellō?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">User members elect three directors (1 @ 100M users, 2 @ 500M users, 3 @ 1B users), corporate members elect three directors, and employees elect one director, providing a board of directors with seven members when Hellō has been broadly adopted.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">What if I don't want Hellō to have my data anymore?</h3>
-                  <p class="opacity-75 mt-2">You can delete all or part of your Hellō profile at anytime at <a href="https://profile.hello.coop/">profile.hello.coop</a> and selecting <b>Edit</b> in the top right.</p>
+                  <h3 class="italic inline font-semibold">What if I don't want Hellō to have my data anymore?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">You can delete all or part of your Hellō profile at anytime at <a href="https://profile.hello.coop/">profile.hello.coop</a> and selecting <b>Edit</b> in the top right.</p>
                </li>
-            </ul>
+            </ol>
          </section>
 
          <section id="member-faqs" class="container max-w-5xl mx-auto pt-20 md:pt-24 px-4">
             <h1 class="text-2xl md:text-4xl font-bold" data-aos="fade-up">Corporate Member FAQs</h1>
-            <ul class="mt-10 text-xl font-medium space-y-4 list-decimal list-inside">
+            <ol class="mt-10 text-xl font-bold space-y-4 list-inside">
                <li data-aos="fade-up">
-                  <h3 class="italic inline">Why is Hellō a cooperative?</h3>
-                  <p class="opacity-75 mt-2">We think it’s crucial that Hellō is mission oriented rather than profit oriented. Cooperatives are owned and controlled by their members.</p>
+                  <h3 class="italic inline font-semibold">Why is Hellō a cooperative?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">We think it’s crucial that Hellō is mission oriented rather than profit oriented. Cooperatives are owned and controlled by their members.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">Why is Hellō not a regular corporation?</h3>
-                  <p class="opacity-75 mt-2">Corporations are owned and controlled by shareholders for the purpose of maximizing shareholder value.</p>
+                  <h3 class="italic inline font-semibold">Why is Hellō not a regular corporation?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">Corporations are owned and controlled by shareholders for the purpose of maximizing shareholder value.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">Why is Hellō not a 501c3 non-profit?</h3>
-                  <p class="opacity-75 mt-2">A 501c3 non-profit lacks ownership and control by the same members who benefit from its services, an important feature to ensure Hellō stays focused on benefiting user and corporate members.</p>
+                  <h3 class="italic inline font-semibold">Why is Hellō not a 501c3 non-profit?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">A 501c3 non-profit lacks ownership and control by the same members who benefit from its services, an important feature to ensure Hellō stays focused on benefiting user and corporate members.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">Is Hellō a standards organization? </h3>
-                  <p class="opacity-75 mt-2">No, Hellō is not a standards organization. If we require functionality that is not standardized, we will participate in standards organizations such as the OpenID Foundation (<a href="https://openid.net/">OIDF</a>) or the Internet Engineering Task Force (<a href="https://www.ietf.org/">IETF</a>).</p>
+                  <h3 class="italic inline font-semibold">Is Hellō a standards organization? </h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">No, Hellō is not a standards organization. If we require functionality that is not standardized, we will participate in standards organizations such as the OpenID Foundation (<a href="https://openid.net/">OIDF</a>) or the Internet Engineering Task Force (<a href="https://www.ietf.org/">IETF</a>).</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">Who can be a member of Hellō?</h3>
-                  <p class="opacity-75 mt-2">Hellō is a multi-stakeholder cooperative where users, corporations, and employees are members. Any human that signs up and uses Hellō is a user member. Any corporation with an interest in transforming personal identity can join Hellō as a corporate member. All employees are members.</p>
+                  <h3 class="italic inline font-semibold">Who can be a member of Hellō?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">Hellō is a multi-stakeholder cooperative where users, corporations, and employees are members. Any human that signs up and uses Hellō is a user member. Any corporation with an interest in transforming personal identity can join Hellō as a corporate member. All employees are members.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">What is the governance of Hellō?</h3>
-                  <p class="opacity-75 mt-2">User members elect three directors (1 @ 100M users, 2 @ 500M users, 3 @ 1B users), corporate members elect three directors, and employees elect one director, providing a board of directors with seven members when Hellō has been broadly adopted.</p>
+                  <h3 class="italic inline font-semibold">What is the governance of Hellō?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">User members elect three directors (1 @ 100M users, 2 @ 500M users, 3 @ 1B users), corporate members elect three directors, and employees elect one director, providing a board of directors with seven members when Hellō has been broadly adopted.</p>
                </li>               
                <li data-aos="fade-up">
-                  <h3 class="italic inline">The alarm went off at exactly 6:00 AM as it had every morning for the past five years?</h3>
-                  <p class="opacity-75 mt-2">Barbara began her morning and was ready to eat breakfast by 7:00 AM. The day appeared to be as normal as any other, but that was about to change. In fact, it was going to change at exactly 7:23 AM.</p>
+                  <h3 class="italic inline font-semibold">The alarm went off at exactly 6:00 AM as it had every morning for the past five years?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">Barbara began her morning and was ready to eat breakfast by 7:00 AM. The day appeared to be as normal as any other, but that was about to change. In fact, it was going to change at exactly 7:23 AM.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">Benny was tired. Not the normal every day tired from a hard day o work?</h3>
-                  <p class="opacity-75 mt-2">The exhausted type of tired where you're surprised your body can even move. All he wanted to do was sit in front of the TV, put his feet up on the coffee table, and drink a beer. The only issue was that he had forgotten where he lived.</p>
+                  <h3 class="italic inline font-semibold">Benny was tired. Not the normal every day tired from a hard day o work?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">The exhausted type of tired where you're surprised your body can even move. All he wanted to do was sit in front of the TV, put his feet up on the coffee table, and drink a beer. The only issue was that he had forgotten where he lived.</p>
                </li>
                <li data-aos="fade-up">
-                  <h3 class="italic inline">Her hair was a tangled mess which she tried to make presentable by putting in a lump on the top of her head?</h3>
-                  <p class="opacity-75 mt-2">It didn't really work although it was a valiant attempt. While most people simply noticed the tangled mess on top of her head, what most people failed to understand that within the tangles mess was an entirely new year. That was her secret. She kept worlds on top of her head.</p>
+                  <h3 class="italic inline font-semibold">Her hair was a tangled mess which she tried to make presentable by putting in a lump on the top of her head?</h3>
+                  <p class="opacity-75 mt-2 font-normal non-italic">It didn't really work although it was a valiant attempt. While most people simply noticed the tangled mess on top of her head, what most people failed to understand that within the tangles mess was an entirely new year. That was her secret. She kept worlds on top of her head.</p>
                </li>
-            </ul>
+            </ol>
          </section>
 
          <section id="bottom-cta" class="flex flex-col md:flex-row justify-center items-center mt-20 space-y-6 md:space-y-0 md:space-x-10 bg-charcoal px-4 py-16">
