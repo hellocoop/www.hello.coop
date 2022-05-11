@@ -159,18 +159,18 @@
    <body>
       <nav class="fixed top-0 w-full bg-charcoal h-12 z-50 text-white">
          <div class="container px-4 max-w-5xl mx-auto h-full flex items-center justify-center flex items-center justify-between">
-            <span class="font-bold text-2xl">
-               <a href="#">Hellō</a>
+            <span>
+               <button onclick="scrollToSection('top')" class="font-bold text-2xl hover:underline">Hellō</button>
             </span>
             <ul class="flex items-center space-x-4">
                <li>
-                  <a href="#about" class="nav-link">About</a>
+                  <button id="btn-about" onclick="scrollToSection('about')" class="nav-link">About</button>
                </li>
                <li>
-                  <a href="#user-faqs" class="nav-link">User FAQs</a>
+                  <button id="btn-user-faqs" onclick="scrollToSection('user-faqs')" class="nav-link">User FAQs</button>
                </li>
                <li>
-                  <a href="#corporate-faqs" class="nav-link">Corporate FAQs</a>
+                  <button id="btn-corporate-faqs" onclick="scrollToSection('corporate-faqs')" class="nav-link">Corporate FAQs</button>
                </li>
             </ul>
          </div>
@@ -451,9 +451,9 @@
                scrollY <= sectionTop + sectionHeight
             ){
                history.replaceState("data", "title", location.origin + location.pathname + '#' +  sectionId);
-               document.querySelector(".nav-link[href*=" + sectionId + "]").classList.add("active");
+               document.querySelector(`#btn-${sectionId}`).classList.add("active");
             } else {
-               document.querySelector(".nav-link[href*=" + sectionId + "]").classList.remove("active");
+               document.querySelector(`#btn-${sectionId}`).classList.remove("active");
             }
 
             if(sectionId === 'about' && scrollY <= sectionTop){
@@ -461,7 +461,28 @@
             }
          });
       }
+      
+      const scrollToSection = (sectionId) => {
+         const sections = document.querySelectorAll("section[id]");
+         sections.forEach(current => {
+            document.querySelector(`#btn-${current.id}`).classList.remove("active");
+         })
 
+         if(sectionId === 'top'){
+            window.scrollTo({
+               top: 0,
+               behavior: 'smooth'
+            });
+         } else{
+            const ref = document.querySelector(`#${sectionId}`);
+            const buttonRef = document.querySelector(`#btn-${sectionId}`);
+            buttonRef.classList.add('active');
+            window.scrollTo({
+               top: ref.offsetTop,
+               behavior: 'smooth'
+            });
+         }
+      }
 
       AOS.init({
          offset: 120, // offset (in px) from the original trigger point
