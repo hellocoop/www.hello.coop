@@ -760,9 +760,9 @@
     initCanvas(trigger, canvas)
     function initCanvas(trigger, canvas){
         const context = canvas.getContext("2d")
-        const frameCount = 137
+        const frameCount = 89
         const currentFrame = index => (
-            `./assets/seq5/${(index + 1).toString().padStart(2, '0')}.png`
+            `./assets/seq/${(index + 1).toString().padStart(2, '0')}.png`
         )
         const images = []
         const anim = {
