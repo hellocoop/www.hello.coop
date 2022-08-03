@@ -10,7 +10,8 @@ export default {
             {
                 items: [
                     { text: 'Terms of Service', link: '/terms-of-service' },
-                    { text: 'Privacy Policy', link: '/privacy-policy' }
+                    { text: 'Privacy Policy', link: '/privacy-policy' },
+                    { text: 'Trademark Disclaimer', link: '/trademark-disclaimer' }
                 ]
             }
         ],
