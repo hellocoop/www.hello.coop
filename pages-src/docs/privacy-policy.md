@@ -64,6 +64,7 @@ technologies when you use our Service, access our Sites, or when
 you open our communications.
 
 ### How we Process Personal Data
+
 #### Service Registration
 If you register for our Service, we will process Identity Data and
 Contact Data in connection with the creation, operation, and
