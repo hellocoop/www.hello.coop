@@ -1,5 +1,6 @@
 export default {
     title: 'Hellō Docs',
+    appearance: false,
     lang: 'en-US',
     outDir: '../../S3/pages',
     base: '/pages/',
