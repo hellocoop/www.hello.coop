@@ -2,4 +2,4 @@
 editLink: false
 ---
 
-# Welcome to Hellō Docs!
+# Welcome to Hellō Pages!
