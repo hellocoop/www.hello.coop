@@ -1,1 +1,0 @@
-  26/07/22 2:38:16 PM GMT+4: Starting composition “Comp 1”.  Output To: /Users/thoran/hellocoop/www.hello.coop/S3/assets/seq/[##].png    26/07/22 2:38:24 PM GMT+4: Finished composition “Comp 1”.  Total Time Elapsed: 8 SecondsLog closed on 26/07/22 at 2:38:24 PM GMT+4
