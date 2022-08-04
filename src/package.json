@@ -1,12 +1,12 @@
 {
-  "name": "vitepress-starter",
+  "name": "hello-pages",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "serve": "vitepress serve docs"
+    "dev": "vitepress dev pages",
+    "build": "vitepress build pages",
+    "serve": "vitepress serve pages"
   },
   "devDependencies": {
     "vitepress": "^1.0.0-alpha.4",
