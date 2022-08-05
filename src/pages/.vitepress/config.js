@@ -4,6 +4,9 @@ export default {
     lang: 'en-US',
     outDir: '../../S3/pages',
     base: '/pages/',
+    head: [
+        ['script', { src: 'https://cdn.hello.coop/js/wc-footer.js'}]
+    ],
     themeConfig: {
         siteTitle: 'Hellō Pages',
         sidebar: [

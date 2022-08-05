@@ -1,4 +1,5 @@
 import defaultTheme from 'vitepress/theme'
+import MyLayout from './MyLayout.vue'
 import './vars.css'
 
 const root = document.getElementsByTagName( 'html' )[0];
@@ -22,5 +23,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
 });
 
 export default {
-  ...defaultTheme
+  ...defaultTheme,
+  Layout: MyLayout
 }
