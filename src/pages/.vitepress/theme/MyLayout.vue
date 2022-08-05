@@ -11,3 +11,9 @@ const { Layout } = DefaultTheme
     <wc-footer/>
   </div>
 </template>
+
+<style>
+  .Layout{
+    padding-bottom: 50px;
+  }
+</style>
