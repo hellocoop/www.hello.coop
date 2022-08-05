@@ -1,7 +1,9 @@
+:root.dark {
+  --vp-c-brand: white;
+  --vp-c-brand-dark: white;
+}
+
 :root {
   --vp-c-brand: #303030;
-  --vp-c-brand-light: #303030;
-  --vp-c-brand-lighter: #303030;
   --vp-c-brand-dark: #303030;
-  --vp-c-brand-darker: #303030;
 }
