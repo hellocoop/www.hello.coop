@@ -35,7 +35,9 @@ onMounted(() => {
 </template>
 
 <style>
-  .Layout{
-    padding-bottom: 50px;
+  @media (max-width: 768px) { 
+    .Layout{
+      padding-bottom: 50px;
+    }
   }
 </style>
