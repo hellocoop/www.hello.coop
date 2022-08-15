@@ -16,6 +16,12 @@ jobs:
         aws-secret-access-key: ${{ secrets.S3_SYNC_SECRET_ACCESS_KEY }}
         aws-region: us-west-2
 
+    - name: Install modules
+      run: npm install
+
+    - name: Build content
+      run: npm run build
+
     - name: Copy S3 dir to S3 bucket with the AWS CLI
       run: aws s3 sync S3/ s3://${{ secrets.BUCKET_NAME }}/
   
