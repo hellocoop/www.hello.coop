@@ -1,6 +1,6 @@
 # www.hello.coop
 
-This repo contains the source code and documentation powering [https://hello.coop/](https://hello.coop/).
+This repo contains the source code and documentation powering [https://www.hello.coop/](https://www.hello.coop/).
 
 ## Getting started
 
