@@ -24,7 +24,7 @@ export default {
                         { text: 'Thesis', link: '/pages/thesis' },
                         { text: 'Tenets', link: '/pages/tenets' },
                         { text: 'Cooperative', link: '/pages/cooperative' },
-                        { text: 'Architecture', link: '/paegs/architecture' },
+                        { text: 'Architecture', link: '/pages/architecture' },
                         { text: 'Financing Model', link: '/pages/financing' },
                         { text: 'Hellō & the Laws of Identity', link: '/pages/laws-of-identity' },
                         { text: 'FAQs', link: '/pages/faqs' },
