@@ -7,7 +7,7 @@ Our tenets guide us in making decisions. When we are choosing between two course
 Kim Cameron’s “Laws of Identity” provide strong guidance on building digital identity systems. For details, read “[Hellō and the Laws of Identity](laws-of-identity)”.
 
 ## 2. Be a Neutral Platform
-The Hellō service may be used by anyone in any way that is compliant with the Laws of Identity. We will strive to enable permissionless innovation wherever possible. Hellō has no position on any topic outside the scope of its mission.
+The Hellō service may be used by anyone in any way that is compliant with the Laws of Identity. We will strive to enable [permissionless innovation](https://permissionlessinnovation.org/) wherever possible. Hellō has no position on any topic outside the scope of its mission.
 
 ## 3. For the Members, by the Members
 We operate in the best interest of our members. Hellō is a multi-stakeholder cooperative with three membership classes. Every user is a user member, any organization may join as a corporate member, and all employees are employee members. We will not prioritize the interests of one membership class to the detriment of any other membership class. 
