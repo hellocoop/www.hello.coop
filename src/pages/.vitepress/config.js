@@ -18,7 +18,7 @@ export default {
                     { text: 'Architecture', link: '/architecture' },
                     { text: 'Financing Model', link: '/financing' },
                     { text: 'Hellō & the Laws of Identity', link: '/laws-of-identity' },
-                    { text: 'FAQs', link: '/FAQs' },
+                    { text: 'FAQs', link: '/faqs' },
                 ]
             }
         ],
