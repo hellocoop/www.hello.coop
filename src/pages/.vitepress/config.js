@@ -12,7 +12,13 @@ export default {
         sidebar: [
             {
                 items: [
-                    { text: 'Hellō Tenets', link: '/hello-tenets' }
+                    { text: 'Thesis', link: '/thesis' },
+                    { text: 'Tenets', link: '/tenets' },
+                    { text: 'Cooperative', link: '/cooperative' },
+                    { text: 'Architecture', link: '/architecture' },
+                    { text: 'Financing Model', link: '/financing' },
+                    { text: 'Hellō & the Laws of Identity', link: '/laws-of-identity' },
+                    { text: 'FAQs', link: '/FAQs' },
                 ]
             }
         ],
