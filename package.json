@@ -1,0 +1,18 @@
+{
+  "name": "hello-coop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vitepress dev src",
+    "build": "vitepress build src && copyfiles src/index.html S3 -f && copyfiles src/assets/* S3/assets/ -f",
+    "serve": "vitepress serve src"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.4",
+    "vue": "^3.2.37"
+  },
+  "dependencies": {
+    "copyfiles": "^2.4.1"
+  }
+}
