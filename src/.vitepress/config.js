@@ -33,7 +33,7 @@ export default {
             ]
         },
         editLink: {
-            pattern: 'https://github.com/hellocoop/www.hello.coop/edit/main/src/pages/:path',
+            pattern: 'https://github.com/hellocoop/www.hello.coop/edit/main/src/:path',
             text: 'Propose changes to this page'
         }
     }
