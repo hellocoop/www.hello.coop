@@ -22,6 +22,8 @@
     <!-- Flip Web Component -->
     <script defer src='./assets/bundle.js'></script>
 
+    <script defer src='https://cdn.hello.coop/js/join-slack-community.js'></script>
+
     <!-- Tailwind -->
     <link href="https://cdn.hello.coop/css/tailwind.css" rel="stylesheet" />
 
@@ -565,7 +567,7 @@
         <section
             class="bottom-cta flex flex-col justify-center items-center mt-20 bg-charcoal px-4 py-16">
             <h3 class="text-lg text-center mb-6">Interested in talking to others about Hellō?</h3>
-            <button class="cta p-3 bg-white text-charcoal inline-flex items-center justify-center rounded-md font-bold hover-none">
+            <button onClick="joinSlackCommunity('hello.coop')" class="cta p-3 bg-white text-charcoal inline-flex items-center justify-center rounded-md font-bold hover-none">
                 Join our Slack Community
             </button>
         </section>
