@@ -3,4 +3,6 @@
 *.zip
 
 node_modules
+dist
+
 S3/*
