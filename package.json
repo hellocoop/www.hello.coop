@@ -8,6 +8,10 @@
     "build": "vitepress build src && copyfiles src/index.html S3 -f && copyfiles src/assets/* S3/assets/ -f && copyfiles src/assets/seq/* S3/assets/seq -f",
     "serve": "vitepress serve src"
   },
+  "engines" : { 
+    "npm" : ">=7.0.0",
+    "node" : ">=16.0.0"
+  },
   "devDependencies": {
     "vitepress": "^1.0.0-alpha.4",
     "vue": "^3.2.37"
