@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vitepress dev src",
-    "build": "vitepress build src && copyfiles src/index.html S3 -f && copyfiles src/assets/* S3/assets/ -f",
+    "build": "vitepress build src && copyfiles src/index.html S3 -f && copyfiles src/assets/* S3/assets/ -f && copyfiles src/assets/seq/* S3/assets/seq -f",
     "serve": "vitepress serve src"
   },
   "devDependencies": {
