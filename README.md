@@ -54,3 +54,5 @@ If possible, test any visual changes in all latest versions of common browsers, 
 
 
 ## License
+
+<a href="LICENSE">![CC0](https://cdn.hello.coop/images/cc-zero.svg)</a>
