@@ -1,0 +1,33 @@
+{
+  "name": "hello-coop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "install": "cd src/protocol && npm i",
+    "dev": "echo \"npm run dev does not exist.\nHellō Pages: npm run dev:pages\nHellō Protocol: npm run dev:proto\"",
+    "dev:proto": "cd src/protocol && vite --open",
+    "dev:pages": "vitepress dev src/pages --open",
+    "build:legal": "vitepress build src/legal",
+    "build:pages": "vitepress build src/pages",
+    "build:proto": "cd src/protocol && npm run build && cd ../../ && shx cp src/protocol/dist/index.html S3/pages/protocol.html && shx cp src/protocol/dist/assets/* S3/pages/assets/",
+    "build": "run-s build:* && copyfiles src/index.html S3 -f && copyfiles src/assets/* S3/assets/ -f && copyfiles src/assets/scroll-anim-seq/* S3/assets/scroll-anim-seq -f",
+    "preview": "vite preview --open",
+    "test": "npm run build && linkinator ./S3 --config linkinator.config.json"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "linkinator": "^4.0.3",
+    "shx": "^0.3.4",
+    "vite": "^3.1.1",
+    "vitepress": "^1.0.0-alpha.4",
+    "vue": "^3.2.37"
+  },
+  "dependencies": {
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
