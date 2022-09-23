@@ -10,7 +10,7 @@ Internet identity is a complicated and unsolved problem. Early centralized offer
 
 ## Decentralized Identity Approach
 
-To resolve the concerns with a centralized approach, numerous decentralized identity approaches have been proposed and built. In the [decentralized approach]() an issuer provides a credential to a user, and then the user chooses to provide the credential to an application. For example, a school will issue a credential to a student so they can prove they are a student. This puts the user in the middle of the transaction, giving them control of when and where their information is shared. 
+To resolve the concerns with a centralized approach, numerous decentralized identity approaches have been proposed and built. In the [decentralized approach](https://www.microsoft.com/en-us/security/business/solutions/decentralized-identity) an issuer provides a credential to a user, and then the user chooses to provide the credential to an application. For example, a school will issue a credential to a student so they can prove they are a student. This puts the user in the middle of the transaction, giving them control of when and where their information is shared. 
 
 ## The Cold Start Problem with Decentralized Identity
 
