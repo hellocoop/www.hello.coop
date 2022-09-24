@@ -20,8 +20,6 @@ The separation of concerns continues with the control of each component. The Hel
 
 The custodians and the cooperative independently verifying the infrastructure. The software for all components is in public repositories. All the parties clone the repository and build each component and calculate the image checksums. Each custodian, and the cooperative, can read the checksum of all deployed component images to verify the images running are built from the publicly visible source code. The infrastructure configuration is readable to all parties, and all infrastructure modifications and metrics are published to all parties.
 
-## Independent Components
-
 The custodians are vendors of the cooperative and are compensated for their service, which is an operating expense for the cooperative. The custodians are chosen for the independence and proven track record operating security infrastructure. If a custodian deviates from their agreement, the cooperative can replace them for breaching their contract and replacing them with a custodian on standby.
 
 ## Independent Components
@@ -32,7 +30,7 @@ The four components of the Hellō Computing Architecture are:
 1. The Encryption Service encrypts and decrypts records going to and from the Orchestration Service and the Storage Service.
 1. The Storage Service Creates, Reads, Updates, and Deletes records in an external database per Access Tokens presented to it.
 
-## Overview
+## Architecture Diagram
 
 In the following diagram, we show the relationship between all the parties. The application (example.app) and issuer (op.example) interact with the Hellō Service. The Orchestration Service is the only component that interacts with external systems. It interacts with the Token Service, and then the Encryption Service, which interacts with the Storage Service, which interacts with the external database. Independent custodians control the credentials for each of the components.
 
