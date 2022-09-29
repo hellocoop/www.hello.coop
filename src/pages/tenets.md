@@ -22,7 +22,7 @@ Hellō has no position on any topic outside the scope of its mission.
 ---
 
 ## 3. For the Members, by the Members
-We operate in the best interest of our members. Hellō is a multi-stakeholder cooperative with three membership classes. Every user is a user member, any organization may join as a corporate member, and all employees are employee members.
+We operate in the best interest of our members. Hellō is a multi-stakeholder cooperative with three membership classes. Every user is a user member, any organization may join as a corporate member, and all Hellō employees are employee members.
 
 We will not prioritize the interests of one membership class to the detriment of any other membership class.
 

@@ -43,7 +43,7 @@ Issuers do not need to choose to use Hellō, although they may choose to not all
 ### 4) What issuers does Hellō support?
 Currently Hellō supports Apple, Facebook, Google, Microsoft, LINE, Twitch, and Yahoo. Users can also use their email, phone, or crypto wallet to log in to Hellō.
 ### 5) Why will developers adopt Hellō?
-Developers of greenfield applications will save weeks of development time while providing their users with the login and account management choices they have come to expect. 
+Developers of greenfield applications will save weeks of development time while providing their users with the login and account management choices they have come to expect. See [hello.dev](https://www.hello.dev) for more details.
 ### 6) How does Hellō save a developer weeks of time?
 The developer no longer needs to implement account recovery, email or phone verification, or profile picture upload. Developers no longer need to spend hours registering their apps at the management consoles of social providers such as Apple, Facebook, or Google, and then copying and pasting configuration to and from those consoles.
 Hellō provides a fully-featured [OpenID Connect](https://openid.net/connect/) interface that will work with the libraries and integrations developers are already familiar with. See our [developer portal](https://www.hello.dev) for details.

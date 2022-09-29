@@ -6,15 +6,15 @@ editLink: true
 
 ## Privacy is a Human Right
 
-We believe that privacy is a human right. We manifest this in our [Tenets](laws-of-identity.html) and our [Computing Architecture](architecture.html).
+We believe that privacy is a human right. We manifest this in our first tenet with guidance from [the Laws of Identity](laws-of-identity.html), and our [Computing Architecture](architecture.html).
 
-Neither Hellō, nor any of the vendors have access to any user data at rest or while being processed. As none of the parties have access to user data, an attacker breaching a system can not gain access to user data.
+The computing architecture ensures that neither Hellō, nor any of the custodians or infrastructure vendors have access to any user data at rest or while being processed. As none of the parties have access to user data, an attacker breaching a system can not gain access to user data.
 
 ## Subpoena Compliance
 
 We do not want to be a safe haven for criminals, and believe it is in society's best interest to cooperate when there is suspicion of activity that is widely recognized as a crime, such as human trafficking. 
 
-The process for law enforcement to obtain Hellō information for a suspected criminal is to obtain a subpoena from the jurisdictions of both the Token Service and the Orchestration Service. The subpoenas contain one or more public identifiers for the suspected criminal that Hellō has for the user. The subpoenas are digitized and presented to both the Token Service and the Orchestration Service by law enforcement using the supplied application. The Token Service will generate Access Tokens that the Orchestration Service will use to read any user information associated with the public identifiers and present it to law enforcement. 
+The process for law enforcement to obtain Hellō information for a suspected criminal is to obtain a subpoena from the jurisdictions of both the Token Service and the Orchestration Service (see ). The subpoenas contain one or more public identifiers for the suspected criminal that Hellō has for the user. The subpoenas are digitized and presented to both the Token Service and the Orchestration Service by law enforcement using the supplied application. The Token Service will generate Access Tokens that the Orchestration Service will use to read any user information associated with the public identifiers and present it to law enforcement. 
 
 ## Subpoena Access Granted
 

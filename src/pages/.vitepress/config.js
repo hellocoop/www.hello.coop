@@ -20,8 +20,8 @@ export default {
                     { text: 'Smart Contract Financing', link: '/financing' },
                     { text: 'Guiding Tenets', link: '/tenets' },
                     { text: 'Protecting Privacy', link: '/laws-of-identity' },
-                    { text: 'Data Governance', link: '/data-governance' },
                     { text: 'Computing Architecture', link: '/architecture' },
+                    { text: 'Data Governance', link: '/data-governance' },
                     { text: 'Hellō Protocol', link: '/protocol' },
                 ]
             }
