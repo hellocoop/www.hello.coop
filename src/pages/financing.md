@@ -33,17 +33,20 @@ We initially explored a revenue-based financing model similar to [toll revenue b
 We will reduce our interchange fees so that we are only charging what is needed to cover expenses.
 ### 6) Why does the Rule of 40 only apply to interchange revenue?
 Hellō receives membership fees from corporate members that are independent of the interchange fees. We use the member fees to cover cooperative expenses unrelated to building and operating the interchange and that the interchange revenue should not cover, and similarly it is not appropriate for investors to get a return on the membership fees.  
-### 7) Why are you rewarding early adopters with token credits?
+### 7) How will investors and employees sell their tokens?
+We will either run a regular auction that matches buyers and sellers of tokens via the smart contract, or list the Hellō tokens on a token exchange. 
+
+### 8) Why are you rewarding early adopters with token credits?
 Early adopters are taking a risk when they integrate an unfamiliar and novel service that their application is dependent on for identity. These application developers are helping build the network as most users of their applications will be new-to-Hellō. Based on the number of the new-to-Hellō users they bring us, we will reward them with tokens that can be used as credits against their Hellō account.
-### 8) How will Hellō compete for talent without stock options?
+### 9) How will Hellō compete for talent without stock options?
 We will offer employees restricted token units (RTUs) that vest over a period of years similar to stock option and restricted stock unit vesting schedules offered by other technology companies. 
-### 9) What is a smart contract?
+### 10) What is a smart contract?
 A smart contract is a contract whose terms are recorded in a computer language instead of legal language. Smart contracts can be automatically executed by a computing system, such as a distributed ledger system. Smart contracts allow transactions to be carried out among disparate parties without the need for a central authority or external enforcement mechanism.
-### 10) Why is Hellō using smart contracts?
+### 11) Why is Hellō using smart contracts?
 Smart contracts represented as tokens on a blockchain lower the costs and friction for Hellō to reward early adopters of Hellō, and for those early adopters to transfer their reward if desired. Smart contracts provide transparency for the rights of token holders, and ensures all token holders are treated equally. 
 Smart contracts allow Hellō to only accept tokens as compensation for Hellō services. This allows Hellō to avoid the costs and complexity of a payment system when dealing directly with developers, and only using fiat currency with Hellō resellers.
 Using tokens as credits for using Hellō expands the market for tokens to Hellō customers in addition to Hellō investors, increasing the liquidity of the tokens.
-### 11) Are the holders of these tokens a decentralized autonomous organization [(DAO)][2]?
+### 12) Are the holders of these tokens a decentralized autonomous organization [(DAO)][2]?
 Yes. In contrast to most projects that use a DAO as the governance mechanism for a project, the DAO created by the Hellō tokens will be limited to matters directly impacting the investment. Governance of Hellō will be by a multi-stakeholder cooperative that provides democratic representation from all stakeholders.
 
 
