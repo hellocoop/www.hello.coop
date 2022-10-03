@@ -908,17 +908,23 @@
                 trigger,
                 pin: true,
                 scrub: 0.5,
-                start: wWidth > 768 ? "25%" : "-20%",
-                end: wWidth > 768 ? "+=5000" : "+=2500",
+                start: wWidth > 768 ? "25%" : "-10%",
+                end: wWidth > 768 ? "+=2000" : "+=1000",
                 markers: false,
             }
         })
+            .to(anim, {
+                frame: 45,
+                snap: "frame",
+                ease: "none",
+                duration: 1
+            })
             .to(anim, {
                 frame: frameCount - 1,
                 snap: "frame",
                 ease: "none",
                 duration: 1
-            }, 0)
+            }, "+=1")
         images[0].onload = render
         function render() {
             context.clearRect(0, 0, canvas.width, canvas.height);
