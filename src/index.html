@@ -669,6 +669,15 @@
     <wc-footer />
 </body>
 <script type="text/javascript">
+    const hash = window.location.hash
+    const scrollSectionOnLoad = hash && document.querySelector(hash)
+    if(scrollSectionOnLoad) {
+        //wait for layout to load
+        setTimeout(()=>{
+            scrollSectionOnLoad.scrollIntoView()
+        }, 250)
+    }
+
     const mobileMenuRef = document.querySelector("#mobile-menu")
     const hamburgerIconRef = document.querySelector("#hamburger")
     const closeIconRef = document.querySelector("#hamburger-close")
