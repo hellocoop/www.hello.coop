@@ -909,21 +909,20 @@
                 pin: true,
                 scrub: 0.5,
                 start: wWidth > 768 ? "25%" : "-10%",
-                end: wWidth > 768 ? "+=3000" : "+=2000",
-                markers: false,
+                end: wWidth > 768 ? "+=3000" : "+=2000"
             }
         })
             .to(anim, {
                 frame: 45, //pause here
                 snap: "frame",
                 ease: "none",
-                duration: 1
+                duration: 3
             })
             .to(anim, {
                 frame: frameCount - 1,
                 snap: "frame",
                 ease: "none",
-                duration: 1
+                duration: 4
             }, "+=1")
         images[0].onload = render
         function render() {
