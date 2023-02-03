@@ -239,9 +239,20 @@
             gap: 0px 20px;
         }
 
+        #more-news-cta {
+            margin-left: 200px;
+        }
+
         @media(max-width: 600px) {
             .post {
                 flex-direction: column;
+            }
+
+            #more-news-cta {
+                margin-left: 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
 
@@ -743,13 +754,6 @@
                         of Hellō, and other organizations that share the mission.</p>
                 </li>
             </ol>
-
-            <div data-aos="fade-up" class="flex flex-col justify-center items-center px-4 pt-16">
-                <h3 class="text-xl font-semibold text-center mb-6">Interested in talking to others about Hellō?</h3>
-                <button onClick="joinSlackCommunity('hello.coop')" class="hello-btn-black-and-static">
-                    Join our Slack Community
-                </button>
-            </div>
         </section>
 
         <section id="news" class="container max-w-5xl mx-auto px-4 pt-20 pb-28">
@@ -759,14 +763,21 @@
             </div>
             <ul id="posts" class="mt-6 text-xl font-bold space-y-10 list-inside">
             </ul>
-            <a href="https://blog.hello.coop/" target="_blank" data-aos="fade-up" class="mt-6 flex items-center text-lg font-bold">
-                <span>Read more news</span>
+            <a href="https://blog.hello.coop/" target="_blank" id="more-news-cta" data-aos="fade-up" class="mt-6 flex items-center text-xl font-semibold">
+                <span>Read more news at blog.hello.coop</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
                     class="w-4 h-4 ml-1">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                 </svg>
             </a>
+
+            <div data-aos="fade-up" class="flex flex-col justify-center items-center px-4 pt-16">
+                <h3 class="text-xl font-semibold text-center mb-6">Interested in talking to others about Hellō?</h3>
+                <button onClick="joinSlackCommunity('hello.coop')" class="hello-btn-black-and-static">
+                    Join our Slack Community
+                </button>
+            </div>
         </section>
     </main>
 
