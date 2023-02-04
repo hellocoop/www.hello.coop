@@ -785,7 +785,7 @@
 </body>
 <script type="text/javascript">
     window.onload = async () => {        
-        const RSS_URL = "https://www.wired.com/feed";
+        const RSS_URL = "https://hellocoopdev.wpengine.com/feed";
         try {
             const res = await fetch(RSS_URL)
             const txt = await res.text()
@@ -797,7 +797,7 @@
                 const title = post.querySelector("title")?.textContent
                 const description = post.querySelector("description")?.textContent
                 const url = post.querySelector("link")?.textContent
-                const image = post.querySelector("thumbnail")?.getAttribute("url")
+                const image = post.querySelector("content")?.getAttribute("url")
                 let date = post.querySelector("pubDate")?.textContent
                 date = date.split(" ").slice(0,4).join(" ")
 
