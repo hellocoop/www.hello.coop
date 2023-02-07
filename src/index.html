@@ -793,14 +793,17 @@
             const posts = xml.querySelectorAll("item")
             const postsRef = document.querySelector("#posts")
             for(let i=0; i<3; i++) {
+                if(!posts[i]) continue;
                 const post = posts[i]
                 const title = post.querySelector("title")?.textContent
-                const description = post.querySelector("description")?.textContent
+                const rawDescription = post.querySelector("description")?.textContent
+                const descriptionPlaceholder = document.createElement("div");
+                descriptionPlaceholder.innerHTML = rawDescription
+                const description = descriptionPlaceholder.textContent
                 const url = post.querySelector("link")?.textContent
                 const image = post.querySelector("content")?.getAttribute("url")
                 let date = post.querySelector("pubDate")?.textContent
                 date = date.split(" ").slice(0,4).join(" ")
-
                 const li = `
                     <li data-aos="fade-up">
                         <a href="${url}" target="_blank" class="post group">
