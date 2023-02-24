@@ -247,7 +247,12 @@
         }
 
         #more-news-cta {
-            margin-left: 200px;
+            display: inline-block;
+            margin-left: 286px;
+        }
+
+        #more-news-cta svg {
+            display: inline-block;
         }
 
         @media(max-width: 600px) {
@@ -257,9 +262,6 @@
 
             #more-news-cta {
                 margin-left: 0px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
         }
 
@@ -274,8 +276,9 @@
         }
 
         .post img {
-            width: 180px;
-            height: 180px;
+            width: 266px;
+            height: auto;
+            aspect-ratio: 16/9;
             object-fit: cover;
             border-radius: 8px;
         }
@@ -801,7 +804,7 @@
             <ul id="posts" class="mt-6 text-xl font-bold space-y-10 list-inside">
             </ul>
             <a href="https://blog.hello.coop/" target="_blank" id="more-news-cta" data-aos="fade-up"
-                class="mt-6 flex items-center text-xl font-semibold">
+                class="mt-6 text-xl font-semibold">
                 <span>Read more news at blog.hello.coop</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                     stroke="currentColor" class="w-4 h-4 ml-1">
