@@ -39,6 +39,7 @@
 
     <script src="https://cdn.hello.coop/js/gsap.min.js"></script>
     <script src="https://cdn.hello.coop/js/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.hello.coop/js/dayjs.min.js"></script>
 
     <style>
         @media (prefers-color-scheme: dark) {
@@ -842,7 +843,7 @@
     window.onload = async () => {
         const RSS_URL = "/feed/";
         try {
-            const res = await fetch(RSS_URL)
+            const res = await fetch("https://blog.hello.coop/feed")
             const txt = await res.text()
             const xml = new window.DOMParser().parseFromString(txt, "text/xml")
             const posts = xml.querySelectorAll("item")
@@ -857,8 +858,8 @@
                 const description = descriptionPlaceholder.textContent
                 const url = post.querySelector("link")?.textContent
                 const image = post.querySelector("content")?.getAttribute("url")
-                let date = post.querySelector("pubDate")?.textContent
-                date = date.split(" ").slice(0, 4).join(" ")
+                //PST is UTC-8
+                const date = dayjs(post.querySelector("pubDate")?.textContent).subtract(8, 'hours').format('ddd, DD MMM YYYY')
                 const li = `
                     <li data-aos="fade-up">
                         <a href="${url}" target="_blank" class="post group">
