@@ -188,7 +188,7 @@
 
             const url = new URL(AUTHORIZATION_ENDPOINT)
             url.searchParams.append("client_id", CLIENT_ID)
-            url.searchParams.append("redirect_uri", window.location.origin + '/')
+            url.searchParams.append("redirect_uri", window.location.origin + window.location.pathname)
             url.searchParams.append("nonce", nonce)
             url.searchParams.append("response_mode", "fragment")
             url.searchParams.append("response_type", "id_token")
