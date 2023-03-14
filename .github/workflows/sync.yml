@@ -22,6 +22,9 @@ jobs:
       - name: Build content
         run: npm run build
 
+      - name: Fix PHX content type
+        run: aws s3 cp --content-type "text/html; charset=UTF-8" s3://${{ secrets.BUCKET_NAME }}/PHX s3://${{ secrets.BUCKET_NAME }}/PHX
+
       - name: Copy S3 dir to S3 bucket with the AWS CLI
         run: aws s3 sync S3/ s3://${{ secrets.BUCKET_NAME }}/
     
