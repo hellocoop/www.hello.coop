@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hellō Wallet Mastodon</title>
+    <link rel="stylesheet" href="https://cdn.hello.coop/css/hello-btn.css" />
+    <link rel="icon" type="image/x-icon" href="https://cdn.hello.coop/images/checkmark-green.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            overflow-x: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            html {
+                color-scheme: dark;
+            }
+
+            body {
+                background-color: #151515;
+                color: #d4d4d4;
+            }
+
+            .spinner {
+                border-color: rgba(116, 116, 116, 0.3);
+                border-top-color: rgb(116, 116, 116);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            html {
+                color-scheme: light;
+            }
+
+            body {
+                background-color: white;
+                color: #303030;
+            }
+
+            .spinner {
+                border-color: rgba(75, 75, 75, 0.3);
+                border-top-color: rgb(75, 75, 75);
+            }
+        }
+
+        .cup-img {
+            max-width: 300px;
+            margin-right: -60px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .logo img {
+            height: 42px;
+            width: auto;
+        }
+
+        .logo span {
+            font-weight: bold;
+            font-size: 42px;
+            margin-left: 4px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        main {
+            max-width: 720px;
+            margin: auto;
+            display: none;
+            min-width: 320px;
+            padding: 20px 20px 100px;
+            padding-top: 0;
+        }
+
+        /* header {
+            height: 48px;
+            background-color: #303030;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #d4d4d4;
+            font-size: 24px;
+            font-weight: 600;
+            font-size: 1.25rem;
+        } */
+
+        header {
+            padding: 20px;
+        }
+
+        header picture{
+            margin: auto;
+        }
+
+        header img {
+            margin: auto;
+            width: 160px;
+            height: auto;
+        }
+
+        #description {
+            margin-top: 0;
+            padding: 0;
+            margin: 40px auto;
+            font-size: 16px;
+            font-weight: 200;
+            line-height: 24px;
+        }
+
+        a {
+            text-decoration: underline;
+            color: inherit;
+        }
+
+        .hello-btn {
+            display: none;
+        }
+
+        .spinner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 40px;
+            width: 40px;
+            margin: -26px 0 0 -26px;
+            box-sizing: content-box;
+            animation: rotation 1s infinite linear;
+            border-width: 6px;
+            border-style: solid;
+            border-radius: 100%;
+            display: none;
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            #description {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        const AUTHORIZATION_ENDPOINT = "https://wallet.hello.coop/authorize"
+        const INTROSPECTION_ENDPOINT = "https://wallet.hello.coop/oauth/introspect"
+        const SIGNUP_ENDPOINT = "/signup"
+        const CLIENT_ID = "f1a13a2a-3840-41f4-8ab6-eb7c5c26edbd"
+        const SCOPES = "openid name email"
+
+        const uuidv4 = () => {
+            return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) => (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16))
+        }
+
+        function login(event) {
+            event.target.disabled = true
+            event.target.classList.add("hello-btn-loader")
+
+            const nonce = uuidv4()
+            sessionStorage.setItem("nonce", nonce)
+
+            const url = new URL(AUTHORIZATION_ENDPOINT)
+            url.searchParams.append("client_id", CLIENT_ID)
+            url.searchParams.append("redirect_uri", window.location.origin + '/')
+            url.searchParams.append("nonce", nonce)
+            url.searchParams.append("response_mode", "fragment")
+            url.searchParams.append("response_type", "id_token")
+            url.searchParams.append("scope", SCOPES)
+
+            window.location.href = url
+        }
+
+        window.onload = async () => {
+            const headerRef = document.querySelector("header")
+            const mainRef = document.querySelector("main")
+
+            const headingRef = document.querySelector("h1")
+            const descriptionRef = document.querySelector("#description")
+            const buttonRef = document.querySelector(".hello-btn")
+            const loadSpinnerRef = document.querySelector(".spinner")
+
+            const searchParams = new URLSearchParams(window.location.hash.substring(1))
+            const id_token = searchParams.get("id_token")
+
+            headingRef.innerHTML = "A FREE Wordpress plugin for users to register and log in to your site using Hellō that installs in just 7 clicks."
+
+            if (!id_token) {
+                descriptionRef.innerHTML = `<p>The MiiR Camp Cup is a 12oz Stainless Steel throwback to the enamel mug of generations past. Thermo3D(r) double - wall vacuum insulation; stays hot, keeps cold, won't sweat. Comes with a splash proof, Press - Fit Slide Lid.MiiR is a Certified B Corp.</p>`
+                buttonRef.style.display = "inline-flex"
+                headerRef.style.display = "flex"
+                mainRef.style.display = "block"
+
+                return
+            }
+
+            loadSpinnerRef.style.display = "block"
+
+            const nonce = sessionStorage.getItem("nonce")
+
+            try {
+                const res = await fetch(SIGNUP_ENDPOINT, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        client_id: CLIENT_ID,
+                        token: id_token,
+                        nonce
+                    })
+                })
+
+                // Handle NOT OK responses
+                // if (!res.ok) {
+                //     const message = `An error has occured: ${response.status}`
+                //     throw new Error(message)
+                // }
+
+                const json = await res.json()
+
+                console.log(JSON.stringify(json, null, 2))
+
+                descriptionRef.innerHTML = `
+                    <h1 style="margin-bottom: 0px;">
+                        Thank you for signing up!
+                    </h1>
+                    <p>
+                        We will email the winner the afternoon of Saturday March 25th
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 10px 0px; margin-top: 30px;">
+                        <a href="https://wordpress.org/plugins/hello-login/">Hellō Login on WP Plugin Directory</a>
+                        <a href="https://blog.hello.coop/2023/03/simple-wordpress-registration-and-social-login-with-hello-login/?utm_campaign=wcphx&utm_source=qrc2&utm_medium=tabletop">Read more about it on our blog</a>
+                        <a href="https://www.hello.coop/?utm_campaign=wcphx&utm_source=qrc1&utm_medium=tabletop">Learn about Hellō</a>
+                    </div>
+                `
+                buttonRef.style.display = "none"
+            } catch (err) {
+                // Respond with UI here
+                console.error(err)
+            } finally {
+                sessionStorage.clear()
+
+                loadSpinnerRef.style.display = "none"
+                headerRef.style.display = "flex"
+                mainRef.style.display = "block"
+
+                // Clean URL
+                window.location.replace("#")
+                if (typeof window.history.replaceState == "function") {
+                    history.replaceState({}, "", window.location.href.slice(0, -1))
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <picture>
+            <source srcset="assets/300x200-dark.png" media="(prefers-color-scheme:dark)">
+            <img src="assets/300x200.png" alt="hello-login">
+        </picture>
+    </header>
+    <main>
+        <h1></h1>
+        <img class="cup-img" src="assets/cup.png" alt="miir camp cup">
+        <div id="description"></div>
+        <button onclick="login(event)" class="hello-btn hello-btn-black-and-static">ō&nbsp;&nbsp;&nbsp;Enter to win with
+            Hellō</button>
+    </main>
+</body>
+
+</html>
