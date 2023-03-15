@@ -29,11 +29,6 @@
                 background-color: #151515;
                 color: #d4d4d4;
             }
-
-            .spinner {
-                border-color: rgba(116, 116, 116, 0.3);
-                border-top-color: rgb(116, 116, 116);
-            }
         }
 
         @media (prefers-color-scheme: light) {
@@ -44,11 +39,6 @@
             body {
                 background-color: white;
                 color: #303030;
-            }
-
-            .spinner {
-                border-color: rgba(75, 75, 75, 0.3);
-                border-top-color: rgb(75, 75, 75);
             }
         }
 
@@ -133,31 +123,6 @@
             display: none;
         }
 
-        .spinner {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            height: 40px;
-            width: 40px;
-            margin: -26px 0 0 -26px;
-            box-sizing: content-box;
-            animation: rotation 1s infinite linear;
-            border-width: 6px;
-            border-style: solid;
-            border-radius: 100%;
-            display: none;
-        }
-
-        @keyframes rotation {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
         @media screen and (max-width: 600px) {
             h1 {
                 font-size: 24px;
@@ -204,7 +169,6 @@
             const headingRef = document.querySelector("h1")
             const descriptionRef = document.querySelector("#description")
             const buttonRef = document.querySelector(".hello-btn")
-            const loadSpinnerRef = document.querySelector(".spinner")
 
             const searchParams = new URLSearchParams(window.location.hash.substring(1))
             const id_token = searchParams.get("id_token")
@@ -219,8 +183,6 @@
 
                 return
             }
-
-            loadSpinnerRef.style.display = "block"
 
             const nonce = sessionStorage.getItem("nonce")
 
@@ -264,10 +226,14 @@
             } catch (err) {
                 // Respond with UI here
                 console.error(err)
+                descriptionRef.innerHTML = `
+                    <h1 style="margin-bottom: 0px;">
+                        Something went wrong
+                    </h1>   
+                `
             } finally {
                 sessionStorage.clear()
 
-                loadSpinnerRef.style.display = "none"
                 headerRef.style.display = "flex"
                 mainRef.style.display = "block"
 
@@ -295,7 +261,6 @@
         <button onclick="login(event)" class="hello-btn hello-btn-black-and-static">ō&nbsp;&nbsp;&nbsp;Enter to win with
             Hellō</button>
     </main>
-    <div id="load-spinner" class="spinner"></div>
 </body>
 
 </html>
