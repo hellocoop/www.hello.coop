@@ -295,6 +295,7 @@
         <button onclick="login(event)" class="hello-btn hello-btn-black-and-static">ō&nbsp;&nbsp;&nbsp;Enter to win with
             Hellō</button>
     </main>
+    <div id="load-spinner" class="spinner"></div>
 </body>
 
 </html>
