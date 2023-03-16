@@ -95,7 +95,7 @@
             padding: 20px;
         }
 
-        header picture{
+        header picture {
             margin: auto;
         }
 
@@ -217,9 +217,9 @@
                         We will email the winner the afternoon of Saturday March 25th
                     </p>
                     <div style="display: flex; flex-direction: column; gap: 10px 0px; margin-top: 30px;">
-                        <a href="https://wordpress.org/plugins/hello-login/">Hellō Login on WP Plugin Directory</a>
-                        <a href="https://blog.hello.coop/2023/03/simple-wordpress-registration-and-social-login-with-hello-login/?utm_campaign=wcphx&utm_source=qrc2&utm_medium=tabletop">Read more about it on our blog</a>
-                        <a href="https://www.hello.coop/?utm_campaign=wcphx&utm_source=qrc1&utm_medium=tabletop">Learn about Hellō</a>
+                        <a href="https://wordpress.org/plugins/hello-login/" target="_blank">Hellō Login on WP Plugin Directory</a>
+                        <a href="https://blog.hello.coop/2023/03/simple-wordpress-registration-and-social-login-with-hello-login/?utm_campaign=wcphx&utm_source=qrc2&utm_medium=tabletop" target="_blank">Read more about it on our blog</a>
+                        <a href="https://www.hello.coop/?utm_campaign=wcphx&utm_source=qrc1&utm_medium=tabletop" target="_blank">Learn about Hellō</a>
                     </div>
                 `
                 buttonRef.style.display = "none"
