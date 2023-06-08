@@ -7,7 +7,7 @@ This repo contains the source code and documentation powering [https://www.hello
 ### Prerequisites
 
 1. Git
-1. Node (>=16.0.0), npm (>=7.0.0)
+1. Node (~18), npm (~9)
 1. A fork of the repo (for any contributions)
 1. A clone of the [www.hello.coop repo](https://github.com/hellocoop/www.hello.coop) on your local machine
 

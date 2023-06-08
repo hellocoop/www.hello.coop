@@ -16,8 +16,8 @@
     "test": "npm run build && linkinator ./S3 --config linkinator.config.json"
   },
   "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=16.0.0"
+    "node": "~18",
+    "npm": "~9"
   },
   "devDependencies": {
     "linkinator": "^4.0.3",
