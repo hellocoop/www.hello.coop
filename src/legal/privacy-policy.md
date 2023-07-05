@@ -12,7 +12,7 @@ Welcome to Hellō! This Privacy Policy is here to help you understand how we col
 This is the Privacy Policy **("Policy")** of Hello Identity Co-op (**"Company"**, **"us"**, **"our"**, or **"we"**), a Washington Cooperative with offices at 516 Yale Ave N, Seattle WA, 98109. You can contact us using the information below.
 
 ## Applicability
-This Policy applies to our **"Service"** which include our websites at hello.coop, hellō.net, hellō.world, & hello (including any subdomains or mobile versions the **"Site"**), our cloud-based software application and service, and any of our mobile applications (**"Apps"**).
+This Policy applies to our **"Service"** which include our websites at hello.coop, hello.net, hello.dev, & hello (including any subdomains or mobile versions the **"Site"**), our cloud-based software application and service, and any of our mobile applications (**"Apps"**).
 
 ## Agreement
 This Policy is referenced in our Terms of Use and capitalized terms not defined in this Policy will have the definition provided in the Terms of Use.
