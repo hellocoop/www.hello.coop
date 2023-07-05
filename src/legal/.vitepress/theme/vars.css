@@ -44,6 +44,10 @@
   display: none !important;
 }
 
+.vp-doc p {
+  margin: 8px 0;
+}
+
 @media (min-width: 960px) {
   .VPNav.no-sidebar {
     background: transparent !important;

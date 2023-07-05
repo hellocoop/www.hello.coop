@@ -15,11 +15,13 @@ This is the Privacy Policy **("Policy")** of Hello Identity Co-op (**"Company"**
 This Policy applies to our **"Service"** which include our websites at hello.coop, hellō.net, hellō.world, & hello (including any subdomains or mobile versions the **"Site"**), our cloud-based software application and service, and any of our mobile applications (**"Apps"**).
 
 ## Agreement
-This Policy is referenced in our Terms of Use and capitalized terms not defined in this Policy will have the definition provided in the Terms of Use.<br/>
+This Policy is referenced in our Terms of Use and capitalized terms not defined in this Policy will have the definition provided in the Terms of Use.
+
 **Your use of our Service indicates your acknowledgement of the practices described in this Policy.**
 
 ## Third Parties
-We integrate with third party services that provide information used to authenticate your identity (our **"Partners"**).<br/>
+We integrate with third party services that provide information used to authenticate your identity (our **"Partners"**).
+
 This Policy reflects only how we process Personal Data through our Service. This Policy does not apply to information processed by our Partners or other third parties, for example, when you create or use Partner accounts, visit a third-party website or interact with third-party services, unless those parties collect or process information on our behalf. Please review any relevant third party's privacy policy for information regarding their privacy practices.
 
 ## Collection and Use of Personal Data
@@ -107,7 +109,8 @@ engagement with such email communications.
 #### Contact Us
 When you contact us though the Site using a contact us box, through our chat, or via email, we process Personal Data such as Identity Data, Device/Network Data, and any Personal Data contained within any User Content. We use Identity Data, Contact Data, and User Content as necessary to communicate with you about the subject matter of your request and related matters. 
 #### Cookies and Similar Tracking Technologies
-We, and certain third parties, automatically collect and process Identity Data, Contact Data, and Device/Network Data when you interact with cookies and similar technologies on our Service. We may receive this data from third parties to the extent allowed by the applicable partner. Please note that the privacy policies of third parties may also apply to these technologies and the Personal Data collected through them.<br/>
+We, and certain third parties, automatically collect and process Identity Data, Contact Data, and Device/Network Data when you interact with cookies and similar technologies on our Service. We may receive this data from third parties to the extent allowed by the applicable partner. Please note that the privacy policies of third parties may also apply to these technologies and the Personal Data collected through them.
+
 Subject to your rights & choices, we may use this information as follows: 
 1. for “essential” or “functional” purposes, such as to enable certain features of the Service, or keeping you logged in during your session; 
 1. for “analytics” and “personalization” purposes, consistent with our business interest in how the Service is used or perform, how users engage with and navigate through our Service, what sites users visit before visiting the Service, how often they visit the Service, and other similar information, as well as to greet users by name and modify the appearance of the Service to usage history, tailor the Service based on geographic location, and understand characteristics of users in various technical and geographic contexts; and
@@ -148,8 +151,10 @@ In limited circumstances, we may, without notice or your consent, access and dis
 
 ## Your Rights & Choices
 ### Your Rights
-Applicable law may grant you rights in your Personal Data. These rights vary based on your location, state/country of residence, and may be limited by or subject to our or our Partners’ own rights in your Personal Data. In cases where we process Personal Data on our own behalf, you may exercise rights you have by contacting us at contact@hello.coop.<br/>
-All rights requests we receive directly must be verified to ensure that the individual making the request is authorized to make that request, to reduce fraud, and to ensure the security of your Personal Data. We may require that you log in to your account or verify that you have access to your account or the email on file in order to verify your identity. If an agent is submitting the request on your behalf, we reserve the right to validate the agent’s authority to act on your behalf.<br/>
+Applicable law may grant you rights in your Personal Data. These rights vary based on your location, state/country of residence, and may be limited by or subject to our or our Partners’ own rights in your Personal Data. In cases where we process Personal Data on our own behalf, you may exercise rights you have by contacting us at contact@hello.coop.
+
+All rights requests we receive directly must be verified to ensure that the individual making the request is authorized to make that request, to reduce fraud, and to ensure the security of your Personal Data. We may require that you log in to your account or verify that you have access to your account or the email on file in order to verify your identity. If an agent is submitting the request on your behalf, we reserve the right to validate the agent’s authority to act on your behalf.
+
 **Note**: We are able to fulfill rights requests regarding Personal Data that we control or process. We may not have access to or control over Personal Data controlled by third parties, including our Partners. Please contact the third party directly to exercise your rights in third party-controlled information. 
 ### Your Choices
 You may have the following choices regarding the Personal Data we process, to the extent required under applicable law:
