@@ -3,7 +3,7 @@ editLink: true
 ---
 
 # Privacy Policy
-Last Updated and Effective: July 05, 2023
+Last Updated and Effective: July 06, 2023
 
 ## Welcome!
 Welcome to Hellō! This Privacy Policy is here to help you understand how we collect, use, disclose, and process your Personal Data (as defined below). We also describe your choices and rights with respect to how we process that Personal Data. Please read this policy carefully.
@@ -12,7 +12,7 @@ Welcome to Hellō! This Privacy Policy is here to help you understand how we col
 This is the Privacy Policy **("Policy")** of Hello Identity Co-op (**"Company"**, **"us"**, **"our"**, or **"we"**), a Washington Cooperative with offices at 516 Yale Ave N, Seattle WA, 98109. You can contact us using the information below.
 
 ## Applicability
-This Policy applies to our **"Service"** which include our websites at hello.coop, hello.net, hello.dev, & hello (including any subdomains or mobile versions the **"Site"**), our cloud-based software application and service, and any of our mobile applications (**"Apps"**).
+This Policy applies to our **"Service"** which include our websites at [hello.coop](https://www.hello.coop), [hello.dev](https://www.hello.dev), [wallet.hello.coop](https://wallet.hello.coop), [console.hello.coop](https://console.hello.coop), [quickstart.hello.coop](https://quickstart.hello.coop), [playground.hello.dev](https://playground.hello.dev), [greenfielddemo.com](https://www.greenfielddemo.com/) (including any subdomains or mobile versions the **"Site"**), our cloud-based software application and service, and any of our mobile applications (**"Apps"**).
 
 ## Agreement
 This Policy is referenced in our Terms of Use and capitalized terms not defined in this Policy will have the definition provided in the Terms of Use.
