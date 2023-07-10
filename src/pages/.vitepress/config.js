@@ -17,7 +17,7 @@ export default {
                 items: [
                     { text: 'Hellō Approach', link: '/approach' },
                     { text: 'Hellō Cooperative', link: '/cooperative' },
-                    { text: 'Smart Contract Financing', link: '/financing' },
+                    { text: 'Competitive ROI', link: '/financing' },
                     { text: 'Guiding Tenets', link: '/tenets' },
                     { text: 'Protecting Privacy', link: '/laws-of-identity' },
                     { text: 'Computing Architecture', link: '/architecture' },
