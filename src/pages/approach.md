@@ -22,7 +22,7 @@ Rather than using decentralized technology to address the concerns of a centrali
 
 ## Resolving the Cold Start Problem
 
-The Hellō service provides an abstraction layer between the parties, allowing users and issuers to utilize existing credentials. This removes the cold start problem for those two parties so only applications need to explicitly adopt the solution, which uses existing, proven technology (OpenID Connect[5]) that is readily available.
+The Hellō service provides an abstraction layer between the parties, allowing users and issuers to utilize existing credentials. This removes the cold start problem for those two parties so only applications need to explicitly adopt the solution, which uses existing, proven technology [OpenID Connect][5] that is readily available.
 
 Developers of new, greenfield applications that choose to use Hellō will save weeks of development time, while offering their users all the choices they have come to expect – and without the risk of a provider revoking access. Developers will only pay for each new verified claim they receive such as a verified email or phone with pricing comparable to other verification services such as Twilio.
 Early adopters will be rewarded with credits that will reduce or eliminate the cost of the service. Credits will be provided using the same mechanism we will use to reward investors, employees, and advisors. See [Smart Financing](financing) for details.
