@@ -20,7 +20,7 @@ While there are a number of digital wallets that are being adopted by users to h
 
 ## Issuer Business Model
 
-A challenge the decentralized identity movement has not adequately addressed is the business model for commercial issuers such as credit rating agencies or background checking services. In the decentralized architecture, to preserve the user's privacy, there is no bilateral relationship between the issuer and the application, preventing the issuer from selling credentials to the application developer. 
+A challenge the decentralized identity movement has not adequately addressed is the business model for commercial issuers such as credit rating agencies or background checking services. In the decentralized architecture, to preserve the user's privacy, the issuer has no relationship with the application, preventing the issuer from selling credentials to the application developer. 
 
 ## Decentralized Governance
 
