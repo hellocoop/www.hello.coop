@@ -16,6 +16,12 @@ To resolve the concerns with a centralized approach, numerous decentralized iden
 
 However, all three parties (issuer, user, application) must be using the same, new decentralized technology, but unfortunately none are today. This is a three-way cold start barrier that has yet to be broken. There is no value to one party adopting the technology unless the other parties they are interacting with have also adopted it.
 
+While there are a number of digital wallets that are being adopted by users to hold government issued credentials, most wallets are incompatible with each other. We view this as as adoption friction that Hellō can solve as an abstraction layer between all the different wallets, and the developer. 
+
+## Issuer Business Model
+
+A challenge the decentralized identity movement has not adequately addressed is the business model for commercial issuers such as credit rating agencies or background checking services. In the decentralized architecture, to preserve the user's privacy, there is no bilateral relationship between the issuer and the application, preventing the issuer from selling credentials to the application developer. 
+
 ## Decentralized Governance
 
 Rather than using decentralized technology to address the concerns of a centralized service, our approach is to decentralize the governance of a centralized service with a multi-stakeholder cooperative that has representation from users, organizations, and employees. See [Hellō Cooperative](cooperative) for details.
@@ -25,7 +31,13 @@ Rather than using decentralized technology to address the concerns of a centrali
 The Hellō service provides an abstraction layer between the parties, allowing users and issuers to utilize existing credentials. This removes the cold start problem for those two parties so only applications need to explicitly adopt the solution, which uses existing, proven technology ([OpenID Connect][5]) that is readily available.
 
 Developers of new, greenfield applications that choose to use Hellō will save weeks of development time, while offering their users all the choices they have come to expect – and without the risk of a provider revoking access. Developers will only pay for each new verified claim they receive such as a verified email or phone with pricing comparable to other verification services such as Twilio.
-Early adopters will be rewarded with credits that will reduce or eliminate the cost of the service. Credits will be provided using the same mechanism we will use to reward investors, employees, and advisors. See [Smart Financing](financing) for details.
+Early adopters will be rewarded with credits for bringing new users to Hellō that will eliminate the cost of the service.
+
+## Business Model
+
+The Hellō business model is to charge developers an interchange fee for each new verified claim that a user releases to the developer. In time, Hellō will be a marketplace for paid claims sold by commercial issuers. Developers will pay the interchange fee plus the price charged by the issuer, providing a business model for commercial claims issuers. We expect this to turn some claims into commodities, lowering the pricing and increasing the utilization by developers. As Hellō sits between the issuer and the application, neither party needs to know the identity of the other, significantly improving user privacy. 
+
+We expect in time Hellō will be bundled with other services the developer is purchasing, and the business relationship will be with the distributor, rather than the developer.
 
 ## Centralized Identity Risk Mitigation
 
