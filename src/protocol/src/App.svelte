@@ -119,8 +119,8 @@
       <p
       class="mt-4 w-full lg:w-3/5"
       >
-        One way to think of what the Hellō Protocol is accomplishing is to transform the application's Request Token and the ID Token from the user's preferred provider
-      into a Hellō ID Token in a trusted and repeatable manner.
+        The Hellō Protocol can be understood as a service that transforms a Request Token from an application and an ID Token from a user's preferred 
+        provider into a Hellō ID Token in a trusted and repeatable manner.
       </p><p
         class="mt-4 w-full lg:w-3/5"
       >
@@ -148,7 +148,7 @@
       >
         We separate the functionality between the Orchestration Service and the Token Service.
         Only the Orchestration Service can interact with external systems. 
-        As it is a new user in this case, the Token Service generates a random identifier for the user and a subject record binding the OpenID Providers identifiers to the Hellō user identifier, and mints an ID Token containing the new user identifier.
+        As it is a new user in this case, the Token Service generates a random identifier for the user and a subject record binding the OpenID Provider's identifiers to the Hellō user identifier, and mints an ID Token containing the new user identifier.
       </p>
       </div>
       <Diagram svg={Two} />
@@ -208,7 +208,7 @@
             class="mt-4 mb-10 w-full lg:w-3/5"
           >
             So far, we have provided each application the same identifier for the same user.
-            To address this, we create a layer of abstraction with a Release Record that links the Hellō identifier with a new, directed identifier specific to the application and user.
+            To address this, we create a layer of abstraction with a Release Record that links the Hellō identifier with a new, <a href="https://www.hello.coop/pages/laws-of-identity.html#_4-directed-identity">directed identifier</a> specific to the application and user.
           </p>
       </div>
       <Diagram svg={Six} />
