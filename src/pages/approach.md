@@ -30,12 +30,15 @@ Rather than using decentralized technology to address the concerns of a centrali
 
 The Hellō service provides an abstraction layer between the parties, allowing users and issuers to utilize existing credentials. This removes the cold start problem for those two parties so only applications need to explicitly adopt the solution, which uses existing, proven technology ([OpenID Connect][5]) that is readily available.
 
-Developers of new, greenfield applications that choose to use Hellō will save weeks of development time, while offering their users all the choices they have come to expect – and without the risk of a provider revoking access. Developers will only pay for each new verified claim they receive such as a verified email or phone with pricing comparable to other verification services such as Twilio.
-Early adopters will be rewarded with credits for bringing new users to Hellō that will eliminate the cost of the service.
+Developers of new, greenfield applications that choose to use Hellō will save weeks of development time, while offering their users all the choices they have come to expect – and without the risk of a provider revoking access. 
 
-## Business Model
+Unlike competitive CIAM offerings, the free tier of Hellō offers developers unlimited monthly active users to encourage adoption and build up the network as every user of a Hellō app, is a Hellō user that can reuse their Hellō identity.
 
-The Hellō business model is to charge developers an interchange fee for each new verified claim that a user releases to the developer. In time, Hellō will be a marketplace for paid claims sold by commercial issuers. Developers will pay the interchange fee plus the price charged by the issuer, providing a business model for commercial claims issuers. We expect this to turn some claims into commodities, lowering the pricing and increasing the utilization by developers. As Hellō sits between the issuer and the application, neither party needs to know the identity of the other, significantly improving user privacy. 
+## Freemium Business Model
+
+Hellō is in the verified claims business. Free claims include login, verified email, and self declared claims such as name, nickname, and picture. In the future, Hellō will offer premium verified claims such as verified name, age, citizenship, residency, affiliations, and entitlements. 
+
+In time, Hellō will be a marketplace for paid claims sold by commercial issuers. Developers will pay the interchange fee plus the price charged by the issuer, providing a business model for commercial claims issuers. We expect this to turn some claims into commodities, lowering the pricing and increasing the utilization by developers. As Hellō sits between the issuer and the application, neither party needs to know the identity of the other, significantly improving user privacy. 
 
 We expect in time Hellō will be bundled with other services the developer is purchasing, and the business relationship will be with the distributor, rather than the developer.
 
