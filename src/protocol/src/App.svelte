@@ -86,7 +86,7 @@
           and a standard relying party to issuers.
         </p><p>
           The following sequence of diagrams incrementally show how the Hellō Protocol achieves its goals. The final diagram is a complete sequence of the protocol for a simple login operation. 
-          An understanding of the OpenID Connect protocol and ID Tokens is required to appreciate how the Hellō Protocol cheives its goals.
+          An understanding of the OpenID Connect protocol and ID Tokens is required to appreciate how the Hellō Protocol acheives its goals.
         </p>
         
         <blockquote class="border-l-2 border-[#303030] dark:border-[#d4d4d4] border-opacity-25 dark:border-opacity-25 text-[#303030] dark:text-[#d4d4d4] text-opacity-60 dark:text-opacity-60 text-left">
