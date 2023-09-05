@@ -1,0 +1,67 @@
+name: Deployment to Production
+
+on:
+  pull_request_target:
+      types: [ closed ]
+      branches: [ main ]
+
+env:
+  PROD_URL: "https://www.hello.coop"
+  SLACK_CHANNEL: "test-dev-process"
+  REPO_NAME: "${{ github.event.repository.name }}"
+  PR_BRANCH: "${{ github.event.pull_request.head.ref }}"
+  PR_URL: "${{ github.event.pull_request.html_url }}"
+  PR_AUTHOR: "${{ github.event.pull_request.user.login }}"
+
+jobs: 
+  notify_start:
+    if: github.event.pull_request.merged == true 
+    runs-on: ubuntu-latest
+    steps:
+      # - name: Log GitHub Event
+      #   run: |
+      #     echo "GitHub Event Object: ${{ toJson(github) }}"
+
+      - name: Notify on Slack (Workflow Started)
+        # TBD: create a var for github.event.pull_request.user.login == github.actor (for some reason, conditions are not working in-line)
+        run: |
+          curl \
+            -d "text=$REPO_NAME/$PR_BRANCH pull request created by @$PR_AUTHOR was ${{ github.event.pull_request.user.login == github.actor && 'merged' || 'approved' }} by @${{ github.actor }}
+          <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Workflow> to deploy $REPO_NAME/main to production has started" \
+            -d "channel=$SLACK_CHANNEL" \
+            -H "Authorization: Bearer ${{ secrets.SLACK_POST_ACCESS_TOKEN }}" \
+            -X POST https://slack.com/api/chat.postMessage
+    
+  run_tests:
+    runs-on: ubuntu-latest
+    needs: notify_start
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run tests
+        run: npm test
+
+  #workflows can only be called within a job, and not job steps
+  deploy:
+    needs: run_tests
+    uses: ./.github/workflows/oidc-sync.yml
+
+  notify_success:
+      needs: deploy
+      runs-on: ubuntu-latest
+      steps:
+        #To get version from package.json
+        - name: Checkout code
+          uses: actions/checkout@v3
+
+        - name: Notify on Slack (Workflow Success)
+          run: |
+            # Get version from package.json
+            VERSION=$(cat package.json | jq -r .version)
+            # TBD: create a var for github.event.pull_request.user.login == github.actor (for some reason, conditions are not working in-line)
+            curl \
+            -d "text=$REPO_NAME/$PR_BRANCH pull request has been <$PROD_URL|deployed> with version $VERSION, created by @$PR_AUTHOR, and ${{ github.event.pull_request.user.login == github.actor && 'merged' || 'approved' }} by @${{ github.actor }}" \
+            -d "channel=$SLACK_CHANNEL" \
+            -H "Authorization: Bearer ${{ secrets.SLACK_POST_ACCESS_TOKEN }}" \
+            -X POST https://slack.com/api/chat.postMessage
