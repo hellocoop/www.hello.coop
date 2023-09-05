@@ -8,3 +8,4 @@ dist
 S3/*
 
 vault.js
+vault.mjs
