@@ -37,7 +37,7 @@ jobs:
       - name: Configure web-sync AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: arn:aws:iam::510094580976:role/hello.coop-repo # make sure it is correct AWS account ID and role
+          role-to-assume: arn:aws:iam::510094580976:role/www.hello.coop-repo # make sure it is correct AWS account ID and role
           aws-region: us-west-2
 
       - name: Build content
