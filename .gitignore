@@ -6,3 +6,5 @@ node_modules
 dist
 
 S3/*
+
+vault.js
