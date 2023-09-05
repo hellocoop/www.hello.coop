@@ -1,0 +1,54 @@
+#
+# Copying instructions
+#
+# the STACK must be the cloud formation stack that created the S3 bucket and distribution
+#
+# The role-to-assume must be the role created for the STACK which is the `${REPO_NAME}-repo`
+#
+
+
+on:
+  workflow_dispatch:
+
+env:
+  STACK: WwwCoopStack #make sure this is the right stack value
+
+jobs:
+  deploy:
+    name: Upload to Amazon S3
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install modules and cache
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Choose the Node.js version you're using
+          cache: 'npm' # Specify the cache key
+
+      - name: Restore npm cache
+        run: npm ci
+
+      - name: Configure web-sync AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: arn:aws:iam::510094580976:role/hello.coop-repo # make sure it is correct AWS account ID and role
+          aws-region: us-west-2
+
+      - name: Build content
+        run: npm run build
+
+      - name: Copy docs dir to S3 bucket with the AWS CLI
+        run: |
+          BUCKET_NAME=$(aws cloudformation describe-stacks --stack-name $STACK --query 'Stacks[0].Outputs[?OutputKey==`BucketNameOutput`].OutputValue' --output text)
+          aws s3 sync S3/ s3://${BUCKET_NAME}/        
+
+      - name: Invalidate CloudFront cache
+        run: |
+          DISTRIBUTION_ID=$(aws cloudformation describe-stacks --stack-name $STACK --query 'Stacks[0].Outputs[?OutputKey==`DistributionIdOutput`].OutputValue' --output text)
+          aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths "/*"
