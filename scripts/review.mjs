@@ -4,7 +4,7 @@ import { SLACK_ACCESS_TOKEN } from "../vault.mjs"
 const SLACK_CHANNEL = "test-dev-process"
 
 try {
-    $.verbose = false //do not log output of script run using zx
+    // $.verbose = false //do not log output of script run using zx
 
     //Is not in main branch
     const prBranchName = (await $`git branch --show-current`).stdout.trim()
