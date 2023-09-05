@@ -1,5 +1,5 @@
 #!/usr/bin/env zx
-import { SLACK_ACCESS_TOKEN } from "../vault.js"
+import { SLACK_ACCESS_TOKEN } from "../vault.mjs"
 
 const SLACK_CHANNEL = "test-dev-process"
 

@@ -15,7 +15,7 @@ We use [Kim Cameron’s](https://en.wikipedia.org/wiki/Kim_Cameron_(computer_sci
 ## 2. Be a Neutral Platform
 The Hellō service may be used by anyone in any way that is compliant with the Laws of Identity. 
 
-We will strive to enable [permissionless innovation](https://permissionlessinnovation.org/) wherever possible. 
+We will strive to enable permissionless innovation wherever possible. 
 
 Hellō has no position on any topic outside the scope of its mission.
 

@@ -2,6 +2,7 @@
     "recurse": true,
     "skip": [
         "www.linkedin.com",
+        "twitter.com",
         "/js/script.hash.js"
     ]
   }
