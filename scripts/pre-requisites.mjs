@@ -1,6 +1,7 @@
 import { execSync } from "child_process"
 
-const requiredPackages = ['zx', 'gh', 'git']
+// TBD: Check zx as well or use npx to run this file
+const requiredPackages = ['gh', 'git']
 
 for (const pkg of requiredPackages) {
     try {
