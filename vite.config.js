@@ -4,6 +4,6 @@ import { defineConfig } from "vite"
 export default defineConfig({
   build: {
     //vite preview by defaults tries to server /dist dir, this overrides that default
-    outDir: "./S3",
+    outDir: "./S3", 
   },
 })
