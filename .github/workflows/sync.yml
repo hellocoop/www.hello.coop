@@ -5,9 +5,6 @@ on:
   pull_request_target:
     types: [ closed ]
     branches: [ main ]
-  
-env:
-  STACK: WwwCoopStack
     
 jobs: 
   sync:
@@ -17,4 +14,4 @@ jobs:
     uses: hellocoop/tools2-delete-later/.github/workflows/content-sync.yml@main
     # GitHub-Slack app sends a workflow status message with live updates to #content-updates channel
     with:
-      STACK: ${{ env.STACK }}
+      STACK: WwwCoopStack #make sure this is the right stack value
