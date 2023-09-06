@@ -15,7 +15,7 @@
     "build:proto": "cd src/protocol && npm run build && cd ../../ && shx cp src/protocol/dist/index.html S3/pages/protocol.html && shx cp src/protocol/dist/assets/* S3/pages/assets/",
     "build": "run-s build:* && copyfiles src/index.html S3 -f && copyfiles src/PHX S3 -f && copyfiles src/assets/* S3/assets/ -f && copyfiles src/assets/scroll-anim-seq/* S3/assets/scroll-anim-seq -f",
     "preview": "vite preview --open",
-    "test": "npm run build && linkinator ./S3 --config linkinator.config.json",
+    "test": "linkinator ./S3 --config linkinator.config.json",
     "test:blog": "linkinator https://blog.hello.coop https://blog.hello.dev --config linkinator.config.json",
     "review": "./scripts/review.mjs"
   },
