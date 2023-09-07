@@ -1,9 +1,9 @@
 name: Sync with S3
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: #Can manually trigger
   pull_request_target:
-    types: [ closed ]
+    types: [ closed ] #Runs on PR merge
     branches: [ main ]
     
 jobs: 
