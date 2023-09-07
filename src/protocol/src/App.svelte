@@ -281,7 +281,7 @@
         <p
           class="mt-4 w-full lg:w-3/5"
         >
-        We have shown the building blocks for verifying token transformation, and ensuring no custodian has credentials that can be used to access user data with colluding with another custodian.
+        We have shown the building blocks for verifying token transformation, and ensuring no custodian has credentials that can be used to access user data without colluding with another custodian.
         </p><p
           class="mt-4 mb-10 w-full lg:w-3/5"
         >
