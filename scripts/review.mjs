@@ -26,7 +26,7 @@ try {
     }
     
     //Play success sound to notify (Only works on MacOS)
-    $`afplay /System/Library/Sounds/Glass.aiff`
+    await $`afplay /System/Library/Sounds/Glass.aiff`
 
     //GitHub-Slack app sends a PR created Slack message to #content-updates channel
 } catch(p) {
@@ -37,6 +37,6 @@ try {
         console.log(p)
     }
     //Play error sound to notify (Only works on MacOS)
-    $`afplay /System/Library/Sounds/Funk.aiff`
+    await $`afplay /System/Library/Sounds/Funk.aiff`
     process.exit(1)
 }
