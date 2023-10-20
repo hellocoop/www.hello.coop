@@ -34,7 +34,7 @@ We could not devise a mechanism for developers to be democratically represented.
 ### 7) Why are people using Hellō called “user members”?
 They are people that “use” a Hellō Wallet. While there are some negative connotations to the term “user”, the term is well understood to mean the person interacting with software.
 ### 8) How does the board of directors govern the interchange?
-The board of directors sets policies using the [Policy Governance® model](https://en.wikipedia.org/wiki/Policy_Governance). From [PolicyGovernance.com](http://www.policygovernance.com/model.htm):
+The board of directors sets policies using the [Policy Governance® model](https://en.wikipedia.org/wiki/Policy_Governance). From PolicyGovernance:
 >Policy Governance separates issues of organizational purpose (ENDS) from all other organizational issues (MEANS), placing primary importance on those Ends. Policy Governance boards demand accomplishment of purpose, and only limit the staff's available means to those which do not violate the board's pre-stated standards of prudence and ethics.
 ### 9) What are the disadvantages of a cooperative structure?
 The most significant challenge for cooperatives is access to capital, as traditional equity is not available to offer investors. We address this with the [dual shareholder class corporation](financing) that operates the interchange, and view the added complexity is worth the benefits of being governed by our members.

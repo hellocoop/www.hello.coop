@@ -24,7 +24,7 @@
     "npm": "~9"
   },
   "devDependencies": {
-    "linkinator": "^4.0.3",
+    "linkinator": "^5.0.2",
     "shx": "^0.3.4",
     "vite": "^3.1.1",
     "vitepress": "^1.0.0-alpha.4",
