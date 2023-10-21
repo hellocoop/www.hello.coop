@@ -18,7 +18,7 @@ The separation of concerns continues with the control of each component. The Hel
 
 ## Redundant Independent Verification
 
-The custodians and the cooperative independently verifying the infrastructure. The software for all components is in public repositories. All the parties clone the repository and build each component and calculate the image checksums. Each custodian, and the cooperative, can read the checksum of all deployed component images to verify the images running are built from the publicly visible source code. The infrastructure configuration is readable to all parties, and all infrastructure modifications and metrics are published to all parties.
+The custodians and the cooperative independently verify the infrastructure. The software for all components is in public repositories. All the parties clone the repository and build each component and calculate the image checksums. Each custodian, and the cooperative, can read the checksum of all deployed component images to verify the images running are built from the publicly visible source code. The infrastructure configuration is readable to all parties, and all infrastructure modifications and metrics are published to all parties.
 
 The custodians are vendors of the cooperative and are compensated for their service, which is an operating expense for the cooperative. The custodians are chosen for the independence and proven track record operating security infrastructure. If a custodian deviates from their agreement, the cooperative can replace them for breaching their contract and replacing them with a custodian on standby.
 
