@@ -8,5 +8,5 @@ on:
     
 jobs: 
   run_tests:
-    uses: hellocoop/tools/.github/workflows/content-merge.yml@main
+    uses: hellocoop/tools/.github/workflows/content/merge.yml@main
     # GitHub-Slack app sends a workflow status message with live updates to #content-updates channel
