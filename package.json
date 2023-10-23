@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "install": "cd src/protocol && npm i",
-    "postinstall": "node ./scripts/pre-requisites.mjs",
+    "postinstall": "node ./scripts/pre-requisites.sh",
     "dev": "echo \"npm run dev does not exist.\nHellō Pages: npm run dev:pages\nHellō Protocol: npm run dev:proto\"",
     "dev:proto": "cd src/protocol && vite --open",
     "dev:pages": "vitepress dev src/pages --open",
