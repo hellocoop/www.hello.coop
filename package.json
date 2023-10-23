@@ -30,8 +30,7 @@
     "shx": "^0.3.4",
     "vite": "^3.1.1",
     "vitepress": "^1.0.0-alpha.4",
-    "vue": "^3.2.37",
-    "zx": "^7.2.3"
+    "vue": "^3.2.37"
   },
   "dependencies": {
     "copyfiles": "^2.4.1",
