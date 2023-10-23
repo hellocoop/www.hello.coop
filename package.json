@@ -19,7 +19,7 @@
     "test:blog": "linkinator https://blog.hello.coop https://blog.hello.dev --config linkinator.config.json",
     "pr": "./scripts/pr.sh",
     "rebase": "git pull origin main --rebase",
-    "review": "npm run rebase && npm run test && npm run pr"
+    "review": "npm run rebase && npm run build && npm run test && npm run pr"
   },
   "engines": {
     "node": "~18",
