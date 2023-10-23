@@ -17,7 +17,9 @@
     "preview": "vite preview --open",
     "test": "linkinator ./S3 --config linkinator.config.json",
     "test:blog": "linkinator https://blog.hello.coop https://blog.hello.dev --config linkinator.config.json",
-    "review": "./scripts/review.mjs"
+    "pr": "./scripts/pr.sh",
+    "rebase": "git pull origin main --rebase",
+    "review": "npm run rebase && npm run test && npm run pr"
   },
   "engines": {
     "node": "~18",
