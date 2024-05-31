@@ -3,6 +3,8 @@
     "skip": [
         "www.linkedin.com",
         "twitter.com",
-        "/js/script.hash.js"
+        "/js/script.hash.js",
+        "www.reuters.com",
+        "www.investopedia.com"
     ]
   }
