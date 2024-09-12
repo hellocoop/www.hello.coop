@@ -29,7 +29,17 @@
     <link href="https://cdn.hello.coop/css/tailwind.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.hello.coop/css/hello-button.css">
 
-    <link id="favicon" rel="icon" type="image/png" href="https://cdn.hello.coop/images/favicon-dark.png" />
+    <!-- Favicons -->
+    <link
+        href="https://cdn.hello.coop/images/favicon-light.png"
+        rel="icon"
+        media="(prefers-color-scheme: light)"
+    />
+    <link
+        href="https://cdn.hello.coop/images/favicon-dark.png"
+        rel="icon"
+        media="(prefers-color-scheme: dark)"
+    />
 
     <!-- AOS -->
     <link href="https://cdn.hello.coop/css/aos.css" rel="stylesheet" />
@@ -983,18 +993,6 @@
         once: false, // whether animation should happen only once - while scrolling down
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
-    });
-
-    const ref = document.querySelector("link[rel='icon']");
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        ref.href = 'https://cdn.hello.coop/images/favicon-light.png';
-    }
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-        if (event.matches) {
-            ref.href = 'https://cdn.hello.coop/images/favicon-dark.png';
-        } else {
-            ref.href = 'https://cdn.hello.coop/images/favicon-light.png';
-        }
     });
 
     const image_base_path = 'https://cdn.hello.coop/images/';
