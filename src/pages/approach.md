@@ -56,7 +56,7 @@ Hellō is as convenient for users as social logins but without the privacy conce
 ### 3) Why will credential issuers adopt Hellō?
 Issuers do not need to choose to use Hellō, although they may choose to not allow Hellō to use them. Hellō will integrate all popular issuers using their existing APIs. In the future, Hellō will be a marketplace for commercial issuers to sell their credentials to Hellō developers.
 ### 4) What issuers does Hellō support?
-Currently Hellō supports Apple, Facebook, Google, Microsoft, LINE, Twitch, and Yahoo. Users can also use their email, phone, or crypto wallet to log in to Hellō.
+@DICK Currently Hellō supports Apple, Facebook, Google, Microsoft, LINE, Twitch, and Yahoo. Users can also use their email, phone, or crypto wallet to log in to Hellō.
 ### 5) Why will developers adopt Hellō?
 Developers of greenfield applications will save weeks of development time while providing their users with the login and account management choices they have come to expect. See [hello.dev](https://www.hello.dev) for more details.
 ### 6) How does Hellō save a developer weeks of time?
