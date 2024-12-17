@@ -5,6 +5,8 @@
         "twitter.com",
         "/js/script.hash.js",
         "www.reuters.com",
-        "www.investopedia.com"
+        "www.investopedia.com",
+        "--- below link exist but unable to resolve with linkinator ---",
+        "https://news.microsoft.com/1999/10/11/microsoft-passport-streamlining-commerce-and-communication-on-the-web/"
     ]
   }

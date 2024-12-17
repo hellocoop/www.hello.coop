@@ -2,8 +2,6 @@
 editLink: true
 ---
 
-
-
 # Competitive ROI
 
 Building and launching a global, always-available cloud service requires significant capital, and we are competing with other SaaS startups for venture funds. The Rule of 40 is a common metric investors use today to determine if a SaaS business is successful. To prevent rent seeking, the Rule of 40 will be considered the target return to investors. If profits exceed the Rule of 40, the interchange will be required to reduce prices to meet the Rule of 40 target. This provides investors asymmetric returns while preventing rent seeking in the distant future.
