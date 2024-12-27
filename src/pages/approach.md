@@ -4,7 +4,9 @@ editLink: true
 
 # The Hellō Approach
 
-## Centralized Identity Approach
+Hellō is an interchange between sources of identity and the consuming application using existing protocols and technology. 
+
+## Early Centralized Identity Approaches
 
 Internet identity is a complicated and unsolved problem. Early centralized offerings, such as [Microsoft Passport][1], were [rejected][2] for fear of giving control to privately-owned entities. Recent centralized offerings – such as Apple, Facebook, and Google’s social login services – only solve a fraction of the problem and access to these free services can be revoked from the [user][3] or the [developer][4] at any time.
 
