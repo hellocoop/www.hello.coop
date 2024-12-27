@@ -9,7 +9,8 @@ export default {
     head: [
         ['meta', { name: 'theme-color', content: '#303030' }],
         ['script', { src: 'https://cdn.hello.coop/js/relative-wc-footer.js'}],
-        ['link', { rel: 'icon', type: 'image/x-icon', href: 'https://cdn.hello.coop/images/favicon-dark.png' }]
+        ['link', { rel: 'icon', media: '(prefers-color-scheme: light)', href: 'https://cdn.hello.coop/images/favicon-light.png' }],
+        ['link', { rel: 'icon', media: '(prefers-color-scheme: dark)', href: 'https://cdn.hello.coop/images/favicon-dark.png' }]
     ],
     themeConfig: {
         sidebar: [
