@@ -6,7 +6,8 @@
         "/js/script.hash.js",
         "www.reuters.com",
         "www.investopedia.com",
-        "--- below link exist but unable to resolve with linkinator ---",
-        "https://news.microsoft.com/1999/10/11/microsoft-passport-streamlining-commerce-and-communication-on-the-web/"
+        "--- below links exist but unable to resolve with linkinator ---",
+        "https://news.microsoft.com/1999/10/11/microsoft-passport-streamlining-commerce-and-communication-on-the-web/",
+        "https://www.kqed.org/news/11851695/facebook-deleted-your-account-good-luck-retrieving-your-data"
     ]
   }

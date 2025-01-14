@@ -17,8 +17,7 @@ export default {
             {
                 items: [
                     { text: 'Hellō Approach', link: '/approach' },
-                    { text: 'Hellō Cooperative', link: '/cooperative' },
-                    { text: 'Competitive ROI', link: '/financing' },
+                    { text: 'Hello Identity Co-op', link: '/cooperative' },
                     { text: 'Guiding Tenets', link: '/tenets' },
                     { text: 'Protecting Privacy', link: '/laws-of-identity' },
                     { text: 'Computing Architecture', link: '/architecture' },
