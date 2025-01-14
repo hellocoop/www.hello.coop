@@ -6,7 +6,7 @@ editLink: true
 
 ## Goals
 
-It is a requirement that trusting the confidentiality, integrity, and availability of the Hellō service does not require trusting the Hellō cooperative or its vendors. 
+It is a requirement that trusting the confidentiality, integrity, and availability of the Hellō service does not require trusting the Hello Identity Co-op or its vendors. 
 
 >Currently, the Hellō service is a monolithic architecture operated directly by the cooperative. Once we have product market fit, we will migrate to the following computing architecture. 
 
@@ -14,7 +14,7 @@ It is a requirement that trusting the confidentiality, integrity, and availabili
 
 The Hellō service is composed of four independent components which each perform a different function. Access to user data requires the components to cooperate. No component can independently access user data. For details, see the [Hellō Protocol](protocol)
 
-The separation of concerns continues with the control of each component. The Hellō cooperative delegates control of each component to independent custodians. The custodian controls the administrative access and cryptographic keys for a component. Each custodian operates in an independent geopolitical jurisdiction. This prevents a single jurisdiction from compelling more than one component to divulge their cryptographic keys, which could give the jurisdiction access to user data. [Data Governance](data-governance)
+The separation of concerns continues with the control of each component. The Hello Identity Co-op delegates control of each component to independent custodians. The custodian controls the administrative access and cryptographic keys for a component. Each custodian operates in an independent geopolitical jurisdiction. This prevents a single jurisdiction from compelling more than one component to divulge their cryptographic keys, which could give the jurisdiction access to user data. [Data Governance](data-governance)
 
 ## Redundant Independent Verification
 

@@ -1,69 +1,158 @@
 ---
 editLink: true
 ---
-
 # The Hellō Approach
 
-Hellō is an interchange between sources of identity and the consuming application using existing protocols and technology. 
+Hellō provides an abstraction layer between identity providers and applications, addressing both personal (B2C) and workforce (B2B) identity challenges. By simplifying integration and enabling a holistic view of user identities, Hellō resolves key issues with both centralized and decentralized approaches to identity.
 
-## Early Centralized Identity Approaches
+## Centralized Identity Issues
 
-Internet identity is a complicated and unsolved problem. Early centralized offerings, such as [Microsoft Passport][1], were [rejected][2] for fear of giving control to privately-owned entities. Recent centralized offerings – such as Apple, Facebook, and Google’s social login services – only solve a fraction of the problem and access to these free services can be revoked from the [user][3] or the [developer][4] at any time.
+### Private Control and Misaligned Interests
 
-## Decentralized Identity Approach
+*Centralized identity systems are often controlled by private organizations that prioritize their own interests over those of users and developers. This dynamic has historically led to trust issues, exemplified by [Microsoft Passport][1], which faced significant criticism and was later [scaled back][2]. Similar concerns persist with modern social login providers like Google, Facebook, and Apple, where unilateral decisions can revoke access or limit functionality, causing disruptions for both [users][3] and [developers][4].*
 
-To resolve the concerns with a centralized approach, numerous decentralized identity approaches have been proposed and built. In the [decentralized approach](https://www.microsoft.com/en-us/security/business/solutions/decentralized-identity) an issuer provides a credential to a user, and then the user chooses to provide the credential to an application. For example, a school will issue a credential to a student so they can prove they are a student. This puts the user in the middle of the transaction, giving them control of when and where their information is shared. 
+Hellō (the for-profit interchange operator) is governed by the [Hello Identity Co-op](cooperative), a multi-stakeholder cooperative that includes users, organizations, and employees. This distributed governance structure ensures that governance decisions are made in the best interests of all parties, not driven by private or profit-driven motives. All stakeholders have a voice in governing Hellō Operations, creating a more equitable and trustworthy identity system.
 
-## The Cold Start Problem with Decentralized Identity
+### Limited User Control
 
-However, all three parties (issuer, user, application) must be using the same, new decentralized technology, but unfortunately none are today. This is a three-way cold start barrier that has yet to be broken. There is no value to one party adopting the technology unless the other parties they are interacting with have also adopted it.
+*Centralized solutions, such as Microsoft Passport and modern social login services, often place control in the hands of private entities. Users can lose access to their accounts or data if a provider chooses to revoke access.*
 
-While there are a number of digital wallets that are being adopted by users to hold government issued credentials, most wallets are incompatible with each other. We view this as as adoption friction that Hellō can solve as an abstraction layer between all the different wallets, and the developer. 
+Hellō gives users control over their data by integrating with existing identity providers while anonymizing interactions between providers and applications. This ensures that user data is only shared with explicit consent and protects against unilateral revocation.
 
-## Issuer Business Model
+### Developer Lock-In
 
-A challenge the decentralized identity movement has not adequately addressed is the business model for commercial issuers such as credit rating agencies or background checking services. In the decentralized architecture, to preserve the user's privacy, the issuer has no relationship with the application, preventing the issuer from selling credentials to the application developer. 
+*Developers relying on centralized systems risk lock-in. Providers can change APIs, discontinue services, or revoke access, leading to costly re-engineering efforts.*
 
-## Decentralized Governance
+By acting as an abstraction layer, Hellō allows developers to integrate once and gain access to 30+ identity providers. This eliminates the dependency on any single provider and reduces the risk of future disruptions.
 
-Rather than using decentralized technology to address the concerns of a centralized service, our approach is to decentralize the governance of a centralized service with a multi-stakeholder cooperative that has representation from users, organizations, and employees. See [Hellō Cooperative](cooperative) for details.
+### Limited Scope
 
-## Resolving the Cold Start Problem
+*Centralized solutions focus primarily on authentication and do not address broader identity verification needs, such as citizenship or affiliations.*
 
-The Hellō service provides an abstraction layer between the parties, allowing users and issuers to utilize existing credentials. This removes the cold start problem for those two parties so only applications need to explicitly adopt the solution, which uses existing, proven technology ([OpenID Connect][5]) that is readily available.
+Hellō supports basic claims, like login and email verification, and in the future will support advanced claims, such as verified age and citizenship. This extensibility provides developers with more comprehensive identity capabilities.
 
-Developers of new, greenfield applications that choose to use Hellō will save weeks of development time, while offering their users all the choices they have come to expect – and without the risk of a provider revoking access. 
+## Decentralized Identity Issues
 
-Unlike competitive CIAM offerings, the free tier of Hellō offers developers unlimited monthly active users to encourage adoption and build up the network as every user of a Hellō app, is a Hellō user that can reuse their Hellō identity.
+### Adoption Barriers
 
-## Freemium Business Model
+*Decentralized identity requires widespread adoption by users, issuers, and applications. Without critical mass, the ecosystem remains fragmented and underutilized.*
 
-Hellō is in the verified claims business. Free claims include login, verified email, and self declared claims such as name, nickname, and picture. In the future, Hellō will offer premium verified claims such as verified name, age, citizenship, residency, affiliations, and entitlements. 
+Hellō removes many of the cold start problems by integrating with existing credentials and technologies, enabling users and issuers to participate without adopting new systems. Applications benefit from proven standards like [OpenID Connect][5], reducing friction.
 
-In time, Hellō will be a marketplace for paid claims sold by commercial issuers. Developers will pay the interchange fee plus the price charged by the issuer, providing a business model for commercial claims issuers. We expect this to turn some claims into commodities, lowering the pricing and increasing the utilization by developers. As Hellō sits between the issuer and the application, neither party needs to know the identity of the other, significantly improving user privacy. 
+### Wallet Fragmentation
 
-We expect in time Hellō will be bundled with other services the developer is purchasing, and the business relationship will be with the distributor, rather than the developer.
+*Many digital wallets supporting decentralized identity are incompatible, creating additional complexity for users and developers.*
 
-## Centralized Identity Risk Mitigation
+Hellō acts as a bridge between various wallets and applications, providing developers with a unified integration point that abstracts away incompatibility issues.
 
-A centralized service raises concerns of confidentiality, integrity, and availability. These are addressed with a verified confidential cooperative computing architecture that ensures only the user can access and release their data, the user can not be impersonated, and the service is resilient to multiple failures. See [Hellō Computing Architecture](architecture) for details.
+### Issuer Business Model
 
-While our data governance model prevents surveillance by state actors, we do not want to be a safe haven for criminals. In the case of suspected criminal activity, law enforcement must obtain subpoenas from two independent geopolitical jurisdictions to ensure the suspected activity is widely considered to be criminal, and no single jurisdiction can abuse access. See [Hellō Data Governance](data-governance) for details.
+*Decentralized systems often prevent issuers from monetizing credentials, which discourages commercial participation.*
+
+Hellō will provide a marketplace for verified claims, allowing issuers to sell credentials to developers. Hellō anonymizes transactions to preserve user privacy while supporting a sustainable business model for issuers.
+
+## Workforce Identity (B2B)
+
+### Federation Complexity
+
+*Setting up federations with enterprise IdPs from Google, Microsoft, Okta, or Ping is time-consuming and technically complex. Developers must configure and maintain separate integrations for each enterprise customer.*
+
+With Hellō, developers integrate once and gain access to all supported enterprise IdPs. This single integration removes the need for repetitive setup, reducing time-to-market for B2B SaaS applications to be enterprise ready.
+
+### Management Overhead
+
+*Maintaining federations for hundreds or thousands of enterprise customers is a significant burden.*
+
+Hellō abstracts away the need to manage individual federations, enabling developers to focus on building and scaling their applications.
+
+### High Costs
+
+*Existing CIAM vendors charge premium fees for B2B functionality, making SSO inaccessible for smaller enterprises or startups.*
+
+Hellō provides basic SSO functionality for free, allowing developers to offer SSO to enterprise customers of any size. Enhanced features, such as managed app access and de-provisioning, are available at competitive rates.
+
+### Unified View of Identity
+
+*B2B and B2C identity systems are often siloed, limiting their ability to provide a holistic understanding of users.*
+
+By supporting both B2C and B2B identity, Hellō offers a unified view of users, integrating personal and workforce identities into a single, scalable solution.
+
+## Privacy and Governance
+
+### Data Confidentiality
+
+*Centralized systems raise concerns about data confidentiality and potential misuse.*
+
+Hellō will use the [Hellō Protocol](protocol.html) to ensure that only users can access and release their data. Anonymized interactions between providers and applications further protect user information.
+
+### Surveillance Risks
+
+*Centralized services are vulnerable to state surveillance and abuse.*
+
+Hellō’s [Data Governance](data-governance) model requires subpoenas from two independent geopolitical jurisdictions for lawful data access. This ensures that no single entity can unilaterally demand user data.
+
+### Secure Operations
+
+*Ensuring the integrity and availability of a centralized service is critical.*
+
+Hellō’s architecture is resilient to failures and designed to prevent impersonation or unauthorized access. This ensures reliable and secure operations for developers and users.
+
+## Summary
+
+Hellō bridges the gap between identity providers and applications, solving the challenges of both personal and workforce identity. Its single integration point simplifies developer workflows, while its privacy-first design ensures user trust. By supporting both B2C and B2B identity, Hellō provides a comprehensive and scalable solution that benefits users, developers, and enterprises alike.
+
+----
 
 ## FAQs
-### 1) Why will users adopt Hellō?
-Initially, we do not expect users to directly adopt Hellō. Users will instead choose to use an application that uses Hellō and implicitly create a Hellō wallet when they sign up.
-### 2) Why will users prefer applications that use Hellō?
-Hellō is as convenient for users as social logins but without the privacy concerns or vendor lock-in. They will not need to create another password or re-verify their email or phone.  
-### 3) Why will credential issuers adopt Hellō?
-Issuers do not need to choose to use Hellō, although they may choose to not allow Hellō to use them. Hellō will integrate all popular issuers using their existing APIs. In the future, Hellō will be a marketplace for commercial issuers to sell their credentials to Hellō developers.
-### 4) What issuers does Hellō support?
-Currently Hellō supports Apple, Discord, Facebook, Google, GitHub, GitLab, Tumblr, Twitch, X (Twitter), Line, Mastodon, MetaMask, Microsoft, WordPress.com, Yahoo. Users can also use their email, phone, or crypto wallet to log in to Hellō.
-### 5) Why will developers adopt Hellō?
-Developers of greenfield applications will save weeks of development time while providing their users with the login and account management choices they have come to expect. See [hello.dev](https://www.hello.dev) for more details.
-### 6) How does Hellō save a developer weeks of time?
-The developer no longer needs to implement account recovery, email or phone verification, or profile picture upload. Developers no longer need to spend hours registering their apps at the management consoles of social providers such as Apple, Facebook, or Google, and then copying and pasting configuration to and from those consoles.
-Hellō provides a fully-featured [OpenID Connect](https://openid.net/connect/) interface that will work with the libraries and integrations developers are already familiar with. See our [developer portal](https://www.hello.dev) for details.
+
+#### 1) What identity providers does Hellō support?
+
+Hellō integrates with 30+ providers, including Apple, Google, Facebook, Microsoft, and more. Users can also log in with email, phone, or crypto wallets.
+
+#### 2) Why is Hellō’s SSO free for developers?
+
+Hellō believes basic SSO should be accessible without financial barriers. This approach fosters adoption and builds network effects.
+
+#### 3) How does Hellō improve user privacy?
+
+Hellō anonymizes interactions between identity providers and applications, ensuring that neither party learns more about the user than necessary.
+
+#### 4) How does Hellō simplify developer workflows?
+
+Developers integrate with Hellō once and gain access to all supported providers. This eliminates the need for managing multiple APIs or credentials.
+
+#### 5) How does Hellō help B2B SaaS developers?
+
+Hellō provides a single integration point for enterprise identity providers, removing the need to set up and manage individual federations for each enterprise customer.
+
+#### 6) What enterprise providers does Hellō support?
+
+Hellō currently supports Google Workspace, Microsoft Entra ID, and Zoho, with more providers in the roadmap.
+
+#### 7) How is Hellō different from CIAM vendors?
+
+Unlike Auth0 or WorkOS, Hellō does not manage user pools, role-based access, or password-based authentication. Instead, it focuses on being a lightweight, cost-effective SSO abstraction layer.
+
+#### 8) Can Hellō handle advanced workforce identity needs?
+
+Yes. Hellō offers premium features like managed apps and de-provisioning for enterprises with mature identity management models.
+
+#### 9) Why do enterprises prefer Hellō?
+
+Enterprises benefit from simplified SSO setup and a cost-effective solution for managing application access.
+
+#### 10) How does supporting both B2C and B2B give Hellō an edge?
+
+By addressing both personal and workforce identity, Hellō offers a holistic view of user identity, enabling developers to build richer, more connected experiences.
+
+#### 11) How does Hellō support privacy and compliance?
+
+Hellō’s architecture ensures user data remains private and secure, while its governance model prevents misuse by state or corporate actors.
+
+#### 12) Why will users prefer applications that use Hellō?
+
+Hellō combines the convenience of social logins with enhanced privacy and flexibility. Users avoid vendor lock-in and benefit from a seamless experience across personal and work contexts.
+
 
 [1]: <https://news.microsoft.com/1999/10/11/microsoft-passport-streamlining-commerce-and-communication-on-the-web/> "Microsoft Passport: Streamlining Commerce and Communication on the Web"
 [2]: <https://www.computerworld.com/article/2567539/microsoft-scales-back-passport-plan.html> "Microsoft Scales Back Passport Plan"
@@ -81,8 +170,20 @@ Hellō provides a fully-featured [OpenID Connect](https://openid.net/connect/) i
         font-style: italic !important;
         margin-top: 10px !important;
         margin-bottom: -12px !important;
-    }
-    h3 + p {
         margin-left: 26px !important;
     }
+    h3 ~ p {
+        margin-left: 26px !important;
+    }
+    h4 {
+        font-family: sans-serif;
+        font-weight: bold !important;
+        font-style: italic !important;
+        margin-top: 10px !important;
+        margin-bottom: -12px !important;
+    }
+    h4 + p {
+        margin-left: 26px !important;
+    }
+
 </style>
