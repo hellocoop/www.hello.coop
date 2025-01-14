@@ -153,7 +153,6 @@ Hellō’s architecture ensures user data remains private and secure, while its 
 
 Hellō combines the convenience of social logins with enhanced privacy and flexibility. Users avoid vendor lock-in and benefit from a seamless experience across personal and work contexts.
 
-
 [1]: <https://news.microsoft.com/1999/10/11/microsoft-passport-streamlining-commerce-and-communication-on-the-web/> "Microsoft Passport: Streamlining Commerce and Communication on the Web"
 [2]: <https://www.computerworld.com/article/2567539/microsoft-scales-back-passport-plan.html> "Microsoft Scales Back Passport Plan"
 [3]: <https://www.kqed.org/news/11851695/facebook-deleted-your-account-good-luck-retrieving-your-data> "Facebook Deleted Your Account? Good Luck Retrieving Your Data"
