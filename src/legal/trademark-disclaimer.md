@@ -1,6 +1,6 @@
----
-editLink: true
----
+--yared-
+Teshoma
+tura
 
 # Trademark Disclaimer
 
