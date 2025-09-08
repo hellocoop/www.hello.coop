@@ -810,7 +810,7 @@
             const xml = new window.DOMParser().parseFromString(txt, "text/xml")
             const allPosts = xml.querySelectorAll("item")
             
-            // Filter out posts with "hello.dev" category
+            // Filter out posts with "Developer" category
             const filteredPosts = Array.from(allPosts).filter(post => {
                 const categories = post.querySelectorAll("category")
                 for (let category of categories) {
