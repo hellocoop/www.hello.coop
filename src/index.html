@@ -808,11 +808,23 @@
             const res = await fetch("https://blog.hello.coop/feed")
             const txt = await res.text()
             const xml = new window.DOMParser().parseFromString(txt, "text/xml")
-            const posts = xml.querySelectorAll("item")
+            const allPosts = xml.querySelectorAll("item")
+            
+            // Filter out posts with "hello.dev" category
+            const filteredPosts = Array.from(allPosts).filter(post => {
+                const categories = post.querySelectorAll("category")
+                for (let category of categories) {
+                    if (category.textContent === "hello.dev") {
+                        return false // Exclude this post
+                    }
+                }
+                return true // Include this post
+            })
+            
             const postsRef = document.querySelector("#posts")
             for (let i = 0; i < 3; i++) {
-                if (!posts[i]) continue;
-                const post = posts[i]
+                if (!filteredPosts[i]) continue;
+                const post = filteredPosts[i]
                 const title = post.querySelector("title")?.textContent
                 const rawDescription = post.querySelector("description")?.textContent
                 const descriptionPlaceholder = document.createElement("div");
