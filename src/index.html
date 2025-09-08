@@ -814,7 +814,7 @@
             const filteredPosts = Array.from(allPosts).filter(post => {
                 const categories = post.querySelectorAll("category")
                 for (let category of categories) {
-                    if (category.textContent === "hello.dev") {
+                    if (category.textContent === "Developer") {
                         return false // Exclude this post
                     }
                 }
