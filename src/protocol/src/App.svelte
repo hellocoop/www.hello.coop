@@ -37,7 +37,7 @@
       </ul>
     </nav>
   </div>
-  <div transition:fade on:click={()=>showMobileMenu=false} class="bg-black lg:hidden bg-opacity-50 h-screen w-screen fixed" style="z-index: 90;"></div>
+  <div transition:fade on:click={()=>showMobileMenu=false} on:keydown={(e) => e.key === 'Escape' && (showMobileMenu=false)} tabindex="0" role="button" aria-label="Close mobile menu" class="bg-black lg:hidden bg-opacity-50 h-screen w-screen fixed" style="z-index: 90;"></div>
 {/if}
 
 <header class="h-12 sticky top-0 md:relative z-50 w-full bg-[#303030] flex items-center justify-center">

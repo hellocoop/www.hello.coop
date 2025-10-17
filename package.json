@@ -1,6 +1,7 @@
 {
   "name": "hello-coop",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -14,20 +15,15 @@
     "build:pages": "vitepress build src/pages",
     "build:proto": "cd src/protocol && npm run build && cd ../../ && shx cp src/protocol/dist/index.html S3/pages/protocol.html && shx cp src/protocol/dist/assets/* S3/pages/assets/",
     "build": "run-s build:* && copyfiles src/index.html S3 -f && copyfiles src/assets/* S3/assets/ -f && copyfiles src/assets/scroll-anim-seq/* S3/assets/scroll-anim-seq -f",
+    "postbuild": "node scripts/generate-sitemap.js",
     "preview": "vite preview --open",
     "test": "linkinator ./S3 --config linkinator.config.json",
-    "test:blog": "linkinator https://blog.hello.coop --config linkinator.config.json",
-    "pr": "./scripts/pr.sh",
-    "rebase": "git pull origin main --rebase",
-    "review": "npm run rebase && npm run build && npm run test && npm run pr"
-  },
-  "engines": {
-    "node": "~18",
-    "npm": "~10"
+    "test:blog": "linkinator https://blog.hello.coop --config linkinator.config.json"
   },
   "devDependencies": {
     "linkinator": "^5.0.2",
     "shx": "^0.3.4",
+    "sitemap": "^8.0.0",
     "vite": "^3.1.1",
     "vitepress": "^1.0.0-alpha.4",
     "vue": "^3.2.37"
