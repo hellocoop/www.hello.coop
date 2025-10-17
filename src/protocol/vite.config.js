@@ -11,9 +11,6 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: "./dist",
       chunkSizeWarningLimit: 1024,
-      rollupOptions: {
-        external: ['/js/script.hash.js']
-      }
     },
     server: {
       port: 7002,
