@@ -41,8 +41,12 @@
             transform: translateY(0);
         }
 
+        .card {
+            @apply mt-4 p-5 md:p-10 flex flex-col md:flex-row items-start justify-between h-auto md:h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl relative font-light overflow-hidden;
+        }
+
         .card-description {
-            @apply text-xl md:text-2xl opacity-50 absolute left-5 top-5 md:left-10 md:top-10;
+            @apply h-full w-full md:w-1/2 text-xl md:text-2xl opacity-50 flex flex-col justify-between space-y-5;
         }
     </style>
 </head>
@@ -93,7 +97,7 @@
         </section>
 
         <section class="bg-[#303030] text-white dark:text-[#d4d4d4] mt-10 md:mt-20">
-            <div class="max-w-6xl mx-auto py-20 px-4">
+            <div class="max-w-6xl mx-auto py-10 md:py-20 px-4">
                 <h1 class="text-5xl md:text-6xl font-bold italic">Identity on the internet is broken</h1>
                 <h2 class="text-4xl md:text-5xl font-semibold opacity-50 mt-4">Cybercrime is Exploding</h1>
                 <div class="h-[500px] mt-4 flex items-center justify-center">
@@ -108,9 +112,9 @@
             <div class="px-4">
                 <h1 class="text-4xl md:text-5xl font-semibold">Users have Lost Control</h1>
                 <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Your identity is scattered across all the corners of the internet</h2>
-                <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl p-10 relative font-light">
+                <div class="card">
                     <p class="card-description">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-96 size-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                     </svg>                      
                 </div>
@@ -119,7 +123,7 @@
             <div class="px-4">
                 <h1 class="text-4xl md:text-5xl font-semibold">Workforce Identities are “all over the place”</h1>
                 <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Your identity is scattered across all the corners of the internet</h2>
-                <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl p-10 relative font-light">
+                <div class="card">
                     <p class="card-description">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-96 size-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
@@ -129,7 +133,7 @@
         </section>
 
         <section class="bg-[#303030] text-white dark:text-[#d4d4d4] mt-16 md:mt-20">
-            <div class="max-w-6xl mx-auto py-20 px-4">
+            <div class="max-w-6xl mx-auto py-10 md:py-20 px-4">
                 <h1 class="text-5xl md:text-6xl font-bold italic">The Interchange Solution</h1>
                 <h2 class="text-4xl md:text-5xl font-semibold leading-tight opacity-50 mt-4">Hellō Identity Interchange Eliminates Complexity Simplified with Identity Interchange</h1>
                 <div class="h-[500px] mt-4 flex items-center justify-center">
@@ -144,7 +148,7 @@
             <div class="px-4">
                 <h1 class="text-4xl md:text-5xl font-semibold">Users Have Control</h1>
                 <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share, and add recoveries in case you lose access</h2>
-                <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl p-10 relative font-light">
+                <div class="card">
                     <p class="card-description">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-96 size-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
@@ -155,7 +159,7 @@
             <div class="px-4">
                 <h1 class="text-4xl md:text-5xl font-semibold">Organizations Have Control</h1>
                 <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share,<br/>and add recoveries in case you lose access</h2>
-                <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl p-10 relative font-light">
+                <div class="card">
                     <p class="card-description">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-96 size-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
@@ -166,16 +170,16 @@
             <div class="px-4">
                 <h1 class="text-4xl md:text-5xl font-semibold">Social Login for B2C Apps</h1>
                 <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share,<br/>and add recoveries in case you lose access</h2>
-                <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl relative overflow-hidden">
-                    <div class="text-2xl opacity-50 absolute left-10 py-10 h-full flex flex-col justify-between font-light">
-                        <p class="card-description">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
+                <div class="card">
+                    <div class="card-description">
+                        <p>Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                         <ul class="space-y-2">
-                            <li>Try out the demo</li>
+                            <li class="uppercase text-base font-semibold">Try out the demo</li>
                         </ul>
                     </div>
                     <picture class="h-full">
                         <source srcset="/b2c-dark.png" media="(prefers-color-scheme: dark)">
-                        <img src="/b2c-light.png" alt="phone showing continue with apple, google, and email buttons" data-aos="slide" class="h-full absolute right-10">
+                        <img src="/b2c-light.png" alt="phone showing continue with apple, google, and email buttons" data-aos="slide" class="w-full md:w-auto -mb-5 mt-10 md:-mb-0 md:mt-0 md:h-full md:absolute md:right-10 md:-bottom-1">
                     </picture>
                 </div>
             </div>
@@ -183,17 +187,17 @@
             <div class="px-4">
                 <h1 class="text-4xl md:text-5xl font-semibold">Enterprise SSO for B2B Apps</h1>
                 <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share,<br/>and add recoveries in case you lose access</h2>
-                <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl relative overflow-hidden">
-                    <div class="text-2xl opacity-50 absolute left-10 py-10 h-full flex flex-col justify-between font-light">
+                <div class="card">
+                    <div class="card-description">
                         <p>Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                         <ul class="space-y-2">
-                            <li>Try out the demo</li>
-                            <li>See developer documentation</li>
+                            <li class="uppercase text-base font-semibold">Try out the demo</li>
+                            <li class="uppercase text-base font-semibold">See developer documentation</li>
                         </ul>
                     </div>
                     <picture class="h-full">
                         <source srcset="/b2b-dark.png" media="(prefers-color-scheme: dark)">
-                        <img src="/b2b-light.png" alt="phone showing continue with apple, google, and email buttons" data-aos="slide" class="h-full absolute right-10">
+                        <img src="/b2b-light.png" alt="phone showing continue with apple, google, and email buttons" data-aos="slide" class="w-full md:w-auto -mb-5 mt-10 md:-mb-0 md:mt-0 md:h-full md:absolute md:right-10 md:-bottom-1">
                     </picture>
                 </div>
             </div>
@@ -201,17 +205,17 @@
             <div class="px-4">
                 <h1 class="text-4xl md:text-5xl font-semibold">Zero Config Vibe Coding</h1>
                 <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Stop breaking developer flow with identity configuration</h2>
-                <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl relative overflow-hidden">
-                    <div class="text-2xl opacity-50 absolute left-10 py-10 h-full flex flex-col justify-between font-light">
+                <div class="card">
+                    <div class="card-description">
                         <p>Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                         <ul class="space-y-2">
-                            <li>Try out the demo</li>
-                            <li>See developer documentation</li>
+                            <li class="uppercase text-base font-semibold">Try out the demo</li>
+                            <li class="uppercase text-base font-semibold">See developer documentation</li>
                         </ul>
                     </div>
                     <picture class="h-full">
                         <source srcset="/vibe-dark.png" media="(prefers-color-scheme: dark)">
-                        <img src="/vibe-light.png" alt="phone showing continue with apple, google, and email buttons" data-aos="slide" class="h-full absolute right-10">
+                        <img src="/vibe-light.png" alt="phone showing continue with apple, google, and email buttons" data-aos="slide" class="w-full md:w-auto -mb-5 mt-10 md:-mb-0 md:mt-0 md:h-full md:absolute md:right-10 md:-bottom-1">
                     </picture>
                 </div>
             </div>
@@ -224,42 +228,42 @@
         </section>
 
         <section class="bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] mt-16 md:mt-20">
-            <div class="max-w-6xl mx-auto py-20">
-                <h1 class="text-6xl font-bold">News</h1>
-                <h2 class="text-5xl font-semibold leading-tight opacity-50 mt-4">Hellō Identity Interchange Eliminates Complexity</h1>
-                <ul class="mt-16 space-y-14">
-                    <li class="flex items-center space-x-10">
-                        <img src="https://blog.hello.coop/wp-content/uploads/2025/03/image-1024x585.png" alt="OpenID Provider Commands" class="w-1/3 rounded-lg border border-[#808080]" />
+            <div class="max-w-6xl mx-auto py-10 md:py-20 px-4">
+                <h1 class="text-5xl md:text-6xl font-bold">News</h1>
+                <h2 class="text-4xl md:text-5xl font-semibold leading-tight opacity-50 mt-4">Placeholder</h1>
+                <ul class="mt-10 md:mt-16 space-y-10 md:space-y-14">
+                    <li class="flex flex-col md:flex-row items-center gap-5 md:gap-10">
+                        <img src="https://blog.hello.coop/wp-content/uploads/2025/03/image-1024x585.png" alt="OpenID Provider Commands" class="flex-1 md:w-1/3 rounded-lg border border-[#808080]" />
                         <div>
-                            <span class="text-2xl opacity-50">March 6, 2025</span>
-                            <h3 class="text-3xl font-semibold my-4">Introducing OpenID Provider Commands</h3>
-                            <p class="text-2xl opacity-50">Today the OpenID Foundation A/B Connect Working Group adopted the OpenID Provider Commands draft that I created with Karl McGuinness as a working group item [...]</p>
+                            <span class="text-xl md:text-2xl opacity-50">March 6, 2025</span>
+                            <h3 class="text-2xl md:text-3xl font-semibold my-4">Introducing OpenID Provider Commands</h3>
+                            <p class="text-xl md:text-2xl opacity-50">Today the OpenID Foundation A/B Connect Working Group adopted the OpenID Provider Commands draft that I created with Karl McGuinness as a working group item [...]</p>
                         </div>
                     </li>
-                    <li class="flex items-center space-x-10">
-                        <img src="https://blog.hello.coop/wp-content/uploads/2024/11/b2bsaas-1024x585.jpg" alt="OpenID Provider Commands" class="w-1/3 rounded-lg border border-[#808080]" />
+                    <li class="flex flex-col md:flex-row items-center gap-5 md:gap-10">
+                        <img src="https://blog.hello.coop/wp-content/uploads/2024/11/b2bsaas-1024x585.jpg" alt="OpenID Provider Commands" class="flex-1 md:w-1/3 rounded-lg border border-[#808080]" />
                         <div>
-                            <span class="text-2xl opacity-50">Nov 11, 2024</span>
-                            <h3 class="text-3xl font-semibold my-4">Hellō B2B SaaS</h3>
+                            <span class="text-xl md:text-2xl opacity-50">Nov 11, 2024</span>
+                            <h3 class="text-2xl md:text-3xl font-semibold my-4">Hellō B2B SaaS</h3>
                             <p class="text-2xl opacity-50">When talking to developers about their identity problems, the pain point of setting up identity federations with enterprise customers would keep coming up [...]</p>
                         </div>
                     </li>
-                    <li class="flex items-center space-x-10">
-                        <img src="https://blog.hello.coop/wp-content/uploads/2023/07/wp-post-thumbnail-1024x576.png" alt="OpenID Provider Commands" class="w-1/3 rounded-lg border border-[#808080]" />
+                    <li class="flex flex-col md:flex-row items-center gap-5 md:gap-10">
+                        <img src="https://blog.hello.coop/wp-content/uploads/2023/07/wp-post-thumbnail-1024x576.png" alt="OpenID Provider Commands" class="flex-1 md:w-1/3 rounded-lg border border-[#808080]" />
                         <div>
-                            <span class="text-2xl opacity-50">Jul 12, 2023</span>
-                            <h3 class="text-3xl font-semibold my-4">Hellō Login Installation and Comparison Video</h3>
-                            <p class="text-2xl opacity-50">Chris Heuer, longtime WordPress user is pretty excited about how Hellō Login can provide 16+ ways to login, protect comments, and provide verified email addresses. [...]</p>
+                            <span class="text-xl md:text-2xl opacity-50">Jul 12, 2023</span>
+                            <h3 class="text-2xl md:text-3xl font-semibold my-4">Hellō Login Installation and Comparison Video</h3>
+                            <p class="text-xl md:text-2xl opacity-50">Chris Heuer, longtime WordPress user is pretty excited about how Hellō Login can provide 16+ ways to login, protect comments, and provide verified email addresses. [...]</p>
                         </div>
                     </li>
                 </ul>
-                <p class="text-2xl opacity-50 text-center mt-16">Read more news at blog.hello.coop</p>
+                <p class="text-xl md:text-2xl opacity-50 text-center mt-10 md:mt-16">Read more news at blog.hello.coop</p>
             </div>
         </section>
     </main>
-    <footer class="max-w-6xl mx-auto py-12 flex flex-wrap items-start justify-between">
+    <footer class="px-4 max-w-6xl mx-auto py-12 grid grid-cols-2 md:grid-cols-6 gap-6">
         <div>
-            <span>Hellō</span>
+            <span class="font-semibold">Hellō</span>
         </div>
 
         <div>
