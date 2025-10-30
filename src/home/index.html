@@ -657,15 +657,13 @@
             //     }
             //     return true // Include this post
             // })
-            const filteredPosts = allPosts
+            const filteredPosts = [...allPosts].slice(0, 3)
 
             // Remove the loading placeholder
             loadingPlaceholder.remove()
 
             const postsRef = document.querySelector("#posts")
-            for (let i = 0; i < 3; i++) {
-                if (!filteredPosts[i]) continue;
-                const post = filteredPosts[i]
+            for (const post of filteredPosts) {
                 const title = post.querySelector("title")?.textContent
                 const rawDescription = post.querySelector("description")?.textContent
                 const descriptionPlaceholder = document.createElement("div");
