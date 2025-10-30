@@ -40,6 +40,10 @@
         [data-aos="slide"].aos-animate {
             transform: translateY(0);
         }
+
+        .card-description {
+            @apply text-xl md:text-2xl opacity-50 absolute left-5 top-5 md:left-10 md:top-10;
+        }
     </style>
 </head>
 
@@ -47,13 +51,13 @@
     <header class="bg-[#303030]/90 w-full h-12 px-4 sticky top-0 z-10 backdrop-blur-lg text-white dark:text-[#d4d4d4]">
         <div class="max-w-6xl mx-auto flex items-center justify-between h-full">
             <span class="font-semibold justify-start text-lg w-1/3">Hellō</span>
-            <ul class="flex items-center justify-center space-x-8 w-1/3">
+            <ul class="hidden md:flex items-center justify-center space-x-8 w-1/3">
                 <li>Products</li>
                 <li>Company</li>
                 <li>Blog</li>
                 <li>Resources</li>
             </ul>
-            <ul class="flex items-center justify-end space-x-4 w-1/3">
+            <ul class="hidden md:flex items-center justify-end space-x-4 w-1/3">
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5" viewBox="0 0 21 17" fill="currentColor">
                         <path d="M0 4.91992V13.4999C0 14.2956 0.316071 15.0586 0.87868 15.6212C1.44129 16.1839 2.20435 16.4999 3 16.4999H18C18.7956 16.4999 19.5587 16.1839 20.1213 15.6212C20.6839 15.0586 21 14.2956 21 13.4999V4.91992L12.072 10.4129C11.5992 10.7038 11.0551 10.8578 10.5 10.8578C9.94494 10.8578 9.40076 10.7038 8.928 10.4129L0 4.91992Z"/>
@@ -79,19 +83,19 @@
         </div>
     </header>
     <main>
-        <section class="max-w-6xl mx-auto">
-            <h1 class="text-[184px] font-bold -ml-2">Hellō</h1>
+        <section class="max-w-6xl mx-auto px-4 md:py-0">
+            <h1 class="text-[80px] md:text-[184px] font-bold -ml-1 md:-ml-2">Hellō</h1>
             <picture>
                 <source srcset="/hero-dark.png" media="(prefers-color-scheme: dark)">
-                <img src="/hero-light.png" alt="phone with continue with hello button" data-aos="slide" class="ml-32 -mt-56 z-10">
+                <img src="/hero-light.png" alt="phone with continue with hello button" data-aos="slide" class="md:ml-32 -mt-5 md:-mt-56 z-10">
             </picture>
-            <h2 class="text-[108px] font-semibold -mt-5">to a #BetterInternet</h2>
+            <h2 class="text-[36px] md:text-[108px] font-semibold md:-mt-5">to a #BetterInternet</h2>
         </section>
 
-        <section class="bg-[#303030] text-white dark:text-[#d4d4d4] mt-20">
-            <div class="max-w-6xl mx-auto py-20">
-                <h1 class="text-6xl font-bold italic">Identity on the internet is broken</h1>
-                <h2 class="text-5xl font-semibold opacity-50 mt-4">Cybercrime is Exploding</h1>
+        <section class="bg-[#303030] text-white dark:text-[#d4d4d4] mt-10 md:mt-20">
+            <div class="max-w-6xl mx-auto py-20 px-4">
+                <h1 class="text-5xl md:text-6xl font-bold italic">Identity on the internet is broken</h1>
+                <h2 class="text-4xl md:text-5xl font-semibold opacity-50 mt-4">Cybercrime is Exploding</h1>
                 <div class="h-[500px] mt-4 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
@@ -100,23 +104,23 @@
             </div>
         </section>
 
-        <section class="max-w-6xl mx-auto mt-20 space-y-20">
-            <div>
-                <h1 class="text-5xl font-semibold">Users have Lost Control</h1>
-                <h2 class="text-4xl opacity-50 mt-4">Your identity is scattered across all the corners of the internet</h2>
+        <section class="max-w-6xl mx-auto mt-16 md:mt-20 space-y-16 md:space-y-20">
+            <div class="px-4">
+                <h1 class="text-4xl md:text-5xl font-semibold">Users have Lost Control</h1>
+                <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Your identity is scattered across all the corners of the internet</h2>
                 <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl p-10 relative font-light">
-                    <p class="text-2xl w-96 opacity-50 absolute left-10 top-10">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
+                    <p class="card-description">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-96 size-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                     </svg>                      
                 </div>
             </div>
 
-            <div>
-                <h1 class="text-5xl font-semibold">Workforce Identities are “all over the place”</h1>
-                <h2 class="text-4xl opacity-50 mt-4">Your identity is scattered across all the corners of the internet</h2>
+            <div class="px-4">
+                <h1 class="text-4xl md:text-5xl font-semibold">Workforce Identities are “all over the place”</h1>
+                <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Your identity is scattered across all the corners of the internet</h2>
                 <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl p-10 relative font-light">
-                    <p class="text-2xl w-96 opacity-50 absolute left-10 top-10">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
+                    <p class="card-description">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-96 size-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                     </svg>                      
@@ -124,10 +128,10 @@
             </div>
         </section>
 
-        <section class="bg-[#303030] text-white dark:text-[#d4d4d4] mt-20">
-            <div class="max-w-6xl mx-auto py-20">
-                <h1 class="text-6xl font-bold italic">The Interchange Solution</h1>
-                <h2 class="text-5xl font-semibold leading-tight opacity-50 mt-4">Hellō Identity Interchange Eliminates Complexity<br/>Simplified with Identity Interchange</h1>
+        <section class="bg-[#303030] text-white dark:text-[#d4d4d4] mt-16 md:mt-20">
+            <div class="max-w-6xl mx-auto py-20 px-4">
+                <h1 class="text-5xl md:text-6xl font-bold italic">The Interchange Solution</h1>
+                <h2 class="text-4xl md:text-5xl font-semibold leading-tight opacity-50 mt-4">Hellō Identity Interchange Eliminates Complexity Simplified with Identity Interchange</h1>
                 <div class="h-[500px] mt-4 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
@@ -136,35 +140,35 @@
             </div>
         </section>
 
-        <section class="max-w-6xl mx-auto mt-20 space-y-20">
-            <div>
-                <h1 class="text-5xl font-semibold">Users Have Control</h1>
-                <h2 class="text-4xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share,<br/>and add recoveries in case you lose access</h2>
+        <section class="max-w-6xl mx-auto mt-16 md:mt-20 space-y-16 md:space-y-20">
+            <div class="px-4">
+                <h1 class="text-4xl md:text-5xl font-semibold">Users Have Control</h1>
+                <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share, and add recoveries in case you lose access</h2>
                 <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl p-10 relative font-light">
-                    <p class="text-2xl w-96 opacity-50 absolute left-10 top-10">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
+                    <p class="card-description">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-96 size-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                     </svg>                      
                 </div>
             </div>
 
-            <div>
-                <h1 class="text-5xl font-semibold">Organizations Have Control</h1>
-                <h2 class="text-4xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share,<br/>and add recoveries in case you lose access</h2>
+            <div class="px-4">
+                <h1 class="text-4xl md:text-5xl font-semibold">Organizations Have Control</h1>
+                <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share,<br/>and add recoveries in case you lose access</h2>
                 <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl p-10 relative font-light">
-                    <p class="text-2xl w-96 opacity-50 absolute left-10 top-10">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
+                    <p class="card-description">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-96 size-10">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                     </svg>                      
                 </div>
             </div>
 
-            <div>
-                <h1 class="text-5xl font-semibold">Social Login for B2C Apps</h1>
-                <h2 class="text-4xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share,<br/>and add recoveries in case you lose access</h2>
+            <div class="px-4">
+                <h1 class="text-4xl md:text-5xl font-semibold">Social Login for B2C Apps</h1>
+                <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share,<br/>and add recoveries in case you lose access</h2>
                 <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl relative overflow-hidden">
-                    <div class="text-2xl w-96 opacity-50 absolute left-10 py-10 h-full flex flex-col justify-between font-light">
-                        <p>Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
+                    <div class="text-2xl opacity-50 absolute left-10 py-10 h-full flex flex-col justify-between font-light">
+                        <p class="card-description">Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                         <ul class="space-y-2">
                             <li>Try out the demo</li>
                         </ul>
@@ -176,11 +180,11 @@
                 </div>
             </div>
 
-            <div>
-                <h1 class="text-5xl font-semibold">Enterprise SSO for B2B Apps</h1>
-                <h2 class="text-4xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share,<br/>and add recoveries in case you lose access</h2>
+            <div class="px-4">
+                <h1 class="text-4xl md:text-5xl font-semibold">Enterprise SSO for B2B Apps</h1>
+                <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Pick your login from 17 providers, choose which photo and email to share,<br/>and add recoveries in case you lose access</h2>
                 <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl relative overflow-hidden">
-                    <div class="text-2xl w-96 opacity-50 absolute left-10 py-10 h-full flex flex-col justify-between font-light">
+                    <div class="text-2xl opacity-50 absolute left-10 py-10 h-full flex flex-col justify-between font-light">
                         <p>Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                         <ul class="space-y-2">
                             <li>Try out the demo</li>
@@ -194,11 +198,11 @@
                 </div>
             </div>
 
-            <div>
-                <h1 class="text-5xl font-semibold">Zero Config Vibe Coding</h1>
-                <h2 class="text-4xl opacity-50 mt-4">Stop breaking developer flow with identity configuration</h2>
+            <div class="px-4">
+                <h1 class="text-4xl md:text-5xl font-semibold">Zero Config Vibe Coding</h1>
+                <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Stop breaking developer flow with identity configuration</h2>
                 <div class="mt-4 flex items-center justify-center h-[500px] bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] rounded-xl relative overflow-hidden">
-                    <div class="text-2xl w-96 opacity-50 absolute left-10 py-10 h-full flex flex-col justify-between font-light">
+                    <div class="text-2xl opacity-50 absolute left-10 py-10 h-full flex flex-col justify-between font-light">
                         <p>Placeholder text: one integration for all different things stop breaking developer flow with identity configuration.</p>
                         <ul class="space-y-2">
                             <li>Try out the demo</li>
@@ -212,14 +216,14 @@
                 </div>
             </div>
 
-            <div>
-                <h1 class="text-5xl font-semibold">Built on Open Standards</h1>
-                <h2 class="text-4xl opacity-50 mt-4">Our founder designed OAuth 2.0 and JWT and helped create the OIDF. Currently working on OAuth 2.1 IPSIE OPC enterprise extensions JWT BCP key binding email verification protocol.</h2>
-                <h2 class="text-4xl opacity-50 mt-4">Add text here that would be a link to page showcasing protocols, etc that are in progress.</h2>
+            <div class="px-4">
+                <h1 class="text-4xl md:text-5xl font-semibold">Built on Open Standards</h1>
+                <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Our founder designed OAuth 2.0 and JWT and helped create the OIDF. Currently working on OAuth 2.1 IPSIE OPC enterprise extensions JWT BCP key binding email verification protocol.</h2>
+                <h2 class="text-2xl md:text-3xl opacity-50 mt-4">Add text here that would be a link to page showcasing protocols, etc that are in progress.</h2>
             </div>
         </section>
 
-        <section class="bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] mt-20">
+        <section class="bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] mt-16 md:mt-20">
             <div class="max-w-6xl mx-auto py-20">
                 <h1 class="text-6xl font-bold">News</h1>
                 <h2 class="text-5xl font-semibold leading-tight opacity-50 mt-4">Hellō Identity Interchange Eliminates Complexity</h1>
@@ -253,7 +257,7 @@
             </div>
         </section>
     </main>
-    <footer class="max-w-6xl mx-auto py-12 flex items-start justify-between">
+    <footer class="max-w-6xl mx-auto py-12 flex flex-wrap items-start justify-between">
         <div>
             <span>Hellō</span>
         </div>
