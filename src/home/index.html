@@ -54,6 +54,18 @@
         .card-link {
             @apply uppercase text-sm font-semibold border border-[#303030] dark:border-[#d4d4d4] inline-flex items-center justify-center rounded-full text-[#303030] dark:text-[#d4d4d4] px-4 py-1 hover:bg-[#303030] dark:hover:bg-[#d4d4d4] hover:text-white dark:hover:text-[#303030] transition-all duration-150;
         }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translatey(0px);
+            }
+
+            50% {
+                transform: translatey(-10px);
+            }
+        }
     </style>
 </head>
 
@@ -139,7 +151,7 @@
             <picture>
                 <source srcset="/hero-dark.png" media="(prefers-color-scheme: dark)">
                 <img src="/hero-light.png" alt="phone with continue with hello button" data-aos="slide"
-                    class="md:ml-32 -mt-5 md:-mt-56 z-10">
+                    class="md:ml-32 -mt-5 md:-mt-56 z-10" style="animation: float 5s infinite;">
             </picture>
             <h2
                 class="text-[40px] md:text-[108px] font-semibold md:-mt-5 bg-gradient-to-b dark:from-[#f5f5f5] from-[#c0c0c0] dark:to-[#7a7a7a] to-[#1c1c1c] bg-clip-text text-transparent">
