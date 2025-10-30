@@ -5,9 +5,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "install": "cd src/protocol && npm i",
+    "install": "cd src/protocol && npm i && cd ../home && npm i",
     "postinstall": "./scripts/pre-requisites.sh",
-    "dev": "echo \"npm run dev does not exist.\nHellō Pages: npm run dev:pages\nHellō Protocol: npm run dev:proto\"",
+    "dev": "cd src/home && npm run dev",
     "dev:proto": "cd src/protocol && vite --open",
     "dev:pages": "vitepress dev src/pages --open",
     "dev:legal": "vitepress dev src/legal --open",
