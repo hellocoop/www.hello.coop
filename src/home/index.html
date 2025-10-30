@@ -58,7 +58,15 @@
 <body class="bg-white text-[#303030] dark:bg-[#151515] dark:text-[#d4d4d4]">
     <header class="bg-[#303030]/90 w-full h-12 sticky top-0 z-10 backdrop-blur-lg text-white dark:text-[#d4d4d4">
         <div class="max-w-6xl mx-auto flex items-center justify-between h-full px-4 overflow-hidden">
-            <ul class="invisible md:visible flex items-center justify-left space-x-4 w-1/3 opacity-75">
+            <div class="w-1/3 md:hidden opacity-75 flex items-center justify-left">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                    </svg>
+                </button>
+            </div>
+            <ul class="hidden md:flex items-center justify-left space-x-4 w-1/3 opacity-75">
                 <li id="nav-products" class="flex items-center space-x-1.5 relative group cursor-pointer">
                     <span>Products</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -113,7 +121,9 @@
                     </li>
                 </ul>
             </div>
+
             <span class="font-semibold text-center text-xl w-1/3">Hellō</span>
+
             <span class="w-1/3 text-right opacity-75">
                 Contact
             </span>
@@ -315,7 +325,7 @@
                 <ul class="mt-10 md:mt-16 space-y-10 md:space-y-14">
                     <li class="flex flex-col md:flex-row items-center gap-5 md:gap-10">
                         <img src="https://blog.hello.coop/wp-content/uploads/2025/03/image-1024x585.png"
-                            alt="OpenID Provider Commands" class="flex-1 md:w-1/3 rounded-lg border border-[#808080]" />
+                            alt="OpenID Provider Commands" class="w-full md:w-1/3 rounded-lg border border-[#808080]" />
                         <div>
                             <span class="text-base md:text-xl opacity-50">March 6, 2025</span>
                             <h3 class="text-xl md:text-3xl font-semibold my-3 md:my-4">Introducing OpenID Provider
@@ -328,7 +338,7 @@
                     </li>
                     <li class="flex flex-col md:flex-row items-center gap-5 md:gap-10">
                         <img src="https://blog.hello.coop/wp-content/uploads/2024/11/b2bsaas-1024x585.jpg"
-                            alt="OpenID Provider Commands" class="flex-1 md:w-1/3 rounded-lg border border-[#808080]" />
+                            alt="OpenID Provider Commands" class="w-full md:w-1/3 rounded-lg border border-[#808080]" />
                         <div>
                             <span class="text-base md:text-xl opacity-50">Nov 11, 2024</span>
                             <h3 class="text-xl md:text-3xl font-semibold my-3 md:my-4">Hellō B2B SaaS</h3>
@@ -339,7 +349,7 @@
                     </li>
                     <li class="flex flex-col md:flex-row items-center gap-5 md:gap-10">
                         <img src="https://blog.hello.coop/wp-content/uploads/2023/07/wp-post-thumbnail-1024x576.png"
-                            alt="OpenID Provider Commands" class="flex-1 md:w-1/3 rounded-lg border border-[#808080]" />
+                            alt="OpenID Provider Commands" class="w-full md:w-1/3 rounded-lg border border-[#808080]" />
                         <div>
                             <span class="text-base md:text-xl opacity-50">Jul 12, 2023</span>
                             <h3 class="text-xl md:text-3xl font-semibold my-3 md:my-4">Hellō Login Installation and
