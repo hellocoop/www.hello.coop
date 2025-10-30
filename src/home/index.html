@@ -48,6 +48,10 @@
         .card-description {
             @apply h-full w-full md:w-1/2 text-xl md:text-2xl opacity-50 flex flex-col justify-between space-y-5;
         }
+
+        .card-link {
+            @apply uppercase text-sm font-semibold border border-[#303030] dark:border-[#d4d4d4] inline-flex items-center justify-center rounded-full text-[#303030] dark:text-[#d4d4d4] px-4 py-1 hover:bg-[#303030] dark:hover:bg-[#d4d4d4] hover:text-white dark:hover:text-[#303030] transition-all duration-150;
+        }
     </style>
 </head>
 
@@ -177,11 +181,11 @@
                     <div class="card-description">
                         <p>Placeholder text: one integration for all different things stop breaking developer flow with
                             identity configuration.</p>
-                        <ul class="space-y-2">
-                            <li
-                                class="uppercase text-sm font-semibold border border-[#303030] inline-flex items-center justify-center rounded-full text-[#303030] px-4 py-1">
+                        <div class="space-y-2">
+                            <a href="https://www.greenfielddemo.com/" target="_blank" class="card-link">
                                 Try out the demo</li>
-                        </ul>
+                            </a>
+                        </div>
                     </div>
                     <picture class="h-full">
                         <source srcset="/b2c-dark.png" media="(prefers-color-scheme: dark)">
@@ -200,14 +204,12 @@
                     <div class="card-description">
                         <p>Placeholder text: one integration for all different things stop breaking developer flow with
                             identity configuration.</p>
-                        <ul class="space-y-2 flex flex-col items-start">
-                            <li
-                                class="uppercase text-sm font-semibold border border-[#303030] inline-flex items-center justify-center rounded-full text-[#303030] px-4 py-1">
-                                Try out the demo</li>
-                            <li
-                                class="uppercase text-sm font-semibold border border-[#303030] inline-flex items-center justify-center rounded-full text-[#303030] px-4 py-1">
-                                See developer documentation</li>
-                        </ul>
+                        <div class="space-y-2 flex flex-col items-start">
+                            <a href="https://www.b2bsaasdemo.com/" target="_blank" class="card-link">
+                                Try out the demo</a>
+                            <a href="#" target="" class="card-link">
+                                See developer documentation</a>
+                        </div>
                     </div>
                     <picture class="h-full">
                         <source srcset="/b2b-dark.png" media="(prefers-color-scheme: dark)">
@@ -227,14 +229,12 @@
                         <p class="md:pr-20">Placeholder text: one integration for all different things stop breaking
                             developer flow with
                             identity configuration.</p>
-                        <ul class="space-y-2 flex flex-col items-start">
-                            <li
-                                class="uppercase text-sm font-semibold border border-[#303030] inline-flex items-center justify-center rounded-full text-[#303030] px-4 py-1">
-                                Try out the demo</li>
-                            <li
-                                class="uppercase text-sm font-semibold border border-[#303030] inline-flex items-center justify-center rounded-full text-[#303030] px-4 py-1">
-                                See developer documentation</li>
-                        </ul>
+                            <div class="space-y-2 flex flex-col items-start">
+                                <a href="#" target="_blank" class="card-link">
+                                    Try out the demo</a>
+                                <a href="#" target="" class="card-link">
+                                    See developer documentation</a>
+                            </div>
                     </div>
                     <picture class="h-full">
                         <source srcset="/vibe-dark.png" media="(prefers-color-scheme: dark)">
@@ -250,7 +250,8 @@
                 <h2 class="text-2xl md:text-3xl text-[#303030]/50 dark:text-[#d4d4d4]/50 mt-4">Our founder designed
                     <span class="text-[#303030]/75 dark:text-[#d4d4d4]/75">OAuth 2.0</span> and <span
                         class="text-[#303030]/75 dark:text-[#d4d4d4]/75">JWT</span>, and helped create the <span
-                        class="text-[#303030]/75 dark:text-[#d4d4d4]/75">OpenID Foundation</span>.</h2>
+                        class="text-[#303030]/75 dark:text-[#d4d4d4]/75">OpenID Foundation</span>.
+                </h2>
                 <h2 class="text-2xl md:text-3xl mt-4 text-[#303030]/50 dark:text-[#d4d4d4]/50">
                     Today, we’re building on that foundation with work on <span
                         class="text-[#303030]/75 dark:text-[#d4d4d4]/75">OAuth 2.1</span>, <span
