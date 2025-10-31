@@ -855,6 +855,11 @@
             products.querySelector('.marker').classList.remove('hidden');
             products.querySelector('svg').classList.add('rotate-180');
         }
+        products.onclick = () => {
+            productsDropdown.classList.toggle('hidden');
+            products.querySelector('.marker').classList.toggle('hidden');
+            products.querySelector('svg').classList.toggle('rotate-180');
+        }
         products.onmouseleave = () => {
             productsDropdown.classList.add('hidden');
             products.querySelector('.marker').classList.add('hidden');
@@ -867,6 +872,11 @@
             devResourcesDropdown.classList.remove('hidden');
             devResources.querySelector('.marker').classList.remove('hidden');
             devResources.querySelector('svg').classList.add('rotate-180');
+        }
+        devResources.onclick = () => {
+            devResourcesDropdown.classList.toggle('hidden');
+            devResources.querySelector('.marker').classList.toggle('hidden');
+            devResources.querySelector('svg').classList.toggle('rotate-180');
         }
         devResources.onmouseleave = () => {
             devResourcesDropdown.classList.add('hidden');
@@ -881,6 +891,11 @@
             company.querySelector('.marker').classList.remove('hidden');
             company.querySelector('svg').classList.add('rotate-180');
         }
+        company.onclick = () => {
+            companyDropdown.classList.toggle('hidden');
+            company.querySelector('.marker').classList.toggle('hidden');
+            company.querySelector('svg').classList.toggle('rotate-180');
+        }
         company.onmouseleave = () => {
             companyDropdown.classList.add('hidden');
             company.querySelector('.marker').classList.add('hidden');
@@ -893,6 +908,11 @@
             socialsDropdown.classList.remove('hidden');
             socials.querySelector('.marker').classList.remove('hidden');
             socials.querySelector('svg').classList.add('rotate-180');
+        }
+        socials.onclick = () => {
+            socialsDropdown.classList.toggle('hidden');
+            socials.querySelector('.marker').classList.toggle('hidden');
+            socials.querySelector('svg').classList.toggle('rotate-180');
         }
         socials.onmouseleave = () => {
             socialsDropdown.classList.add('hidden');
