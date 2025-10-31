@@ -108,8 +108,8 @@
                     </svg>
                 </button>
             </div>
-            <ul class="hidden lg:flex items-center justify-left space-x-4 w-1/2 h-full">
-                <li id="nav-products" class="relative cursor-pointer h-full flex items-center justify-center">
+            <ul class="hidden lg:flex items-center justify-left w-1/2 h-full">
+                <li id="nav-products" class="relative cursor-pointer h-full flex items-center justify-center px-1.5">
                     <div class="opacity-75 flex items-center space-x-1">
                         <span>Products</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -157,7 +157,8 @@
                         </div>
                     </div>
                 </li>
-                <li id="nav-dev-resources" class="relative cursor-pointer h-full flex items-center justify-center">
+                <li id="nav-dev-resources"
+                    class="relative cursor-pointer h-full flex items-center justify-center px-1.5">
                     <div class="opacity-75 flex items-center space-x-1">
                         <span>Dev Resources</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -168,7 +169,7 @@
                             class="marker hidden md:visible w-full h-1 bg-[#d4d4d4]/50 absolute bottom-0 left-0 rounded-t-xs" />
                     </div>
 
-                    <div id="nav-dev-resources-dropdown" class="hidden absolute top-12 left-0 w-64 md:visible">
+                    <div id="nav-dev-resources-dropdown" class="hidden absolute top-11 left-0 w-64 md:visible">
                         <div class="bg-[#303030] p-4 mt-2 rounded-sm">
                             <ul class="space-y-4 opacity-75">
                                 <li>
@@ -205,7 +206,7 @@
                         </div>
                     </div>
                 </li>
-                <li id="nav-company" class="relative cursor-pointer h-full flex items-center justify-center">
+                <li id="nav-company" class="relative cursor-pointer h-full flex items-center justify-center px-1.5">
                     <div class="opacity-75 flex items-center space-x-1">
                         <span>Company</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -216,7 +217,7 @@
                             class="marker hidden md:visible w-full h-1 bg-[#d4d4d4]/50 absolute bottom-0 left-0 rounded-t-xs" />
                     </div>
 
-                    <div id="nav-company-dropdown" class="hidden absolute top-12 left-0 w-64 md:visible">
+                    <div id="nav-company-dropdown" class="hidden absolute top-11 left-0 w-64 md:visible">
                         <div class="bg-[#303030] p-4 mt-2 rounded-sm">
                             <ul class="space-y-4 opacity-75">
                                 <li>
@@ -253,7 +254,7 @@
                         </div>
                     </div>
                 </li>
-                <li id="nav-socials" class="relative cursor-pointer h-full flex items-center justify-center">
+                <li id="nav-socials" class="relative cursor-pointer h-full flex items-center justify-center px-1.5">
                     <div class="opacity-75 flex items-center space-x-1">
                         <span>Socials</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -264,7 +265,7 @@
                             class="marker hidden md:visible w-full h-1 bg-[#d4d4d4]/50 absolute bottom-0 left-0 rounded-t-xs" />
                     </div>
 
-                    <div id="nav-socials-dropdown" class="hidden absolute top-12 left-0 w-64 md:visible">
+                    <div id="nav-socials-dropdown" class="hidden absolute top-11 left-0 w-64 md:visible">
                         <div class="bg-[#303030] p-4 mt-2 rounded-sm">
                             <ul class="space-y-4 opacity-75">
                                 <li>
@@ -816,10 +817,12 @@
         products.onmouseenter = () => {
             productsDropdown.classList.remove('hidden');
             products.querySelector('.marker').classList.remove('hidden');
+            products.querySelector('svg').classList.add('rotate-180');
         }
         products.onmouseleave = () => {
             productsDropdown.classList.add('hidden');
             products.querySelector('.marker').classList.add('hidden');
+            products.querySelector('svg').classList.remove('rotate-180');
         }
 
         const devResources = document.getElementById('nav-dev-resources');
@@ -827,10 +830,12 @@
         devResources.onmouseenter = () => {
             devResourcesDropdown.classList.remove('hidden');
             devResources.querySelector('.marker').classList.remove('hidden');
+            devResources.querySelector('svg').classList.add('rotate-180');
         }
         devResources.onmouseleave = () => {
             devResourcesDropdown.classList.add('hidden');
             devResources.querySelector('.marker').classList.add('hidden');
+            devResources.querySelector('svg').classList.remove('rotate-180');
         }
 
         const company = document.getElementById('nav-company');
@@ -838,10 +843,12 @@
         company.onmouseenter = () => {
             companyDropdown.classList.remove('hidden');
             company.querySelector('.marker').classList.remove('hidden');
+            company.querySelector('svg').classList.add('rotate-180');
         }
         company.onmouseleave = () => {
             companyDropdown.classList.add('hidden');
             company.querySelector('.marker').classList.add('hidden');
+            company.querySelector('svg').classList.remove('rotate-180');
         }
 
         const socials = document.getElementById('nav-socials');
@@ -849,10 +856,12 @@
         socials.onmouseenter = () => {
             socialsDropdown.classList.remove('hidden');
             socials.querySelector('.marker').classList.remove('hidden');
+            socials.querySelector('svg').classList.add('rotate-180');
         }
         socials.onmouseleave = () => {
             socialsDropdown.classList.add('hidden');
             socials.querySelector('.marker').classList.add('hidden');
+            socials.querySelector('svg').classList.remove('rotate-180');
         }
 
         const mobileNavToggle = document.getElementById('movile-nav-toggle');
