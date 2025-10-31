@@ -9,15 +9,15 @@
     "src/protocol"
   ],
   "scripts": {
+    "preview": "npm run build && vite S3 --open --port 5575",
     "dev": "npm run dev:index",
     "dev:index": "cd src/index && npm run dev",
     "dev:proto": "cd src/protocol && vite --open",
     "dev:pages": "vitepress dev src/pages --open",
     "dev:legal": "vitepress dev src/legal --open",
-    "preview:docs": "npm run build && vite S3 --open --port 5575",
     "build:legal": "vitepress build src/legal",
     "build:pages": "vitepress build src/pages",
-    "build-proto": "cd src/protocol && npm run build && cd ../../ && shx cp src/protocol/dist/index.html S3/pages/protocol.html && shx cp src/protocol/dist/assets/* S3/pages/assets/",
+    "build:proto": "cd src/protocol && npm run build && cd ../../ && shx cp src/protocol/dist/index.html S3/pages/protocol.html && shx cp src/protocol/dist/assets/* S3/pages/assets/",
     "build:index": "cd src/index && npm run build",
     "build": "run-s build:*",
     "postbuild": "node scripts/generate-sitemap.js",
