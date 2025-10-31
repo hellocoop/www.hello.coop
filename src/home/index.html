@@ -103,7 +103,7 @@
             @apply opacity-50 hover:opacity-100 transition-all;
         }
 
-        header a {
+        header a:not(.mobile-nav-dropdown a) {
             @apply opacity-75 hover:opacity-100 transition-all;
         }
     </style>
@@ -367,7 +367,7 @@
             <div class="grid grid-cols-2 md:grid-cols-5 gap-6 pt-4 pb-4">
                 <div>
                     <span>Products</span>
-                    <ul class="opacity-50 space-y-2 mt-2">
+                    <ul class="space-y-2 mt-2">
                         <li>Hellō SSO</li>
                         <li>Hellō Deprovisioning</li>
                         <li>Hellō Account Lifecycle</li>
@@ -380,54 +380,53 @@
                     <span>Dev Resources</span>
                     <ul class="space-y-2 mt-2">
                         <li>
-                            <a href="https://hello.dev/" target="_blank" class="hover:underline">hello.dev</a>
+                            <a href="https://hello.dev/" target="_blank">hello.dev</a>
                         </li>
                         <li>
                             <a href="https://hello-community.slack.com/join/shared_invite/zt-1eccnd2np-qJoOWBkHGnpxvBpCTtaH9g"
-                                target="_blank" class="hover:underline">Slack Community</a>
+                                target="_blank">Slack Community</a>
                         </li>
                         <li>
-                            <a href="https://console.hello.coop/" target="_blank" class="hover:underline">
+                            <a href="https://console.hello.coop/" target="_blank">
                                 Developer Console
                             </a>
                         </li>
                         <li>
-                            <a href="https://playground.hello.dev/" target="_blank"
-                                class="hover:underline">Playground</a>
+                            <a href="https://playground.hello.dev/" target="_blank">Playground</a>
                         </li>
                         <li>
-                            <a href="#" target="_blank" class="hover:underline">MCP Server</a>
+                            <a href="#" target="_blank">MCP Server</a>
                         </li>
-                        <li><a href="#" target="_blank" class="hover:underline">Status Page</a></li>
+                        <li><a href="#" target="_blank">Status Page</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <span>Company</span>
-                    <ul class="opacity-50 space-y-2 mt-2">
+                    <ul class="space-y-2 mt-2">
                         <li>
-                            <a href="/pages/approach.html" class="hover:underline">Approach</a></a>
+                            <a href="/pages/approach.html">Approach</a></a>
                         </li>
                         <li>
-                            <a href="/pages/cooperative.html" class="hover:underline">Cooperative</a>
+                            <a href="/pages/cooperative.html">Cooperative</a>
                         </li>
                         <li>
-                            <a href="/pages/tenets.html" class="hover:underline">Tenets</a>
+                            <a href="/pages/tenets.html">Tenets</a>
                         </li>
                         <li>
-                            <a href="/pages/laws-of-identity.html" class="hover:underline">Protecting Privacy</a>
+                            <a href="/pages/laws-of-identity.html">Protecting Privacy</a>
                         </li>
                         <li>
-                            <a href="/pages/architecture.html" class="hover:underline">Computing Architecture</a>
+                            <a href="/pages/architecture.html">Computing Architecture</a>
                         </li>
-                        <li><a href="/pages/data-governance.html" class="hover:underline">Data Governance</a></li>
-                        <li><a href="/pages/protocol.html" class="hover:underline">Hellō Protocol</a></li>
+                        <li><a href="/pages/data-governance.html">Data Governance</a></li>
+                        <li><a href="/pages/protocol.html">Hellō Protocol</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <span>Social</span>
-                    <ul class="opacity-50 space-y-2 mt-2">
+                    <ul class="space-y-2 mt-2">
                         <li>
                             <a href="https://github.com/HelloCoop" target="_blank"
                                 class="inline-flex items-center space-x-2 group">
