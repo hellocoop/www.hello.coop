@@ -958,6 +958,11 @@
                 document.body.classList.add('overflow-y-hidden');
             }
         }
+        window.onresize = () => {
+            if (window.innerWidth > 768) {
+                document.body.classList.remove('overflow-y-hidden');
+            }
+        }
     })();
 
     window.onload = async () => {
