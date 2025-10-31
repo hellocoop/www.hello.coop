@@ -36,6 +36,11 @@
     <style>
         @import "tailwindcss";
 
+        @theme {
+            --color-charcoal: #303030;
+            --color-gray: #d4d4d4;
+        }
+
         [data-aos="slide"] {
             transform: translateY(20px);
             transition-property: transform, opacity;
@@ -46,19 +51,19 @@
         }
 
         .card {
-            @apply mt-4 p-5 md:p-10 flex flex-col md:flex-row items-start justify-between min-h-56 md:h-[500px] border border-[#303030]/25 dark:border-[#808080]/25 text-[#303030] dark:text-[#d4d4d4] rounded-xl relative font-light overflow-hidden;
+            @apply mt-4 p-5 md:p-10 flex flex-col md:flex-row items-start justify-between min-h-56 md:h-[500px] border border-charcoal/25 dark:border-[#808080]/25 text-charcoal dark:text-gray rounded-xl relative font-light overflow-hidden;
         }
 
         .card-description {
-            @apply h-full w-full md:w-1/2 text-lg md:text-2xl text-[#303030]/50 dark:text-[#d4d4d4]/50 flex flex-col justify-between space-y-5;
+            @apply h-full w-full md:w-1/2 text-lg md:text-2xl text-charcoal/50 dark:text-gray/50 flex flex-col justify-between space-y-5;
         }
 
         .card-link-primary {
-            @apply uppercase text-sm font-semibold border border-[#303030] dark:border-[#d4d4d4] inline-flex items-center justify-center rounded-full px-4 py-1 bg-[#303030] dark:bg-[#d4d4d4] text-white dark:text-[#303030];
+            @apply uppercase text-sm font-semibold border border-charcoal dark:border-gray inline-flex items-center justify-center rounded-full px-4 py-1 bg-charcoal dark:bg-gray text-white dark:text-charcoal;
         }
 
         .card-link-secondary {
-            @apply uppercase text-sm font-semibold border border-[#303030] dark:border-[#d4d4d4] inline-flex items-center justify-center rounded-full px-4 py-1 text-[#303030] dark:text-[#d4d4d4];
+            @apply uppercase text-sm font-semibold border border-charcoal dark:border-gray inline-flex items-center justify-center rounded-full px-4 py-1 text-charcoal dark:text-gray;
         }
 
         @keyframes float {
@@ -107,17 +112,21 @@
         header a:not(#mobile-nav-dropdown a) {
             @apply opacity-75 hover:opacity-100 transition-all;
         }
+
+        .callout {
+            @apply bg-[#e8e8e8] dark:bg-[#212121] text-charcoal dark:text-gray mt-16 md:mt-20
+        }
     </style>
 </head>
 
-<body class="bg-white text-[#303030] dark:bg-[#151515] dark:text-[#d4d4d4] overflow-x-hidden">
-    <header class="bg-[#303030] w-full h-12 sticky top-0 z-10 text-white dark:text-[#d4d4d4]">
+<body class="bg-white text-charcoal dark:bg-[#151515] dark:text-gray overflow-x-hidden">
+    <header class="bg-charcoal w-full h-12 sticky top-0 z-10 text-white dark:text-gray">
         <div class="max-w-6xl mx-auto flex items-center justify-between h-full px-4 relative">
             <div class="flex items-center">
                 <span class="font-semibold text-center text-xl mr-8">Hellō</span>
                 <ul class="hidden md:flex items-center justify-left h-full">
                     <li id="nav-products"
-                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-[#d4d4d4]/15 px-3 rounded-full py-0.5 transition-all group">
+                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-gray/15 px-3 rounded-full py-0.5 transition-all group">
                         <div class="opacity-75 flex items-center space-x-1 group-hover:opacity-100 transition-all">
                             <span>Products</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -128,7 +137,7 @@
                         </div>
 
                         <div id="nav-products-dropdown" class="hidden absolute top-6 left-0 w-70 md:visible">
-                            <div class="bg-[#303030] p-4 mt-3 rounded-sm">
+                            <div class="bg-charcoal p-4 mt-3 rounded-sm">
                                 <ul class="space-y-4">
                                     <li>
                                         <a href="#" class="flex flex-col">
@@ -166,7 +175,7 @@
                         </div>
                     </li>
                     <li id="nav-dev-resources"
-                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-[#d4d4d4]/15 px-3 rounded-full py-0.5 transition-all">
+                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-gray/15 px-3 rounded-full py-0.5 transition-all">
                         <div class="opacity-75 hover:opacity-100 transition-all flex items-center space-x-1 group">
                             <span>Dev Resources</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -177,7 +186,7 @@
                         </div>
 
                         <div id="nav-dev-resources-dropdown" class="hidden absolute top-6 left-0 w-64 md:visible">
-                            <div class="bg-[#303030] p-4 mt-3 rounded-sm">
+                            <div class="bg-charcoal p-4 mt-3 rounded-sm">
                                 <ul class="space-y-4">
                                     <li>
                                         <a href="https://hello.dev/" target="_blank" class="flex flex-col">
@@ -227,7 +236,7 @@
                         </div>
                     </li>
                     <li id="nav-company"
-                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-[#d4d4d4]/15 px-3 rounded-full py-0.5 transition-all">
+                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-gray/15 px-3 rounded-full py-0.5 transition-all">
                         <div class="opacity-75 hover:opacity-100 transition-all flex items-center space-x-1 group">
                             <span>Company</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -238,7 +247,7 @@
                         </div>
 
                         <div id="nav-company-dropdown" class="hidden absolute top-6 left-0 w-56 md:visible">
-                            <div class="bg-[#303030] p-4 mt-3 rounded-sm">
+                            <div class="bg-charcoal p-4 mt-3 rounded-sm">
                                 <ul class="space-y-4">
                                     <li>
                                         <a href="/pages/approach.html" class="flex flex-col">
@@ -280,7 +289,7 @@
                         </div>
                     </li>
                     <li id="nav-socials"
-                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-[#d4d4d4]/15 px-3 rounded-full py-0.5 transition-all">
+                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-gray/15 px-3 rounded-full py-0.5 transition-all">
                         <div class="opacity-75 hover:opacity-100 transition-all flex items-center space-x-1">
                             <span>Socials</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -291,7 +300,7 @@
                         </div>
 
                         <div id="nav-socials-dropdown" class="hidden absolute top-6 left-0 w-48 md:visible">
-                            <div class="bg-[#303030] p-4 mt-3 rounded-sm">
+                            <div class="bg-charcoal p-4 mt-3 rounded-sm">
                                 <ul class="space-y-4">
                                     <li>
                                         <a href="https://github.com/HelloCoop" target="_blank" class="flex items-center
@@ -361,7 +370,7 @@
         </div>
 
         <div id="mobile-nav-dropdown"
-            class="hidden px-4 max-w-6xl mx-auto pb-12 pt-0 bg-[#303030] fixed h-screen w-full overflow-y-auto">
+            class="hidden px-4 max-w-6xl mx-auto pb-12 pt-0 bg-charcoal fixed h-screen w-full overflow-y-auto">
             <div class="text-right">
                 <a href="mailto:contact@hello.coop?subject=Hellō Inquiry" class="text-right !opacity-100">Contact</a>
             </div>
@@ -496,7 +505,7 @@
             </h2>
         </section>
 
-        <section class="bg-[#e8e8e8] dark:bg-[#212121] mt-10 md:mt-20">
+        <section class="callout">
             <div class="max-w-6xl mx-auto py-10 px-4">
                 <h1 class="text-4xl md:text-6xl font-bold italic">Identity on the internet is broken</h1>
                 <h2 class="text-3xl md:text-5xl font-semibold opacity-50 mt-4">Cybercrime is Exploding</h1>
@@ -532,7 +541,7 @@
             </div>
         </section>
 
-        <section class="bg-[#e8e8e8] dark:bg-[#212121] mt-16 md:mt-20">
+        <section class="callout">
             <div class="max-w-6xl mx-auto py-10 px-4">
                 <h1 class="text-4xl md:text-6xl font-bold italic">The Interchange Solution</h1>
                 <h2 class="text-3xl md:text-5xl font-semibold leading-tight opacity-50 mt-4">Hellō Identity Interchange
@@ -697,38 +706,37 @@
             </div>
         </section>
 
-        <section class="bg-[#e8e8e8] dark:bg-[#212121] mt-16 md:mt-20">
+        <section class="callout">
             <div class="max-w-6xl mx-auto py-10 px-4">
                 <h1 class="text-4xl md:text-6xl font-bold italic">Building a #BetterInternet</h1>
-                <h2
-                    class="text-3xl md:text-5xl font-semibold leading-tight text-[#303030]/50 dark:text-[#d4d4d4]/50 mt-4">
+                <h2 class="text-3xl md:text-5xl font-semibold leading-tight text-charcoal/50 dark:text-gray/50 mt-4">
                     Our founder designed
-                    <span class="text-[#303030]/75 dark:text-[#d4d4d4]/75">The OAuth 2.0 Authorization Framework</span>
-                    and <span class="text-[#303030]/75 dark:text-[#d4d4d4]/75">JSON Web Tokens (JWT)</span>,<br />and
-                    co-founded the <span class="text-[#303030]/75 dark:text-[#d4d4d4]/75">OpenID Foundation</span>.</h1>
+                    <span class="text-charcoal/75 dark:text-gray/75">The OAuth 2.0 Authorization Framework</span>
+                    and <span class="text-charcoal/75 dark:text-gray/75">JSON Web Tokens (JWT)</span>,<br />and
+                    co-founded the <span class="text-charcoal/75 dark:text-gray/75">OpenID Foundation</span>.</h1>
             </div>
         </section>
 
         <section class="max-w-6xl mx-auto mt-16 md:mt-20 space-y-16 md:space-y-20">
             <div class="px-4">
-                <h2 class="text-xl md:text-3xl mt-0 text-[#303030]/50 dark:text-[#d4d4d4]/50">
+                <h2 class="text-xl md:text-3xl mt-0 text-charcoal/50 dark:text-gray/50">
                     Today, we're building on that foundation with work on:
                 </h2>
                 <ul
-                    class="text-xl md:text-3xl mt-4 space-y-2 text-[#303030]/50 dark:text-[#d4d4d4]/50 list-disc list-outside ms-5 md:ms-8">
-                    <li class="text-[#303030]/75 dark:text-[#d4d4d4]/75">The OAuth 2.1 Authorization Framework</li>
-                    <li class="text-[#303030]/75 dark:text-[#d4d4d4]/75">Interoperability Profiling for Secure Identity
+                    class="text-xl md:text-3xl mt-4 space-y-2 text-charcoal/50 dark:text-gray/50 list-disc list-outside ms-5 md:ms-8">
+                    <li class="text-charcoal/75 dark:text-gray/75">The OAuth 2.1 Authorization Framework</li>
+                    <li class="text-charcoal/75 dark:text-gray/75">Interoperability Profiling for Secure Identity
                         in the Enterprise (IPSIE)</li>
-                    <li class="text-[#303030]/75 dark:text-[#d4d4d4]/75">OpenID Provider Commands</li>
-                    <li class="text-[#303030]/75 dark:text-[#d4d4d4]/75">OpenID Connect Enterprise Extensions</li>
-                    <li class="text-[#303030]/75 dark:text-[#d4d4d4]/75">JSON Web Token Best Current Practices</li>
-                    <li class="text-[#303030]/75 dark:text-[#d4d4d4]/75">OpenID Connect Key Binding</li>
-                    <li class="text-[#303030]/75 dark:text-[#d4d4d4]/75">Email Verification Protocol</li>
+                    <li class="text-charcoal/75 dark:text-gray/75">OpenID Provider Commands</li>
+                    <li class="text-charcoal/75 dark:text-gray/75">OpenID Connect Enterprise Extensions</li>
+                    <li class="text-charcoal/75 dark:text-gray/75">JSON Web Token Best Current Practices</li>
+                    <li class="text-charcoal/75 dark:text-gray/75">OpenID Connect Key Binding</li>
+                    <li class="text-charcoal/75 dark:text-gray/75">Email Verification Protocol</li>
                 </ul>
             </div>
         </section>
 
-        <section class="bg-[#e8e8e8] dark:bg-[#212121] text-[#303030] dark:text-[#d4d4d4] mt-16 md:mt-20">
+        <section class="callout">
             <div class="max-w-6xl mx-auto py-10 md:py-20 px-4">
                 <h1 class="text-4xl md:text-6xl font-bold">News</h1>
                 <ul id="posts" class="mt-10 md:mt-16 space-y-10">
@@ -861,7 +869,7 @@
         </div>
 
         <div
-            class="max-w-6xl w-full h-12 flex items-center justify-center border-t border-[#303030]/25 dark:border-[#d4d4d4]/25 text-xs md:text-sm space-x-2">
+            class="max-w-6xl w-full h-12 flex items-center justify-center border-t border-charcoal/25 dark:border-gray/25 text-xs md:text-sm space-x-2">
             <div class="flex items-center space-x-4 py-2 md:py-0">
                 <a href="/terms-of-service.html">Terms of Service</a>
                 <a href="/privacy-policy.html">Privacy Policy</a>
@@ -955,7 +963,7 @@
                 const date = dayjs(post.querySelector("pubDate")?.textContent).subtract(8, 'hours').format('ddd, DD MMM YYYY')
                 const li = `
                     <li>
-                        <a href="${url}" target="_blank" class="no-global-hover flex flex-col md:flex-row items-center gap-5 md:gap-10 hover:bg-[#303030]/10 dark:hover:bg-[#d4d4d4]/10 rounded-md p-4 -m-4 transition-all">
+                        <a href="${url}" target="_blank" class="no-global-hover flex flex-col md:flex-row items-center gap-5 md:gap-10 hover:bg-charcoal/10 dark:hover:bg-gray/10 rounded-md p-4 -m-4 transition-all">
                             <img src="${image}"
                                 alt="${title}" class="w-full md:w-1/3 rounded-lg border border-[#808080]" />
                             <div>
