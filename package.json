@@ -11,7 +11,7 @@
   "scripts": {
     "preview": "npm run build && vite S3 --open --port 5575",
     "dev": "npm run dev:index",
-    "dev:index": "cd src/index && npm run dev",
+    "dev:index": "cd src/index && npm run dev -- --open",
     "dev:proto": "cd src/protocol && vite --open",
     "dev:pages": "vitepress dev src/pages --open",
     "dev:legal": "vitepress dev src/legal --open",
