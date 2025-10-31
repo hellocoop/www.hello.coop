@@ -50,11 +50,15 @@
         }
 
         .card-description {
-            @apply h-full w-full md:w-1/2 text-lg md:text-2xl opacity-50 flex flex-col justify-between space-y-5;
+            @apply h-full w-full md:w-1/2 text-lg md:text-2xl text-[#303030]/50 dark:text-[#d4d4d4]/50 flex flex-col justify-between space-y-5;
         }
 
-        .card-link {
-            @apply uppercase text-sm font-semibold border border-[#303030] dark:border-[#d4d4d4] inline-flex items-center justify-center rounded-full text-[#303030] dark:text-[#d4d4d4] px-4 py-1 hover:bg-[#303030] dark:hover:bg-[#d4d4d4] hover:text-white dark:hover:text-[#303030] transition-all duration-150;
+        .card-link-primary {
+            @apply uppercase text-sm font-semibold border border-[#303030] dark:border-[#d4d4d4] inline-flex items-center justify-center rounded-full px-4 py-1 bg-[#303030] dark:bg-[#d4d4d4] text-white dark:text-[#303030];
+        }
+
+        .card-link-secondary {
+            @apply uppercase text-sm font-semibold border border-[#303030] dark:border-[#d4d4d4] inline-flex items-center justify-center rounded-full px-4 py-1 text-[#303030] dark:text-[#d4d4d4];
         }
 
         @keyframes float {
@@ -556,8 +560,17 @@
                     <div class="card-description">
                         <p>Placeholder text: one integration for all different things stop breaking developer flow with
                             identity configuration.</p>
-                        <div class="space-y-2">
-                            <a href="https://www.greenfielddemo.com/" target="_blank" class="card-link">
+                        <div class="space-y-2 flex flex-col items-start">
+                            <a href="mailto:contact@hello.coop?subject=Hellō Inquiry" target="_blank" class="card-link-primary">
+                                Contact
+                                <svg width="10" height="10" fil="currentColor" class="ml-2">
+                                    <g>
+                                        <path class="line" d="M 0 5 H 7"></path>
+                                        <path class="tip" d="M 5 10 L 10 5 L 5 0"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <a href="https://www.greenfielddemo.com/" target="_blank" class="card-link-secondary">
                                 Try out the demo
                                 <svg width="10" height="10" fil="currentColor" class="ml-2">
                                     <g>
@@ -587,8 +600,8 @@
                         <p>Placeholder text: one integration for all different things stop breaking developer flow with
                             identity configuration.</p>
                         <div class="space-y-2 flex flex-col items-start">
-                            <a href="https://www.b2bsaasdemo.com/" target="_blank" class="card-link">
-                                Try out the demo
+                            <a href="mailto:contact@hello.coop?subject=Hellō Inquiry" target="_blank" class="card-link-primary">
+                                Contact
                                 <svg width="10" height="10" fil="currentColor" class="ml-2">
                                     <g>
                                         <path class="line" d="M 0 5 H 7"></path>
@@ -596,8 +609,8 @@
                                     </g>
                                 </svg>
                             </a>
-                            <a href="#" target="" class="card-link">
-                                See developer documentation
+                            <a href="https://www.b2bsaasdemo.com/" target="_blank" class="card-link-secondary">
+                                Try out the demo
                                 <svg width="10" height="10" fil="currentColor" class="ml-2">
                                     <g>
                                         <path class="line" d="M 0 5 H 7"></path>
@@ -627,7 +640,7 @@
                             developer flow with
                             identity configuration.</p>
                         <div class="space-y-2 flex flex-col items-start">
-                            <a href="#" target="_blank" class="card-link">
+                            <a href="#" target="_blank" class="card-link-secondary">
                                 Try out the demo
                                 <svg width="10" height="10" fil="currentColor" class="ml-2">
                                     <g>
@@ -636,7 +649,7 @@
                                     </g>
                                 </svg>
                             </a>
-                            <a href="#" target="" class="card-link">
+                            <a href="#" target="" class="card-link-secondary">
                                 See developer documentation
                                 <svg width="10" height="10" fil="currentColor" class="ml-2">
                                     <g>
