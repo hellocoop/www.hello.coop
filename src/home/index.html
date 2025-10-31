@@ -846,79 +846,35 @@
         anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
     });
 
-    // Simple JS-driven hover to show Products dropdown
+    // Simple JS-driven hover to show dropdown menus
     (function () {
-        const products = document.getElementById('nav-products');
-        const productsDropdown = document.getElementById('nav-products-dropdown');
-        products.onmouseenter = () => {
-            productsDropdown.classList.remove('hidden');
-            products.querySelector('.marker').classList.remove('hidden');
-            products.querySelector('svg').classList.add('rotate-180');
-        }
-        products.onclick = () => {
-            productsDropdown.classList.toggle('hidden');
-            products.querySelector('.marker').classList.toggle('hidden');
-            products.querySelector('svg').classList.toggle('rotate-180');
-        }
-        products.onmouseleave = () => {
-            productsDropdown.classList.add('hidden');
-            products.querySelector('.marker').classList.add('hidden');
-            products.querySelector('svg').classList.remove('rotate-180');
+        function setupDropdown(navId, dropdownId) {
+            const nav = document.getElementById(navId);
+            const dropdown = document.getElementById(dropdownId);
+            const marker = nav.querySelector('.marker');
+            const svg = nav.querySelector('svg');
+
+            nav.onmouseenter = () => {
+                dropdown.classList.remove('hidden');
+                marker.classList.remove('hidden');
+                svg.classList.add('rotate-180');
+            }
+            nav.onclick = () => {
+                dropdown.classList.toggle('hidden');
+                marker.classList.toggle('hidden');
+                svg.classList.toggle('rotate-180');
+            }
+            nav.onmouseleave = () => {
+                dropdown.classList.add('hidden');
+                marker.classList.add('hidden');
+                svg.classList.remove('rotate-180');
+            }
         }
 
-        const devResources = document.getElementById('nav-dev-resources');
-        const devResourcesDropdown = document.getElementById('nav-dev-resources-dropdown');
-        devResources.onmouseenter = () => {
-            devResourcesDropdown.classList.remove('hidden');
-            devResources.querySelector('.marker').classList.remove('hidden');
-            devResources.querySelector('svg').classList.add('rotate-180');
-        }
-        devResources.onclick = () => {
-            devResourcesDropdown.classList.toggle('hidden');
-            devResources.querySelector('.marker').classList.toggle('hidden');
-            devResources.querySelector('svg').classList.toggle('rotate-180');
-        }
-        devResources.onmouseleave = () => {
-            devResourcesDropdown.classList.add('hidden');
-            devResources.querySelector('.marker').classList.add('hidden');
-            devResources.querySelector('svg').classList.remove('rotate-180');
-        }
-
-        const company = document.getElementById('nav-company');
-        const companyDropdown = document.getElementById('nav-company-dropdown');
-        company.onmouseenter = () => {
-            companyDropdown.classList.remove('hidden');
-            company.querySelector('.marker').classList.remove('hidden');
-            company.querySelector('svg').classList.add('rotate-180');
-        }
-        company.onclick = () => {
-            companyDropdown.classList.toggle('hidden');
-            company.querySelector('.marker').classList.toggle('hidden');
-            company.querySelector('svg').classList.toggle('rotate-180');
-        }
-        company.onmouseleave = () => {
-            companyDropdown.classList.add('hidden');
-            company.querySelector('.marker').classList.add('hidden');
-            company.querySelector('svg').classList.remove('rotate-180');
-        }
-
-        const socials = document.getElementById('nav-socials');
-        const socialsDropdown = document.getElementById('nav-socials-dropdown');
-        socials.onmouseenter = () => {
-            socialsDropdown.classList.remove('hidden');
-            socials.querySelector('.marker').classList.remove('hidden');
-            socials.querySelector('svg').classList.add('rotate-180');
-        }
-        socials.onclick = () => {
-            socialsDropdown.classList.toggle('hidden');
-            socials.querySelector('.marker').classList.toggle('hidden');
-            socials.querySelector('svg').classList.toggle('rotate-180');
-        }
-        socials.onmouseleave = () => {
-            socialsDropdown.classList.add('hidden');
-            socials.querySelector('.marker').classList.add('hidden');
-            socials.querySelector('svg').classList.remove('rotate-180');
-        }
+        setupDropdown('nav-products', 'nav-products-dropdown');
+        setupDropdown('nav-dev-resources', 'nav-dev-resources-dropdown');
+        setupDropdown('nav-company', 'nav-company-dropdown');
+        setupDropdown('nav-socials', 'nav-socials-dropdown');
 
         const mobileNavToggle = document.getElementById('movile-nav-toggle');
         const mobileNavDropdown = document.getElementById('mobile-nav-dropdown');
