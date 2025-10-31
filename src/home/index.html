@@ -643,7 +643,10 @@
     })();
 
     window.onload = async () => {
-        const RSS_URL = "/feed/";
+        processFeed();
+    }
+
+    async function processFeed() {
         const loadingPlaceholder = document.querySelector("#news-loading-placeholder")
         try {
             const res = await fetch("https://blog.hello.coop/feed")
