@@ -109,12 +109,12 @@
             @apply opacity-50 hover:opacity-100 transition-all;
         }
 
-        header a:not(#mobile-nav-dropdown a) {
+        header a:not(#mobile-nav-dropdown a):not(.no-global-hover) {
             @apply opacity-75 hover:opacity-100 transition-all;
         }
 
         .callout {
-            @apply bg-[#e8e8e8] dark:bg-[#212121] text-charcoal dark:text-gray mt-16 md:mt-20
+            @apply bg-[#e8e8e8] dark:bg-[#212121] text-charcoal dark:text-gray mt-16 md:mt-20;
         }
     </style>
 </head>
@@ -126,8 +126,9 @@
                 <span class="font-semibold text-center text-xl mr-8">Hellō</span>
                 <ul class="hidden md:flex items-center justify-left h-full">
                     <li id="nav-products"
-                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-gray/15 px-3 rounded-full py-0.5 transition-all group">
-                        <div class="opacity-75 flex items-center space-x-1 group-hover:opacity-100 transition-all">
+                        class="relative cursor-pointer h-full flex items-center justify-center transition-all group/li">
+                        <div
+                            class="opacity-75 flex items-center space-x-1 group-hover/li:opacity-100 transition-all rounded-full group-hover/li:bg-gray/15 px-3 py-0.5">
                             <span>Products</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
                                 stroke="currentColor"
@@ -137,37 +138,46 @@
                         </div>
 
                         <div id="nav-products-dropdown" class="hidden absolute top-6 left-0 w-70 md:visible">
-                            <div class="bg-charcoal p-4 mt-3 rounded-sm">
+                            <div class="bg-charcoal p-4 mt-5 rounded-sm">
                                 <ul class="space-y-4">
                                     <li>
-                                        <a href="#" class="flex flex-col">
+                                        <a href="#" class="flex flex-col no-global-hover group">
                                             <span>Hellō SSO</span>
-                                            <span class="text-sm">Placeholder
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" class="flex flex-col">
+                                        <a href="#" class="flex flex-col no-global-hover group">
                                             <span>Hellō Deprovisioning</span>
-                                            <span class="text-sm">Placeholder sample description</span>
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
+                                                sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" class="flex flex-col">
+                                        <a href="#" class="flex flex-col no-global-hover group">
                                             <span>Hellō Account Lifecycle</span>
-                                            <span class="text-sm">Placeholder sample description</span>
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
+                                                sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" class="flex flex-col">
+                                        <a href="#" class="flex flex-col no-global-hover group">
                                             <span>GitHub Lifecycle</span>
-                                            <span class="text-sm">Placeholder sample description</span>
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
+                                                sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" class="flex flex-col">
+                                        <a href="#" class="flex flex-col no-global-hover group">
                                             <span>Coding Platforms</span>
-                                            <span class="text-sm">Placeholder sample description</span>
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
+                                                sample description</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -175,8 +185,9 @@
                         </div>
                     </li>
                     <li id="nav-dev-resources"
-                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-gray/15 px-3 rounded-full py-0.5 transition-all">
-                        <div class="opacity-75 hover:opacity-100 transition-all flex items-center space-x-1 group">
+                        class="relative cursor-pointer h-full flex items-center justify-center group/li transition-all">
+                        <div
+                            class="opacity-75 group-hover/li:opacity-100 transition-all flex items-center space-x-1 group-hover/li:bg-gray/15 px-3 py-0.5 rounded-full">
                             <span>Dev Resources</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
                                 stroke="currentColor"
@@ -186,48 +197,57 @@
                         </div>
 
                         <div id="nav-dev-resources-dropdown" class="hidden absolute top-6 left-0 w-64 md:visible">
-                            <div class="bg-charcoal p-4 mt-3 rounded-sm">
+                            <div class="bg-charcoal p-4 mt-5 rounded-sm">
                                 <ul class="space-y-4">
                                     <li>
-                                        <a href="https://hello.dev/" target="_blank" class="flex flex-col">
+                                        <a href="https://hello.dev/" target="_blank"
+                                            class="flex flex-col no-global-hover group">
                                             <span>hello.dev</span>
-                                            <span class="text-sm">Placeholder
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
                                         <a href="https://hello-community.slack.com/join/shared_invite/zt-1eccnd2np-qJoOWBkHGnpxvBpCTtaH9g"
-                                            target="_blank" class="flex flex-col">
+                                            target="_blank" class="flex flex-col no-global-hover group">
                                             <span>Slack Community</span>
-                                            <span class="text-sm">Placeholder
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="https://console.hello.coop/" target="_blank" class="flex flex-col">
+                                        <a href="https://console.hello.coop/" target="_blank"
+                                            class="flex flex-col no-global-hover group">
                                             <span>Developer Console</span>
-                                            <span class="text-sm">Placeholder
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="https://playground.hello.dev/" target="_blank" class="flex flex-col">
+                                        <a href="https://playground.hello.dev/" target="_blank"
+                                            class="flex flex-col no-global-hover group">
                                             <span>Playground</span>
-                                            <span class="text-sm">Placeholder
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" target="_blank" class="flex flex-col">
+                                        <a href="#" target="_blank" class="flex flex-col no-global-hover group">
                                             <span>MCP Server</span>
-                                            <span class="text-sm">Placeholder
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" target="_blank" class="flex flex-col">
+                                        <a href="#" target="_blank" class="flex flex-col no-global-hover group">
                                             <span>Status Page</span>
-                                            <span class="text-sm">Placeholder
+                                            <span
+                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
@@ -236,8 +256,9 @@
                         </div>
                     </li>
                     <li id="nav-company"
-                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-gray/15 px-3 rounded-full py-0.5 transition-all">
-                        <div class="opacity-75 hover:opacity-100 transition-all flex items-center space-x-1 group">
+                        class="relative cursor-pointer h-full flex items-center justify-center group transition-all">
+                        <div
+                            class="opacity-75 group-hover:opacity-100 transition-all flex items-center space-x-1 group-hover:bg-gray/15 px-3 py-0.5 rounded-full">
                             <span>Company</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
                                 stroke="currentColor"
@@ -247,7 +268,7 @@
                         </div>
 
                         <div id="nav-company-dropdown" class="hidden absolute top-6 left-0 w-56 md:visible">
-                            <div class="bg-charcoal p-4 mt-3 rounded-sm">
+                            <div class="bg-charcoal p-4 mt-5 rounded-sm">
                                 <ul class="space-y-4">
                                     <li>
                                         <a href="/pages/approach.html" class="flex flex-col">
@@ -289,8 +310,9 @@
                         </div>
                     </li>
                     <li id="nav-socials"
-                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-gray/15 px-3 rounded-full py-0.5 transition-all">
-                        <div class="opacity-75 hover:opacity-100 transition-all flex items-center space-x-1">
+                        class="relative cursor-pointer h-full flex items-center justify-center group transition-all">
+                        <div
+                            class="opacity-75 group-hover:opacity-100 transition-all flex items-center space-x-1 group-hover:bg-gray/15 px-3 py-0.5 rounded-full">
                             <span>Socials</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
                                 stroke="currentColor"
@@ -300,7 +322,7 @@
                         </div>
 
                         <div id="nav-socials-dropdown" class="hidden absolute top-6 left-0 w-48 md:visible">
-                            <div class="bg-charcoal p-4 mt-3 rounded-sm">
+                            <div class="bg-charcoal p-4 mt-5 rounded-sm">
                                 <ul class="space-y-4">
                                     <li>
                                         <a href="https://github.com/HelloCoop" target="_blank" class="flex items-center
