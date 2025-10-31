@@ -108,62 +108,200 @@
                     </svg>
                 </button>
             </div>
-            <ul class="hidden lg:flex items-center justify-left space-x-4 opacity-75 w-1/2">
-                <li id="nav-products" class="flex items-center space-x-1 relative group cursor-pointer">
-                    <span>Products</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
-                        stroke="currentColor" class="size-3 mt-0.5 rotate-180 opacity-50">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                    </svg>
-                    <span class="md:visible w-full h-1 bg-[#d4d4d4]/50 absolute -bottom-3 left-0 rounded-t-xs" />
+            <ul class="hidden lg:flex items-center justify-left space-x-4 w-1/2 h-full">
+                <li id="nav-products" class="relative cursor-pointer h-full flex items-center justify-center">
+                    <div class="opacity-75 flex items-center space-x-1">
+                        <span>Products</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
+                            stroke="currentColor" class="size-3 mt-0.5 opacity-50">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                        <span
+                            class="marker hidden md:visible w-full h-1 bg-[#d4d4d4]/50 absolute bottom-0 left-0 rounded-t-xs" />
+                    </div>
+
+                    <div id="nav-products-dropdown" class="hidden absolute top-11 left-0 w-64 md:visible">
+                        <div class="bg-[#303030] p-4 mt-2 rounded-sm">
+                            <ul class="space-y-4 opacity-75">
+                                <li>
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō SSO</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō Deprovisioning</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō Account Lifecycle</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">GitHub Lifecycle</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Coding Platforms</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
-                <li class="flex items-center space-x-1">
-                    <span>Dev Resources</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
-                        stroke="currentColor" class="size-3 mt-0.5 opacity-50">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                    </svg>
+                <li id="nav-dev-resources" class="relative cursor-pointer h-full flex items-center justify-center">
+                    <div class="opacity-75 flex items-center space-x-1">
+                        <span>Dev Resources</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
+                            stroke="currentColor" class="size-3 mt-0.5 opacity-50">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                        <span
+                            class="marker hidden md:visible w-full h-1 bg-[#d4d4d4]/50 absolute bottom-0 left-0 rounded-t-xs" />
+                    </div>
+
+                    <div id="nav-dev-resources-dropdown" class="hidden absolute top-12 left-0 w-64 md:visible">
+                        <div class="bg-[#303030] p-4 mt-2 rounded-sm">
+                            <ul class="space-y-4 opacity-75">
+                                <li>
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō SSO</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō Deprovisioning</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō Account Lifecycle</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">GitHub Lifecycle</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Coding Platforms</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
-                <li class="flex items-center space-x-1">
-                    <span>Company</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
-                        stroke="currentColor" class="size-3 mt-0.5 opacity-50">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                    </svg>
+                <li id="nav-company" class="relative cursor-pointer h-full flex items-center justify-center">
+                    <div class="opacity-75 flex items-center space-x-1">
+                        <span>Company</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
+                            stroke="currentColor" class="size-3 mt-0.5 opacity-50">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                        <span
+                            class="marker hidden md:visible w-full h-1 bg-[#d4d4d4]/50 absolute bottom-0 left-0 rounded-t-xs" />
+                    </div>
+
+                    <div id="nav-company-dropdown" class="hidden absolute top-12 left-0 w-64 md:visible">
+                        <div class="bg-[#303030] p-4 mt-2 rounded-sm">
+                            <ul class="space-y-4 opacity-75">
+                                <li>
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō SSO</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō Deprovisioning</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō Account Lifecycle</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">GitHub Lifecycle</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Coding Platforms</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
-                <li class="flex items-center space-x-1">
-                    <span>Social</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
-                        stroke="currentColor" class="size-3 mt-0.5 opacity-50">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                    </svg>
+                <li id="nav-socials" class="relative cursor-pointer h-full flex items-center justify-center">
+                    <div class="opacity-75 flex items-center space-x-1">
+                        <span>Socials</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
+                            stroke="currentColor" class="size-3 mt-0.5 opacity-50">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                        <span
+                            class="marker hidden md:visible w-full h-1 bg-[#d4d4d4]/50 absolute bottom-0 left-0 rounded-t-xs" />
+                    </div>
+
+                    <div id="nav-socials-dropdown" class="hidden absolute top-12 left-0 w-64 md:visible">
+                        <div class="bg-[#303030] p-4 mt-2 rounded-sm">
+                            <ul class="space-y-4 opacity-75">
+                                <li>
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō SSO</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō Deprovisioning</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Hellō Account Lifecycle</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">GitHub Lifecycle</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                                <li class="flex flex-col">
+                                    <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <span class="group-hover:underline">Coding Platforms</span>
+                                        <span class="text-sm opacity-50">Placeholder sample description</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
             </ul>
-            <div id="products-dropdown"
-                class="bg-[#303030] absolute top-14 left-0 p-4 pr-12 rounded-sm hidden md:visible">
-                <ul class="space-y-4 opacity-75">
-                    <li class="flex flex-col">
-                        <span>Hellō SSO</span>
-                        <span class="text-sm opacity-50">Placeholder sample description</span>
-                    </li>
-                    <li class="flex flex-col">
-                        <span>Hellō Deprovisioning</span>
-                        <span class="text-sm opacity-50">Placeholder sample description</span>
-                    </li>
-                    <li class="flex flex-col">
-                        <span>Hellō Account Lifecycle</span>
-                        <span class="text-sm opacity-50">Placeholder sample description</span>
-                    </li>
-                    <li class="flex flex-col">
-                        <span>GitHub Lifecycle</span>
-                        <span class="text-sm opacity-50">Placeholder sample description</span>
-                    </li>
-                    <li class="flex flex-col">
-                        <span>Coding Platforms</span>
-                        <span class="text-sm opacity-50">Placeholder sample description</span>
-                    </li>
-                </ul>
-            </div>
 
             <span class="font-semibold text-center text-xl absolute">Hellō</span>
 
@@ -674,15 +812,51 @@
     // Simple JS-driven hover to show Products dropdown
     (function () {
         const products = document.getElementById('nav-products');
-        const productsDropdown = document.getElementById('products-dropdown');
+        const productsDropdown = document.getElementById('nav-products-dropdown');
+        products.onmouseenter = () => {
+            productsDropdown.classList.remove('hidden');
+            products.querySelector('.marker').classList.remove('hidden');
+        }
+        products.onmouseleave = () => {
+            productsDropdown.classList.add('hidden');
+            products.querySelector('.marker').classList.add('hidden');
+        }
+
+        const devResources = document.getElementById('nav-dev-resources');
+        const devResourcesDropdown = document.getElementById('nav-dev-resources-dropdown');
+        devResources.onmouseenter = () => {
+            devResourcesDropdown.classList.remove('hidden');
+            devResources.querySelector('.marker').classList.remove('hidden');
+        }
+        devResources.onmouseleave = () => {
+            devResourcesDropdown.classList.add('hidden');
+            devResources.querySelector('.marker').classList.add('hidden');
+        }
+
+        const company = document.getElementById('nav-company');
+        const companyDropdown = document.getElementById('nav-company-dropdown');
+        company.onmouseenter = () => {
+            companyDropdown.classList.remove('hidden');
+            company.querySelector('.marker').classList.remove('hidden');
+        }
+        company.onmouseleave = () => {
+            companyDropdown.classList.add('hidden');
+            company.querySelector('.marker').classList.add('hidden');
+        }
+
+        const socials = document.getElementById('nav-socials');
+        const socialsDropdown = document.getElementById('nav-socials-dropdown');
+        socials.onmouseenter = () => {
+            socialsDropdown.classList.remove('hidden');
+            socials.querySelector('.marker').classList.remove('hidden');
+        }
+        socials.onmouseleave = () => {
+            socialsDropdown.classList.add('hidden');
+            socials.querySelector('.marker').classList.add('hidden');
+        }
+
         const mobileNavToggle = document.getElementById('movile-nav-toggle');
         const mobileNavDropdown = document.getElementById('mobile-nav-dropdown');
-        products.onclick = () => {
-            productsDropdown.classList.toggle('hidden');
-        }
-        productsDropdown.onclick = () => {
-            productsDropdown.classList.toggle('hidden');
-        }
         mobileNavToggle.onclick = () => {
             mobileNavDropdown.classList.toggle('hidden');
             if (mobileNavDropdown.classList.contains('hidden')) {
