@@ -99,8 +99,12 @@
             transform: translate(-2px, 0);
         }
 
-        a:not(.no-global-hover) {
+        a:not(.no-global-hover):not(header a) {
             @apply opacity-50 hover:opacity-100 transition-all;
+        }
+
+        header a {
+            @apply opacity-75 hover:opacity-100 transition-all;
         }
     </style>
 </head>
@@ -116,7 +120,8 @@
                         <div class="opacity-75 flex items-center space-x-1 group-hover:opacity-100 transition-all">
                             <span>Products</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
-                                stroke="currentColor" class="size-3 mt-0.5 opacity-50 group-hover:opacity-100 transition-all">
+                                stroke="currentColor"
+                                class="size-3 mt-0.5 opacity-50 group-hover:opacity-100 transition-all">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </div>
@@ -127,8 +132,7 @@
                                     <li>
                                         <a href="#" class="flex flex-col">
                                             <span>Hellō SSO</span>
-                                            <span
-                                                class="text-sm">Placeholder
+                                            <span class="text-sm">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
@@ -165,7 +169,8 @@
                         <div class="opacity-75 hover:opacity-100 transition-all flex items-center space-x-1 group">
                             <span>Dev Resources</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
-                                stroke="currentColor" class="size-3 mt-0.5 opacity-50 group-hover:opacity-100 transition-all">
+                                stroke="currentColor"
+                                class="size-3 mt-0.5 opacity-50 group-hover:opacity-100 transition-all">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </div>
@@ -176,8 +181,7 @@
                                     <li>
                                         <a href="https://hello.dev/" target="_blank" class="flex flex-col">
                                             <span>hello.dev</span>
-                                            <span
-                                                class="text-sm">Placeholder
+                                            <span class="text-sm">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
@@ -185,40 +189,35 @@
                                         <a href="https://hello-community.slack.com/join/shared_invite/zt-1eccnd2np-qJoOWBkHGnpxvBpCTtaH9g"
                                             target="_blank" class="flex flex-col">
                                             <span>Slack Community</span>
-                                            <span
-                                                class="text-sm">Placeholder
+                                            <span class="text-sm">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
                                         <a href="https://console.hello.coop/" target="_blank" class="flex flex-col">
                                             <span>Developer Console</span>
-                                            <span
-                                                class="text-sm">Placeholder
+                                            <span class="text-sm">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
                                         <a href="https://playground.hello.dev/" target="_blank" class="flex flex-col">
                                             <span>Playground</span>
-                                            <span
-                                                class="text-sm">Placeholder
+                                            <span class="text-sm">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
                                         <a href="#" target="_blank" class="flex flex-col">
                                             <span>MCP Server</span>
-                                            <span
-                                                class="text-sm">Placeholder
+                                            <span class="text-sm">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
                                         <a href="#" target="_blank" class="flex flex-col">
                                             <span>Status Page</span>
-                                            <span
-                                                class="text-sm">Placeholder
+                                            <span class="text-sm">Placeholder
                                                 sample description</span>
                                         </a>
                                     </li>
@@ -231,7 +230,8 @@
                         <div class="opacity-75 hover:opacity-100 transition-all flex items-center space-x-1 group">
                             <span>Company</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
-                                stroke="currentColor" class="size-3 mt-0.5 opacity-50 group-hover:opacity-100 transition-all">
+                                stroke="currentColor"
+                                class="size-3 mt-0.5 opacity-50 group-hover:opacity-100 transition-all">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </div>
@@ -280,17 +280,18 @@
                     </li>
                     <li id="nav-socials"
                         class="relative cursor-pointer h-full flex items-center justify-center hover:bg-[#d4d4d4]/15 px-3 rounded-full py-0.5 transition-all">
-                        <div class="opacity-50 hover:opacity-100 transition-all flex items-center space-x-1">
+                        <div class="opacity-75 hover:opacity-100 transition-all flex items-center space-x-1">
                             <span>Socials</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
-                                stroke="currentColor" class="size-3 mt-0.5 opacity-50 group-hover:opacity-100 transition-all">
+                                stroke="currentColor"
+                                class="size-3 mt-0.5 opacity-50 group-hover:opacity-100 transition-all">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </div>
 
                         <div id="nav-socials-dropdown" class="hidden absolute top-6 left-0 w-48 md:visible">
                             <div class="bg-[#303030] p-4 mt-3 rounded-sm">
-                                <ul class="space-y-4 opacity-75">
+                                <ul class="space-y-4">
                                     <li>
                                         <a href="https://github.com/HelloCoop" target="_blank" class="flex items-center
                                             space-x-2">
@@ -346,8 +347,7 @@
                 </ul>
             </div>
             <div class="text-right">
-                <a href="mailto:contact@hello.coop?subject=Hellō Inquiry"
-                    class="hidden md:inline-block">Contact</a>
+                <a href="mailto:contact@hello.coop?subject=Hellō Inquiry" class="hidden md:inline-block">Contact</a>
                 <div class="md:hidden flex items-center justify-left">
                     <button id="movile-nav-toggle" class="cursor-pointer opacity-50 hover:opacity-100 transition-all">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -593,7 +593,8 @@
                                     </g>
                                 </svg>
                             </a>
-                            <a href="https://www.greenfielddemo.com/" target="_blank" class="card-link-secondary no-global-hover">
+                            <a href="https://www.greenfielddemo.com/" target="_blank"
+                                class="card-link-secondary no-global-hover">
                                 Try out the demo
                                 <svg width="10" height="10" fil="currentColor" class="ml-2">
                                     <g>
@@ -633,7 +634,8 @@
                                     </g>
                                 </svg>
                             </a>
-                            <a href="https://www.b2bsaasdemo.com/" target="_blank" class="card-link-secondary no-global-hover">
+                            <a href="https://www.b2bsaasdemo.com/" target="_blank"
+                                class="card-link-secondary no-global-hover">
                                 Try out the demo
                                 <svg width="10" height="10" fil="currentColor" class="ml-2">
                                     <g>
