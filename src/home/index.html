@@ -103,8 +103,9 @@
             <div class="flex items-center">
                 <span class="font-semibold text-center text-xl mr-8">Hellō</span>
                 <ul class="hidden md:flex items-center justify-left h-full">
-                    <li id="nav-products" class="relative cursor-pointer h-full flex items-center justify-center px-2">
-                        <div class="opacity-75 flex items-center space-x-1">
+                    <li id="nav-products"
+                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-[#d4d4d4]/15 px-3 rounded-full py-0.5 transition-all group">
+                        <div class="opacity-75 flex items-center space-x-1 group-hover:opacity-100 transition-all">
                             <span>Products</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
                                 stroke="currentColor" class="size-3 mt-0.5 opacity-50 transition-all">
@@ -116,32 +117,34 @@
                             <div class="bg-[#303030] p-4 mt-4 rounded-sm">
                                 <ul class="space-y-4 opacity-75">
                                     <li>
-                                        <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
-                                            <span class="group-hover:underline">Hellō SSO</span>
+                                        <a href="#" class="flex flex-col">
+                                            <span>Hellō SSO</span>
+                                            <span
+                                                class="text-sm opacity-50 hover:group-opacity-100 transition-all">Placeholder
+                                                sample description</span>
+                                        </a>
+                                    </li>
+                                    <li class="flex flex-col">
+                                        <a href="#" class="flex flex-col">
+                                            <span>Hellō Deprovisioning</span>
                                             <span class="text-sm opacity-50">Placeholder sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
-                                            <span class="group-hover:underline">Hellō Deprovisioning</span>
+                                        <a href="#" class="flex flex-col">
+                                            <span>Hellō Account Lifecycle</span>
                                             <span class="text-sm opacity-50">Placeholder sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
-                                            <span class="group-hover:underline">Hellō Account Lifecycle</span>
+                                        <a href="#" class="flex flex-col">
+                                            <span>GitHub Lifecycle</span>
                                             <span class="text-sm opacity-50">Placeholder sample description</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
-                                            <span class="group-hover:underline">GitHub Lifecycle</span>
-                                            <span class="text-sm opacity-50">Placeholder sample description</span>
-                                        </a>
-                                    </li>
-                                    <li class="flex flex-col">
-                                        <a href="#" class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
-                                            <span class="group-hover:underline">Coding Platforms</span>
+                                        <a href="#" class="flex flex-col">
+                                            <span>Coding Platforms</span>
                                             <span class="text-sm opacity-50">Placeholder sample description</span>
                                         </a>
                                     </li>
@@ -150,7 +153,7 @@
                         </div>
                     </li>
                     <li id="nav-dev-resources"
-                        class="relative cursor-pointer h-full flex items-center justify-center px-1.5">
+                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-[#d4d4d4]/15 px-3 rounded-full py-0.5 transition-all">
                         <div class="opacity-75 flex items-center space-x-1">
                             <span>Dev Resources</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -163,39 +166,33 @@
                             <div class="bg-[#303030] p-4 mt-4 rounded-sm">
                                 <ul class="space-y-4 opacity-75">
                                     <li>
-                                        <a href="https://hello.dev/" target="_blank"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="https://hello.dev/" target="_blank" class="flex flex-col">
                                             <span>hello.dev</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
                                         <a href="https://hello-community.slack.com/join/shared_invite/zt-1eccnd2np-qJoOWBkHGnpxvBpCTtaH9g"
-                                            target="_blank"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                            target="_blank" class="flex flex-col">
                                             <span>Slack Community</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="https://console.hello.coop/" target="_blank"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="https://console.hello.coop/" target="_blank" class="flex flex-col">
                                             <span>Developer Console</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="https://playground.hello.dev/" target="_blank"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="https://playground.hello.dev/" target="_blank" class="flex flex-col">
                                             <span>Playground</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" target="_blank"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="#" target="_blank" class="flex flex-col">
                                             <span>MCP Server</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="#" target="_blank"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="#" target="_blank" class="flex flex-col">
                                             <span>Status Page</span>
                                         </a>
                                     </li>
@@ -203,7 +200,8 @@
                             </div>
                         </div>
                     </li>
-                    <li id="nav-company" class="relative cursor-pointer h-full flex items-center justify-center px-2">
+                    <li id="nav-company"
+                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-[#d4d4d4]/15 px-3 rounded-full py-0.5 transition-all">
                         <div class="opacity-75 flex items-center space-x-1">
                             <span>Company</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -216,44 +214,37 @@
                             <div class="bg-[#303030] p-4 mt-4 rounded-sm">
                                 <ul class="space-y-4 opacity-75">
                                     <li>
-                                        <a href="/pages/approach.html"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="/pages/approach.html" class="flex flex-col">
                                             <span>Approach</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="/pages/cooperative.html"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="/pages/cooperative.html" class="flex flex-col">
                                             <span>Cooperative</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="/pages/tenets.html"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="/pages/tenets.html" class="flex flex-col">
                                             <span>Tenets</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="/pages/laws-of-identity.html"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="/pages/laws-of-identity.html" class="flex flex-col">
                                             <span>Protecting Privacy</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="/pages/architecture.html"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="/pages/architecture.html" class="flex flex-col">
                                             <span>Computing Architecture</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="/pages/data-governance.html"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="/pages/data-governance.html" class="flex flex-col">
                                             <span>Data Governance</span>
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="/pages/protocol.html"
-                                            class="flex flex-col hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm">
+                                        <a href="/pages/protocol.html" class="flex flex-col">
                                             <span>Hellō Protocol</span>
                                         </a>
                                     </li>
@@ -261,7 +252,8 @@
                             </div>
                         </div>
                     </li>
-                    <li id="nav-socials" class="relative cursor-pointer h-full flex items-center justify-center px-2">
+                    <li id="nav-socials"
+                        class="relative cursor-pointer h-full flex items-center justify-center hover:bg-[#d4d4d4]/15 px-3 rounded-full py-0.5 transition-all">
                         <div class="opacity-75 flex items-center space-x-1">
                             <span>Socials</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
@@ -274,8 +266,8 @@
                             <div class="bg-[#303030] p-4 mt-4 rounded-sm">
                                 <ul class="space-y-4 opacity-75">
                                     <li>
-                                        <a href="https://github.com/HelloCoop" target="_blank"
-                                            class="hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm flex items-center space-x-2">
+                                        <a href="https://github.com/HelloCoop" target="_blank" class=flex items-center
+                                            space-x-2">
                                             <svg role="img" class="w-3.5" fill="currentColor" viewBox="0 0 24 24"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <title>GitHub</title>
@@ -286,8 +278,8 @@
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="https://www.linkedin.com/company/HelloCoop" target="_blank"
-                                            class="hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm flex items-center space-x-2">
+                                        <a href="https://www.linkedin.com/company/HelloCoop" target="_blank" class=flex
+                                            items-center space-x-2">
                                             <svg class="w-3.5" fill="currentColor" role="img" viewBox="0 0 24 24"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <title>LinkedIn</title>
@@ -298,8 +290,8 @@
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="https://x.com/HelloCoop" target="_blank"
-                                            class="hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm flex items-center space-x-2">
+                                        <a href="https://x.com/HelloCoop" target="_blank" class=flex items-center
+                                            space-x-2">
                                             <svg role="img" class="w-3" fill="currentColor" viewBox="0 0 24 24"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <title>X</title>
@@ -310,8 +302,8 @@
                                         </a>
                                     </li>
                                     <li class="flex flex-col">
-                                        <a href="https://www.youtube.com/@HelloCoop" target="_blank"
-                                            class="hover:bg-[#d4d4d4]/50 -m-2 p-2 rounded-sm flex items-center space-x-2">
+                                        <a href="https://www.youtube.com/@HelloCoop" target="_blank" class=flex
+                                            items-center space-x-2">
                                             <svg role="img" class="w-3.5" viewBox="0 0 24 24" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <title>YouTube</title>
@@ -580,7 +572,8 @@
                         <source srcset="/b2c-dark.png" media="(prefers-color-scheme: dark)">
                         <img src="/b2c-light.png" alt="phone showing continue with apple, google, and email buttons"
                             data-aos="slide"
-                            class="w-full md:w-auto -mb-5 mt-10 md:-mb-0 md:mt-0 md:h-full md:absolute md:right-10 md:-bottom-1">
+                            class="w-full md:w-auto -mb-5 mt-10 md:-mb-0 md:mt-0 md:h-full md:absolute md:right-10 md:-bottom-1"
+                            style="animation: float 5s infinite;">
                     </picture>
                 </div>
             </div>
@@ -618,7 +611,8 @@
                         <source srcset="/b2b-dark.png" media="(prefers-color-scheme: dark)">
                         <img src="/b2b-light.png" alt="phone showing continue with apple, google, and email buttons"
                             data-aos="slide"
-                            class="w-full md:w-auto -mb-5 mt-10 md:-mb-0 md:mt-0 md:h-full md:absolute md:right-10 md:-bottom-1">
+                            class="w-full md:w-auto -mb-5 mt-10 md:-mb-0 md:mt-0 md:h-full md:absolute md:right-10 md:-bottom-1"
+                            style="animation: float 5s infinite;">
                     </picture>
                 </div>
             </div>
@@ -657,7 +651,8 @@
                         <source srcset="/vibe-dark.png" media="(prefers-color-scheme: dark)">
                         <img src="/vibe-light.png" alt="phone showing continue with apple, google, and email buttons"
                             data-aos="slide"
-                            class="w-full md:w-auto -mb-5 mt-10 md:-mb-0 md:mt-0 md:h-full md:absolute md:right-10 md:-bottom-1">
+                            class="w-full md:w-auto -mb-5 mt-10 md:-mb-0 md:mt-0 md:h-full md:absolute md:right-10 md:-bottom-1"
+                            style="animation: float 5s infinite;">
                     </picture>
                 </div>
             </div>
