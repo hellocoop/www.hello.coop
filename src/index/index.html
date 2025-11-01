@@ -156,8 +156,10 @@
                             </svg>
                         </div>
 
-                        <div id="nav-products-dropdown" class="hidden absolute top-6 left-0 w-70 md:visible">
-                            <div class="bg-charcoal p-4 mt-5 rounded-sm">
+                        <div id="nav-products-dropdown"
+                            class="invisible group-hover/li:visible absolute top-6 left-0 w-70">
+                            <div
+                                class="bg-charcoal p-4 mt-5 opacity-0 group-hover/li:opacity-100 rounded-sm perspective-1000 perspective-origin-top rotate-x-75 origin-top group-hover/li:-rotate-x-0 transition-all">
                                 <ul class="space-y-4">
                                     <li>
                                         <a href="#"
@@ -220,8 +222,10 @@
                             </svg>
                         </div>
 
-                        <div id="nav-dev-resources-dropdown" class="hidden absolute top-6 left-0 w-64 md:visible">
-                            <div class="bg-charcoal p-4 mt-5 rounded-sm">
+                        <div id="nav-dev-resources-dropdown"
+                            class="invisible group-hover/li:visible absolute top-6 left-0 w-70">
+                            <div
+                                class="bg-charcoal p-4 mt-5 opacity-0 group-hover/li:opacity-100 rounded-sm perspective-1000 perspective-origin-top rotate-x-75 origin-top group-hover/li:-rotate-x-0 transition-all">
                                 <ul class="space-y-4">
                                     <li>
                                         <a href="https://hello.dev/" target="_blank"
@@ -283,9 +287,9 @@
                         </div>
                     </li>
                     <li id="nav-company"
-                        class="relative cursor-pointer h-full flex items-center justify-center group transition-all">
+                        class="relative cursor-pointer h-full flex items-center justify-center group/li transition-all">
                         <div
-                            class="opacity-75 group-hover:opacity-100 transition-all flex items-center space-x-1 group-hover:bg-gray/15 px-3 py-0.5 rounded-full">
+                            class="opacity-75 group-hover/li:opacity-100 transition-all flex items-center space-x-1 group-hover/li:bg-gray/15 px-3 py-0.5 rounded-full">
                             <span>Company</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
                                 stroke="currentColor"
@@ -294,8 +298,10 @@
                             </svg>
                         </div>
 
-                        <div id="nav-company-dropdown" class="hidden absolute top-6 left-0 w-56 md:visible">
-                            <div class="bg-charcoal p-4 mt-5 rounded-sm">
+                        <div id="nav-company-dropdown"
+                            class="invisible group-hover/li:visible absolute top-6 left-0 w-70">
+                            <div
+                                class="bg-charcoal p-4 mt-5 opacity-0 group-hover/li:opacity-100 rounded-sm perspective-1000 perspective-origin-top rotate-x-75 origin-top group-hover/li:-rotate-x-0 transition-all">
                                 <ul class="space-y-2">
                                     <li>
                                         <a href="/pages/approach.html"
@@ -344,9 +350,9 @@
                         </div>
                     </li>
                     <li id="nav-socials"
-                        class="relative cursor-pointer h-full flex items-center justify-center group transition-all">
+                        class="relative cursor-pointer h-full flex items-center justify-center group/li transition-all">
                         <div
-                            class="opacity-75 group-hover:opacity-100 transition-all flex items-center space-x-1 group-hover:bg-gray/15 px-3 py-0.5 rounded-full">
+                            class="opacity-75 group-hover/li:opacity-100 transition-all flex items-center space-x-1 group-hover/li:bg-gray/15 px-3 py-0.5 rounded-full">
                             <span>Socials</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
                                 stroke="currentColor"
@@ -355,8 +361,10 @@
                             </svg>
                         </div>
 
-                        <div id="nav-socials-dropdown" class="hidden absolute top-6 left-0 w-48 md:visible">
-                            <div class="bg-charcoal p-4 mt-5 rounded-sm">
+                        <div id="nav-socials-dropdown"
+                            class="invisible group-hover/li:visible absolute top-6 left-0 w-70">
+                            <div
+                                class="bg-charcoal p-4 mt-5 opacity-0 group-hover/li:opacity-100 rounded-sm perspective-1000 perspective-origin-top rotate-x-75 origin-top group-hover/li:-rotate-x-0 transition-all">
                                 <ul class="space-y-4">
                                     <li>
                                         <a href="https://github.com/HelloCoop" target="_blank"
@@ -949,26 +957,6 @@
 
     // Simple JS-driven hover to show dropdown menus
     (function () {
-        function setupDropdown(navId, dropdownId) {
-            const nav = document.getElementById(navId);
-            const dropdown = document.getElementById(dropdownId);
-            const svg = nav.querySelector('svg');
-
-            nav.onmouseenter = () => {
-                dropdown.classList.remove('hidden');
-                svg.classList.add('rotate-180');
-            }
-            nav.onmouseleave = () => {
-                dropdown.classList.add('hidden');
-                svg.classList.remove('rotate-180');
-            }
-        }
-
-        setupDropdown('nav-products', 'nav-products-dropdown');
-        setupDropdown('nav-dev-resources', 'nav-dev-resources-dropdown');
-        setupDropdown('nav-company', 'nav-company-dropdown');
-        setupDropdown('nav-socials', 'nav-socials-dropdown');
-
         const mobileNavToggle = document.getElementById('movile-nav-toggle');
         const mobileNavDropdown = document.getElementById('mobile-nav-dropdown');
         mobileNavToggle.onclick = () => {
