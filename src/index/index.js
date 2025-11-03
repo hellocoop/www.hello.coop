@@ -1,4 +1,4 @@
-import { createTimeline, svg } from 'animejs';
+import { createTimeline, spring } from 'animejs';
 
 window.onload = async () => {
     processFeed();
@@ -39,16 +39,19 @@ function orgsHaveControlAnimation() {
             scale: 1.5,
             duration: 500,
             transformOrigin: "10px 10px",
+            ease: spring({ bounce: .5 }),
         })
         .add('#provisioned-user', {
             translateX: 0,
             translateY: 0,
             duration: 1000,
+            ease: spring({ bounce: .15 }),
         })
         .add('#provisioned-cursor', {
             translateX: 0,
             translateY: 0,
             duration: 1000,
+            ease: spring({ bounce: .15 }),
         }, "<<")
         .add('#provisioned-user', {
             scale: 1,
@@ -110,16 +113,19 @@ function orgsHaveControlAnimation() {
             scale: 1.5,
             duration: 500,
             transformOrigin: "10px 10px",
+            ease: spring({ bounce: .5 }),
         })
         .add("#deprovisioned-cursor", {
             translateX: 57,
             translateY: 50,
-            duration: 1000,
+            duration: 500,
+            ease: spring({ bounce: .15 }),
         })
         .add("#deprovisioned-user", {
             translateX: 40,
             translateY: 35,
-            duration: 1000,
+            duration: 500,
+            ease: spring({ bounce: .15 }),
         }, "<<")
         .add('#deprovisioned-user', {
             opacity: 0,
