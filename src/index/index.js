@@ -1,4 +1,5 @@
 import AOS from 'aos';
+import { createTimeline } from 'animejs';
 import 'aos/dist/aos.css';
 
 window.onload = async () => {
@@ -13,6 +14,83 @@ window.onload = async () => {
         once: false, // whether animation should happen only once - while scrolling down
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+    });
+
+    orgsHaveControlAnimation();
+}
+
+function orgsHaveControlAnimation() {
+    const provisioning = createTimeline({
+        loop: true,
+        loopDelay: 1000,
+        easing: "easeInOutSine",
+    });
+    // position cursor and user offset from original position
+    provisioning.add('#provisioned-user', {
+        translateX: -75,
+        translateY: 50,
+        duration: 0,
+    });
+    provisioning.add('#cursor', {
+        translateX: -75,
+        translateY: 50,
+        duration: 0,
+    });
+    // fade in user and cursor
+    provisioning.add('#provisioned-user', {
+        translateX: -75,
+        translateY: 50,
+        opacity: [0, 1],
+        duration: 500,
+    });
+    provisioning.add('#cursor', {
+        translateX: -75,
+        translateY: 50,
+        opacity: [0, 1],
+        duration: 500,
+    });
+    // scale user to indicate selected
+    provisioning.add('#provisioned-user', {
+        scale: 1.5,
+        duration: 500,
+        transformOrigin: "10px 10px",
+    });
+    // move user and cursor to original position
+    provisioning.add('#provisioned-user', {
+        translateX: 0,
+        translateY: 0,
+        duration: 1000,
+    });
+    provisioning.add('#cursor', {
+        translateX: 0,
+        translateY: 0,
+        duration: 1000,
+    }, "<<");
+    // scale user to indicate deselection
+    provisioning.add('#provisioned-user', {
+        scale: 1,
+        duration: 500,
+        transformOrigin: "10px 10px",
+    });
+    provisioning.add('#cursor', {
+        opacity: 0,
+        duration: 1000,
+    });
+    // animate cloud line
+    provisioning.add('#provisioned-user-cloud-line', {
+        opacity: [0,1,0],
+        translateX: 100,
+        duration: 1500,
+    }, "<<");
+    // fade in provisioned user in cloud
+    provisioning.add('#provisioned-user-cloud', {
+        opacity: 1,
+        duration: 500,
+    }, "-=500");
+    // fade in provisioned user apps
+    provisioning.add('.provisioned-user-app', {
+        opacity: 1,
+        duration: 500,
     });
 }
 
