@@ -20,122 +20,122 @@ window.onload = async () => {
 }
 
 function orgsHaveControlAnimation() {
-    const provisioning = createTimeline({
+    createTimeline({
         loop: true,
         loopDelay: 1000,
         easing: "easeInOutSine",
-    });
+    })
     // reset all elements at init state
-    provisioning.add('#provisioned-user', {
+    .add('#provisioned-user', {
         translateX: -75,
         translateY: 50,
         opacity: 0,
         duration: 0,
-    });
-    provisioning.add('#cursor', {
+    })
+    .add('#cursor', {
         translateX: -75,
         translateY: 50,
         opacity: 0,
         duration: 0,
-    });
-    provisioning.add('#provisioned-user-cloud', {
+    })
+    .add('#provisioned-user-cloud', {
         opacity: 0,
         duration: 0,
-    });
-    provisioning.add('.provisioned-user-app', {
+    })
+    .add('.provisioned-user-app', {
         opacity: 0,
         duration: 0,
-    });
-    provisioning.add('#provisioned-user-cloud-line', {
+    })
+    .add('#provisioned-user-cloud-line', {
         opacity: 0,
         duration: 0,
-    });
-    provisioning.add('#provisioned-user-app-line-1', {
+    })
+    .add('#provisioned-user-app-line-1', {
         opacity: 0,
         duration: 0,
-    });
-    provisioning.add('#provisioned-user-app-line-2', {
+    })
+    .add('#provisioned-user-app-line-2', {
         opacity: 0,
         duration: 0,
-    });
-    provisioning.add('#provisioned-user-app-line-3', {
+    })
+    .add('#provisioned-user-app-line-3', {
         opacity: 0,
         duration: 0,
-    });
+    })
     // fade in user and cursor
-    provisioning.add('#provisioned-user', {
+    .add('#provisioned-user', {
         translateX: -75,
         translateY: 50,
         opacity: 1,
         duration: 1000,
-    });
-    provisioning.add('#cursor', {
+    })
+    .add('#cursor', {
         translateX: -75,
         translateY: 50,
         opacity: 1,
         duration: 500,
-    });
+    })
     // scale user to indicate selected
-    provisioning.add('#provisioned-user', {
+    .add('#provisioned-user', {
         scale: 1.5,
         duration: 500,
         transformOrigin: "10px 10px",
-    });
+    })
     // move user and cursor to original position
-    provisioning.add('#provisioned-user', {
+    .add('#provisioned-user', {
         translateX: 0,
         translateY: 0,
         duration: 1000,
-    });
-    provisioning.add('#cursor', {
+    })
+    .add('#cursor', {
         translateX: 0,
         translateY: 0,
         duration: 1000,
-    }, "<<");
+    }, "<<")
     // scale user to indicate deselection
-    provisioning.add('#provisioned-user', {
+    .add('#provisioned-user', {
         scale: 1,
         duration: 500,
         transformOrigin: "10px 10px",
-    });
-    provisioning.add('#cursor', {
+    })
+    .add('#cursor', {
         opacity: 0,
         duration: 1000,
-    });
+    })
     // animate cloud line
-    provisioning.add('#provisioned-user-cloud-line', {
+    .add('#provisioned-user-cloud-line', {
         opacity: [0,1,0],
         translateX: 100,
         duration: 1500,
-    }, "<<");
+    }, "<<")
     // fade in provisioned user in cloud
-    provisioning.add('#provisioned-user-cloud', {
+    .add('#provisioned-user-cloud', {
         opacity: 1,
         duration: 500,
-    }, "-=500");
-    provisioning.add('#provisioned-user-app-line-1', {
+    }, "-=500")
+    .add('#provisioned-user-app-line-1', {
         opacity: [0,1,0],
         duration: 1500,
         translateX: 150,
         translateY: -85,
-    });
-    provisioning.add('#provisioned-user-app-line-2', {
+    })
+    .add('#provisioned-user-app-line-2', {
         opacity: [0,1,0],
         duration: 1500,
         translateX: 150,
         translateY: 90,
-    }, "<<");
-    provisioning.add('#provisioned-user-app-line-3', {
+    }, "<<")
+    .add('#provisioned-user-app-line-3', {
         opacity: [0,1,0],
         duration: 1500,
         translateX: 75,
-        translateY: 85,
-    }, "<<");
+        translateY: 82.5,
+    }, "<<")
     // fade in provisioned user apps
-    provisioning.add('.provisioned-user-app', {
+    .add('.provisioned-user-app', {
         opacity: 1,
         duration: 500,
-    }, "-=750");
+    }, "-=500")
 }
 
 async function processFeed() {
