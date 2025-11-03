@@ -118,13 +118,13 @@ function orgsHaveControlAnimation() {
         .add("#deprovisioned-cursor", {
             translateX: 57,
             translateY: 50,
-            duration: 500,
+            duration: 1000,
             ease: spring({ bounce: .15 }),
         })
         .add("#deprovisioned-user", {
             translateX: 40,
             translateY: 35,
-            duration: 500,
+            duration: 1000,
             ease: spring({ bounce: .15 }),
         }, "<<")
         .add('#deprovisioned-user', {
