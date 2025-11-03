@@ -26,69 +26,56 @@ function orgsHaveControlAnimation() {
         easing: "easeInOutSine",
     })
     // reset all elements at init state
-    .add('#provisioned-user', {
+    .set('#provisioned-user', {
+        translateX: -75,
+        translateY: 50,
+        opacity: 0,
+    })
+    .set('#provisioned-cursor', {
         translateX: -75,
         translateY: 50,
         opacity: 0,
         duration: 0,
     })
-    .add('#provisioned-cursor', {
-        translateX: -75,
-        translateY: 50,
-        opacity: 0,
-        duration: 0,
-    })
-    .add('#deprovisioned-cursor', {
+    .set('#deprovisioned-cursor', {
         translateX: 0,
         opacity: 0,
-        duration: 0,
     })
-    .add('#provisioned-user-cloud', {
-        opacity: 0,
-        duration: 0,
-    })
-    .add('#provisioned-user-app-1', {
-        opacity: 0,
-        duration: 0,
-    })
-    .add('#provisioned-user-app-2', {
-        opacity: 0,
-        duration: 0,
-    })
-    .add('#provisioned-user-app-3', {
+    .set('#provisioned-user-cloud', {
         opacity: 0,
     })
-    .add('#provisioned-user-cloud-line', {
+    .set('#provisioned-user-app-1', {
         opacity: 0,
-        duration: 0,
     })
-    .add('#deprovisioned-user-cloud-line', {
+    .set('#provisioned-user-app-2', {
         opacity: 0,
-        duration: 0,
     })
-    .add('#provisioned-user-app-line-1', {
+    .set('#provisioned-user-app-3', {
         opacity: 0,
-        duration: 0,
     })
-    .add('#provisioned-user-app-line-2', {
+    .set('#provisioned-user-cloud-line', {
         opacity: 0,
-        duration: 0,
     })
-    .add('#provisioned-user-app-line-3', {
+    .set('#deprovisioned-user-cloud-line', {
         opacity: 0,
-        duration: 0,
     })
-    .add('#deprovisioned-user-app-line-1', {
+    .set('#provisioned-user-app-line-1', {
         opacity: 0,
-        duration: 0,
     })
-    .add('#deprovisioned-user-app-line-2', {
+    .set('#provisioned-user-app-line-2', {
         opacity: 0,
-        duration: 0,
     })
-    .add('#deprovisioned-user-app-line-3', {
+    .set('#provisioned-user-app-line-3', {
         opacity: 0,
-        duration: 0,
+    })
+    .set('#deprovisioned-user-app-line-1', {
+        opacity: 0,
+    })
+    .set('#deprovisioned-user-app-line-2', {
+        opacity: 0,
+    })
+    .set('#deprovisioned-user-app-line-3', {
+        opacity: 0,
     })
     // fade in user and cursor
     .add('#provisioned-user', {
