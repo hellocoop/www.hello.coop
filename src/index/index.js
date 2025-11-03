@@ -33,7 +33,7 @@ function orgsHaveControlAnimation() {
         translateX: -75,
         translateY: 50,
     })
-    .set(['#provisioned-cursor', '#deprovisioned-cursor', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3', '#provisioned-user-app-line-1', '#provisioned-user-app-line-2', '#provisioned-user-app-line-3', '#provisioned-user-cloud-line', '#deprovisioned-user-cloud-line', '#deprovisioned-user-app-line-1', '#deprovisioned-user-app-line-2', '#deprovisioned-user-app-line-3'], {
+    .set(['#provisioned-user', '#provisioned-cursor', '#deprovisioned-cursor', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3', '#provisioned-user-app-line-1', '#provisioned-user-app-line-2', '#provisioned-user-app-line-3', '#provisioned-user-cloud-line', '#deprovisioned-user-cloud-line', '#deprovisioned-user-app-line-1', '#deprovisioned-user-app-line-2', '#deprovisioned-user-app-line-3'], {
         opacity: 0,
     })
     .add('#provisioned-user', {
@@ -70,8 +70,8 @@ function orgsHaveControlAnimation() {
     })
     .add('#provisioned-cursor', {
         opacity: 0,
-        duration: 1000,
-    })
+        duration: 500,
+    }, "-=500")
     .add('#provisioned-user-cloud-line', {
         opacity: [0,1,0],
         translateX: 100,
@@ -115,6 +115,9 @@ function orgsHaveControlAnimation() {
         opacity: 1,
         duration: 1000,
         delay: 1000,
+        onBegin: () => {
+            document.querySelector('#deprovisioned-cursor').style.display = 'block';
+        }
     })
     .add('#deprovisioned-user', {
         scale: 1.5,
@@ -135,10 +138,18 @@ function orgsHaveControlAnimation() {
         opacity: 0,
         duration: 500,
     })
+    .set('#deprovisioned-user', {
+        translateX: 0,
+        translateY: 0,
+        scale: 1,
+    })
     .add('#deprovisioned-cursor', {
         opacity: 0,
         duration: 500,
-    })
+        onComplete: () => {
+            document.querySelector('#deprovisioned-cursor').style.display = 'none';
+        }
+    }, "-=250")
     .add('#deprovisioned-user-cloud-line', {
         opacity: [0,1,0],
         duration: 1500,
@@ -174,6 +185,14 @@ function orgsHaveControlAnimation() {
         duration: 500,
     }, "<<")
     .add('#deprovisioned-user-app-3', {
+        opacity: 0,
+        duration: 500,
+    }, "<<")
+    .add(['#deprovisioned-user', '#deprovisioned-user-cloud', '#deprovisioned-user-app-1', '#deprovisioned-user-app-2', '#deprovisioned-user-app-3'], {
+        opacity: 1,
+        duration: 500,
+    })
+    .add(['#provisioned-user', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3'], {
         opacity: 0,
         duration: 500,
     }, "<<")
