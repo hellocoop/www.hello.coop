@@ -32,9 +32,14 @@ function orgsHaveControlAnimation() {
         opacity: 0,
         duration: 0,
     })
-    .add('#cursor', {
+    .add('#provision-cursor', {
         translateX: -75,
         translateY: 50,
+        opacity: 0,
+        duration: 0,
+    })
+    .add('#deprovision-cursor', {
+        translateX: 57,
         opacity: 0,
         duration: 0,
     })
@@ -69,7 +74,7 @@ function orgsHaveControlAnimation() {
         opacity: 1,
         duration: 1000,
     })
-    .add('#cursor', {
+    .add('#provision-cursor', {
         translateX: -75,
         translateY: 50,
         opacity: 1,
@@ -87,7 +92,7 @@ function orgsHaveControlAnimation() {
         translateY: 0,
         duration: 1000,
     })
-    .add('#cursor', {
+    .add('#provision-cursor', {
         translateX: 0,
         translateY: 0,
         duration: 1000,
@@ -98,7 +103,7 @@ function orgsHaveControlAnimation() {
         duration: 500,
         transformOrigin: "10px 10px",
     })
-    .add('#cursor', {
+    .add('#provision-cursor', {
         opacity: 0,
         duration: 1000,
     })
@@ -136,6 +141,11 @@ function orgsHaveControlAnimation() {
         opacity: 1,
         duration: 500,
     }, "-=500")
+    .add('#deprovision-cursor', {
+        opacity: 1,
+        duration: 1000,
+        delay: 1000,
+    })
 }
 
 async function processFeed() {
