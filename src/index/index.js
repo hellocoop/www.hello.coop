@@ -22,180 +22,181 @@ window.onload = async () => {
 function orgsHaveControlAnimation() {
     createTimeline({
         loop: true,
-        loopDelay: 1000,
+        loopDelay: 0,
         easing: "easeInOutSine",
     })
-    .set('#provisioned-user', {
-        translateX: -75,
-        translateY: 50,
-    })
-    .set('#provisioned-cursor', {
-        translateX: -75,
-        translateY: 50,
-    })
-    .set(['#provisioned-user', '#provisioned-cursor', '#deprovisioned-cursor', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3', '#provisioned-user-app-line-1', '#provisioned-user-app-line-2', '#provisioned-user-app-line-3', '#provisioned-user-cloud-line', '#deprovisioned-user-cloud-line', '#deprovisioned-user-app-line-1', '#deprovisioned-user-app-line-2', '#deprovisioned-user-app-line-3'], {
-        opacity: 0,
-    })
-    .add('#provisioned-user', {
-        translateX: -75,
-        translateY: 50,
-        opacity: 1,
-        duration: 1000,
-    })
-    .add('#provisioned-cursor', {
-        translateX: -75,
-        translateY: 50,
-        opacity: 1,
-        duration: 500,
-    })
-    .add('#provisioned-user', {
-        scale: 1.5,
-        duration: 500,
-        transformOrigin: "10px 10px",
-    })
-    .add('#provisioned-user', {
-        translateX: 0,
-        translateY: 0,
-        duration: 1000,
-    })
-    .add('#provisioned-cursor', {
-        translateX: 0,
-        translateY: 0,
-        duration: 1000,
-    }, "<<")
-    .add('#provisioned-user', {
-        scale: 1,
-        duration: 500,
-        transformOrigin: "10px 10px",
-    })
-    .add('#provisioned-cursor', {
-        opacity: 0,
-        duration: 500,
-    }, "-=500")
-    .add('#provisioned-user-cloud-line', {
-        opacity: [0,1,0],
-        translateX: 100,
-        duration: 1500,
-    }, "<<")
-    .add('#provisioned-user-cloud', {
-        opacity: 1,
-        duration: 500,
-    })
-    .add('#provisioned-user-app-line-1', {
-        opacity: [0,1,0],
-        duration: 1500,
-        translateX: 150,
-        translateY: -85,
-    })
-    .add('#provisioned-user-app-line-2', {
-        opacity: [0,1,0],
-        duration: 1500,
-        translateX: 150,
-        translateY: 90,
-    }, "<<")
-    .add('#provisioned-user-app-line-3', {
-        opacity: [0,1,0],
-        duration: 1500,
-        translateX: 75,
-        translateY: 82.5,
-    }, "<<")
-    .add('#provisioned-user-app-1', {
-        opacity: 1,
-        duration: 500,
-    })
-    .add('#provisioned-user-app-2', {
-        opacity: 1,
-        duration: 500,
-    }, "<<")
-    .add('#provisioned-user-app-3', {
-        opacity: 1,
-        duration: 500,
-    }, "<<")
-    .add("#deprovisioned-cursor", {
-        opacity: 1,
-        duration: 1000,
-        delay: 1000,
-        onBegin: () => {
-            document.querySelector('#deprovisioned-cursor').style.display = 'block';
-        }
-    })
-    .add('#deprovisioned-user', {
-        scale: 1.5,
-        duration: 500,
-        transformOrigin: "10px 10px",
-    })
-    .add("#deprovisioned-cursor", {
-        translateX: 57,
-        translateY: 50,
-        duration: 1000,
-    })
-    .add("#deprovisioned-user", {
-        translateX: 40,
-        translateY: 35,
-        duration: 1000,
-    }, "<<")
-    .add('#deprovisioned-user', {
-        opacity: 0,
-        duration: 500,
-    })
-    .set('#deprovisioned-user', {
-        translateX: 0,
-        translateY: 0,
-        scale: 1,
-    })
-    .add('#deprovisioned-cursor', {
-        opacity: 0,
-        duration: 500,
-        onComplete: () => {
-            document.querySelector('#deprovisioned-cursor').style.display = 'none';
-        }
-    }, "-=250")
-    .add('#deprovisioned-user-cloud-line', {
-        opacity: [0,1,0],
-        duration: 1500,
-        translateX: 100,
-    })
-    .add('#deprovisioned-user-cloud', {
-        opacity: 0,
-        duration: 500,
-    })
-    .add('#deprovisioned-user-app-line-1', {
-        opacity: [0,1,0],
-        translateY: -100,
-        translateX: 85,
-        duration: 1500,
-    })
-    .add('#deprovisioned-user-app-line-2', {
-        opacity: [0,1,0],
-        translateX: 200,
-        duration: 1500,
-    }, "<<")
-    .add('#deprovisioned-user-app-line-3', {
-        opacity: [0,1,0],
-        translateY: 90,
-        translateX: 150,
-        duration: 1500,
-    }, "<<")
-    .add('#deprovisioned-user-app-1', {
-        opacity: 0,
-        duration: 500,
-    })
-    .add('#deprovisioned-user-app-2', {
-        opacity: 0,
-        duration: 500,
-    }, "<<")
-    .add('#deprovisioned-user-app-3', {
-        opacity: 0,
-        duration: 500,
-    }, "<<")
-    .add(['#deprovisioned-user', '#deprovisioned-user-cloud', '#deprovisioned-user-app-1', '#deprovisioned-user-app-2', '#deprovisioned-user-app-3'], {
-        opacity: 1,
-        duration: 500,
-    })
-    .add(['#provisioned-user', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3'], {
-        opacity: 0,
-        duration: 500,
-    }, "<<")
+        .set('#provisioned-user', {
+            translateX: -75,
+            translateY: 50,
+        })
+        .set('#provisioned-cursor', {
+            translateX: -75,
+            translateY: 50,
+        })
+        .set(['#provisioned-user', '#provisioned-cursor', '#deprovisioned-cursor', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3', '#provisioned-user-app-line-1', '#provisioned-user-app-line-2', '#provisioned-user-app-line-3', '#provisioned-user-cloud-line', '#deprovisioned-user-cloud-line', '#deprovisioned-user-app-line-1', '#deprovisioned-user-app-line-2', '#deprovisioned-user-app-line-3'], {
+            opacity: 0,
+        })
+        .add('#provisioned-user', {
+            translateX: -75,
+            translateY: 50,
+            opacity: 1,
+            duration: 1000,
+        })
+        .add('#provisioned-cursor', {
+            translateX: -75,
+            translateY: 50,
+            opacity: 1,
+            duration: 500,
+        })
+        .add('#provisioned-user', {
+            scale: 1.5,
+            duration: 500,
+            transformOrigin: "10px 10px",
+        })
+        .add('#provisioned-user', {
+            translateX: 0,
+            translateY: 0,
+            duration: 1000,
+        })
+        .add('#provisioned-cursor', {
+            translateX: 0,
+            translateY: 0,
+            duration: 1000,
+        }, "<<")
+        .add('#provisioned-user', {
+            scale: 1,
+            duration: 500,
+            transformOrigin: "10px 10px",
+        })
+        .add('#provisioned-cursor', {
+            opacity: 0,
+            duration: 500,
+        }, "-=500")
+        .add('#provisioned-user-cloud-line', {
+            opacity: [0, 1, 0],
+            translateX: 100,
+            duration: 1500,
+        }, "<<")
+        .add('#provisioned-user-cloud', {
+            opacity: 1,
+            duration: 500,
+        })
+        .add('#provisioned-user-app-line-1', {
+            opacity: [0, 1, 0],
+            duration: 1500,
+            translateX: 150,
+            translateY: -85,
+        })
+        .add('#provisioned-user-app-line-2', {
+            opacity: [0, 1, 0],
+            duration: 1500,
+            translateX: 150,
+            translateY: 90,
+        }, "<<")
+        .add('#provisioned-user-app-line-3', {
+            opacity: [0, 1, 0],
+            duration: 1500,
+            translateX: 75,
+            translateY: 82.5,
+        }, "<<")
+        .add('#provisioned-user-app-1', {
+            opacity: 1,
+            duration: 500,
+        })
+        .add('#provisioned-user-app-2', {
+            opacity: 1,
+            duration: 500,
+        }, "<<")
+        .add('#provisioned-user-app-3', {
+            opacity: 1,
+            duration: 500,
+        }, "<<")
+        .add("#deprovisioned-cursor", {
+            opacity: 1,
+            duration: 1000,
+            delay: 1000,
+            onBegin: () => {
+                document.querySelector('#deprovisioned-cursor').style.display = 'block';
+            }
+        })
+        .add('#deprovisioned-user', {
+            scale: 1.5,
+            duration: 500,
+            transformOrigin: "10px 10px",
+        })
+        .add("#deprovisioned-cursor", {
+            translateX: 57,
+            translateY: 50,
+            duration: 1000,
+        })
+        .add("#deprovisioned-user", {
+            translateX: 40,
+            translateY: 35,
+            duration: 1000,
+        }, "<<")
+        .add('#deprovisioned-user', {
+            opacity: 0,
+            duration: 500,
+        })
+        .set('#deprovisioned-user', {
+            translateX: 0,
+            translateY: 0,
+            scale: 1,
+        })
+        .add('#deprovisioned-cursor', {
+            opacity: 0,
+            duration: 500,
+            onComplete: () => {
+                document.querySelector('#deprovisioned-cursor').style.display = 'none';
+            }
+        }, "-=250")
+        .add('#deprovisioned-user-cloud-line', {
+            opacity: [0, 1, 0],
+            duration: 1500,
+            translateX: 100,
+        })
+        .add('#deprovisioned-user-cloud', {
+            opacity: 0,
+            duration: 500,
+        })
+        .add('#deprovisioned-user-app-line-1', {
+            opacity: [0, 1, 0],
+            translateY: -100,
+            translateX: 85,
+            duration: 1500,
+        })
+        .add('#deprovisioned-user-app-line-2', {
+            opacity: [0, 1, 0],
+            translateX: 200,
+            duration: 1500,
+        }, "<<")
+        .add('#deprovisioned-user-app-line-3', {
+            opacity: [0, 1, 0],
+            translateY: 90,
+            translateX: 150,
+            duration: 1500,
+        }, "<<")
+        .add('#deprovisioned-user-app-1', {
+            opacity: 0,
+            duration: 500,
+        })
+        .add('#deprovisioned-user-app-2', {
+            opacity: 0,
+            duration: 500,
+        }, "<<")
+        .add('#deprovisioned-user-app-3', {
+            opacity: 0,
+            duration: 500,
+        }, "<<")
+        .add(['#deprovisioned-user', '#deprovisioned-user-cloud', '#deprovisioned-user-app-1', '#deprovisioned-user-app-2', '#deprovisioned-user-app-3'], {
+            opacity: 1,
+            duration: 500,
+            delay: 1000,
+        })
+        .add(['#provisioned-user', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3'], {
+            opacity: 0,
+            duration: 500,
+        }, "<<")
 }
 
 async function processFeed() {
