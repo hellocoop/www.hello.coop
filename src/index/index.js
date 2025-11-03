@@ -1,5 +1,5 @@
 import AOS from 'aos';
-import { createTimeline } from 'animejs';
+import { animate, createTimeline, svg } from 'animejs';
 import 'aos/dist/aos.css';
 
 window.onload = async () => {
@@ -25,7 +25,7 @@ function orgsHaveControlAnimation() {
         loopDelay: 1000,
         easing: "easeInOutSine",
     });
-    // position cursor and user offset from original position
+    // reset all elements at init state
     provisioning.add('#provisioned-user', {
         translateX: -75,
         translateY: 50,
@@ -35,6 +35,30 @@ function orgsHaveControlAnimation() {
     provisioning.add('#cursor', {
         translateX: -75,
         translateY: 50,
+        opacity: 0,
+        duration: 0,
+    });
+    provisioning.add('#provisioned-user-cloud', {
+        opacity: 0,
+        duration: 0,
+    });
+    provisioning.add('.provisioned-user-app', {
+        opacity: 0,
+        duration: 0,
+    });
+    provisioning.add('#provisioned-user-cloud-line', {
+        opacity: 0,
+        duration: 0,
+    });
+    provisioning.add('#provisioned-user-app-line-1', {
+        opacity: 0,
+        duration: 0,
+    });
+    provisioning.add('#provisioned-user-app-line-2', {
+        opacity: 0,
+        duration: 0,
+    });
+    provisioning.add('#provisioned-user-app-line-3', {
         opacity: 0,
         duration: 0,
     });
@@ -89,11 +113,29 @@ function orgsHaveControlAnimation() {
         opacity: 1,
         duration: 500,
     }, "-=500");
+    provisioning.add('#provisioned-user-app-line-1', {
+        opacity: [0,1,0],
+        duration: 1500,
+        translateX: 150,
+        translateY: -85,
+    });
+    provisioning.add('#provisioned-user-app-line-2', {
+        opacity: [0,1,0],
+        duration: 1500,
+        translateX: 150,
+        translateY: 90,
+    }, "<<");
+    provisioning.add('#provisioned-user-app-line-3', {
+        opacity: [0,1,0],
+        duration: 1500,
+        translateX: 75,
+        translateY: 85,
+    }, "<<");
     // fade in provisioned user apps
     provisioning.add('.provisioned-user-app', {
         opacity: 1,
         duration: 500,
-    });
+    }, "-=750");
 }
 
 async function processFeed() {
