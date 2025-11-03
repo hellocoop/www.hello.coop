@@ -29,55 +29,15 @@ function orgsHaveControlAnimation() {
     .set('#provisioned-user', {
         translateX: -75,
         translateY: 50,
-        opacity: 0,
     })
     .set('#provisioned-cursor', {
         translateX: -75,
         translateY: 50,
         opacity: 0,
-        duration: 0,
     })
-    .set('#deprovisioned-cursor', {
-        translateX: 0,
+    .set(['#deprovisioned-cursor', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3', '#provisioned-user-app-line-1', '#provisioned-user-app-line-2', '#provisioned-user-app-line-3', '#provisioned-user-cloud-line', '#deprovisioned-user-cloud-line', '#deprovisioned-user-app-line-1', '#deprovisioned-user-app-line-2', '#deprovisioned-user-app-line-3'], {
         opacity: 0,
     })
-    .set('#provisioned-user-cloud', {
-        opacity: 0,
-    })
-    .set('#provisioned-user-app-1', {
-        opacity: 0,
-    })
-    .set('#provisioned-user-app-2', {
-        opacity: 0,
-    })
-    .set('#provisioned-user-app-3', {
-        opacity: 0,
-    })
-    .set('#provisioned-user-cloud-line', {
-        opacity: 0,
-    })
-    .set('#deprovisioned-user-cloud-line', {
-        opacity: 0,
-    })
-    .set('#provisioned-user-app-line-1', {
-        opacity: 0,
-    })
-    .set('#provisioned-user-app-line-2', {
-        opacity: 0,
-    })
-    .set('#provisioned-user-app-line-3', {
-        opacity: 0,
-    })
-    .set('#deprovisioned-user-app-line-1', {
-        opacity: 0,
-    })
-    .set('#deprovisioned-user-app-line-2', {
-        opacity: 0,
-    })
-    .set('#deprovisioned-user-app-line-3', {
-        opacity: 0,
-    })
-    // fade in user and cursor
     .add('#provisioned-user', {
         translateX: -75,
         translateY: 50,
@@ -90,13 +50,11 @@ function orgsHaveControlAnimation() {
         opacity: 1,
         duration: 500,
     })
-    // scale user to indicate selected
     .add('#provisioned-user', {
         scale: 1.5,
         duration: 500,
         transformOrigin: "10px 10px",
     })
-    // move user and cursor to original position
     .add('#provisioned-user', {
         translateX: 0,
         translateY: 0,
@@ -107,7 +65,6 @@ function orgsHaveControlAnimation() {
         translateY: 0,
         duration: 1000,
     }, "<<")
-    // scale user to indicate deselection
     .add('#provisioned-user', {
         scale: 1,
         duration: 500,
@@ -117,17 +74,15 @@ function orgsHaveControlAnimation() {
         opacity: 0,
         duration: 1000,
     })
-    // animate cloud line
     .add('#provisioned-user-cloud-line', {
         opacity: [0,1,0],
         translateX: 100,
         duration: 1500,
     }, "<<")
-    // fade in provisioned user in cloud
     .add('#provisioned-user-cloud', {
         opacity: 1,
         duration: 500,
-    }, "-=500")
+    })
     .add('#provisioned-user-app-line-1', {
         opacity: [0,1,0],
         duration: 1500,
@@ -146,19 +101,18 @@ function orgsHaveControlAnimation() {
         translateX: 75,
         translateY: 82.5,
     }, "<<")
-    // fade in provisioned user apps
     .add('#provisioned-user-app-1', {
         opacity: 1,
         duration: 500,
-    }, "-=500")
+    })
     .add('#provisioned-user-app-2', {
         opacity: 1,
         duration: 500,
-    }, "-=500")
+    }, "<<")
     .add('#provisioned-user-app-3', {
         opacity: 1,
         duration: 500,
-    }, "-=500")
+    }, "<<")
     .add("#deprovisioned-cursor", {
         opacity: 1,
         duration: 1000,
@@ -184,18 +138,18 @@ function orgsHaveControlAnimation() {
         duration: 500,
     })
     .add('#deprovisioned-cursor', {
-        opacity: 0,
+        opacity: [1,0],
         duration: 500,
-    }, "-=250")
+    })
     .add('#deprovisioned-user-cloud-line', {
         opacity: [0,1,0],
         duration: 1500,
         translateX: 100,
-    }, "-=750")
+    })
     .add('#deprovisioned-user-cloud', {
         opacity: 0,
         duration: 500,
-    }, "-=750")
+    })
     .add('#deprovisioned-user-app-line-1', {
         opacity: [0,1,0],
         translateY: -100,
@@ -216,15 +170,15 @@ function orgsHaveControlAnimation() {
     .add('#deprovisioned-user-app-1', {
         opacity: 0,
         duration: 500,
-    }, "-=500")
+    })
     .add('#deprovisioned-user-app-2', {
         opacity: 0,
         duration: 500,
-    }, "-=500")
+    }, "<<")
     .add('#deprovisioned-user-app-3', {
         opacity: 0,
         duration: 500,
-    }, "-=500")
+    }, "<<")
 }
 
 async function processFeed() {
