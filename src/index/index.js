@@ -22,7 +22,7 @@ window.onload = async () => {
 function orgsHaveControlAnimation() {
     createTimeline({
         loop: true,
-        loopDelay: 0,
+        loopDelay: 1000,
         easing: "easeInOutSine",
     })
         .set('#provisioned-user', {
@@ -190,12 +190,11 @@ function orgsHaveControlAnimation() {
         }, "<<")
         .add(['#deprovisioned-user', '#deprovisioned-user-cloud', '#deprovisioned-user-app-1', '#deprovisioned-user-app-2', '#deprovisioned-user-app-3'], {
             opacity: 1,
-            duration: 500,
-            delay: 1000,
-        })
+            duration: 1000,
+        }, "+=1000")
         .add(['#provisioned-user', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3'], {
             opacity: 0,
-            duration: 500,
+            duration: 1000,
         }, "<<")
 }
 
