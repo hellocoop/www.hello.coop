@@ -29,24 +29,26 @@ function orgsHaveControlAnimation() {
     provisioning.add('#provisioned-user', {
         translateX: -75,
         translateY: 50,
+        opacity: 0,
         duration: 0,
     });
     provisioning.add('#cursor', {
         translateX: -75,
         translateY: 50,
+        opacity: 0,
         duration: 0,
     });
     // fade in user and cursor
     provisioning.add('#provisioned-user', {
         translateX: -75,
         translateY: 50,
-        opacity: [0, 1],
-        duration: 500,
+        opacity: 1,
+        duration: 1000,
     });
     provisioning.add('#cursor', {
         translateX: -75,
         translateY: 50,
-        opacity: [0, 1],
+        opacity: 1,
         duration: 500,
     });
     // scale user to indicate selected
