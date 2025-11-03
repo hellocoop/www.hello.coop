@@ -19,7 +19,7 @@
 }
 
 .hero-img::after,
-.card::after {
+.card::after:(.no-inset-shadow) {
     content: "";
     position: absolute;
     inset: 0;
