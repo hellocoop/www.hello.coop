@@ -3,7 +3,16 @@ import { createTimeline, spring } from 'animejs';
 window.onload = async () => {
     processFeed();
     handleDropdown();
+    usersHaveLostControlAnimation();
     orgsHaveControlAnimation();
+}
+
+function usersHaveLostControlAnimation() {
+    createTimeline({
+        loop: true,
+        loopDelay: 1000,
+        easing: "easeInOutSine",
+    })
 }
 
 function orgsHaveControlAnimation() {
