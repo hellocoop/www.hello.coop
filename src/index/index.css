@@ -18,7 +18,17 @@
     @apply mt-4 p-5 md:p-10 flex flex-col md:flex-row items-start justify-between min-h-56 md:h-[500px] border border-charcoal/25 dark:border-[#808080]/25 text-charcoal dark:text-gray rounded-xl relative font-light overflow-hidden;
 }
 
-.hero-img::after,
+.hero-img::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* so clicks pass through */
+    z-index: 1;
+    height: 100px;
+    background: linear-gradient(#ffffff00, #ffffff);
+    margin-top: auto;
+}
 .card::after {
     content: "";
     position: absolute;
@@ -30,8 +40,10 @@
 }
 
 @media (prefers-color-scheme: dark) {
-
-    .hero-img::after,
+    
+    .hero-img::after{
+        background: linear-gradient(#15151500, #151515);
+    }
     .card::after {
         box-shadow: inset 0 0 30px 30px #151515;
     }
