@@ -25,7 +25,6 @@ function orgsHaveControlAnimation() {
         loopDelay: 1000,
         easing: "easeInOutSine",
     })
-    // reset all elements at init state
     .set('#provisioned-user', {
         translateX: -75,
         translateY: 50,
@@ -33,9 +32,8 @@ function orgsHaveControlAnimation() {
     .set('#provisioned-cursor', {
         translateX: -75,
         translateY: 50,
-        opacity: 0,
     })
-    .set(['#deprovisioned-cursor', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3', '#provisioned-user-app-line-1', '#provisioned-user-app-line-2', '#provisioned-user-app-line-3', '#provisioned-user-cloud-line', '#deprovisioned-user-cloud-line', '#deprovisioned-user-app-line-1', '#deprovisioned-user-app-line-2', '#deprovisioned-user-app-line-3'], {
+    .set(['#provisioned-cursor', '#deprovisioned-cursor', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3', '#provisioned-user-app-line-1', '#provisioned-user-app-line-2', '#provisioned-user-app-line-3', '#provisioned-user-cloud-line', '#deprovisioned-user-cloud-line', '#deprovisioned-user-app-line-1', '#deprovisioned-user-app-line-2', '#deprovisioned-user-app-line-3'], {
         opacity: 0,
     })
     .add('#provisioned-user', {
@@ -138,7 +136,7 @@ function orgsHaveControlAnimation() {
         duration: 500,
     })
     .add('#deprovisioned-cursor', {
-        opacity: [1,0],
+        opacity: 0,
         duration: 500,
     })
     .add('#deprovisioned-user-cloud-line', {
