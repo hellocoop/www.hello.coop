@@ -57,29 +57,27 @@
                             <div
                                 class="bg-[#434343] p-4 mt-6 opacity-0 group-hover/li:opacity-100 rounded-b-sm rounded-tr-sm perspective-1000 perspective-origin-top rotate-x-75 origin-top group-hover/li:-rotate-x-0 transition-all">
                                 <ul class="space-y-4">
-                                    <li>
+                                    <li class="flex flex-col">
                                         <a href="#"
                                             class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
                                             <span>Hellō B2C SSO</span>
-                                            <span
-                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">
+                                            <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">
                                                 Give users choice of 17 providers</span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="flex flex-col">
                                         <a href="#"
                                             class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
                                             <span>Hellō B2B SSO</span>
-                                            <span
-                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">
+                                            <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">
                                                 Zero configuration enterprise SSO</span>
                                         </a>
-                                    </li>                                    <li class="flex flex-col">
+                                    </li>
+                                    <li class="flex flex-col">
                                         <a href="#"
                                             class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
                                             <span>Hellō Lifecycle</span>
-                                            <span
-                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">
+                                            <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">
                                                 Add offboarding to your B2B App</span>
                                         </a>
                                     </li>
@@ -87,8 +85,7 @@
                                         <a href="#"
                                             class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
                                             <span>GitHub Offboarding</span>
-                                            <span
-                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">
+                                            <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">
                                                 Simplify & automate compliance</span>
                                         </a>
                                     </li>
@@ -96,8 +93,7 @@
                                         <a href="#"
                                             class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
                                             <span>Coding Platforms</span>
-                                            <span
-                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">
+                                            <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">
                                                 Let devs add identity in seconds</span>
                                         </a>
                                     </li>
@@ -374,10 +370,10 @@
                 <div>
                     <span>Products</span>
                     <ul class="space-y-2 mt-2">
-                        <li><a href="#">Hellō SSO</a></li>
-                        <li><a href="#">Hellō Deprovisioning</a></li>
-                        <li><a href="#">Hellō Account Lifecycle</a></li>
-                        <li><a href="#">GitHub Lifecycle</a></li>
+                        <li><a href="#">Hellō B2C SSO</a></li>
+                        <li><a href="#">Hellō B2B SSO</a></li>
+                        <li><a href="#">Hellō Lifecycle</a></li>
+                        <li><a href="#">GitHub Offboarding</a></li>
                         <li><a href="#">Coding Platforms</a></li>
                     </ul>
                 </div>
@@ -840,7 +836,7 @@
                 <h1 class="text-4xl md:text-6xl font-bold italic">Building a #BetterInternet</h1>
                 <h2 class="text-3xl md:text-5xl font-semibold leading-tight text-charcoal/50 dark:text-gray/50 mt-4">
                     Standards That Power the Internet.</h2>
-                <div class="mt-12 text-xl md:text-3xl text-charcoal/50 dark:text-gray/50 space-y-6">
+                <div class="mt-12 text-xl md:text-2xl text-charcoal/50 dark:text-gray/50 space-y-6">
                     <p><span class="text-charcoal/75 dark:text-gray/75"><a href="https://www.linkedin.com/in/dickhardt/"
                                 target="_blank" class="ext-link-icon no-global-hover">Dick Hardt</a></span>, Founder &
                         CEO of Hellō, has
@@ -870,11 +866,17 @@
                         serves users, developers, and organizations equally.
                     </p>
                 </div>
+                <!-- <a href="#" target="_blank" class="card-link-primary no-global-hover mt-8">
+                    Explore Standards
+                    <svg width="10" height="10" fil="currentColor" class="ml-2">
+                        <g>
+                            <path class="line" d="M 0 5 H 7"></path>
+                            <path class="tip" d="M 5 10 L 10 5 L 5 0"></path>
+                        </g>
+                    </svg>
+                </a> -->
             </div>
-        </section>
-
-        <section class="callout">
-            <div class="max-w-6xl mx-auto py-10 md:py-20 px-4">
+            <div class="max-w-6xl mx-auto py-10 md:py-16 px-4">
                 <h1 class="text-4xl md:text-6xl font-bold">News</h1>
                 <ul id="posts" class="mt-10 md:mt-16 space-y-10">
                     <span id="news-loading-placeholder"
@@ -891,16 +893,17 @@
             </div>
         </section>
     </main>
+
     <footer class="flex flex-col justify-center w-full items-center max-w-6xl mx-auto px-4">
         <div class="py-12 grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
             <div>
                 <span>Products</span>
                 <ul class="space-y-2 mt-2">
-                    <li><a href="#" target="_blank">Hellō SSO</a></li>
-                    <li><a href="#" target="_blank">Hellō Deprovisioning</a></li>
-                    <li><a href="#" target="_blank">Hellō Account Lifecycle</a></li>
-                    <li><a href="#" target="_blank">GitHub Lifecycle</a></li>
-                    <li><a href="#" target="_blank">Coding Platforms</a></li>
+                    <li><a href="#">Hellō B2C SSO</a></li>
+                    <li><a href="#">Hellō B2B SSO</a></li>
+                    <li><a href="#">Hellō Lifecycle</a></li>
+                    <li><a href="#">GitHub Offboarding</a></li>
+                    <li><a href="#">Coding Platforms</a></li>
                 </ul>
             </div>
 
