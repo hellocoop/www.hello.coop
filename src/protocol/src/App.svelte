@@ -41,7 +41,9 @@
 {/if}
 
 <header class="h-12 sticky top-0 md:relative z-50 w-full bg-[#303030] flex items-center justify-center">
-  <a href="/" class="text-xl hover:underline focus-visible:underline text-white dark:text-[#d4d4d4]">Hellō</a>
+  <div style="max-width: 88rem; width: 100%; padding: 0rem 1rem;">
+    <a href="/" class="text-xl hover:underline focus-visible:underline text-white dark:text-[#d4d4d4]">Hellō</a>
+  </div>
 </header>
 <div class="lg:hidden sticky top-12 z-50 flex px-6 md:px-8 items-center justify-between h-12 w-full border-b border-black dark:border-white border-opacity-10 dark:border-opacity-10 bg-white dark:bg-[#151515]">
   <button on:click={()=>showMobileMenu=!showMobileMenu} class="dark:text-[#ebebeb] text-[#303030] opacity-60 text-xs hover:opacity-100 focus-visible:opacity-100 inline-flex items-center duration-150 transition">
