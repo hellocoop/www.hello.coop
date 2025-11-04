@@ -75,7 +75,9 @@ onMounted(() => {
     <template #layout-top>
       <div style="z-index: 10; position: fixed; width: 100%;">
         <header>
-          <a href="/" class="vp-raw">Hellō</a>
+          <div style="max-width: 88rem; width: 100%; padding: 0rem 1rem;">
+            <a href="/" class="vp-raw">Hellō</a>
+          </div>
         </header>
       </div>
     </template>
