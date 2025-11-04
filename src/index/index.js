@@ -10,9 +10,205 @@ window.onload = async () => {
 function usersHaveLostControlAnimation() {
     createTimeline({
         loop: true,
-        loopDelay: 1000,
+        loopDelay: 500,
         easing: "easeInOutSine",
     })
+        .set(["#app-1-bg", "#app-2-bg", "#app-3-bg", "#app-1-blue", "#app-1-yellow", "#app-2-pink", "#app-2-yellow", "#app-3-blue", "#app-3-pink", '#app-1-line-req-blue', '#app-1-line-req-yellow', '#app-2-line-req-yellow', '#app-2-line-req-pink', '#app-3-line-req-blue', '#app-3-line-req-pink', '#app-1-line-req-blue-res', '#app-1-line-req-yellow-res', '#app-2-line-req-yellow-res', '#app-2-line-req-pink-res', '#app-3-line-req-blue-res', '#app-3-line-req-pink-res', '#app-1-line-res-blue', '#app-1-line-res-yellow', '#app-2-line-res-pink', '#app-2-line-res-yellow', '#app-3-line-res-blue', '#app-3-line-res-pink'], {
+            opacity: 0
+        })
+        .add('#app-1-line-cloud', {
+            translateX: 212,
+            opacity: [0, 1, 0],
+            translateY: 130,
+            duration: 750,
+        })
+        .add('#app-2-line-cloud', {
+            translateX: 190,
+            opacity: [0, 1, 0],
+            translateY: 0,
+            duration: 750,
+            delay: 150,
+        }, "<<")
+        .add('#app-3-line-cloud', {
+            translateX: 205,
+            opacity: [0, 1, 0],
+            translateY: -130,
+            duration: 750,
+            delay: 250,
+        }, "<<")
+        .add('#app-1-line-req-blue', {
+            translateX: 225,
+            opacity: [0, 1, 0],
+            translateY: -127,
+            duration: 750,
+        }, "-=450")
+        .add("#source-1", {
+            opacity: [1, 0.85, 1],
+            duration: 250,
+        }, "-=250")
+        .add('#app-1-line-req-yellow', {
+            translateX: 192,
+            opacity: [0, 1, 0],
+            duration: 750,
+        }, "-=700")
+        .add("#source-2", {
+            opacity: [1, 0.85, 1],
+            duration: 250,
+        }, "-=250")
+        .add('#app-2-line-req-yellow', {
+            translateX: 190,
+            opacity: [0, 1, 0],
+            translateY: 0,
+            duration: 750,
+        }, "-=350")
+        .add("#source-2", {
+            opacity: [1, 0.85, 1],
+            duration: 250,
+        }, "-=250")
+        .add('#app-2-line-req-pink', {
+            translateX: 204,
+            translateY: 126,
+            opacity: [0, 1, 0],
+            duration: 750,
+        }, "-=700")
+        .add("#source-3", {
+            opacity: [1, 0.85, 1],
+            duration: 250,
+        }, "-=250")
+        .add('#app-3-line-req-blue', {
+            translateX: 225,
+            opacity: [0, 1, 0],
+            translateY: -127,
+            duration: 750,
+        }, "-=350")
+        .add("#source-1", {
+            opacity: [1, 0.85, 1],
+            duration: 250,
+        }, "-=250")
+        .add('#app-3-line-req-pink', {
+            translateX: 204,
+            translateY: 126,
+            opacity: [0, 1, 0],
+            duration: 750,
+        }, "-=700")
+        .add("#source-3", {
+            opacity: [1, 0.85, 1],
+            duration: 250,
+        }, "-=250")
+
+        .add('#app-1-line-req-blue-res', {
+            translateX: -225,
+            opacity: [0, 1, 0],
+            translateY: 127,
+            duration: 750,
+        }, "-=450")
+        .add('#app-1-line-req-yellow-res', {
+            translateX: -192,
+            opacity: [0, 1, 0],
+            duration: 750,
+        }, "<<")
+        .add('#app-2-line-req-yellow-res', {
+            translateX: -190,
+            opacity: [0, 1, 0],
+            translateY: 0,
+            duration: 750,
+        }, "-=350")
+        .add('#app-2-line-req-pink-res', {
+            translateX: -204,
+            translateY: -126,
+            opacity: [0, 1, 0],
+            duration: 750,
+        }, "<<")
+        .add('#app-3-line-req-blue-res', {
+            translateX: -225,
+            opacity: [0, 1, 0],
+            translateY: 127,
+            duration: 750,
+        }, "-=350")
+        .add('#app-3-line-req-pink-res', {
+            translateX: -204,
+            translateY: -125,
+            opacity: [0, 1, 0],
+            duration: 750,
+        }, "<<")
+        .add("#app-1-bg", {
+            opacity: 1,
+            duration: 250,
+        }, "-=250")
+        .add('#app-1-line-res-blue', {
+            translateX: -218,
+            translateY: -134,
+            opacity: [0, 1, 0],
+            duration: 750,
+        }, "-=500")
+        .add("#app-1-blue", {
+            opacity: 1,
+            duration: 250,
+        }, "-=250")
+        .add('#app-1-line-res-yellow', {
+            translateX: -218,
+            translateY: -134,
+            opacity: [0, 1, 0],
+            duration: 750,
+            delay: 250,
+        }, "-=750")
+        .add("#app-1-yellow", {
+            opacity: 1,
+            duration: 250,
+        }, "-=250")
+        .add("#app-2-bg", {
+            opacity: 1,
+            duration: 250,
+        }, "-=500")
+        .add('#app-2-line-res-pink', {
+            translateX: -185,
+            opacity: [0, 1, 0],
+            duration: 750,
+        }, "-=750")
+        .add("#app-2-pink", {
+            opacity: 1,
+            duration: 250,
+        }, "-=250")
+        .add('#app-2-line-res-yellow', {
+            translateX: -185,
+            opacity: [0, 1, 0],
+            duration: 750,
+            delay: 250,
+        }, "-=750")
+        .add("#app-2-yellow", {
+            opacity: 1,
+            duration: 250,
+        }, "-=250")
+        .add("#app-3-bg", {
+            opacity: 1,
+            duration: 250,
+        }, "-=500")
+        .add('#app-3-line-res-blue', {
+            translateX: -205,
+            translateY: 130,
+            opacity: [0, 1, 0],
+            duration: 750,
+        }, "-=650")
+        .add("#app-3-blue", {
+            opacity: 1,
+            duration: 250,
+        }, "-=500")
+        .add('#app-3-line-res-pink', {
+            translateX: -205,
+            translateY: 130,
+            opacity: [0, 1, 0],
+            duration: 750,
+            delay: 250,
+        }, "-=750")
+        .add("#app-3-pink", {
+            opacity: 1,
+            duration: 250,
+        }, "-=500")
+        .add(['#app-1', '#app-2', '#app-3'], {
+            opacity: 0,
+            duration: 500,
+            delay: 250,
+        })
 }
 
 function orgsHaveControlAnimation() {
