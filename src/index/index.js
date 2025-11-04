@@ -225,13 +225,13 @@ function orgsHaveControlAnimation() {
             translateX: -75,
             translateY: 60,
         })
-        .set(['#orgs-have-control', '#provisioned-user', '#provisioned-cursor', '#deprovisioned-cursor', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3', '#provisioned-user-app-line-1', '#provisioned-user-app-line-2', '#provisioned-user-app-line-3', '#provisioned-user-cloud-line', '#deprovisioned-user-cloud-line', '#deprovisioned-user-app-line-1', '#deprovisioned-user-app-line-2', '#deprovisioned-user-app-line-3'], {
+        .set(['#user-group', '#provisioned-user', '#provisioned-cursor', '#deprovisioned-cursor', '#provisioned-user-cloud', '#provisioned-user-app-1', '#provisioned-user-app-2', '#provisioned-user-app-3', '#provisioned-user-app-line-1', '#provisioned-user-app-line-2', '#provisioned-user-app-line-3', '#provisioned-user-cloud-line', '#deprovisioned-user-cloud-line', '#deprovisioned-user-app-line-1', '#deprovisioned-user-app-line-2', '#deprovisioned-user-app-line-3'], {
             opacity: 0,
         })
         .set(['#deprovisioned-user', '#deprovisioned-user-cloud', '#deprovisioned-user-app-1', '#deprovisioned-user-app-2', '#deprovisioned-user-app-3'], {
             opacity: 1,
         })
-        .add('#orgs-have-control', {
+        .add('#user-group', {
             opacity: 1,
             duration: 500,
         })
@@ -277,8 +277,7 @@ function orgsHaveControlAnimation() {
             duration: 250,
         }, "-=1500")
         .add('#provisioned-user-cloud-line', {
-            opacity: [0, 1, 0],
-            translateX: [0, 135],
+            translateX: [0, 150],
             ease: 'easeInOutSine',
             duration: 750,
         }, "-=1750")
@@ -287,21 +286,18 @@ function orgsHaveControlAnimation() {
             duration: 250,
         }, "-=1250")
         .add('#provisioned-user-app-line-1', {
-            opacity: [0, 1, 0],
             duration: 750,
             translateX: 227,
             translateY: -120,
             ease: 'easeInOutSine',
         }, "-=1000")
         .add('#provisioned-user-app-line-2', {
-            opacity: [0, 1, 0],
             duration: 750,
             translateX: 202,
             translateY: 114,
             ease: 'easeInOutSine',
         }, "<<")
         .add('#provisioned-user-app-line-3', {
-            opacity: [0, 1, 0],
             duration: 750,
             translateX: 72,
             translateY: 134,
@@ -356,7 +352,6 @@ function orgsHaveControlAnimation() {
             translateY: 70,
         }, "-=1000")
         .add('#deprovisioned-user-cloud-line', {
-            opacity: [0, 1, 0],
             duration: 750,
             translateX: [0, 135],
             ease: 'easeInOutSine',
@@ -366,7 +361,6 @@ function orgsHaveControlAnimation() {
             duration: 250,
         }, "-=1000")
         .add('#deprovisioned-user-app-line-1', {
-            opacity: [0, 1, 0],
             translateY: -156,
             translateX: 93,
             duration: 750,
@@ -395,7 +389,7 @@ function orgsHaveControlAnimation() {
             opacity: 0,
             duration: 250,
         }, "<<")
-        .add('#orgs-have-control', {
+        .add('#user-group', {
             opacity: 0,
             duration: 250,
             delay: 500,
