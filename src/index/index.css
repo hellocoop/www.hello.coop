@@ -15,7 +15,8 @@
 }
 
 .card {
-    @apply mt-4 p-5 lg:p-10 flex flex-col lg:flex-row items-start justify-between min-h-56 lg:h-[500px] border border-charcoal/25 dark:border-[#808080]/25 text-charcoal dark:text-gray rounded-xl relative font-light overflow-hidden;
+    /* border border-charcoal/25 dark:border-[#808080]/25 */
+    @apply mt-4 p-5 lg:p-10 flex flex-col lg:flex-row items-start justify-between min-h-56 lg:h-[500px] text-charcoal dark:text-gray rounded-xl relative font-light overflow-hidden;
 }
 
 .hero-img::after,
