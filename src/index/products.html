@@ -27,8 +27,9 @@
     <script defer data-domain="hello.coop" src="/js/script.hash.js"></script>
     <!-- DayJS -->
     <script src="https://cdn.hello.coop/js/dayjs.min.js"></script>
-    <!-- Hello Scripts -->
+    <!-- Hello -->
     <script src="https://cdn.hello.coop/js/relative-wc-footer.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.hello.coop/css/hello-btn.css">
     <!-- Self -->
     <link rel="stylesheet" href="./index.css">
     <script type="module" src="./index.js"></script>
@@ -600,6 +601,50 @@
                 </div>
             </div>
 
+            <div id="hello-lifecycle-join-waitlist-modal" class="flex items-center justify-center h-screen w-screen bg-red-500 fixed left-0">
+                <div
+                    class="absolute z-70 p-4 bg-white dark:bg-[#151515] rounded-md flex flex-col w-96 border border-[#808080]/50">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-2xl font-semibold">Hellō Lifecycle</h2>
+                        <button id="close-hello-lifecycle-join-waitlist-modal" class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h2 class="uppercase text-sm mt-4 opacity-75">Join the waitlist</h2>
+                    <form>
+                        <input type="email" placeholder="enter your email"
+                            class="w-64 p-2 rounded-md border border-[#808080]/50 mt-2 w-full" required>
+                        <button type="submit" class="hello-btn w-full mt-2">ō&nbsp;&nbsp;&nbsp;Continue with Hellō</button>
+                    </form>
+                </div>
+                <!-- <span class="h-screen w-screen bg-white/75 dark:bg-[#151515]/75 fixed left-0 top-0 z-60" /> -->
+            </div>
+
+            <div id="github-offboarding-join-waitlist-modal" class="hidden flex items-center justify-center">
+                <div
+                    class="absolute z-70 p-4 bg-white dark:bg-[#151515] rounded-md flex flex-col w-96 border border-[#808080]/50">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-2xl font-semibold">GitHub Offboarding</h2>
+                        <button id="close-github-offboarding-join-waitlist-modal" class="cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h2 class="uppercase text-sm mt-4 opacity-75">Join the waitlist</h2>
+                    <form>
+                        <input type="email" placeholder="enter your email"
+                            class="w-64 p-2 rounded-md border border-[#808080]/50 mt-2 w-full" required>
+                        <button type="submit" class="hello-btn w-full mt-2">ō&nbsp;&nbsp;&nbsp;Continue with Hellō</button>
+                    </form>
+                </div>
+                <span class="h-screen w-screen bg-white/75 dark:bg-[#151515]/75 fixed left-0 top-0 z-60" />
+            </div>
+
             <div id="hello-lifecycle" class="px-4 scroll-mt-24">
                 <h1 class="text-[1.35rem] md:text-5xl font-semibold">
                     Hellō Lifecycle
@@ -621,7 +666,7 @@
                         </div>
                         <span class="text-base font-medium text-charcoal/75 dark:text-gray/75">Coming Q1 2026</span>
                         <div class="gap-2 flex flex-col md:flex-row items-start">
-                            <a href="#" target="_blank" class="card-link-primary no-global-hover">
+                            <button id="hello-lifecycle-join-waitlist-btn" target="_blank" class="card-link-primary no-global-hover cursor-pointer">
                                 Join the waitlist
                                 <svg width="10" height="10" fil="currentColor" class="ml-2">
                                     <g>
@@ -629,7 +674,7 @@
                                         <path class="tip" d="M 5 10 L 10 5 L 5 0"></path>
                                     </g>
                                 </svg>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <picture
@@ -663,7 +708,7 @@
                         </div>
                         <span class="text-base font-medium text-charcoal/75 dark:text-gray/75">Coming Q1 2026</span>
                         <div class="gap-2 flex flex-col md:flex-row items-start">
-                            <a href="#" target="_blank" class="card-link-primary no-global-hover">
+                            <button id="github-offboarding-join-waitlist-btn" target="_blank" class="card-link-primary no-global-hover cursor-pointer">
                                 Join the waitlist
                                 <svg width="10" height="10" fil="currentColor" class="ml-2">
                                     <g>
@@ -671,7 +716,7 @@
                                         <path class="tip" d="M 5 10 L 10 5 L 5 0"></path>
                                     </g>
                                 </svg>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <picture

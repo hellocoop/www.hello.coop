@@ -5,6 +5,31 @@ window.onload = async () => {
     handleDropdown();
     usersHaveLostControlAnimation();
     orgsHaveControlAnimation();
+
+    const helloLifecycleJoinWaitlistBtn = document.querySelector('#hello-lifecycle-join-waitlist-btn');
+    const githubOffboardingJoinWaitlistBtn = document.querySelector('#github-offboarding-join-waitlist-btn');
+    const helloLifecycleJoinWaitlistModal = document.querySelector('#hello-lifecycle-join-waitlist-modal');
+    const githubOffboardingJoinWaitlistModal = document.querySelector('#github-offboarding-join-waitlist-modal');
+    const closeHelloLifecycleJoinWaitlistModal = document.querySelector('#close-hello-lifecycle-join-waitlist-modal');
+    const closeGithubOffboardingJoinWaitlistModal = document.querySelector('#close-github-offboarding-join-waitlist-modal');
+    helloLifecycleJoinWaitlistBtn.onclick = () => {
+        helloLifecycleJoinWaitlistModal.classList.remove('hidden');
+    }
+    githubOffboardingJoinWaitlistBtn.onclick = () => {
+        githubOffboardingJoinWaitlistModal.classList.remove('hidden');
+    }
+    closeHelloLifecycleJoinWaitlistModal.onclick = () => {
+        helloLifecycleJoinWaitlistModal.classList.add('hidden');
+    }
+    closeGithubOffboardingJoinWaitlistModal.onclick = () => {
+        githubOffboardingJoinWaitlistModal.classList.add('hidden');
+    }
+    helloLifecycleJoinWaitlistModal.onclick = () => {
+        helloLifecycleJoinWaitlistModal.classList.add('hidden');
+    }
+    githubOffboardingJoinWaitlistModal.onclick = () => {
+        githubOffboardingJoinWaitlistModal.classList.add('hidden');
+    }
 }
 
 function usersHaveLostControlAnimation() {
@@ -453,8 +478,8 @@ async function processFeed() {
 }
 
 async function handleDropdown() {
-    const mobileNavToggle = document.getElementById('movile-nav-toggle');
-    const mobileNavDropdown = document.getElementById('mobile-nav-dropdown');
+    const mobileNavToggle = document.querySelector('#movile-nav-toggle');
+    const mobileNavDropdown = document.querySelector('#mobile-nav-dropdown');
     mobileNavToggle.onclick = () => {
         mobileNavDropdown.classList.toggle('hidden');
         if (mobileNavDropdown.classList.contains('hidden')) {
