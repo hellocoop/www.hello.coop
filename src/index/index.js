@@ -14,21 +14,19 @@ window.onload = async () => {
     const closeGithubOffboardingJoinWaitlistModal = document.querySelector('#close-github-offboarding-join-waitlist-modal');
     helloLifecycleJoinWaitlistBtn.onclick = () => {
         helloLifecycleJoinWaitlistModal.classList.remove('hidden');
+        document.body.classList.add('overflow-y-hidden');
     }
     githubOffboardingJoinWaitlistBtn.onclick = () => {
         githubOffboardingJoinWaitlistModal.classList.remove('hidden');
+        document.body.classList.add('overflow-y-hidden');
     }
     closeHelloLifecycleJoinWaitlistModal.onclick = () => {
         helloLifecycleJoinWaitlistModal.classList.add('hidden');
+        document.body.classList.remove('overflow-y-hidden');
     }
     closeGithubOffboardingJoinWaitlistModal.onclick = () => {
         githubOffboardingJoinWaitlistModal.classList.add('hidden');
-    }
-    helloLifecycleJoinWaitlistModal.onclick = () => {
-        helloLifecycleJoinWaitlistModal.classList.add('hidden');
-    }
-    githubOffboardingJoinWaitlistModal.onclick = () => {
-        githubOffboardingJoinWaitlistModal.classList.add('hidden');
+        document.body.classList.remove('overflow-y-hidden');
     }
 }
 
