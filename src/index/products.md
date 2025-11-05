@@ -1,6 +1,6 @@
 # Hellō Products
 
-Identity solutions that eliminate complexity and cost. From free SSO to automated lifecycle management, Hellō abstracts away identity provider complexity through a single OpenID Connect integration.
+Identity solutions that eliminate complexity and cost. From #FreeSSO to automated lifecycle management, Hellō abstracts away identity provider complexity through a single OpenID Connect integration.
 
 ## Hellō B2C SSO
 ### Give users choice of 17 providers
