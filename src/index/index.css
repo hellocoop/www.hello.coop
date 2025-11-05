@@ -16,7 +16,7 @@
 
 .card {
     /* border border-charcoal/25 dark:border-[#808080]/25 */
-    @apply mt-4 p-4 lg:p-10 flex flex-col-reverse md:flex-row items-start justify-between min-h-56 md:h-[280px] lg:h-[500px] text-charcoal dark:text-gray rounded-xl relative font-light overflow-hidden;
+    @apply mt-4 p-4 lg:p-10 flex flex-col-reverse md:flex-row items-start justify-between min-h-56 md:h-[300px] lg:h-[500px] text-charcoal dark:text-gray rounded-xl relative font-light overflow-hidden;
 }
 
 .hero-img::after {
