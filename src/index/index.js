@@ -6,28 +6,29 @@ window.onload = async () => {
     usersHaveLostControlAnimation();
     orgsHaveControlAnimation();
 
-    const helloLifecycleJoinWaitlistBtn = document.querySelector('#hello-lifecycle-join-waitlist-btn');
-    const githubOffboardingJoinWaitlistBtn = document.querySelector('#github-offboarding-join-waitlist-btn');
-    const helloLifecycleJoinWaitlistModal = document.querySelector('#hello-lifecycle-join-waitlist-modal');
-    const githubOffboardingJoinWaitlistModal = document.querySelector('#github-offboarding-join-waitlist-modal');
-    const closeHelloLifecycleJoinWaitlistModal = document.querySelector('#close-hello-lifecycle-join-waitlist-modal');
-    const closeGithubOffboardingJoinWaitlistModal = document.querySelector('#close-github-offboarding-join-waitlist-modal');
-    helloLifecycleJoinWaitlistBtn.onclick = () => {
-        helloLifecycleJoinWaitlistModal.classList.remove('hidden');
-        document.body.classList.add('overflow-y-hidden');
-    }
-    githubOffboardingJoinWaitlistBtn.onclick = () => {
-        githubOffboardingJoinWaitlistModal.classList.remove('hidden');
-        document.body.classList.add('overflow-y-hidden');
-    }
-    closeHelloLifecycleJoinWaitlistModal.onclick = () => {
-        helloLifecycleJoinWaitlistModal.classList.add('hidden');
-        document.body.classList.remove('overflow-y-hidden');
-    }
-    closeGithubOffboardingJoinWaitlistModal.onclick = () => {
-        githubOffboardingJoinWaitlistModal.classList.add('hidden');
-        document.body.classList.remove('overflow-y-hidden');
-    }
+    // Uncomment these when we have the signups flows complete
+    // const helloLifecycleJoinWaitlistBtn = document.querySelector('#hello-lifecycle-join-waitlist-btn');
+    // const githubOffboardingJoinWaitlistBtn = document.querySelector('#github-offboarding-join-waitlist-btn');
+    // const helloLifecycleJoinWaitlistModal = document.querySelector('#hello-lifecycle-join-waitlist-modal');
+    // const githubOffboardingJoinWaitlistModal = document.querySelector('#github-offboarding-join-waitlist-modal');
+    // const closeHelloLifecycleJoinWaitlistModal = document.querySelector('#close-hello-lifecycle-join-waitlist-modal');
+    // const closeGithubOffboardingJoinWaitlistModal = document.querySelector('#close-github-offboarding-join-waitlist-modal');
+    // helloLifecycleJoinWaitlistBtn.onclick = () => {
+    //     helloLifecycleJoinWaitlistModal.classList.remove('hidden');
+    //     document.body.classList.add('overflow-y-hidden');
+    // }
+    // githubOffboardingJoinWaitlistBtn.onclick = () => {
+    //     githubOffboardingJoinWaitlistModal.classList.remove('hidden');
+    //     document.body.classList.add('overflow-y-hidden');
+    // }
+    // closeHelloLifecycleJoinWaitlistModal.onclick = () => {
+    //     helloLifecycleJoinWaitlistModal.classList.add('hidden');
+    //     document.body.classList.remove('overflow-y-hidden');
+    // }
+    // closeGithubOffboardingJoinWaitlistModal.onclick = () => {
+    //     githubOffboardingJoinWaitlistModal.classList.add('hidden');
+    //     document.body.classList.remove('overflow-y-hidden');
+    // }
 }
 
 function usersHaveLostControlAnimation() {

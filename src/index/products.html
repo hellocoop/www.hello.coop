@@ -45,7 +45,7 @@
                         class="relative cursor-pointer h-full flex items-center justify-center transition-all group/li">
                         <div
                             class="opacity-75 flex items-center space-x-1 group-hover/li:opacity-100 transition-all rounded-t-md group-hover/li:bg-[#434343] px-3 pb-3 -mb-2 pt-1">
-                            <span>Products</span>
+                            <a href="/products.html" class="no-global-hover">Products</a>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
                                 stroke="currentColor"
                                 class="size-3 mt-0.5 opacity-50 group-hover/li:opacity-100 transition-all group-hover/li:rotate-180">
@@ -74,7 +74,8 @@
                                                 Zero configuration enterprise SSO</span>
                                         </a>
                                     </li>
-                                    <li class="flex flex-col">
+                                    <!-- Uncomment these when we have the signups flows complete -->
+                                    <!-- <li class="flex flex-col">
                                         <a href="/products.html#hello-lifecycle"
                                             class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
                                             <span>Hellō Lifecycle</span>
@@ -89,7 +90,7 @@
                                             <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">
                                                 Simplify & automate compliance</span>
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li class="flex flex-col">
                                         <a href="/products.html#coding-platforms"
                                             class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
@@ -122,17 +123,7 @@
                                     <li>
                                         <a href="https://hello.dev/" target="_blank"
                                             class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                                            <span class="ext-link-icon">hello.dev</span>
-                                            <span
-                                                class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
-                                                sample description</span>
-                                        </a>
-                                    </li>
-                                    <li class="flex flex-col">
-                                        <a href="https://hello-community.slack.com/join/shared_invite/zt-1eccnd2np-qJoOWBkHGnpxvBpCTtaH9g"
-                                            target="_blank"
-                                            class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                                            <span class="ext-link-icon">Slack Community</span>
+                                            <span class="ext-link-icon">Developer Documentation</span>
                                             <span
                                                 class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder
                                                 sample description</span>
@@ -262,11 +253,11 @@
                             </div>
                         </div>
                     </li>
-                    <li id="nav-socials"
+                    <li id="nav-social"
                         class="relative cursor-pointer h-full flex items-center justify-center group/li transition-all">
                         <div
                             class="opacity-75 flex items-center space-x-1 group-hover/li:opacity-100 transition-all rounded-t-md group-hover/li:bg-[#434343] px-3 pb-3 -mb-2 pt-1">
-                            <span>Socials</span>
+                            <span>Social</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5"
                                 stroke="currentColor"
                                 class="size-3 mt-0.5 opacity-50 group-hover/li:opacity-100 transition-all group-hover/li:rotate-180">
@@ -274,11 +265,27 @@
                             </svg>
                         </div>
 
-                        <div id="nav-socials-dropdown"
+                        <div id="nav-social-dropdown"
                             class="invisible group-hover/li:visible absolute top-6 left-0 w-70">
                             <div
                                 class="bg-[#434343] p-4 mt-6 opacity-0 group-hover/li:opacity-100 rounded-b-sm rounded-tr-sm perspective-1000 perspective-origin-top rotate-x-75 origin-top group-hover/li:-rotate-x-0 transition-all">
                                 <ul class="space-y-4">
+                                    <li class="flex flex-col">
+                                        <a href="https://hello-community.slack.com/join/shared_invite/zt-1eccnd2np-qJoOWBkHGnpxvBpCTtaH9g"
+                                            target="_blank"
+                                            class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
+                                            <div class="flex space-x-2">
+                                                <svg role="img" class="w-3.5" fill="currentColor" viewBox="0 0 24 24"
+                                                    <title>Slack</title>
+                                                    <path
+                                                        d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" />
+                                                </svg>
+                                                <span class="ext-link-icon">Slack</span>
+                                            </div>
+                                            <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Join
+                                                our community channel</span>
+                                        </a>
+                                    </li>
                                     <li class="flex flex-col">
                                         <a href="https://github.com/HelloCoop" target="_blank"
                                             class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
@@ -373,8 +380,9 @@
                     <ul class="space-y-2 mt-2">
                         <li><a href="/products.html#hello-b2c-sso">Hellō B2C SSO</a></li>
                         <li><a href="/products.html#hello-b2b-sso">Hellō B2B SSO</a></li>
-                        <li><a href="/products.html#hello-lifecycle">Hellō Lifecycle</a></li>
-                        <li><a href="/products.html#github-offboarding">GitHub Offboarding</a></li>
+                        <!-- Uncomment these when we have the signups flows complete -->
+                        <!-- <li><a href="/products.html#hello-lifecycle">Hellō Lifecycle</a></li>
+                        <li><a href="/products.html#github-offboarding">GitHub Offboarding</a></li> -->
                         <li><a href="/products.html#coding-platforms">Coding Platforms</a></li>
                     </ul>
                 </div>
@@ -383,11 +391,8 @@
                     <span>Dev Resources</span>
                     <ul class="space-y-2 mt-2">
                         <li>
-                            <a href="https://hello.dev/" target="_blank" class="ext-link-icon">hello.dev</a>
-                        </li>
-                        <li>
-                            <a href="https://hello-community.slack.com/join/shared_invite/zt-1eccnd2np-qJoOWBkHGnpxvBpCTtaH9g"
-                                target="_blank" class="ext-link-icon">Slack Community</a>
+                            <a href="https://hello.dev/" target="_blank" class="ext-link-icon">Developer
+                                Documentation</a>
                         </li>
                         <li>
                             <a href="https://console.hello.coop/" target="_blank" class="ext-link-icon">
@@ -432,6 +437,17 @@
                 <div>
                     <span>Social</span>
                     <ul class="space-y-2 mt-2">
+                        <li>
+                            <a href="https://hello-community.slack.com/join/shared_invite/zt-1eccnd2np-qJoOWBkHGnpxvBpCTtaH9g"
+                                target="_blank" class="inline-flex items-center space-x-2">
+                                <svg role="img" class="w-3.5" fill="currentColor" viewBox="0 0 24 24" <title>Slack
+                                    </title>
+                                    <path
+                                        d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" />
+                                </svg>
+                                <span class="ext-link-icon">Slack</span>
+                            </a>
+                        </li>
                         <li>
                             <a href="https://github.com/HelloCoop" target="_blank"
                                 class="inline-flex items-center space-x-2">
@@ -647,7 +663,8 @@
                 </div>
             </div>
 
-            <div id="hello-lifecycle" class="px-4 scroll-mt-24">
+            <!-- Uncomment these when we have the signups flows complete -->
+            <!-- <div id="hello-lifecycle" class="px-4 scroll-mt-24">
                 <h1 class="text-[1.35rem] md:text-5xl font-semibold">
                     Hellō Lifecycle
                 </h1>
@@ -731,7 +748,7 @@
                             style="animation: float 3s infinite;">
                     </picture>
                 </div>
-            </div>
+            </div> -->
 
             <div id="coding-platforms" class="px-4 scroll-mt-24">
                 <h1 class="text-[1.35rem] md:text-5xl font-semibold">
@@ -796,8 +813,9 @@
                 <ul class="space-y-2 mt-2">
                     <li><a href="/products.html#hello-b2c-sso">Hellō B2C SSO</a></li>
                     <li><a href="/products.html#hello-b2b-sso">Hellō B2B SSO</a></li>
-                    <li><a href="/products.html#hello-lifecycle">Hellō Lifecycle</a></li>
-                    <li><a href="/products.html#github-offboarding">GitHub Offboarding</a></li>
+                    <!-- Uncomment these when we have the signups flows complete -->
+                    <!-- <li><a href="/products.html#hello-lifecycle">Hellō Lifecycle</a></li>
+                    <li><a href="/products.html#github-offboarding">GitHub Offboarding</a></li> -->
                     <li><a href="/products.html#coding-platforms">Coding Platforms</a></li>
                 </ul>
             </div>
@@ -806,11 +824,7 @@
                 <span>Dev Resources</span>
                 <ul class="space-y-2 mt-2">
                     <li>
-                        <a href="https://hello.dev/" target="_blank">hello.dev</a>
-                    </li>
-                    <li>
-                        <a href="https://hello-community.slack.com/join/shared_invite/zt-1eccnd2np-qJoOWBkHGnpxvBpCTtaH9g"
-                            target="_blank" class="ext-link-icon">Slack Community</a>
+                        <a href="https://hello.dev/" target="_blank" class="ext-link-icon">Developer Documentation</a>
                     </li>
                     <li>
                         <a href="https://console.hello.coop/" target="_blank" class="ext-link-icon">
@@ -855,15 +869,14 @@
                 <span>Social</span>
                 <ul class="space-y-2 mt-2">
                     <li>
-                        <a href="https://github.com/HelloCoop" target="_blank"
-                            class="inline-flex items-center space-x-2">
-                            <svg role="img" class="w-3.5" fill="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title>GitHub</title>
+                        <a href="https://hello-community.slack.com/join/shared_invite/zt-1eccnd2np-qJoOWBkHGnpxvBpCTtaH9g"
+                            target="_blank" class="inline-flex items-center space-x-2">
+                            <svg role="img" class="w-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <title>Slack</title>
                                 <path
-                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                    d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" />
                             </svg>
-                            <span class="ext-link-icon">GitHub</span>
+                            <span class="ext-link-icon">Slack</span>
                         </a>
                     </li>
                     <li>
