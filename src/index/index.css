@@ -31,8 +31,23 @@
     margin-top: auto;
 }
 
+.card-phone-shadow-bottom::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* so clicks pass through */
+    z-index: 1;
+    height: 100px;
+    background: linear-gradient(#ffffff00, #ffffff);
+    margin-top: auto;
+}
+
 @media (prefers-color-scheme: dark) {
     .hero-img::after {
+        background: linear-gradient(#15151500, #151515);
+    }
+    .card-phone-shadow-bottom::after {
         background: linear-gradient(#15151500, #151515);
     }
 }
