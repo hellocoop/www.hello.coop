@@ -16,11 +16,10 @@
 
 .card {
     /* border border-charcoal/25 dark:border-[#808080]/25 */
-    @apply mt-4 p-5 lg:p-10 flex flex-col lg:flex-row items-start justify-between min-h-56 lg:h-[500px] text-charcoal dark:text-gray rounded-xl relative font-light overflow-hidden;
+    @apply mt-4 p-5 lg:p-10 flex flex-col-reverse lg:flex-row items-start justify-between min-h-56 lg:h-[500px] text-charcoal dark:text-gray rounded-xl relative font-light overflow-hidden;
 }
 
-.hero-img::after,
-.card::after {
+.hero-img::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -33,9 +32,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    
-    .hero-img::after,
-    .card::after {
+    .hero-img::after {
         background: linear-gradient(#15151500, #151515);
     }
 }
