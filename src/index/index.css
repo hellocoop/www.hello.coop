@@ -114,11 +114,6 @@ header a:not(#mobile-nav-dropdown a):not(.no-global-hover) {
     @apply bg-[#e8e8e8] dark:bg-[#212121] text-charcoal dark:text-gray mt-16 md:mt-20;
 }
 
-svg * {
-    transform-box: fill-box;
-    transform-origin: center;
-}
-
 .ext-link-icon::after {
     content: "↗";
     display: inline-block;
