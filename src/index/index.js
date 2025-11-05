@@ -15,10 +15,11 @@ window.onload = async () => {
     // -----------------------------
     // USER ICONS SETUP
     // -----------------------------
-    const userIds = ["user", ...Array.from({ length: 36 }, (_, i) => `user_${i + 1}`)];
+    // no "user_1" — starts from "user" then "user_2" to "user_36"
+    const userIds = ["user", ...Array.from({ length: 35 }, (_, i) => `user_${i + 2}`)];
     userIds.forEach(id => gsap.set(`#${id}`, { opacity: 0.5, scale: 1, filter: "none" }));
 
-    // 4 users per reverse line group
+    // divide users into groups (4 per reverse line)
     const userGroups = reverseIds.map((_, i) => userIds.slice(i * 4, i * 4 + 4));
 
     // -----------------------------
@@ -31,17 +32,15 @@ window.onload = async () => {
         const id = gsap.utils.random(group);
         const el = `#${id}`;
 
-        // clear any previous tweens to avoid overlap
-        gsap.killTweensOf(el);
+        gsap.killTweensOf(el); // prevent overlap
 
-        // random glow color for variety
         const glowColors = [
             "rgba(255,255,255,0.9)",
             "rgba(173,216,255,0.9)",
             "rgba(255,248,200,0.9)",
             "rgba(180,255,210,0.9)"
         ];
-        const glowColor = gsap.utils.random(glowColors);
+        // const glowColor = gsap.utils.random(glowColors);
 
         // light-up pulse animation
         gsap.to(el, {
@@ -76,8 +75,7 @@ window.onload = async () => {
             repeat: -1,
             repeatDelay: gsap.utils.random(0.5, 4),
             delay: gsap.utils.random(0, 3),
-            defaults: { ease: "power1.inOut" },
-            onRepeat: () => (tl.flickerScheduled = false)
+            defaults: { ease: "power1.inOut" }
         });
 
         tl.fromTo(
@@ -91,16 +89,15 @@ window.onload = async () => {
                     alignOrigin: [0.5, 0.5],
                     autoRotate: [path, 90],
                     start: reverse ? 1 : 0,
-                    end: reverse ? 0 : 1,
+                    end: reverse ? 0 : 1
                 },
                 keyframes: [
                     { opacity: gsap.utils.random(0.6, 1), duration: gsap.utils.random(0.1, 0.4), ease: "power1.in" },
                     { opacity: gsap.utils.random(0.8, 1), duration: gsap.utils.random(1, 2) },
-                    { opacity: 0, duration: gsap.utils.random(0.1, 0.4), ease: "power1.out" },
+                    { opacity: 0, duration: gsap.utils.random(0.1, 0.4), ease: "power1.out" }
                 ],
                 onComplete: () => {
-                    // ⚡ precisely timed flicker after reverse path ends
-                    if (reverse) flickerUser(index);
+                    if (reverse) flickerUser(index); // flicker when reverse line finishes
                 }
             }
         );
@@ -111,7 +108,6 @@ window.onload = async () => {
     // -----------------------------
     forwardIds.forEach(id => animate(id, false));
     reverseIds.forEach((id, i) => animate(id, true, i));
-
 }
 
 async function processFeed() {
