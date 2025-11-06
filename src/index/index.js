@@ -270,7 +270,7 @@ async function processFeed() {
                 <li>
                     <a href="${url}" target="_blank" class="no-global-hover flex flex-col md:flex-row items-center gap-5 md:gap-10 hover:bg-charcoal/10 dark:hover:bg-gray/10 rounded-md p-4 -m-4 transition-all">
                         <img src="${image}"
-                            alt="${title}" class="w-full md:w-1/3 rounded-sm" />
+                            alt="${title}" class="w-full md:w-1/3 rounded-sm flex-shrink-0" />
                         <div>
                             <span class="text-base md:text-xl opacity-50">${date}</span>
                             <h3 class="text-xl md:text-3xl font-semibold my-3 md:my-4">${title}</h3>
