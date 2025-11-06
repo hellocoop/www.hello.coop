@@ -7,6 +7,12 @@ export default defineConfig({
   },
   build: {
     outDir: '../../S3/',
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        products: './products.html',
+      },
+    },
   },
   plugins: [
     tailwindcss(),
