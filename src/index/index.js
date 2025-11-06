@@ -152,7 +152,7 @@ async function processFeed() {
                         <div>
                             <span class="text-base md:text-xl opacity-50">${date}</span>
                             <h3 class="text-xl md:text-3xl font-semibold my-3 md:my-4">${title}</h3>
-                            <p class="text-lg md:text-2xl opacity-50 line-clamp-3">${description}</p>
+                            <p class="text-base md:text-lg lg:text-2xl opacity-50 line-clamp-3">${description}</p>
                         </div>
                     </a>
                 </li>
