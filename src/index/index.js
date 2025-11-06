@@ -183,11 +183,11 @@ function interchangeAnimation() {
                 repeatDelay: 0.1,
                 ease: "power1.inOut",
                 onStart: () => {
-                    gsap.set(`#${third}`, { stroke: "#d4d4d4", opacity: 0.35 });
+                    gsap.set(`#${third}`, { stroke: "currentColor", opacity: 0.35 });
                 },
                 onComplete: () => {
                     gsap.to(`#${third}`, {
-                        stroke: "#d4d4d4",
+                        stroke: "currentColor",
                         opacity: 0.35,
                         duration: 0.3,
                         ease: "power1.out",
