@@ -6,108 +6,230 @@ window.onload = async () => {
     handleDropdown();
 
     gsap.registerPlugin(MotionPathPlugin);
-    // -----------------------------
-    // LINE PATH ANIMATIONS
-    // -----------------------------
-    const forwardIds = ["one", "two", "three", "four", "five", "six", "seven"];
-    const reverseIds = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
 
-    // -----------------------------
-    // USER ICONS SETUP
-    // -----------------------------
-    // no "user_1" — starts from "user" then "user_2" to "user_36"
-    const userIds = ["user", ...Array.from({ length: 35 }, (_, i) => `user_${i + 2}`)];
-    userIds.forEach(id => gsap.set(`#${id}`, { opacity: 0.5, scale: 1, filter: "none" }));
+    interchangeAnimation();
+}
 
-    // divide users into groups (4 per reverse line)
-    const userGroups = reverseIds.map((_, i) => userIds.slice(i * 4, i * 4 + 4));
+function interchangeAnimation() {
+    gsap.registerPlugin(MotionPathPlugin);
 
-    // -----------------------------
-    // FLICKER FUNCTION
-    // -----------------------------
-    function flickerUser(groupIndex) {
-        const group = userGroups[groupIndex];
-        if (!group || group.length === 0) return;
+    const dictionary = {
+        one: ["a"],
+        two: ["b", "f", "n"],
+        three: ["c", "j"],
+        four: ["d", "i"],
+        five: ["m", "k", "e"],
+        six: ["n", "f"],
+        seven: ["g", "l"],
+    };
 
-        const id = gsap.utils.random(group);
-        const el = `#${id}`;
+    const flashColors = {
+        a: "#0EA5E9",
+        b: "#F59E0B",
+        c: "#10B981",
+        d: "#D946EF",
+        e: "#F54900",
+        f: "#F0B000",
+        g: "#894EFC",
+        h: "#F59E0B",
+        i: "#D946EF",
+        j: "#10B981",
+        k: "#F54900",
+        l: "#894EFC",
+        m: "#F54900",
+        n: "#F0B000",
+    };
 
-        gsap.killTweensOf(el); // prevent overlap
+    // ⚙️ Controls
+    const VELOCITY = 250;             // px per second
+    const FLOW_INTERVAL = [0.8, 1.5]; // seconds between spawn attempts
+    const MAX_CONCURRENT = 2;         // 🔹 maximum concurrent animations
+    const CONCURRENT_DELAY = [0.25, 0.6]; // 🔹 delay between concurrent flows (s)
 
-        const glowColors = [
-            "rgba(255,255,255,0.9)",
-            "rgba(173,216,255,0.9)",
-            "rgba(255,248,200,0.9)",
-            "rgba(180,255,210,0.9)"
-        ];
-        // const glowColor = gsap.utils.random(glowColors);
+    // Track active elements and active flow count
+    const activeElements = new Set();
+    let activeFlows = 0;
 
-        // light-up pulse animation
-        gsap.to(el, {
-            opacity: 0.75,
-            scale: 1.025,
-            // filter: `drop-shadow(0 0 6px ${glowColor})`,
-            duration: gsap.utils.random(0.15, 0.3),
-            ease: "power1.inOut",
-            yoyo: true,
-            repeat: 1,
-            onComplete: () => {
-                // smooth fade back to base state
-                gsap.to(el, {
-                    opacity: 0.5,
-                    scale: 1,
-                    filter: "drop-shadow(0 0 0 rgba(255,255,255,0))",
-                    duration: gsap.utils.random(0.25, 0.5),
-                    ease: "power1.out"
-                });
-            }
-        });
+    // ───────────────────────────────
+    // Utility helpers
+    // ───────────────────────────────
+
+    function randomItem(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
     }
 
-    // -----------------------------
-    // MAIN ANIMATION FUNCTION
-    // -----------------------------
-    function animate(id, reverse = false, index = 0) {
-        const path = `#${id}-path`;
-        const dur = gsap.utils.random(1.5, 3);
+    function resetOpacities() {
+        const all = [
+            "one", "two", "three", "four", "five", "six", "seven",
+            "a", "b", "c", "d", "e", "f", "g", "h",
+            "i", "j", "k", "l", "m", "n",
+        ];
+        all.forEach(id => gsap.set(`#${id}`, { opacity: 0 }));
+    }
+
+    function isPathLeftToRight(pathSelector) {
+        const path = document.querySelector(pathSelector);
+        if (!path) return true;
+        const length = path.getTotalLength();
+        const start = path.getPointAtLength(0);
+        const end = path.getPointAtLength(length);
+        return end.x > start.x;
+    }
+
+    function getDurationForPath(pathSelector) {
+        const path = document.querySelector(pathSelector);
+        if (!path) return 2;
+        const length = path.getTotalLength();
+        return length / VELOCITY;
+    }
+
+    function pickAvailable(keys) {
+        for (let i = 0; i < 20; i++) {
+            const candidate = randomItem(keys);
+            if (!activeElements.has(candidate)) {
+                activeElements.add(candidate);
+                return candidate;
+            }
+        }
+        return randomItem(keys);
+    }
+
+    // ───────────────────────────────
+    // Flow animation
+    // ───────────────────────────────
+
+    function flowAnimation() {
+        const firstKeys = Object.keys(dictionary);
+        const first = pickAvailable(firstKeys);
+        const secondOptions = dictionary[first];
+        const second = pickAvailable(secondOptions);
+        const third = `${second}-${Math.floor(Math.random() * 4) + 1}`;
+        const flashColor = flashColors[second] || "#0EA5E9";
+
+        const firstPath = `#${first}-path`;
+        const secondPath = `#${second}-path`;
+        const forward = isPathLeftToRight(secondPath);
+
+        const firstDuration = getDurationForPath(firstPath);
+        const secondDuration = getDurationForPath(secondPath);
+
+        activeFlows++;
 
         const tl = gsap.timeline({
-            repeat: -1,
-            repeatDelay: gsap.utils.random(0.5, 4),
-            delay: gsap.utils.random(0, 3),
-            defaults: { ease: "power1.inOut" }
+            defaults: { ease: "power1.out" },
+            onComplete: () => {
+                // free elements and reduce count
+                activeElements.delete(first);
+                activeElements.delete(second);
+                activeFlows--;
+            },
         });
 
+        // Step 1: top-level rect animation
         tl.fromTo(
-            `#${id}`,
+            `#${first}`,
             { opacity: 0 },
             {
-                duration: dur,
+                duration: firstDuration,
                 motionPath: {
-                    path,
-                    align: path,
+                    path: firstPath,
+                    align: firstPath,
                     alignOrigin: [0.5, 0.5],
-                    autoRotate: [path, 90],
-                    start: reverse ? 1 : 0,
-                    end: reverse ? 0 : 1
+                    autoRotate: true,
+                    start: 0,
+                    end: 1,
                 },
                 keyframes: [
-                    { opacity: gsap.utils.random(0.6, 1), duration: gsap.utils.random(0.1, 0.4), ease: "power1.in" },
-                    { opacity: gsap.utils.random(0.8, 1), duration: gsap.utils.random(1, 2) },
-                    { opacity: 0, duration: gsap.utils.random(0.1, 0.4), ease: "power1.out" }
+                    { opacity: 0, duration: 0 },
+                    { opacity: 1, duration: 0.05 * firstDuration },
+                    { opacity: 1, duration: 0.85 * firstDuration },
+                    { opacity: 0, duration: 0.1 * firstDuration },
                 ],
-                onComplete: () => {
-                    if (reverse) flickerUser(index); // flicker when reverse line finishes
-                }
             }
         );
+
+        // Step 2: second-level rect (after first)
+        tl.fromTo(
+            `#${second}`,
+            { opacity: 0 },
+            {
+                duration: secondDuration,
+                motionPath: {
+                    path: secondPath,
+                    align: secondPath,
+                    alignOrigin: [0.5, 0.5],
+                    autoRotate: true,
+                    start: forward ? 0 : 1,
+                    end: forward ? 1 : 0,
+                },
+                keyframes: [
+                    { opacity: 0, duration: 0 },
+                    { opacity: 1, duration: 0.05 * secondDuration },
+                    { opacity: 1, duration: 0.85 * secondDuration },
+                    { opacity: 0, duration: 0.1 * secondDuration },
+                ],
+            }
+        );
+
+        // Step 3: flash stroke color
+        tl.to(
+            `#${third}`,
+            {
+                stroke: flashColor,
+                opacity: 0.75,
+                duration: 0.3,
+                yoyo: true,
+                repeat: 1,
+                repeatDelay: 0.1,
+                ease: "power1.inOut",
+                onStart: () => {
+                    gsap.set(`#${third}`, { stroke: "#d4d4d4", opacity: 0.35 });
+                },
+                onComplete: () => {
+                    gsap.to(`#${third}`, {
+                        stroke: "#d4d4d4",
+                        opacity: 0.35,
+                        duration: 0.3,
+                        ease: "power1.out",
+                    });
+                },
+            }
+        );
+
+        return tl;
     }
 
-    // -----------------------------
-    // RUN ANIMATIONS
-    // -----------------------------
-    forwardIds.forEach(id => animate(id, false));
-    reverseIds.forEach((id, i) => animate(id, true, i));
+    // ───────────────────────────────
+    // Loop controller
+    // ───────────────────────────────
+
+    function startFlowLoop() {
+        function spawnFlow() {
+            if (activeFlows < MAX_CONCURRENT) {
+                flowAnimation();
+
+                // Add a small random delay before next concurrent start
+                const delayBetween = gsap.utils.random(CONCURRENT_DELAY[0], CONCURRENT_DELAY[1]);
+                gsap.delayedCall(delayBetween, () => {
+                    // Only spawn again if still under concurrency limit
+                    if (activeFlows < MAX_CONCURRENT) {
+                        flowAnimation();
+                    }
+                });
+            }
+
+            // Schedule next spawn attempt regardless
+            const nextDelay = gsap.utils.random(FLOW_INTERVAL[0], FLOW_INTERVAL[1]);
+            gsap.delayedCall(nextDelay, spawnFlow);
+        }
+
+        resetOpacities();
+        spawnFlow();
+    }
+
+    // 🚀 Start
+    startFlowLoop();
+
 }
 
 async function processFeed() {
