@@ -41,12 +41,12 @@ function interchangeAnimation() {
     };
 
     // ⚙️ Controls
-    const VELOCITY = 250;             // px per second
-    const FLOW_INTERVAL = [0.8, 1.5]; // seconds between spawn attempts
-    const MAX_CONCURRENT = 2;         // 🔹 maximum concurrent animations
-    const CONCURRENT_DELAY = [0.25, 0.6]; // 🔹 delay between concurrent flows (s)
+    const VELOCITY = 250;              // px per second (speed along path)
+    const FLOW_INTERVAL = [0.8, 1.5];  // seconds between spawn attempts
+    const MAX_CONCURRENT = 2;          // max flows running at once
+    const CONCURRENT_DELAY = [0.25, 0.6]; // delay between concurrent starts (s)
 
-    // Track active elements and active flow count
+    // Track state
     const activeElements = new Set();
     let activeFlows = 0;
 
@@ -95,7 +95,7 @@ function interchangeAnimation() {
     }
 
     // ───────────────────────────────
-    // Flow animation
+    // Core flow animation
     // ───────────────────────────────
 
     function flowAnimation() {
@@ -118,14 +118,13 @@ function interchangeAnimation() {
         const tl = gsap.timeline({
             defaults: { ease: "power1.out" },
             onComplete: () => {
-                // free elements and reduce count
                 activeElements.delete(first);
                 activeElements.delete(second);
                 activeFlows--;
             },
         });
 
-        // Step 1: top-level rect animation
+        // Step 1: top-level animation
         tl.fromTo(
             `#${first}`,
             { opacity: 0 },
@@ -148,7 +147,7 @@ function interchangeAnimation() {
             }
         );
 
-        // Step 2: second-level rect (after first)
+        // Step 2: second-level animation
         tl.fromTo(
             `#${second}`,
             { opacity: 0 },
@@ -171,30 +170,17 @@ function interchangeAnimation() {
             }
         );
 
-        // Step 3: flash stroke color
-        tl.to(
-            `#${third}`,
-            {
-                stroke: flashColor,
-                opacity: 0.75,
-                duration: 0.3,
-                yoyo: true,
-                repeat: 1,
-                repeatDelay: 0.1,
-                ease: "power1.inOut",
-                onStart: () => {
-                    gsap.set(`#${third}`, { stroke: "currentColor", opacity: 0.35 });
-                },
-                onComplete: () => {
-                    gsap.to(`#${third}`, {
-                        stroke: "currentColor",
-                        opacity: 0.35,
-                        duration: 0.3,
-                        ease: "power1.out",
-                    });
-                },
-            }
-        );
+        // Step 3: single clean stroke flash
+        tl.to(`#${third}`, {
+            stroke: flashColor,
+            opacity: 0.75,
+            duration: 0.3,
+            yoyo: true,
+            repeat: 1,
+            yoyoEase: "power1.inOut",
+            ease: "power2.inOut",
+            onStart: () => gsap.set(`#${third}`, { stroke: "#d4d4d4", opacity: 0.35 }),
+        });
 
         return tl;
     }
@@ -208,17 +194,16 @@ function interchangeAnimation() {
             if (activeFlows < MAX_CONCURRENT) {
                 flowAnimation();
 
-                // Add a small random delay before next concurrent start
+                // add stagger delay before next concurrent flow
                 const delayBetween = gsap.utils.random(CONCURRENT_DELAY[0], CONCURRENT_DELAY[1]);
                 gsap.delayedCall(delayBetween, () => {
-                    // Only spawn again if still under concurrency limit
                     if (activeFlows < MAX_CONCURRENT) {
                         flowAnimation();
                     }
                 });
             }
 
-            // Schedule next spawn attempt regardless
+            // schedule next spawn attempt
             const nextDelay = gsap.utils.random(FLOW_INTERVAL[0], FLOW_INTERVAL[1]);
             gsap.delayedCall(nextDelay, spawnFlow);
         }
@@ -227,9 +212,8 @@ function interchangeAnimation() {
         spawnFlow();
     }
 
-    // 🚀 Start
+    // 🚀 Start animation loop
     startFlowLoop();
-
 }
 
 async function processFeed() {
