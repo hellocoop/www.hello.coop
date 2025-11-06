@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
       chunkSizeWarningLimit: 1024,
     },
     server: {
-      port: 7002,
+      port: 5173,
       fs: {
         // Allow serving files from one level up to the project root
         allow: ['..']
