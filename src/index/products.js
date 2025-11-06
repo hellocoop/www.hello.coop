@@ -57,7 +57,7 @@ window.onload = async () => {
           start: 0,
           end: 1,
         },
-        duration: 1.2,
+        duration: 0.5,
         opacity: 1,
         ease: "power1.inOut",
       },
@@ -74,7 +74,7 @@ window.onload = async () => {
           start: 0,
           end: 1,
         },
-        duration: 1.2,
+        duration: 0.5,
         opacity: 1,
         ease: "power1.inOut",
       }
