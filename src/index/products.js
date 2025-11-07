@@ -7,6 +7,78 @@ window.onload = async () => {
   gsap.registerPlugin(MotionPathPlugin);
   lifecycleAnimation();
   offboardingAnimation();
+  handleSignUpModals();
+}
+
+function handleSignUpModals() {
+  // Get modal elements
+  const helloLifecycleModal = document.querySelector('#hello-lifecycle-join-waitlist-modal');
+  const githubOffboardingModal = document.querySelector('#github-offboarding-join-waitlist-modal');
+  
+  // Get button elements
+  const helloLifecycleBtn = document.querySelector('#hello-lifecycle-join-waitlist-btn');
+  const githubOffboardingBtn = document.querySelector('#github-offboarding-join-waitlist-btn');
+  
+  // Get close button elements
+  const closeHelloLifecycleModal = document.querySelector('#close-hello-lifecycle-join-waitlist-modal');
+  const closeGithubOffboardingModal = document.querySelector('#close-github-offboarding-join-waitlist-modal');
+  
+  // Helper function to show modal
+  function showModal(modal) {
+    modal.classList.remove('hidden');
+    document.body.classList.add('overflow-y-hidden');
+  }
+  
+  // Helper function to hide modal
+  function hideModal(modal) {
+    modal.classList.add('hidden');
+    document.body.classList.remove('overflow-y-hidden');
+  }
+  
+  // Hello Lifecycle modal handlers
+  if (helloLifecycleBtn && helloLifecycleModal) {
+    helloLifecycleBtn.onclick = (e) => {
+      e.preventDefault();
+      showModal(helloLifecycleModal);
+    };
+  }
+  
+  if (closeHelloLifecycleModal && helloLifecycleModal) {
+    closeHelloLifecycleModal.onclick = () => {
+      hideModal(helloLifecycleModal);
+    };
+  }
+  
+  // GitHub Offboarding modal handlers
+  if (githubOffboardingBtn && githubOffboardingModal) {
+    githubOffboardingBtn.onclick = (e) => {
+      e.preventDefault();
+      showModal(githubOffboardingModal);
+    };
+  }
+  
+  if (closeGithubOffboardingModal && githubOffboardingModal) {
+    closeGithubOffboardingModal.onclick = () => {
+      hideModal(githubOffboardingModal);
+    };
+  }
+  
+  // Close modals when clicking outside (optional enhancement)
+  if (helloLifecycleModal) {
+    helloLifecycleModal.onclick = (e) => {
+      if (e.target === helloLifecycleModal) {
+        hideModal(helloLifecycleModal);
+      }
+    };
+  }
+  
+  if (githubOffboardingModal) {
+    githubOffboardingModal.onclick = (e) => {
+      if (e.target === githubOffboardingModal) {
+        hideModal(githubOffboardingModal);
+      }
+    };
+  }
 }
 
 function lifecycleAnimation() {
