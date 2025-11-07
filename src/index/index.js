@@ -179,7 +179,7 @@ function interchangeAnimation() {
             repeat: 1,
             yoyoEase: "power1.inOut",
             ease: "power2.inOut",
-            onStart: () => gsap.set(`#${third}`, { stroke: "#d4d4d4", opacity: 0.35 }),
+            onStart: () => gsap.set(`#${third}`, { stroke: "currentColor", opacity: 0.35 }),
         });
 
         return tl;
