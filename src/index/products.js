@@ -87,12 +87,13 @@ function lifecycleAnimation() {
       duration: 0.25,
     }, "greenFadeOut+=0.1")
     // 6. At end of #one animation, fade out green-2
+    .addLabel("greenAPathStart")
     .to("#hello-lifecycle #green-2", {
       opacity: 0,
       duration: 0.25,
-    }, ">")
-    // 7. When green-2 fades out, start #a animation on #a-b-c-path
-    .set("#hello-lifecycle #a", { opacity: 1 }, ">-0.25")
+    }, "greenAPathStart")
+    // 7. Start #a animation on #a-b-c-path (at same time as green-2 starts fading)
+    .set("#hello-lifecycle #a", { opacity: 1 }, "greenAPathStart")
     .to("#hello-lifecycle #a", {
       duration: 0.35,
       ease: "none",
@@ -104,7 +105,7 @@ function lifecycleAnimation() {
         start: 0,
         end: 0.7,
       },
-    }, ">-0.25")
+    }, "greenAPathStart")
     .to("#hello-lifecycle #a", {
       duration: 0.15,
       ease: "power1.out",
@@ -180,12 +181,13 @@ function lifecycleAnimation() {
       duration: 0.25,
     }, "blueFadeOut+=0.1")
     // 6. At end of #two animation, fade out blue-2
+    .addLabel("blueAPathStart")
     .to("#hello-lifecycle #blue-2", {
       opacity: 0,
       duration: 0.25,
-    }, ">")
-    // 7. When blue-2 fades out, start #b animation on #a-b-c-path
-    .set("#hello-lifecycle #b", { opacity: 1 }, ">-0.25")
+    }, "blueAPathStart")
+    // 7. Start #b animation on #a-b-c-path (at same time as blue-2 starts fading)
+    .set("#hello-lifecycle #b", { opacity: 1 }, "blueAPathStart")
     .to("#hello-lifecycle #b", {
       duration: 0.35,
       ease: "none",
@@ -197,7 +199,7 @@ function lifecycleAnimation() {
         start: 0,
         end: 0.7,
       },
-    }, ">-0.25")
+    }, "blueAPathStart")
     .to("#hello-lifecycle #b", {
       duration: 0.15,
       ease: "power1.out",
@@ -273,12 +275,13 @@ function lifecycleAnimation() {
       duration: 0.25,
     }, "yellowFadeOut+=0.1")
     // 6. At end of #three animation, fade out yellow-2
+    .addLabel("yellowAPathStart")
     .to("#hello-lifecycle #yellow-2", {
       opacity: 0,
       duration: 0.25,
-    }, ">")
-    // 7. When yellow-2 fades out, start #c animation on #a-b-c-path
-    .set("#hello-lifecycle #c", { opacity: 1 }, ">-0.25")
+    }, "yellowAPathStart")
+    // 7. Start #c animation on #a-b-c-path (at same time as yellow-2 starts fading)
+    .set("#hello-lifecycle #c", { opacity: 1 }, "yellowAPathStart")
     .to("#hello-lifecycle #c", {
       duration: 0.35,
       ease: "none",
@@ -290,7 +293,7 @@ function lifecycleAnimation() {
         start: 0,
         end: 0.7,
       },
-    }, ">-0.25")
+    }, "yellowAPathStart")
     .to("#hello-lifecycle #c", {
       duration: 0.15,
       ease: "power1.out",
