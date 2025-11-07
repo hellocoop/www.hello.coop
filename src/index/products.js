@@ -10,8 +10,6 @@ window.onload = async () => {
 }
 
 function lifecycleAnimation() {
-  gsap.registerPlugin(MotionPathPlugin);
-
   // Set initial states for green, blue, and yellow
   ["#hello-lifecycle #cursor-1", "#hello-lifecycle #cursor-2", "#hello-lifecycle #cursor-3"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
   gsap.set("#hello-lifecycle #green-1", { scale: 1, opacity: 1, x: 0, y: 0 });
