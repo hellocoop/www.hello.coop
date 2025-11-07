@@ -5,18 +5,370 @@ window.onload = async () => {
   handleDropdown();
 
   gsap.registerPlugin(MotionPathPlugin);
+  lifecycleAnimation();
   offboardingAnimation();
 }
 
-function offboardingAnimation() {
+function lifecycleAnimation() {
   gsap.registerPlugin(MotionPathPlugin);
 
+  // Set initial states for green, blue, and yellow
+  ["#hello-lifecycle #cursor-1", "#hello-lifecycle #cursor-2", "#hello-lifecycle #cursor-3"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
+  gsap.set("#hello-lifecycle #green-1", { scale: 1, opacity: 1, x: 0, y: 0 });
+  gsap.set("#hello-lifecycle #green-2", { opacity: 1, x: 0, y: 0 });
+  gsap.set("#hello-lifecycle #green-3", { opacity: 1, x: 0, y: 0 });
+  gsap.set("#hello-lifecycle #blue-1", { scale: 1, opacity: 1, x: 0, y: 0 });
+  gsap.set("#hello-lifecycle #blue-2", { opacity: 1, x: 0, y: 0 });
+  gsap.set("#hello-lifecycle #blue-3", { opacity: 1, x: 0, y: 0 });
+  gsap.set("#hello-lifecycle #yellow-1", { scale: 1, opacity: 1, x: 0, y: 0 });
+  gsap.set("#hello-lifecycle #yellow-2", { opacity: 1, x: 0, y: 0 });
+  gsap.set("#hello-lifecycle #yellow-3", { opacity: 1, x: 0, y: 0 });
+  ["#hello-lifecycle #one", "#hello-lifecycle #two", "#hello-lifecycle #three"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
+  ["#hello-lifecycle #a", "#hello-lifecycle #b", "#hello-lifecycle #c"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
+
+  const tl = gsap.timeline({
+    defaults: { ease: "power1.inOut" },
+    repeat: -1,
+    repeatDelay: 0.25,
+  });
+
+  // 1. Cursor-1 fades in
+  tl.addLabel("start")
+    .to("#hello-lifecycle #cursor-1", {
+      opacity: 1,
+      duration: 0.4,
+    }, "start")
+    // 2. Scale green-1
+    .to("#hello-lifecycle #green-1", {
+      scale: 1.2,
+      duration: 0.3,
+      transformOrigin: "center center",
+    }, ">+0.2")
+    // 3. Move cursor and green-1 to 50 translate x and y
+    .to(["#hello-lifecycle #cursor-1", "#hello-lifecycle #green-1"], {
+      x: 50,
+      y: 50,
+      duration: 0.5,
+    }, ">+0.1")
+    // 4. Scale green-1 to 0 and fade out, start #one path animation at same time
+    .addLabel("greenFadeOut")
+    .to("#hello-lifecycle #green-1", {
+      scale: 0,
+      opacity: 0,
+      duration: 0.25,
+    }, "greenFadeOut")
+    .set("#hello-lifecycle #one", { opacity: 1 }, "greenFadeOut")
+    .to("#hello-lifecycle #one", {
+      duration: 0.35,
+      ease: "none",
+      motionPath: {
+        path: "#hello-lifecycle #one-path",
+        align: "#hello-lifecycle #one-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0,
+        end: 0.7,
+      },
+    }, "greenFadeOut")
+    .to("#hello-lifecycle #one", {
+      duration: 0.15,
+      ease: "power1.out",
+      opacity: 0,
+      motionPath: {
+        path: "#hello-lifecycle #one-path",
+        align: "#hello-lifecycle #one-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0.7,
+        end: 1,
+      },
+    }, ">")
+    // 5. Fade out cursor (almost immediately after green-1 starts fading)
+    .to("#hello-lifecycle #cursor-1", {
+      opacity: 0,
+      duration: 0.25,
+    }, "greenFadeOut+=0.1")
+    // 6. At end of #one animation, fade out green-2
+    .to("#hello-lifecycle #green-2", {
+      opacity: 0,
+      duration: 0.25,
+    }, ">")
+    // 7. When green-2 fades out, start #a animation on #a-b-c-path
+    .set("#hello-lifecycle #a", { opacity: 1 }, ">-0.25")
+    .to("#hello-lifecycle #a", {
+      duration: 0.35,
+      ease: "none",
+      motionPath: {
+        path: "#hello-lifecycle #a-b-c-path",
+        align: "#hello-lifecycle #a-b-c-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0,
+        end: 0.7,
+      },
+    }, ">-0.25")
+    .to("#hello-lifecycle #a", {
+      duration: 0.15,
+      ease: "power1.out",
+      opacity: 0,
+      motionPath: {
+        path: "#hello-lifecycle #a-b-c-path",
+        align: "#hello-lifecycle #a-b-c-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0.7,
+        end: 1,
+      },
+    }, ">")
+    // 8. Once #a animation is done, fade out green-3
+    .to("#hello-lifecycle #green-3", {
+      opacity: 0,
+      duration: 0.25,
+    }, ">")
+    // BLUE SEQUENCE
+    // 1. Cursor-2 fades in
+    .to("#hello-lifecycle #cursor-2", {
+      opacity: 1,
+      duration: 0.4,
+    }, ">+0.5")
+    // 2. Scale blue-1
+    .to("#hello-lifecycle #blue-1", {
+      scale: 1.2,
+      duration: 0.3,
+      transformOrigin: "center center",
+    }, ">+0.2")
+    // 3. Move cursor and blue-1 to 50 translate x and y
+    .to(["#hello-lifecycle #cursor-2", "#hello-lifecycle #blue-1"], {
+      x: -30,
+      y: 35,
+      duration: 0.5,
+    }, ">+0.1")
+    // 4. Scale blue-1 to 0 and fade out, start #two path animation at same time
+    .addLabel("blueFadeOut")
+    .to("#hello-lifecycle #blue-1", {
+      scale: 0,
+      opacity: 0,
+      duration: 0.25,
+    }, "blueFadeOut")
+    .set("#hello-lifecycle #two", { opacity: 1 }, "blueFadeOut")
+    .to("#hello-lifecycle #two", {
+      duration: 0.35,
+      ease: "none",
+      motionPath: {
+        path: "#hello-lifecycle #two-path",
+        align: "#hello-lifecycle #two-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0,
+        end: 0.7,
+      },
+    }, "blueFadeOut")
+    .to("#hello-lifecycle #two", {
+      duration: 0.15,
+      ease: "power1.out",
+      opacity: 0,
+      motionPath: {
+        path: "#hello-lifecycle #two-path",
+        align: "#hello-lifecycle #two-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0.7,
+        end: 1,
+      },
+    }, ">")
+    // 5. Fade out cursor-2 (almost immediately after blue-1 starts fading)
+    .to("#hello-lifecycle #cursor-2", {
+      opacity: 0,
+      duration: 0.25,
+    }, "blueFadeOut+=0.1")
+    // 6. At end of #two animation, fade out blue-2
+    .to("#hello-lifecycle #blue-2", {
+      opacity: 0,
+      duration: 0.25,
+    }, ">")
+    // 7. When blue-2 fades out, start #b animation on #a-b-c-path
+    .set("#hello-lifecycle #b", { opacity: 1 }, ">-0.25")
+    .to("#hello-lifecycle #b", {
+      duration: 0.35,
+      ease: "none",
+      motionPath: {
+        path: "#hello-lifecycle #a-b-c-path",
+        align: "#hello-lifecycle #a-b-c-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0,
+        end: 0.7,
+      },
+    }, ">-0.25")
+    .to("#hello-lifecycle #b", {
+      duration: 0.15,
+      ease: "power1.out",
+      opacity: 0,
+      motionPath: {
+        path: "#hello-lifecycle #a-b-c-path",
+        align: "#hello-lifecycle #a-b-c-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0.7,
+        end: 1,
+      },
+    }, ">")
+    // 8. Once #b animation is done, fade out blue-3
+    .to("#hello-lifecycle #blue-3", {
+      opacity: 0,
+      duration: 0.25,
+    }, ">")
+    // YELLOW SEQUENCE
+    // 1. Cursor-3 fades in
+    .to("#hello-lifecycle #cursor-3", {
+      opacity: 1,
+      duration: 0.4,
+    }, ">+0.5")
+    // 2. Scale yellow-1
+    .to("#hello-lifecycle #yellow-1", {
+      scale: 1.2,
+      duration: 0.3,
+      transformOrigin: "center center",
+    }, ">+0.2")
+    // 3. Move cursor and yellow-1 to 50 translate x and y
+    .to(["#hello-lifecycle #cursor-3", "#hello-lifecycle #yellow-1"], {
+      x: 65,
+      y: -75,
+      duration: 0.5,
+    }, ">+0.1")
+    // 4. Scale yellow-1 to 0 and fade out, start #three path animation at same time
+    .addLabel("yellowFadeOut")
+    .to("#hello-lifecycle #yellow-1", {
+      scale: 0,
+      opacity: 0,
+      duration: 0.25,
+    }, "yellowFadeOut")
+    .set("#hello-lifecycle #three", { opacity: 1 }, "yellowFadeOut")
+    .to("#hello-lifecycle #three", {
+      duration: 0.35,
+      ease: "none",
+      motionPath: {
+        path: "#hello-lifecycle #three-path",
+        align: "#hello-lifecycle #three-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0,
+        end: 0.7,
+      },
+    }, "yellowFadeOut")
+    .to("#hello-lifecycle #three", {
+      duration: 0.15,
+      ease: "power1.out",
+      opacity: 0,
+      motionPath: {
+        path: "#hello-lifecycle #three-path",
+        align: "#hello-lifecycle #three-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0.7,
+        end: 1,
+      },
+    }, ">")
+    // 5. Fade out cursor-3 (almost immediately after yellow-1 starts fading)
+    .to("#hello-lifecycle #cursor-3", {
+      opacity: 0,
+      duration: 0.25,
+    }, "yellowFadeOut+=0.1")
+    // 6. At end of #three animation, fade out yellow-2
+    .to("#hello-lifecycle #yellow-2", {
+      opacity: 0,
+      duration: 0.25,
+    }, ">")
+    // 7. When yellow-2 fades out, start #c animation on #a-b-c-path
+    .set("#hello-lifecycle #c", { opacity: 1 }, ">-0.25")
+    .to("#hello-lifecycle #c", {
+      duration: 0.35,
+      ease: "none",
+      motionPath: {
+        path: "#hello-lifecycle #a-b-c-path",
+        align: "#hello-lifecycle #a-b-c-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0,
+        end: 0.7,
+      },
+    }, ">-0.25")
+    .to("#hello-lifecycle #c", {
+      duration: 0.15,
+      ease: "power1.out",
+      opacity: 0,
+      motionPath: {
+        path: "#hello-lifecycle #a-b-c-path",
+        align: "#hello-lifecycle #a-b-c-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0.7,
+        end: 1,
+      },
+    }, ">")
+    // 8. Once #c animation is done, fade out yellow-3
+    .to("#hello-lifecycle #yellow-3", {
+      opacity: 0,
+      duration: 0.25,
+    }, ">")
+    // Reset: Fade in all users at the same time (consistent with offboarding animation)
+    .addLabel("reset")
+    // Reset positions and states first
+    .set([
+      "#hello-lifecycle #cursor-1",
+      "#hello-lifecycle #cursor-2",
+      "#hello-lifecycle #cursor-3"
+    ], {
+      opacity: 0,
+      x: 0,
+      y: 0,
+    }, "reset")
+    .set([
+      "#hello-lifecycle #green-1",
+      "#hello-lifecycle #blue-1",
+      "#hello-lifecycle #yellow-1"
+    ], {
+      scale: 1,
+      opacity: 0,
+      x: 0,
+      y: 0,
+    }, "reset")
+    .set([
+      "#hello-lifecycle #green-2",
+      "#hello-lifecycle #green-3",
+      "#hello-lifecycle #blue-2",
+      "#hello-lifecycle #blue-3",
+      "#hello-lifecycle #yellow-2",
+      "#hello-lifecycle #yellow-3"
+    ], {
+      opacity: 0,
+      x: 0,
+      y: 0,
+    }, "reset")
+    // Fade in all users at the same time
+    .to([
+      "#hello-lifecycle #green-1",
+      "#hello-lifecycle #green-2",
+      "#hello-lifecycle #green-3",
+      "#hello-lifecycle #blue-1",
+      "#hello-lifecycle #blue-2",
+      "#hello-lifecycle #blue-3",
+      "#hello-lifecycle #yellow-1",
+      "#hello-lifecycle #yellow-2",
+      "#hello-lifecycle #yellow-3"
+    ], {
+      opacity: 1,
+      duration: 0.3,
+    }, "reset+=0.2")
+}
+
+function offboardingAnimation() {
   // Set initial states
-  ["#one", "#a"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
-  gsap.set("#cursor", { opacity: 0, x: 0, y: 0 });
-  gsap.set("#deprovisioned-user-1", { scale: 1, opacity: 0, x: 0, y: 0 });
-  gsap.set("#deprovisioned-user-2", { opacity: 0, x: 0, y: 0 });
-  gsap.set("#deprovisioned-user-3", { opacity: 0, x: 0, y: 0 });
+  ["#github-offboarding #one", "#github-offboarding #a"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
+  gsap.set("#github-offboarding #cursor", { opacity: 0, x: 0, y: 0 });
+  gsap.set("#github-offboarding #deprovisioned-user-1", { scale: 1, opacity: 0, x: 0, y: 0 });
+  gsap.set("#github-offboarding #deprovisioned-user-2", { opacity: 0, x: 0, y: 0 });
+  gsap.set("#github-offboarding #deprovisioned-user-3", { opacity: 0, x: 0, y: 0 });
 
   const tl = gsap.timeline({
     defaults: { ease: "power1.inOut" },
@@ -26,23 +378,23 @@ function offboardingAnimation() {
 
   // 2. Start with users and cursor fade in, then selection and movement
   tl.addLabel("fadeInUsers")
-    .to(["#deprovisioned-user-3", "#deprovisioned-user-2", "#deprovisioned-user-1"], {
+    .to(["#github-offboarding #deprovisioned-user-3", "#github-offboarding #deprovisioned-user-2", "#github-offboarding #deprovisioned-user-1"], {
       opacity: 1,
       duration: 0.3,
     }, "fadeInUsers")
     // Cursor fades in (appears in place), after a short delay following users
-    .to("#cursor", {
+    .to("#github-offboarding #cursor", {
       opacity: 1,
       duration: 0.4,
     }, "fadeInUsers+=0.5")
     // 3. Deprovisioned user 2 scales (to indicate it being selected by cursor)
-    .to("#deprovisioned-user-1", {
+    .to("#github-offboarding #deprovisioned-user-1", {
       scale: 1.2,
       duration: 0.3,
       transformOrigin: "center center",
     }, ">+0.2")
     // 4. Move both cursor and deprovisioned user 2 to translate x and y of 50
-    .to(["#cursor", "#deprovisioned-user-1"], {
+    .to(["#github-offboarding #cursor", "#github-offboarding #deprovisioned-user-1"], {
       x: 50,
       y: 50,
       duration: 0.5,
@@ -51,66 +403,66 @@ function offboardingAnimation() {
     // 5. Scale and the deprovisioned user 2 to 0 and opacity to 0 as well at the same time
     // 6. Should start at same time of 5, start path animation #one
     .addLabel("fadeAndPath")
-    .to("#deprovisioned-user-1", {
+    .to("#github-offboarding #deprovisioned-user-1", {
       scale: 0,
       opacity: 0,
       duration: 0.25,
     }, "fadeAndPath")
-    .to("#cursor", {
+    .to("#github-offboarding #cursor", {
       opacity: 0,
       duration: 0.25,
     }, "fadeAndPath")
-    .set("#one", { opacity: 1 }, "fadeAndPath")
-    .to("#one", {
+    .set("#github-offboarding #one", { opacity: 1 }, "fadeAndPath")
+    .to("#github-offboarding #one", {
       duration: 0.35,
       ease: "none",
       motionPath: {
-        path: "#one-path",
-        align: "#one-path",
+        path: "#github-offboarding #one-path",
+        align: "#github-offboarding #one-path",
         alignOrigin: [0.5, 0.5],
         autoRotate: true,
         start: 0,
         end: 0.7,
       },
     }, "fadeAndPath")
-    .to("#one", {
+    .to("#github-offboarding #one", {
       duration: 0.15,
       ease: "power1.out",
       opacity: 0,
       motionPath: {
-        path: "#one-path",
-        align: "#one-path",
+        path: "#github-offboarding #one-path",
+        align: "#github-offboarding #one-path",
         alignOrigin: [0.5, 0.5],
         autoRotate: true,
         start: 0.7,
         end: 1,
       },
     }, ">")
-    .to("#deprovisioned-user-2", {
+    .to("#github-offboarding #deprovisioned-user-2", {
       opacity: 0,
       duration: 0.25,
     })
     // 7. Start path animation #a
-    .set("#a", { opacity: 1 }, ">-0.25")
-    .to("#a", {
+    .set("#github-offboarding #a", { opacity: 1 }, ">-0.25")
+    .to("#github-offboarding #a", {
       duration: 0.35,
       ease: "none",
       motionPath: {
-        path: "#a-path",
-        align: "#a-path",
+        path: "#github-offboarding #a-path",
+        align: "#github-offboarding #a-path",
         alignOrigin: [0.5, 0.5],
         autoRotate: true,
         start: 0,
         end: 0.7,
       },
     }, ">-0.25")
-    .to("#a", {
+    .to("#github-offboarding #a", {
       duration: 0.15,
       ease: "power1.out",
       opacity: 0,
       motionPath: {
-        path: "#a-path",
-        align: "#a-path",
+        path: "#github-offboarding #a-path",
+        align: "#github-offboarding #a-path",
         alignOrigin: [0.5, 0.5],
         autoRotate: true,
         start: 0.7,
@@ -120,13 +472,13 @@ function offboardingAnimation() {
 
     // 8. Wait for path animations to be done, then reduce opacity of deprovisioned user to 0
     // #one ends at fadeAndPath+=0.5, #a ends at fadeAndPath+=0.75 (starts at fadeAndPath+=0.25, duration 0.5)
-    .to("#deprovisioned-user-3", {
+    .to("#github-offboarding #deprovisioned-user-3", {
       opacity: 0,
       duration: 0.25,
     }, ">")
 
     // 9. Set deprovisioned user to translate x and y of 0
-    .to("#deprovisioned-user-3", {
+    .to("#github-offboarding #deprovisioned-user-3", {
       x: 0,
       y: 0,
       duration: 0,
