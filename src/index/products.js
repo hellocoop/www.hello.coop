@@ -23,6 +23,35 @@ function handleSignUpModals() {
   const closeHelloLifecycleModal = document.querySelector('#close-hello-lifecycle-join-waitlist-modal');
   const closeGithubOffboardingModal = document.querySelector('#close-github-offboarding-join-waitlist-modal');
   
+  // Get form elements
+  const helloLifecycleForm = helloLifecycleModal?.querySelector('form');
+  const githubOffboardingForm = githubOffboardingModal?.querySelector('form');
+  
+  // Helper function to generate random nonce (UUID-like format)
+  function generateNonce() {
+    const hex = () => Math.floor(Math.random() * 16).toString(16);
+    return `${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}-${hex()}${hex()}${hex()}${hex()}-${hex()}${hex()}${hex()}${hex()}-${hex()}${hex()}${hex()}${hex()}-${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}`;
+  }
+  
+  // Helper function to get redirect URI based on current page
+  function getRedirectUri(hash) {
+    const isProductsPage = window.location.pathname.includes('products.html');
+    const baseUrl = window.location.origin;
+    if (isProductsPage) {
+      return `${baseUrl}/products.html${hash}`;
+    }
+    return `${baseUrl}${hash}`;
+  }
+  
+  // Helper function to redirect to Hellō authorization
+  function redirectToHello(clientId, hash, email) {
+    const nonce = generateNonce();
+    const redirectUri = encodeURIComponent(getRedirectUri(hash));
+    const loginHint = encodeURIComponent(email);
+    const authUrl = `https://wallet.hello-dev.net/authorize?scope=openid+email&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=id_token&response_mode=fragment&nonce=${nonce}&login_hint=${loginHint}`;
+    window.location.href = authUrl;
+  }
+  
   // Helper function to show modal
   function showModal(modal) {
     modal.classList.remove('hidden');
@@ -49,6 +78,23 @@ function handleSignUpModals() {
     };
   }
   
+  // Hello Lifecycle form submission
+  if (helloLifecycleForm) {
+    helloLifecycleForm.onsubmit = (e) => {
+      e.preventDefault();
+      const emailInput = helloLifecycleForm.querySelector('input[type="email"]');
+      const submitButton = helloLifecycleForm.querySelector('button[type="submit"]');
+      const email = emailInput?.value || '';
+      
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.classList.add('hello-btn-loader');
+      }
+      
+      redirectToHello('app_hello_lifecycle_signup', '#hello-lifecycle', email);
+    };
+  }
+  
   // GitHub Offboarding modal handlers
   if (githubOffboardingBtn && githubOffboardingModal) {
     githubOffboardingBtn.onclick = (e) => {
@@ -60,6 +106,23 @@ function handleSignUpModals() {
   if (closeGithubOffboardingModal && githubOffboardingModal) {
     closeGithubOffboardingModal.onclick = () => {
       hideModal(githubOffboardingModal);
+    };
+  }
+  
+  // GitHub Offboarding form submission
+  if (githubOffboardingForm) {
+    githubOffboardingForm.onsubmit = (e) => {
+      e.preventDefault();
+      const emailInput = githubOffboardingForm.querySelector('input[type="email"]');
+      const submitButton = githubOffboardingForm.querySelector('button[type="submit"]');
+      const email = emailInput?.value || '';
+      
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.classList.add('hello-btn-loader');
+      }
+      
+      redirectToHello('app_hello_github_offboarding_signup', '#github-offboarding', email);
     };
   }
   
