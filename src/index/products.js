@@ -14,25 +14,25 @@ function handleSignUpModals() {
   // Get modal elements
   const helloLifecycleModal = document.querySelector('#hello-lifecycle-join-waitlist-modal');
   const githubOffboardingModal = document.querySelector('#github-offboarding-join-waitlist-modal');
-  
+
   // Get button elements
   const helloLifecycleBtn = document.querySelector('#hello-lifecycle-join-waitlist-btn');
   const githubOffboardingBtn = document.querySelector('#github-offboarding-join-waitlist-btn');
-  
+
   // Get close button elements
   const closeHelloLifecycleModal = document.querySelector('#close-hello-lifecycle-join-waitlist-modal');
   const closeGithubOffboardingModal = document.querySelector('#close-github-offboarding-join-waitlist-modal');
-  
+
   // Get form elements
   const helloLifecycleForm = helloLifecycleModal?.querySelector('form');
   const githubOffboardingForm = githubOffboardingModal?.querySelector('form');
-  
+
   // Helper function to generate random nonce (UUID-like format)
   function generateNonce() {
     const hex = () => Math.floor(Math.random() * 16).toString(16);
     return `${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}-${hex()}${hex()}${hex()}${hex()}-${hex()}${hex()}${hex()}${hex()}-${hex()}${hex()}${hex()}${hex()}-${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}${hex()}`;
   }
-  
+
   // Helper function to get redirect URI based on current page
   function getRedirectUri(hash) {
     const isProductsPage = window.location.pathname.includes('products.html');
@@ -42,7 +42,7 @@ function handleSignUpModals() {
     }
     return `${baseUrl}${hash}`;
   }
-  
+
   // Helper function to redirect to Hellō authorization
   function redirectToHello(clientId, hash, email) {
     const nonce = generateNonce();
@@ -51,19 +51,19 @@ function handleSignUpModals() {
     const authUrl = `https://wallet.hello-dev.net/authorize?scope=openid+email&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=id_token&response_mode=fragment&nonce=${nonce}&login_hint=${loginHint}`;
     window.location.href = authUrl;
   }
-  
+
   // Helper function to show modal
   function showModal(modal) {
     modal.classList.remove('hidden');
     document.body.classList.add('overflow-y-hidden');
   }
-  
+
   // Helper function to hide modal
   function hideModal(modal) {
     modal.classList.add('hidden');
     document.body.classList.remove('overflow-y-hidden');
   }
-  
+
   // Hello Lifecycle modal handlers
   if (helloLifecycleBtn && helloLifecycleModal) {
     helloLifecycleBtn.onclick = (e) => {
@@ -71,13 +71,13 @@ function handleSignUpModals() {
       showModal(helloLifecycleModal);
     };
   }
-  
+
   if (closeHelloLifecycleModal && helloLifecycleModal) {
     closeHelloLifecycleModal.onclick = () => {
       hideModal(helloLifecycleModal);
     };
   }
-  
+
   // Hello Lifecycle form submission
   if (helloLifecycleForm) {
     helloLifecycleForm.onsubmit = (e) => {
@@ -85,16 +85,16 @@ function handleSignUpModals() {
       const emailInput = helloLifecycleForm.querySelector('input[type="email"]');
       const submitButton = helloLifecycleForm.querySelector('button[type="submit"]');
       const email = emailInput?.value || '';
-      
+
       if (submitButton) {
         submitButton.disabled = true;
         submitButton.classList.add('hello-btn-loader');
       }
-      
+
       redirectToHello('app_hello_lifecycle_signup', '#hello-lifecycle', email);
     };
   }
-  
+
   // GitHub Offboarding modal handlers
   if (githubOffboardingBtn && githubOffboardingModal) {
     githubOffboardingBtn.onclick = (e) => {
@@ -102,13 +102,13 @@ function handleSignUpModals() {
       showModal(githubOffboardingModal);
     };
   }
-  
+
   if (closeGithubOffboardingModal && githubOffboardingModal) {
     closeGithubOffboardingModal.onclick = () => {
       hideModal(githubOffboardingModal);
     };
   }
-  
+
   // GitHub Offboarding form submission
   if (githubOffboardingForm) {
     githubOffboardingForm.onsubmit = (e) => {
@@ -116,16 +116,16 @@ function handleSignUpModals() {
       const emailInput = githubOffboardingForm.querySelector('input[type="email"]');
       const submitButton = githubOffboardingForm.querySelector('button[type="submit"]');
       const email = emailInput?.value || '';
-      
+
       if (submitButton) {
         submitButton.disabled = true;
         submitButton.classList.add('hello-btn-loader');
       }
-      
+
       redirectToHello('app_hello_github_offboarding_signup', '#github-offboarding', email);
     };
   }
-  
+
   // Close modals when clicking outside (optional enhancement)
   if (helloLifecycleModal) {
     helloLifecycleModal.onclick = (e) => {
@@ -134,7 +134,7 @@ function handleSignUpModals() {
       }
     };
   }
-  
+
   if (githubOffboardingModal) {
     githubOffboardingModal.onclick = (e) => {
       if (e.target === githubOffboardingModal) {
@@ -158,6 +158,12 @@ function lifecycleAnimation() {
   gsap.set("#hello-lifecycle #yellow-3", { opacity: 1, x: 0, y: 0 });
   ["#hello-lifecycle #one", "#hello-lifecycle #two", "#hello-lifecycle #three"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
   ["#hello-lifecycle #a", "#hello-lifecycle #b", "#hello-lifecycle #c"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
+  // Set initial states for app elements (original fill color #D4D4D4, opacity 0.15)
+  ["#hello-lifecycle #source-1", "#hello-lifecycle #source-2", "#hello-lifecycle #source-3"].forEach(id => gsap.set(id, { fill: "#D4D4D4", opacity: 0.15 }));
+  // Set initial state for cloud (original stroke color #D4D4D4, opacity 0.15)
+  gsap.set("#hello-lifecycle #cloud", { stroke: "#D4D4D4", opacity: 0.15 });
+  // Set initial state for app (original stroke color #D4D4D4, opacity 0.15)
+  gsap.set("#hello-lifecycle #app", { stroke: "#D4D4D4", opacity: 0.15 });
 
   const tl = gsap.timeline({
     defaults: { ease: "power1.inOut" },
@@ -190,6 +196,16 @@ function lifecycleAnimation() {
       opacity: 0,
       duration: 0.25,
     }, "greenFadeOut")
+    .to("#hello-lifecycle #source-1", {
+      fill: "#10B981",
+      opacity: 1,
+      duration: 0.16,
+    }, "greenFadeOut-=0.18")
+    .to("#hello-lifecycle #source-1", {
+      fill: "#D4D4D4",
+      opacity: 0.15,
+      duration: 0.16,
+    }, ">+0.03")
     .set("#hello-lifecycle #one", { opacity: 1 }, "greenFadeOut")
     .to("#hello-lifecycle #one", {
       duration: 0.35,
@@ -221,8 +237,18 @@ function lifecycleAnimation() {
       opacity: 0,
       duration: 0.25,
     }, "greenFadeOut+=0.1")
-    // 6. At end of #one animation, fade out green-2
+    // 6. At end of #one animation, fade out green-2 and flash cloud green
     .addLabel("greenAPathStart")
+    .to("#hello-lifecycle #cloud", {
+      stroke: "#10B981",
+      opacity: 1,
+      duration: 0.16,
+    }, "greenAPathStart-=0.05")
+    .to("#hello-lifecycle #cloud", {
+      stroke: "#D4D4D4",
+      opacity: 0.15,
+      duration: 0.16,
+    }, ">+0.03")
     .to("#hello-lifecycle #green-2", {
       opacity: 0,
       duration: 0.25,
@@ -254,11 +280,21 @@ function lifecycleAnimation() {
         end: 1,
       },
     }, ">")
-    // 8. Once #a animation is done, fade out green-3
+    // 8. Once #a animation is done, fade out green-3 and flash app green
+    .to("#hello-lifecycle #app", {
+      stroke: "#10B981",
+      opacity: 1,
+      duration: 0.16,
+    }, ">")
     .to("#hello-lifecycle #green-3", {
       opacity: 0,
       duration: 0.25,
     }, ">")
+    .to("#hello-lifecycle #app", {
+      stroke: "#D4D4D4",
+      opacity: 0.15,
+      duration: 0.16,
+    }, ">+0.03")
     // BLUE SEQUENCE
     // 1. Cursor-2 fades in
     .to("#hello-lifecycle #cursor-2", {
@@ -284,6 +320,16 @@ function lifecycleAnimation() {
       opacity: 0,
       duration: 0.25,
     }, "blueFadeOut")
+    .to("#hello-lifecycle #source-2", {
+      fill: "#0EA5E9",
+      opacity: 1,
+      duration: 0.16,
+    }, "blueFadeOut-=0.18")
+    .to("#hello-lifecycle #source-2", {
+      fill: "#D4D4D4",
+      opacity: 0.15,
+      duration: 0.16,
+    }, ">+0.03")
     .set("#hello-lifecycle #two", { opacity: 1 }, "blueFadeOut")
     .to("#hello-lifecycle #two", {
       duration: 0.35,
@@ -315,8 +361,18 @@ function lifecycleAnimation() {
       opacity: 0,
       duration: 0.25,
     }, "blueFadeOut+=0.1")
-    // 6. At end of #two animation, fade out blue-2
+    // 6. At end of #two animation, fade out blue-2 and flash cloud blue
     .addLabel("blueAPathStart")
+    .to("#hello-lifecycle #cloud", {
+      stroke: "#0EA5E9",
+      opacity: 1,
+      duration: 0.16,
+    }, "blueAPathStart-=0.05")
+    .to("#hello-lifecycle #cloud", {
+      stroke: "#D4D4D4",
+      opacity: 0.15,
+      duration: 0.16,
+    }, ">+0.03")
     .to("#hello-lifecycle #blue-2", {
       opacity: 0,
       duration: 0.25,
@@ -348,11 +404,21 @@ function lifecycleAnimation() {
         end: 1,
       },
     }, ">")
-    // 8. Once #b animation is done, fade out blue-3
+    // 8. Once #b animation is done, fade out blue-3 and flash app blue
+    .to("#hello-lifecycle #app", {
+      stroke: "#0EA5E9",
+      opacity: 1,
+      duration: 0.16,
+    }, ">")
     .to("#hello-lifecycle #blue-3", {
       opacity: 0,
       duration: 0.25,
     }, ">")
+    .to("#hello-lifecycle #app", {
+      stroke: "#D4D4D4",
+      opacity: 0.15,
+      duration: 0.16,
+    }, ">+0.03")
     // YELLOW SEQUENCE
     // 1. Cursor-3 fades in
     .to("#hello-lifecycle #cursor-3", {
@@ -378,6 +444,16 @@ function lifecycleAnimation() {
       opacity: 0,
       duration: 0.25,
     }, "yellowFadeOut")
+    .to("#hello-lifecycle #source-3", {
+      fill: "#F59E0B",
+      opacity: 1,
+      duration: 0.16,
+    }, "yellowFadeOut-=0.18")
+    .to("#hello-lifecycle #source-3", {
+      fill: "#D4D4D4",
+      opacity: 0.15,
+      duration: 0.16,
+    }, ">+0.03")
     .set("#hello-lifecycle #three", { opacity: 1 }, "yellowFadeOut")
     .to("#hello-lifecycle #three", {
       duration: 0.35,
@@ -409,8 +485,18 @@ function lifecycleAnimation() {
       opacity: 0,
       duration: 0.25,
     }, "yellowFadeOut+=0.1")
-    // 6. At end of #three animation, fade out yellow-2
+    // 6. At end of #three animation, fade out yellow-2 and flash cloud yellow
     .addLabel("yellowAPathStart")
+    .to("#hello-lifecycle #cloud", {
+      stroke: "#F59E0B",
+      opacity: 1,
+      duration: 0.16,
+    }, "yellowAPathStart-=0.05")
+    .to("#hello-lifecycle #cloud", {
+      stroke: "#D4D4D4",
+      opacity: 0.15,
+      duration: 0.16,
+    }, ">+0.03")
     .to("#hello-lifecycle #yellow-2", {
       opacity: 0,
       duration: 0.25,
@@ -442,11 +528,21 @@ function lifecycleAnimation() {
         end: 1,
       },
     }, ">")
-    // 8. Once #c animation is done, fade out yellow-3
+    // 8. Once #c animation is done, fade out yellow-3 and flash app yellow
+    .to("#hello-lifecycle #app", {
+      stroke: "#F59E0B",
+      opacity: 1,
+      duration: 0.16,
+    }, ">")
     .to("#hello-lifecycle #yellow-3", {
       opacity: 0,
       duration: 0.25,
     }, ">")
+    .to("#hello-lifecycle #app", {
+      stroke: "#D4D4D4",
+      opacity: 0.15,
+      duration: 0.16,
+    }, ">+0.03")
     // Reset: Fade in all users at the same time (consistent with offboarding animation)
     .addLabel("reset")
     // Reset positions and states first
@@ -480,6 +576,25 @@ function lifecycleAnimation() {
       opacity: 0,
       x: 0,
       y: 0,
+    }, "reset")
+    // Reset app elements to original fill color and opacity 0.15
+    .set([
+      "#hello-lifecycle #source-1",
+      "#hello-lifecycle #source-2",
+      "#hello-lifecycle #source-3"
+    ], {
+      fill: "#D4D4D4",
+      opacity: 0.15,
+    }, "reset")
+    // Reset cloud to original stroke color and opacity 0.15
+    .set("#hello-lifecycle #cloud", {
+      stroke: "#D4D4D4",
+      opacity: 0.15,
+    }, "reset")
+    // Reset app to original stroke color and opacity 0.15
+    .set("#hello-lifecycle #app", {
+      stroke: "#D4D4D4",
+      opacity: 0.15,
     }, "reset")
     // Fade in all users at the same time
     .to([
