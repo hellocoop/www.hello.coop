@@ -158,14 +158,10 @@ function lifecycleAnimation() {
   gsap.set("#hello-lifecycle #yellow-3", { opacity: 1, x: 0, y: 0 });
   ["#hello-lifecycle #one", "#hello-lifecycle #two", "#hello-lifecycle #three"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
   ["#hello-lifecycle #a", "#hello-lifecycle #b", "#hello-lifecycle #c"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
-  // Set initial states for app elements (original fill color currentColor, opacity 0.25)
-  ["#hello-lifecycle #source-1", "#hello-lifecycle #source-2", "#hello-lifecycle #source-3"].forEach(id => gsap.set(id, { fill: "currentColor", opacity: 0.25 }));
-  // Set initial state for cloud (original stroke color currentColor, opacity 0.25)
-  gsap.set("#hello-lifecycle #cloud-1", { fill: "currentColor", opacity: 0.25 });
-  gsap.set("#hello-lifecycle #cloud-2", { fill: "currentColor", opacity: 0.25 });
-  gsap.set("#hello-lifecycle #cloud-3", { fill: "currentColor", opacity: 0.25 });
-  // Set initial state for app (original stroke color currentColor, opacity 0.25)
-  gsap.set("#hello-lifecycle #app", { fill: "currentColor", opacity: 0.25 });
+  // Set initial states for overlay flash elements (opacity 0)
+  ["#hello-lifecycle #source-1", "#hello-lifecycle #source-2", "#hello-lifecycle #source-3"].forEach(id => gsap.set(id, { opacity: 0 }));
+  ["#hello-lifecycle #cloud-1", "#hello-lifecycle #cloud-2", "#hello-lifecycle #cloud-3"].forEach(id => gsap.set(id, { opacity: 0 }));
+  ["#hello-lifecycle #app-1", "#hello-lifecycle #app-2", "#hello-lifecycle #app-3"].forEach(id => gsap.set(id, { opacity: 0 }));
 
   const tl = gsap.timeline({
     defaults: { ease: "power1.inOut" },
@@ -198,19 +194,14 @@ function lifecycleAnimation() {
       opacity: 0,
       duration: 0.25,
     }, "greenFadeOut")
-    // .to("#hello-lifecycle #source-1", {
-    //   fill: "#10B981",
-    //   opacity: 1,
-    //   duration: 0.16,
-    // }, "greenFadeOut-=0.18")
     .to("#hello-lifecycle #source-1", {
-      opacity: 0.25,
+      opacity: 1,
       duration: 0.16,
-    }, ">+0.03")
+    }, "greenFadeOut-=0.18")
     .to("#hello-lifecycle #source-1", {
-      fill: "currentColor",
-      duration: 0,
-    }, ">")
+      opacity: 0,
+      duration: 0.16,
+    }, ">+0.19")
     .set("#hello-lifecycle #one", { opacity: 1 }, "greenFadeOut")
     .to("#hello-lifecycle #one", {
       duration: 0.4,
@@ -246,22 +237,17 @@ function lifecycleAnimation() {
     .addLabel("greenAPathStart")
     .addLabel("greenCloudFlash")
     .to("#hello-lifecycle #cloud-1", {
-      fill: "#10B981",
       opacity: 1,
       duration: 0.16,
     }, "greenCloudFlash")
-    tl.to("#hello-lifecycle #green-2", {
+  tl.to("#hello-lifecycle #green-2", {
+    opacity: 0,
+    duration: 0.16,
+  }, "greenCloudFlash")
+    .to("#hello-lifecycle #cloud-1", {
       opacity: 0,
       duration: 0.16,
-    }, "greenCloudFlash")
-    .to("#hello-lifecycle #cloud-1", {
-      opacity: 0.25,
-      duration: 0.16,
     }, "greenCloudFlash+=0.19")
-    .to("#hello-lifecycle #cloud-1", {
-      fill: "currentColor",
-      duration: 0,
-    }, "greenCloudFlash+=0.35")
     // 7. Start #a animation on #a-b-c-path (at same time as green-2 starts fading)
     .set("#hello-lifecycle #a", { opacity: 1 }, "greenAPathStart")
     .to("#hello-lifecycle #a", {
@@ -291,8 +277,7 @@ function lifecycleAnimation() {
     }, ">")
     // 8. Once #a animation is done, fade out green-3 and flash app green
     .addLabel("greenAppFlash")
-    .to("#hello-lifecycle #app", {
-      fill: "#10B981",
+    .to("#hello-lifecycle #app-1", {
       opacity: 1,
       duration: 0.16,
     }, "greenAppFlash")
@@ -300,14 +285,10 @@ function lifecycleAnimation() {
       opacity: 0,
       duration: 0.16,
     }, "greenAppFlash")
-    .to("#hello-lifecycle #app", {
-      opacity: 0.25,
+    .to("#hello-lifecycle #app-1", {
+      opacity: 0,
       duration: 0.16,
     }, "greenAppFlash+=0.19")
-    .to("#hello-lifecycle #app", {
-      fill: "currentColor",
-      duration: 0,
-    }, "greenAppFlash+=0.35")
     // BLUE SEQUENCE
     // 1. Cursor-2 fades in
     .to("#hello-lifecycle #cursor-2", {
@@ -334,18 +315,13 @@ function lifecycleAnimation() {
       duration: 0.25,
     }, "blueFadeOut")
     .to("#hello-lifecycle #source-2", {
-      fill: "#0EA5E9",
       opacity: 1,
       duration: 0.16,
     }, "blueFadeOut-=0.18")
     .to("#hello-lifecycle #source-2", {
-      opacity: 0.25,
+      opacity: 0,
       duration: 0.16,
-    }, ">+0.03")
-    .to("#hello-lifecycle #source-2", {
-      fill: "currentColor",
-      duration: 0,
-    }, ">")
+    }, ">+0.19")
     .set("#hello-lifecycle #two", { opacity: 1 }, "blueFadeOut")
     .to("#hello-lifecycle #two", {
       duration: 0.4,
@@ -381,7 +357,6 @@ function lifecycleAnimation() {
     .addLabel("blueAPathStart")
     .addLabel("blueCloudFlash")
     .to("#hello-lifecycle #cloud-2", {
-      fill: "#0EA5E9",
       opacity: 1,
       duration: 0.16,
     }, "blueCloudFlash")
@@ -390,13 +365,9 @@ function lifecycleAnimation() {
       duration: 0.16,
     }, "blueCloudFlash")
     .to("#hello-lifecycle #cloud-2", {
-      opacity: 0.25,
+      opacity: 0,
       duration: 0.16,
     }, "blueCloudFlash+=0.19")
-    .to("#hello-lifecycle #cloud-2", {
-      fill: "currentColor",
-      duration: 0,
-    }, "blueCloudFlash+=0.35")
     // 7. Start #b animation on #a-b-c-path (at same time as blue-2 starts fading)
     .set("#hello-lifecycle #b", { opacity: 1 }, "blueAPathStart")
     .to("#hello-lifecycle #b", {
@@ -426,8 +397,7 @@ function lifecycleAnimation() {
     }, ">")
     // 8. Once #b animation is done, fade out blue-3 and flash app blue
     .addLabel("blueAppFlash")
-    .to("#hello-lifecycle #app", {
-      fill: "#0EA5E9",
+    .to("#hello-lifecycle #app-2", {
       opacity: 1,
       duration: 0.16,
     }, "blueAppFlash")
@@ -435,14 +405,10 @@ function lifecycleAnimation() {
       opacity: 0,
       duration: 0.16,
     }, "blueAppFlash")
-    .to("#hello-lifecycle #app", {
-      opacity: 0.25,
+    .to("#hello-lifecycle #app-2", {
+      opacity: 0,
       duration: 0.16,
     }, "blueAppFlash+=0.19")
-    .to("#hello-lifecycle #app", {
-      fill: "currentColor",
-      duration: 0,
-    }, "blueAppFlash+=0.35")
     // YELLOW SEQUENCE
     // 1. Cursor-3 fades in
     .to("#hello-lifecycle #cursor-3", {
@@ -469,18 +435,13 @@ function lifecycleAnimation() {
       duration: 0.25,
     }, "yellowFadeOut")
     .to("#hello-lifecycle #source-3", {
-      fill: "#F59E0B",
       opacity: 1,
       duration: 0.16,
     }, "yellowFadeOut-=0.18")
     .to("#hello-lifecycle #source-3", {
-      opacity: 0.25,
+      opacity: 0,
       duration: 0.16,
-    }, ">+0.03")
-    .to("#hello-lifecycle #source-3", {
-      fill: "currentColor",
-      duration: 0,
-    }, ">")
+    }, ">+0.19")
     .set("#hello-lifecycle #three", { opacity: 1 }, "yellowFadeOut")
     .to("#hello-lifecycle #three", {
       duration: 0.4,
@@ -516,7 +477,6 @@ function lifecycleAnimation() {
     .addLabel("yellowAPathStart")
     .addLabel("yellowCloudFlash")
     .to("#hello-lifecycle #cloud-3", {
-      fill: "#F59E0B",
       opacity: 1,
       duration: 0.16,
     }, "yellowCloudFlash")
@@ -525,13 +485,9 @@ function lifecycleAnimation() {
       duration: 0.16,
     }, "yellowCloudFlash")
     .to("#hello-lifecycle #cloud-3", {
-      opacity: 0.25,
+      opacity: 0,
       duration: 0.16,
     }, "yellowCloudFlash+=0.19")
-    .to("#hello-lifecycle #cloud-3", {
-      fill: "currentColor",
-      duration: 0,
-    }, "yellowCloudFlash+=0.35")
     // 7. Start #c animation on #a-b-c-path (at same time as yellow-2 starts fading)
     .set("#hello-lifecycle #c", { opacity: 1 }, "yellowAPathStart")
     .to("#hello-lifecycle #c", {
@@ -561,8 +517,7 @@ function lifecycleAnimation() {
     }, ">")
     // 8. Once #c animation is done, fade out yellow-3 and flash app yellow
     .addLabel("yellowAppFlash")
-    .to("#hello-lifecycle #app", {
-      fill: "#F59E0B",
+    .to("#hello-lifecycle #app-3", {
       opacity: 1,
       duration: 0.16,
     }, "yellowAppFlash")
@@ -570,14 +525,10 @@ function lifecycleAnimation() {
       opacity: 0,
       duration: 0.16,
     }, "yellowAppFlash")
-    .to("#hello-lifecycle #app", {
-      opacity: 0.25,
+    .to("#hello-lifecycle #app-3", {
+      opacity: 0,
       duration: 0.16,
     }, "yellowAppFlash+=0.19")
-    .to("#hello-lifecycle #app", {
-      fill: "currentColor",
-      duration: 0,
-    }, "yellowAppFlash+=0.35")
     // Reset: Fade in all users at the same time (consistent with offboarding animation)
     .addLabel("reset")
     // Reset positions and states first
@@ -612,32 +563,19 @@ function lifecycleAnimation() {
       x: 0,
       y: 0,
     }, "reset")
-    // Reset app elements to original fill color and opacity 0.25
+    // Reset overlay flash elements to opacity 0
     .set([
       "#hello-lifecycle #source-1",
       "#hello-lifecycle #source-2",
-      "#hello-lifecycle #source-3"
+      "#hello-lifecycle #source-3",
+      "#hello-lifecycle #cloud-1",
+      "#hello-lifecycle #cloud-2",
+      "#hello-lifecycle #cloud-3",
+      "#hello-lifecycle #app-1",
+      "#hello-lifecycle #app-2",
+      "#hello-lifecycle #app-3"
     ], {
-      fill: "currentColor",
-      opacity: 0.25,
-    }, "reset")
-    // Reset cloud to original stroke color and opacity 0.25
-    .set("#hello-lifecycle #cloud-1", {
-      fill: "currentColor",
-      opacity: 0.25,
-    }, "reset")
-    .set("#hello-lifecycle #cloud-2", {
-      fill: "currentColor",
-      opacity: 0.25,
-    }, "reset")
-    .set("#hello-lifecycle #cloud-3", {
-      fill: "currentColor",
-      opacity: 0.25,
-    }, "reset")
-    // Reset app to original stroke color and opacity 0.25
-    .set("#hello-lifecycle #app", {
-      fill: "currentColor",
-      opacity: 0.25,
+      opacity: 0,
     }, "reset")
     // Fade in all users at the same time
     .to([
@@ -689,8 +627,8 @@ function offboardingAnimation() {
     }, ">+0.2")
     // 4. Move both cursor and deprovisioned user 2 to translate x and y of 50
     .to(["#github-offboarding #cursor", "#github-offboarding #deprovisioned-user-1"], {
-      x: 50,
-      y: 50,
+      x: -30,
+      y: 65,
       duration: 0.5,
     }, ">+0.1")
 
@@ -700,7 +638,7 @@ function offboardingAnimation() {
     .to("#github-offboarding #deprovisioned-user-1", {
       scale: 0,
       opacity: 0,
-      duration: 0.25,
+      duration: 0.15,
     }, "fadeAndPath")
     .to("#github-offboarding #cursor", {
       opacity: 0,
@@ -736,8 +674,17 @@ function offboardingAnimation() {
       opacity: 0,
       duration: 0.25,
     })
-    // 7. Start path animation #a
-    .set("#github-offboarding #a", { opacity: 1 }, ">-0.25")
+    // 7. Start path animation #a (after deprovisioned-user-2 disappears)
+    .set("#github-offboarding #a", {
+      opacity: 1,
+      motionPath: {
+        path: "#github-offboarding #a-path",
+        align: "#github-offboarding #a-path",
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+        start: 0,
+      }
+    }, ">")
     .to("#github-offboarding #a", {
       duration: 0.4,
       ease: "none",
@@ -749,7 +696,7 @@ function offboardingAnimation() {
         start: 0,
         end: 0.7,
       },
-    }, ">-0.25")
+    }, ">")
     .to("#github-offboarding #a", {
       duration: 0.15,
       ease: "power1.out",
