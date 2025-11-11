@@ -19,7 +19,7 @@ function handleSignUpModals() {
   const helloLifecycleBtn = document.querySelector('#hello-lifecycle-join-waitlist-btn');
   const githubOffboardingBtn = document.querySelector('#github-offboarding-join-waitlist-btn');
 
-  // Get close button elements
+  // Get close icon button elements
   const closeHelloLifecycleModal = document.querySelector('#close-hello-lifecycle-join-waitlist-modal');
   const closeGithubOffboardingModal = document.querySelector('#close-github-offboarding-join-waitlist-modal');
 
