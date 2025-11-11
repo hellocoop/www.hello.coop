@@ -53,7 +53,15 @@
 }
 
 .card-description {
-    @apply h-full w-full md:w-1/2 text-base md:text-lg lg:text-2xl text-charcoal/50 dark:text-gray/50 flex flex-col justify-between space-y-5 relative z-10;
+    @apply h-full w-full md:w-1/2 text-base md:text-lg lg:text-[1.275rem] text-charcoal/50 dark:text-gray/50 flex flex-col justify-between space-y-5 relative z-10;
+}
+
+.card-description ol {
+    @apply list-outside list-decimal space-y-0.5;
+}
+
+.card-description ol li {
+    @apply ms-5;
 }
 
 .card-link-primary {
