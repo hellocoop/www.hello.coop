@@ -102,7 +102,7 @@ function handleSignUpModals() {
     };
   }
 
-  // GitHub Offboarding form submission
+  // Github Offboarding form submission 
   if (githubOffboardingForm) {
     githubOffboardingForm.onsubmit = (e) => {
       e.preventDefault();
