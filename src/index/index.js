@@ -894,7 +894,7 @@ function handleSignUpModals() {
         const nonce = generateNonce();
         const redirectUri = encodeURIComponent(getRedirectUri(hash));
         const loginHint = encodeURIComponent(email);
-        const authUrl = `https://wallet.hello-dev.net/authorize?scope=openid+email&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=id_token&response_mode=fragment&nonce=${nonce}&login_hint=${loginHint}`;
+        const authUrl = `https://wallet.hello.coop/authorize?scope=openid+email&client_id=${clientId}&redirect_uri=${redirectUri}&response_type=id_token&response_mode=fragment&nonce=${nonce}&login_hint=${loginHint}`;
         window.location.href = authUrl;
     }
 
@@ -934,7 +934,7 @@ function handleSignUpModals() {
 
             if (submitButton) {
                 submitButton.disabled = true;
-                submitButton.classList.add('hello-btn-loader');
+                submitButton.classList.add('hello-btn-loader', 'opacity-50');
             }
 
             redirectToHello('app_hello_lifecycle_signup', '#hello-lifecycle', email);
@@ -965,7 +965,7 @@ function handleSignUpModals() {
 
             if (submitButton) {
                 submitButton.disabled = true;
-                submitButton.classList.add('hello-btn-loader');
+                submitButton.classList.add('hello-btn-loader', 'opacity-50');
             }
 
             redirectToHello('app_hello_github_offboarding_signup', '#github-offboarding', email);
