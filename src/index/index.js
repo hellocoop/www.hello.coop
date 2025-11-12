@@ -61,7 +61,7 @@ function interchangeAnimation() {
             "a", "b", "c", "d", "e", "f", "g", "h",
             "i", "j", "k", "l", "m", "n",
         ];
-        all.forEach(id => gsap.set(`#${id}`, { opacity: 0 }));
+        all.forEach(id => gsap.set(`#interchange-animation #${id}`, { opacity: 0 }));
     }
 
     function isPathLeftToRight(pathSelector) {
@@ -103,12 +103,12 @@ function interchangeAnimation() {
         const third = `${second}-${Math.floor(Math.random() * 4) + 1}`;
         const flashColor = flashColors[second] || "#0EA5E9";
 
-        const firstPath = `#${first}-path`;
-        const secondPath = `#${second}-path`;
-        const forward = isPathLeftToRight(secondPath);
+        const firstPathSelector = `#interchange-animation #${first}-path`;
+        const secondPathSelector = `#interchange-animation #${second}-path`;
+        const forward = isPathLeftToRight(secondPathSelector);
 
-        const firstDuration = getDurationForPath(firstPath);
-        const secondDuration = getDurationForPath(secondPath);
+        const firstDuration = getDurationForPath(firstPathSelector);
+        const secondDuration = getDurationForPath(secondPathSelector);
 
         activeFlows++;
 
@@ -123,13 +123,13 @@ function interchangeAnimation() {
 
         // Step 1: top-level animation
         tl.fromTo(
-            `#${first}`,
+            `#interchange-animation #${first}`,
             { opacity: 0 },
             {
                 duration: firstDuration,
                 motionPath: {
-                    path: firstPath,
-                    align: firstPath,
+                    path: firstPathSelector,
+                    align: firstPathSelector,
                     alignOrigin: [0.5, 0.5],
                     autoRotate: true,
                     start: 0,
@@ -146,13 +146,13 @@ function interchangeAnimation() {
 
         // Step 2: second-level animation
         tl.fromTo(
-            `#${second}`,
+            `#interchange-animation #${second}`,
             { opacity: 0 },
             {
                 duration: secondDuration,
                 motionPath: {
-                    path: secondPath,
-                    align: secondPath,
+                    path: secondPathSelector,
+                    align: secondPathSelector,
                     alignOrigin: [0.5, 0.5],
                     autoRotate: true,
                     start: forward ? 0 : 1,
@@ -168,7 +168,7 @@ function interchangeAnimation() {
         );
 
         // Step 3: single clean stroke flash
-        tl.to(`#${third}`, {
+        tl.to(`#interchange-animation #${third}`, {
             stroke: flashColor,
             opacity: 0.75,
             duration: 0.3,
@@ -176,7 +176,7 @@ function interchangeAnimation() {
             repeat: 1,
             yoyoEase: "power1.inOut",
             ease: "power2.inOut",
-            onStart: () => gsap.set(`#${third}`, { stroke: "currentColor", opacity: 0.35 }),
+            onStart: () => gsap.set(`#interchange-animation #${third}`, { stroke: "currentColor", opacity: 0.35 }),
         });
 
         return tl;
@@ -212,6 +212,7 @@ function interchangeAnimation() {
     // 🚀 Start animation loop
     startFlowLoop();
 }
+
 
 async function processFeed() {
     const loadingPlaceholder = document.querySelector("#news-loading-placeholder")
