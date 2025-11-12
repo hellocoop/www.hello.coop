@@ -1,0 +1,11 @@
+# MacOS
+.DS_Store
+*.zip
+
+node_modules
+dist
+
+S3/*
+
+vault.js
+vault.mjs
