@@ -289,6 +289,10 @@ function lifecycleAnimation() {
     ["#hello-lifecycle #source-1", "#hello-lifecycle #source-2", "#hello-lifecycle #source-3"].forEach(id => gsap.set(id, { opacity: 0 }));
     ["#hello-lifecycle #cloud-1", "#hello-lifecycle #cloud-2", "#hello-lifecycle #cloud-3"].forEach(id => gsap.set(id, { opacity: 0 }));
     ["#hello-lifecycle #app-1", "#hello-lifecycle #app-2", "#hello-lifecycle #app-3"].forEach(id => gsap.set(id, { opacity: 0 }));
+    // Set initial states for text elements (opacity 0)
+    ["#hello-lifecycle #one-text", "#hello-lifecycle #two-text", "#hello-lifecycle #three-text"].forEach(id => gsap.set(id, { opacity: 0 }));
+    ["#hello-lifecycle #cloud-1-text", "#hello-lifecycle #cloud-2-text", "#hello-lifecycle #cloud-3-text"].forEach(id => gsap.set(id, { opacity: 0 }));
+    ["#hello-lifecycle #app-1-text", "#hello-lifecycle #app-2-text", "#hello-lifecycle #app-3-text"].forEach(id => gsap.set(id, { opacity: 0 }));
 
     const tl = gsap.timeline({
         defaults: { ease: "power1.inOut" },
@@ -321,11 +325,11 @@ function lifecycleAnimation() {
             opacity: 0,
             duration: 0.25,
         }, "greenFadeOut")
-        .to("#hello-lifecycle #source-1", {
+        .to(["#hello-lifecycle #source-1", "#hello-lifecycle #one-text"], {
             opacity: 1,
             duration: 0.16,
         }, "greenFadeOut-=0.18")
-        .to("#hello-lifecycle #source-1", {
+        .to(["#hello-lifecycle #source-1", "#hello-lifecycle #one-text"], {
             opacity: 0,
             duration: 0.16,
         }, ">+0.19")
@@ -363,7 +367,7 @@ function lifecycleAnimation() {
         // 6. At end of #one animation, fade out green-2 and flash cloud green
         .addLabel("greenAPathStart")
         .addLabel("greenCloudFlash")
-        .to("#hello-lifecycle #cloud-1", {
+        .to(["#hello-lifecycle #cloud-1", "#hello-lifecycle #cloud-1-text"], {
             opacity: 1,
             duration: 0.16,
         }, "greenCloudFlash")
@@ -371,7 +375,7 @@ function lifecycleAnimation() {
         opacity: 0,
         duration: 0.16,
     }, "greenCloudFlash")
-        .to("#hello-lifecycle #cloud-1", {
+        .to(["#hello-lifecycle #cloud-1", "#hello-lifecycle #cloud-1-text"], {
             opacity: 0,
             duration: 0.16,
         }, "greenCloudFlash+=0.19")
@@ -404,7 +408,7 @@ function lifecycleAnimation() {
         }, ">")
         // 8. Once #a animation is done, fade out green-3 and flash app green
         .addLabel("greenAppFlash")
-        .to("#hello-lifecycle #app-1", {
+        .to(["#hello-lifecycle #app-1", "#hello-lifecycle #app-1-text"], {
             opacity: 1,
             duration: 0.16,
         }, "greenAppFlash")
@@ -412,7 +416,7 @@ function lifecycleAnimation() {
             opacity: 0,
             duration: 0.16,
         }, "greenAppFlash")
-        .to("#hello-lifecycle #app-1", {
+        .to(["#hello-lifecycle #app-1", "#hello-lifecycle #app-1-text"], {
             opacity: 0,
             duration: 0.16,
         }, "greenAppFlash+=0.19")
@@ -441,11 +445,11 @@ function lifecycleAnimation() {
             opacity: 0,
             duration: 0.25,
         }, "blueFadeOut")
-        .to("#hello-lifecycle #source-2", {
+        .to(["#hello-lifecycle #source-2", "#hello-lifecycle #two-text"], {
             opacity: 1,
             duration: 0.16,
         }, "blueFadeOut-=0.18")
-        .to("#hello-lifecycle #source-2", {
+        .to(["#hello-lifecycle #source-2", "#hello-lifecycle #two-text"], {
             opacity: 0,
             duration: 0.16,
         }, ">+0.19")
@@ -483,7 +487,7 @@ function lifecycleAnimation() {
         // 6. At end of #two animation, fade out blue-2 and flash cloud blue
         .addLabel("blueAPathStart")
         .addLabel("blueCloudFlash")
-        .to("#hello-lifecycle #cloud-2", {
+        .to(["#hello-lifecycle #cloud-2", "#hello-lifecycle #cloud-2-text"], {
             opacity: 1,
             duration: 0.16,
         }, "blueCloudFlash")
@@ -491,7 +495,7 @@ function lifecycleAnimation() {
             opacity: 0,
             duration: 0.16,
         }, "blueCloudFlash")
-        .to("#hello-lifecycle #cloud-2", {
+        .to(["#hello-lifecycle #cloud-2", "#hello-lifecycle #cloud-2-text"], {
             opacity: 0,
             duration: 0.16,
         }, "blueCloudFlash+=0.19")
@@ -524,7 +528,7 @@ function lifecycleAnimation() {
         }, ">")
         // 8. Once #b animation is done, fade out blue-3 and flash app blue
         .addLabel("blueAppFlash")
-        .to("#hello-lifecycle #app-2", {
+        .to(["#hello-lifecycle #app-2", "#hello-lifecycle #app-2-text"], {
             opacity: 1,
             duration: 0.16,
         }, "blueAppFlash")
@@ -532,7 +536,7 @@ function lifecycleAnimation() {
             opacity: 0,
             duration: 0.16,
         }, "blueAppFlash")
-        .to("#hello-lifecycle #app-2", {
+        .to(["#hello-lifecycle #app-2", "#hello-lifecycle #app-2-text"], {
             opacity: 0,
             duration: 0.16,
         }, "blueAppFlash+=0.19")
@@ -561,11 +565,11 @@ function lifecycleAnimation() {
             opacity: 0,
             duration: 0.25,
         }, "yellowFadeOut")
-        .to("#hello-lifecycle #source-3", {
+        .to(["#hello-lifecycle #source-3", "#hello-lifecycle #three-text"], {
             opacity: 1,
             duration: 0.16,
         }, "yellowFadeOut-=0.18")
-        .to("#hello-lifecycle #source-3", {
+        .to(["#hello-lifecycle #source-3", "#hello-lifecycle #three-text"], {
             opacity: 0,
             duration: 0.16,
         }, ">+0.19")
@@ -603,7 +607,7 @@ function lifecycleAnimation() {
         // 6. At end of #three animation, fade out yellow-2 and flash cloud yellow
         .addLabel("yellowAPathStart")
         .addLabel("yellowCloudFlash")
-        .to("#hello-lifecycle #cloud-3", {
+        .to(["#hello-lifecycle #cloud-3", "#hello-lifecycle #cloud-3-text"], {
             opacity: 1,
             duration: 0.16,
         }, "yellowCloudFlash")
@@ -611,7 +615,7 @@ function lifecycleAnimation() {
             opacity: 0,
             duration: 0.16,
         }, "yellowCloudFlash")
-        .to("#hello-lifecycle #cloud-3", {
+        .to(["#hello-lifecycle #cloud-3", "#hello-lifecycle #cloud-3-text"], {
             opacity: 0,
             duration: 0.16,
         }, "yellowCloudFlash+=0.19")
@@ -644,7 +648,7 @@ function lifecycleAnimation() {
         }, ">")
         // 8. Once #c animation is done, fade out yellow-3 and flash app yellow
         .addLabel("yellowAppFlash")
-        .to("#hello-lifecycle #app-3", {
+        .to(["#hello-lifecycle #app-3", "#hello-lifecycle #app-3-text"], {
             opacity: 1,
             duration: 0.16,
         }, "yellowAppFlash")
@@ -652,7 +656,7 @@ function lifecycleAnimation() {
             opacity: 0,
             duration: 0.16,
         }, "yellowAppFlash")
-        .to("#hello-lifecycle #app-3", {
+        .to(["#hello-lifecycle #app-3", "#hello-lifecycle #app-3-text"], {
             opacity: 0,
             duration: 0.16,
         }, "yellowAppFlash+=0.19")
@@ -700,7 +704,16 @@ function lifecycleAnimation() {
             "#hello-lifecycle #cloud-3",
             "#hello-lifecycle #app-1",
             "#hello-lifecycle #app-2",
-            "#hello-lifecycle #app-3"
+            "#hello-lifecycle #app-3",
+            "#hello-lifecycle #one-text",
+            "#hello-lifecycle #two-text",
+            "#hello-lifecycle #three-text",
+            "#hello-lifecycle #cloud-1-text",
+            "#hello-lifecycle #cloud-2-text",
+            "#hello-lifecycle #cloud-3-text",
+            "#hello-lifecycle #app-1-text",
+            "#hello-lifecycle #app-2-text",
+            "#hello-lifecycle #app-3-text"
         ], {
             opacity: 0,
         }, "reset")
