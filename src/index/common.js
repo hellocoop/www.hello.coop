@@ -493,7 +493,7 @@ function offboardingAnimation() {
     const tl = gsap.timeline({
         defaults: { ease: "power1.inOut" },
         repeat: -1,
-        repeatDelay: 0.25,
+        repeatDelay: 0.75,
     });
 
     // 2. Start with users and cursor fade in, then selection and movement
@@ -502,11 +502,21 @@ function offboardingAnimation() {
             opacity: 1,
             duration: 0.3,
         }, "fadeInUsers")
+        // Fade out app and app-text when users appear back again
+        .to(["#github-offboarding #app", "#github-offboarding #app-text"], {
+            opacity: 0,
+            duration: 0.16,
+        }, "fadeInUsers")
         // Cursor fades in (appears in place), after a short delay following users
         .to("#github-offboarding #cursor", {
             opacity: 1,
             duration: 0.4,
         }, "fadeInUsers+=0.5")
+        // Source and source-text fade in at the same time as cursor (slightly earlier)
+        .to(["#github-offboarding #source", "#github-offboarding #source-text"], {
+            opacity: 1,
+            duration: 0.16,
+        }, "fadeInUsers+=0.4")
         // 3. Deprovisioned user 2 scales (to indicate it being selected by cursor)
         .to("#github-offboarding #deprovisioned-user-1", {
             scale: 1.2,
@@ -528,14 +538,6 @@ function offboardingAnimation() {
             opacity: 0,
             duration: 0.15,
         }, "fadeAndPath")
-        .to(["#github-offboarding #source", "#github-offboarding #source-text"], {
-            opacity: 1,
-            duration: 0.16,
-        }, "fadeAndPath-=0.18")
-        .to(["#github-offboarding #source", "#github-offboarding #source-text"], {
-            opacity: 0,
-            duration: 0.16,
-        }, "fadeAndPath+=0.01")
         .to("#github-offboarding #cursor", {
             opacity: 0,
             duration: 0.25,
@@ -565,22 +567,24 @@ function offboardingAnimation() {
                 start: 0.7,
                 end: 1,
             },
-        }, ">")
-        // Flash cloud when #one animation ends
-        .addLabel("cloudFlash", ">")
+        }, "fadeAndPath+=0.4")
+        // Flash cloud before #one animation ends
+        .addLabel("cloudFlash")
         .to(["#github-offboarding #cloud", "#github-offboarding #cloud-text"], {
             opacity: 1,
             duration: 0.16,
-        }, "cloudFlash")
+        }, "fadeAndPath+=0.5")
+        // Fade out source and source-text when #one animation ends
+        .to(["#github-offboarding #source", "#github-offboarding #source-text"], {
+            opacity: 0,
+            duration: 0.16,
+        }, "fadeAndPath+=0.55")
         .to("#github-offboarding #deprovisioned-user-2", {
             opacity: 0,
             duration: 0.25,
         }, "cloudFlash")
-        .to(["#github-offboarding #cloud", "#github-offboarding #cloud-text"], {
-            opacity: 0,
-            duration: 0.16,
-        }, "cloudFlash+=0.19")
         // 7. Start path animation #a (after deprovisioned-user-2 disappears)
+        .addLabel("aPathStart")
         .set("#github-offboarding #a", {
             opacity: 1,
             motionPath: {
@@ -590,7 +594,7 @@ function offboardingAnimation() {
                 autoRotate: true,
                 start: 0,
             }
-        }, ">")
+        }, "aPathStart")
         .to("#github-offboarding #a", {
             duration: 0.4,
             ease: "none",
@@ -602,7 +606,13 @@ function offboardingAnimation() {
                 start: 0,
                 end: 0.7,
             },
-        }, ">")
+        }, "aPathStart")
+        // Flash app before #a animation ends
+        .addLabel("appFlash")
+        .to(["#github-offboarding #app", "#github-offboarding #app-text"], {
+            opacity: 1,
+            duration: 0.16,
+        }, "aPathStart+=0.5")
         .to("#github-offboarding #a", {
             duration: 0.15,
             ease: "power1.out",
@@ -615,23 +625,18 @@ function offboardingAnimation() {
                 start: 0.7,
                 end: 1,
             },
-        }, ">")
-        // Flash app when #a animation ends
-        .addLabel("appFlash", ">")
-        .to(["#github-offboarding #app", "#github-offboarding #app-text"], {
-            opacity: 1,
+        }, "aPathStart+=0.4")
+        // Fade out cloud and cloud-text when #a animation ends
+        .to(["#github-offboarding #cloud", "#github-offboarding #cloud-text"], {
+            opacity: 0,
             duration: 0.16,
-        }, "appFlash")
+        }, "aPathStart+=0.55")
         // 8. Wait for path animations to be done, then reduce opacity of deprovisioned user to 0
         // #one ends at fadeAndPath+=0.5, #a ends at fadeAndPath+=0.75 (starts at fadeAndPath+=0.25, duration 0.5)
         .to("#github-offboarding #deprovisioned-user-3", {
             opacity: 0,
             duration: 0.25,
         }, "appFlash")
-        .to(["#github-offboarding #app", "#github-offboarding #app-text"], {
-            opacity: 0,
-            duration: 0.16,
-        }, "appFlash+=0.19")
 
         // 9. Set deprovisioned user to translate x and y of 0
         .to("#github-offboarding #deprovisioned-user-3", {
