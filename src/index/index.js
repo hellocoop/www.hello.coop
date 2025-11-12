@@ -3,11 +3,11 @@
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
-window.onload = async () => {
+window.addEventListener('load', () => {
     processFeed();
     gsap.registerPlugin(MotionPathPlugin);
     interchangeAnimation();
-}
+});
 
 function interchangeAnimation() {
     const dictionary = {

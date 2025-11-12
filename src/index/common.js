@@ -3,12 +3,12 @@
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
-window.onload = () => {
+window.addEventListener('load', () => {
     gsap.registerPlugin(MotionPathPlugin);
     lifecycleAnimation();
     offboardingAnimation();
     handleNavMenu();
-}
+});
 
 function lifecycleAnimation() {
     // Set initial states for green, blue, and yellow
