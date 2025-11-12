@@ -47,6 +47,7 @@
     .hero-img::after {
         background: linear-gradient(#15151500, #151515);
     }
+
     .card-phone-shadow-bottom::after {
         background: linear-gradient(#15151500, #151515);
     }
@@ -73,6 +74,7 @@
 }
 
 @keyframes float {
+
     0%,
     100% {
         transform: translatey(0px);
@@ -133,19 +135,28 @@ header a:not(#mobile-nav-dropdown a):not(.no-global-hover) {
 
 @keyframes fadeSlideLoop {
     0% {
-      opacity: 0;
-      transform: translate(-25px, -25px);
+        opacity: 0;
+        transform: translate(-25px, -25px);
     }
+
     20% {
-      opacity: 1;
-      transform: translate(0, 0);
+        opacity: 1;
+        transform: translate(0, 0);
     }
+
     80% {
-      opacity: 1;
-      transform: translate(0, 0);
+        opacity: 1;
+        transform: translate(0, 0);
     }
+
     100% {
-      opacity: 0;
-      transform: translate(0, 0);
+        opacity: 0;
+        transform: translate(0, 0);
     }
-  }
+}
+
+#interchange-animation svg,
+#hello-lifecycle svg,
+#github-offboarding svg {
+    opacity: 0;
+}

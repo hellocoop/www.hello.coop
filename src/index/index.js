@@ -112,6 +112,11 @@ function interchangeAnimation() {
 
         activeFlows++;
 
+        gsap.to("#interchange-animation svg", {
+            opacity: 1,
+            duration: 1,
+        })
+
         const tl = gsap.timeline({
             defaults: { ease: "power1.out" },
             onComplete: () => {
@@ -120,7 +125,6 @@ function interchangeAnimation() {
                 activeFlows--;
             },
         });
-
         // Step 1: top-level animation
         tl.fromTo(
             `#interchange-animation #${first}`,

@@ -32,13 +32,15 @@ function lifecycleAnimation() {
     ["#hello-lifecycle #one-text", "#hello-lifecycle #two-text", "#hello-lifecycle #three-text"].forEach(id => gsap.set(id, { opacity: 0 }));
     ["#hello-lifecycle #cloud-1-text", "#hello-lifecycle #cloud-2-text", "#hello-lifecycle #cloud-3-text"].forEach(id => gsap.set(id, { opacity: 0 }));
     ["#hello-lifecycle #app-1-text", "#hello-lifecycle #app-2-text", "#hello-lifecycle #app-3-text"].forEach(id => gsap.set(id, { opacity: 0 }));
-
+    gsap.to("#hello-lifecycle svg", {
+        opacity: 1,
+        duration: 1,
+    });
     const tl = gsap.timeline({
         defaults: { ease: "power1.inOut" },
         repeat: -1,
         repeatDelay: 0.25,
     });
-
     // 1. Cursor-1 fades in
     tl.addLabel("start")
         .to("#hello-lifecycle #cursor-1", {
@@ -484,7 +486,10 @@ function offboardingAnimation() {
     ["#github-offboarding #source", "#github-offboarding #cloud", "#github-offboarding #app"].forEach(id => gsap.set(id, { opacity: 0 }));
     // Set initial states for text elements (opacity 0)
     ["#github-offboarding #source-text", "#github-offboarding #cloud-text", "#github-offboarding #app-text"].forEach(id => gsap.set(id, { opacity: 0 }));
-
+    gsap.to("#github-offboarding svg", {
+        opacity: 1,
+        duration: 1,
+    })
     const tl = gsap.timeline({
         defaults: { ease: "power1.inOut" },
         repeat: -1,
