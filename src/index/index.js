@@ -166,16 +166,7 @@ function animateOne() {
             if (sourceElement) {
                 // Get child path elements (source groups contain paths)
                 const pathElements = sourceElement.querySelectorAll('path');
-                
-                // Get original values from the first path (or the group itself)
-                const targetElement = pathElements.length > 0 ? pathElements[0] : sourceElement;
-                let originalFill = targetElement.getAttribute('fill');
-                if (!originalFill || originalFill === 'currentColor' || originalFill === 'none') {
-                    // If fill is currentColor or not set, get computed style
-                    const computedStyle = window.getComputedStyle(targetElement);
-                    originalFill = computedStyle.fill || '#D4D4D4';
-                }
-                const originalOpacity = parseFloat(sourceElement.getAttribute('opacity')) || 0.25;
+                const originalOpacity = 0.25;
                 
                 const sourceTl = gsap.timeline();
                 // Flash the group opacity and child path fills
@@ -191,9 +182,18 @@ function animateOne() {
                     opacity: originalOpacity,
                 })
                 .set(pathElements.length > 0 ? `${sourceSelector} path` : sourceSelector, {
-                    fill: originalFill,
-                    attr: { fill: originalFill },
-                }, "<"); // Start at same time as opacity restore
+                    clearProps: 'fill', // Clear GSAP-set fill property
+                }, "<") // Start at same time as opacity restore
+                .call(() => {
+                    // Always restore to currentColor by directly setting the attribute on all paths
+                    if (pathElements.length > 0) {
+                        pathElements.forEach(path => {
+                            path.setAttribute('fill', 'currentColor');
+                        });
+                    } else {
+                        sourceElement.setAttribute('fill', 'currentColor');
+                    }
+                });
             }
         }, 0) // Start at time 0, same time as number animation
         
