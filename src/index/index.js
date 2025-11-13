@@ -62,9 +62,6 @@ function animateOne() {
         letterNumbers: new Set() // Track which letter-number combinations are currently animating (e.g., "a-one")
     };
     
-    // Track which letter-app flash is currently in progress (e.g., "a-app", "b-app")
-    let letterAppFlashInProgress = null;
-    
     // Start multiple concurrent animations with delays
     const delayBetweenSequences = 1.5; // seconds between starting each sequence
     const numConcurrentSequences = 5;
@@ -181,25 +178,21 @@ function animateOne() {
                 const originalOpacity = parseFloat(sourceElement.getAttribute('opacity')) || 0.25;
                 
                 const sourceTl = gsap.timeline();
-                // Animate the group opacity and child path fills
-                sourceTl.to(sourceSelector, {
+                // Flash the group opacity and child path fills
+                sourceTl.set(sourceSelector, {
                     opacity: 1,
-                    duration: 0.1,
                 })
-                .to(pathElements.length > 0 ? `${sourceSelector} path` : sourceSelector, {
+                .set(pathElements.length > 0 ? `${sourceSelector} path` : sourceSelector, {
                     fill: appColor,
                     attr: { fill: appColor },
-                    duration: 0.1,
                 }, "<") // Start at same time as opacity
                 .to({}, { duration: 0.25 })
-                .to(sourceSelector, {
+                .set(sourceSelector, {
                     opacity: originalOpacity,
-                    duration: 0.1,
                 })
-                .to(pathElements.length > 0 ? `${sourceSelector} path` : sourceSelector, {
+                .set(pathElements.length > 0 ? `${sourceSelector} path` : sourceSelector, {
                     fill: originalFill,
                     attr: { fill: originalFill },
-                    duration: 0.1,
                 }, "<"); // Start at same time as opacity restore
             }
         }, 0) // Start at time 0, same time as number animation
@@ -293,48 +286,25 @@ function animateOne() {
             const letterAppKey = `${randomLetter}-app`;
             const letterAppSelector = `#interchange-animation #${letterAppKey}`;
             
-            // Skip if THIS specific letter-app flash is already in progress
-            if (letterAppFlashInProgress === letterAppKey) {
-                return;
-            }
-            
-            letterAppFlashInProgress = letterAppKey;
-            
             const letterAppElement = document.querySelector(letterAppSelector);
             if (letterAppElement) {
-                // Get original values BEFORE starting animation (when element is in original state)
-                const computedStyle = window.getComputedStyle(letterAppElement);
-                const originalStroke = computedStyle.stroke || '#D4D4D4';
-                const originalOpacity = parseFloat(letterAppElement.getAttribute('opacity')) || 0.25;
+                const originalOpacity = 0.25;
                 
-                const letterAppTl = gsap.timeline({
-                    onComplete: () => {
-                        // Only clear if this is still the active flash
-                        if (letterAppFlashInProgress === letterAppKey) {
-                            letterAppFlashInProgress = null;
-                        }
-                    }
-                });
+                const letterAppTl = gsap.timeline();
                 
-                letterAppTl.to(letterAppSelector, {
+                letterAppTl.set(letterAppSelector, {
                     opacity: 1,
                     stroke: appColor,
-                    duration: 0.1,
                 })
                 .to({}, { duration: 0.25 })
-                .to(letterAppSelector, {
+                .set(letterAppSelector, {
                     opacity: originalOpacity,
-                    stroke: originalStroke,
-                    duration: 0.1,
+                    clearProps: 'stroke', // Clear GSAP-set stroke property
                 })
                 .call(() => {
-                    // Ensure attribute is set to currentColor for theme changes
-                    gsap.set(letterAppSelector, {
-                        attr: { stroke: 'currentColor' }
-                    });
+                    // Always restore to currentColor by directly setting the attribute
+                    letterAppElement.setAttribute('stroke', 'currentColor');
                 });
-            } else {
-                letterAppFlashInProgress = null;
             }
         })
         
@@ -342,22 +312,21 @@ function animateOne() {
         .call(() => {
             const appElement = document.querySelector(appSelector);
             if (appElement) {
-                // Get computed style to resolve currentColor to actual color value
-                const computedStyle = window.getComputedStyle(appElement);
-                const originalStroke = computedStyle.stroke || '#D4D4D4';
-                const originalOpacity = parseFloat(appElement.getAttribute('opacity')) || 0.25;
+                const originalOpacity = 0.25;
                 
                 const appTl = gsap.timeline();
-                appTl.to(appSelector, {
+                appTl.set(appSelector, {
                     opacity: 1,
                     stroke: appColor,
-                    duration: 0.1,
                 })
                 .to({}, { duration: 0.25 })
-                .to(appSelector, {
+                .set(appSelector, {
                     opacity: originalOpacity,
-                    stroke: originalStroke,
-                    duration: 0.1,
+                    clearProps: 'stroke', // Clear GSAP-set stroke property
+                })
+                .call(() => {
+                    // Always restore to currentColor by directly setting the attribute
+                    appElement.setAttribute('stroke', 'currentColor');
                 });
             }
         });
