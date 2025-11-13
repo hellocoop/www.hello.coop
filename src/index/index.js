@@ -10,213 +10,379 @@ window.addEventListener('load', () => {
 });
 
 function interchangeAnimation() {
-    const dictionary = {
-        one: ["a"],
-        two: ["b", "f", "n"],
-        three: ["c", "j"],
-        four: ["d", "i"],
-        five: ["m", "k", "e"],
-        six: ["n", "f"],
-        seven: ["g", "l"],
-    };
-
-    const flashColors = {
-        a: "#0EA5E9",
-        b: "#F59E0B",
-        c: "#10B981",
-        d: "#D946EF",
-        e: "#F54900",
-        f: "#F0B000",
-        g: "#894EFC",
-        h: "#F59E0B",
-        i: "#D946EF",
-        j: "#10B981",
-        k: "#F54900",
-        l: "#894EFC",
-        m: "#F54900",
-        n: "#F0B000",
-    };
-
-    // ⚙️ Controls
-    const VELOCITY = 250;              // px per second (speed along path)
-    const FLOW_INTERVAL = [0.8, 1.5];  // seconds between spawn attempts
-    const MAX_CONCURRENT = 3;          // max flows running at once
-    const CONCURRENT_DELAY = [0.25, 0.5]; // delay between concurrent starts (s)
-
-    // Track state
-    const activeElements = new Set();
-    let activeFlows = 0;
-
-    // ───────────────────────────────
-    // Utility helpers
-    // ───────────────────────────────
-
-    function randomItem(arr) {
-        return arr[Math.floor(Math.random() * arr.length)];
-    }
-
-    function resetOpacities() {
-        const all = [
-            "one", "two", "three", "four", "five", "six", "seven",
-            "a", "b", "c", "d", "e", "f", "g", "h",
-            "i", "j", "k", "l", "m", "n",
-        ];
-        all.forEach(id => gsap.set(`#interchange-animation #${id}`, { opacity: 0 }));
-    }
-
-    function isPathLeftToRight(pathSelector) {
-        const path = document.querySelector(pathSelector);
-        if (!path) return true;
-        const length = path.getTotalLength();
-        const start = path.getPointAtLength(0);
-        const end = path.getPointAtLength(length);
-        return end.x > start.x;
-    }
-
-    function getDurationForPath(pathSelector) {
-        const path = document.querySelector(pathSelector);
-        if (!path) return 2;
-        const length = path.getTotalLength();
-        return length / VELOCITY;
-    }
-
-    function pickAvailable(keys) {
-        for (let i = 0; i < 20; i++) {
-            const candidate = randomItem(keys);
-            if (!activeElements.has(candidate)) {
-                activeElements.add(candidate);
-                return candidate;
-            }
-        }
-        return randomItem(keys);
-    }
-
-    // ───────────────────────────────
-    // Core flow animation
-    // ───────────────────────────────
-
-    function flowAnimation() {
-        const firstKeys = Object.keys(dictionary);
-        const first = pickAvailable(firstKeys);
-        const secondOptions = dictionary[first];
-        const second = pickAvailable(secondOptions);
-        const third = `${second}-${Math.floor(Math.random() * 4) + 1}`;
-        const flashColor = flashColors[second] || "#0EA5E9";
-
-        const firstPathSelector = `#interchange-animation #${first}-path`;
-        const secondPathSelector = `#interchange-animation #${second}-path`;
-        const forward = isPathLeftToRight(secondPathSelector);
-
-        const firstDuration = getDurationForPath(firstPathSelector);
-        const secondDuration = getDurationForPath(secondPathSelector);
-
-        activeFlows++;
-
-        gsap.to("#interchange-animation svg", {
-            opacity: 1,
-            duration: 1,
-        })
-
-        const tl = gsap.timeline({
-            defaults: { ease: "power1.out" },
-            onComplete: () => {
-                activeElements.delete(first);
-                activeElements.delete(second);
-                activeFlows--;
-            },
+    // Set initial opacity to 0 for all numbered elements
+    const numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven'];
+    const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
+    
+    // Set opacity to 0 and position at start of path for #one through #seven
+    numbers.forEach(num => {
+        const elementSelector = `#interchange-animation #${num}`;
+        const pathSelector = `#interchange-animation #${num}-path`;
+        gsap.set(elementSelector, { 
+            opacity: 0,
         });
-        // Step 1: top-level animation
-        tl.fromTo(
-            `#interchange-animation #${first}`,
-            { opacity: 0 },
-            {
-                duration: firstDuration,
-                motionPath: {
-                    path: firstPathSelector,
-                    align: firstPathSelector,
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0,
-                    end: 1,
-                },
-                keyframes: [
-                    { opacity: 0, duration: 0 },
-                    { opacity: 1, duration: 0.05 * firstDuration },
-                    { opacity: 1, duration: 0.85 * firstDuration },
-                    { opacity: 0, duration: 0.1 * firstDuration },
-                ],
-            }
-        );
-
-        // Step 2: second-level animation
-        tl.fromTo(
-            `#interchange-animation #${second}`,
-            { opacity: 0 },
-            {
-                duration: secondDuration,
-                motionPath: {
-                    path: secondPathSelector,
-                    align: secondPathSelector,
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: forward ? 0 : 1,
-                    end: forward ? 1 : 0,
-                },
-                keyframes: [
-                    { opacity: 0, duration: 0 },
-                    { opacity: 1, duration: 0.05 * secondDuration },
-                    { opacity: 1, duration: 0.85 * secondDuration },
-                    { opacity: 0, duration: 0.1 * secondDuration },
-                ],
-            }
-        );
-
-        // Step 3: single clean stroke flash
-        tl.to(`#interchange-animation #${third}`, {
-            stroke: flashColor,
-            opacity: 0.75,
-            duration: 0.3,
-            yoyo: true,
-            repeat: 1,
-            yoyoEase: "power1.inOut",
-            ease: "power2.inOut",
-            onStart: () => gsap.set(`#interchange-animation #${third}`, { stroke: "currentColor", opacity: 0.35 }),
+    });
+    
+    // Set opacity to 0 for #a-one through #k-seven
+    letters.forEach(letter => {
+        numbers.forEach(num => {
+            gsap.set(`#interchange-animation #${letter}-${num}`, { opacity: 0 });
         });
-
-        return tl;
-    }
-
-    // ───────────────────────────────
-    // Loop controller
-    // ───────────────────────────────
-
-    function startFlowLoop() {
-        function spawnFlow() {
-            if (activeFlows < MAX_CONCURRENT) {
-                flowAnimation();
-
-                // add stagger delay before next concurrent flow
-                const delayBetween = gsap.utils.random(CONCURRENT_DELAY[0], CONCURRENT_DELAY[1]);
-                gsap.delayedCall(delayBetween, () => {
-                    if (activeFlows < MAX_CONCURRENT) {
-                        flowAnimation();
-                    }
-                });
-            }
-
-            // schedule next spawn attempt
-            const nextDelay = gsap.utils.random(FLOW_INTERVAL[0], FLOW_INTERVAL[1]);
-            gsap.delayedCall(nextDelay, spawnFlow);
+    });
+    
+    // Show the SVG
+    gsap.to("#interchange-animation svg", {
+        opacity: 1,
+        duration: 1,
+        onComplete: () => {
+            // Start the animation after SVG is visible
+            animateOne();
         }
-
-        resetOpacities();
-        spawnFlow();
-    }
-
-    // 🚀 Start animation loop
-    startFlowLoop();
+    });
 }
 
+function animateOne() {
+    const numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven'];
+    const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
+    
+    // Color mapping for numbers
+    const numberColors = {
+        'one': '#0EA5E9',
+        'two': '#F59E0B',
+        'three': '#10B981',
+        'four': '#D946EF',
+        'five': '#F54900',
+        'six': '#F0B000',
+        'seven': '#894EFC'
+    };
+    
+    // Track active animations to prevent duplicates
+    const activeAnimations = {
+        numbers: new Set(), // Track which numbers are currently animating
+        letterNumbers: new Set() // Track which letter-number combinations are currently animating (e.g., "a-one")
+    };
+    
+    // Track if cloud flash is currently in progress
+    let cloudFlashInProgress = false;
+    
+    // Track which letter-app flash is currently in progress (e.g., "a-app", "b-app")
+    let letterAppFlashInProgress = null;
+    
+    // Start multiple concurrent animations with delays
+    const delayBetweenSequences = 1.5; // seconds between starting each sequence
+    const numConcurrentSequences = 5;
+    
+    // Start the first sequence immediately
+    animateRandomSequence(0);
+    
+    // Start additional sequences with delays
+    for (let i = 1; i < numConcurrentSequences; i++) {
+        setTimeout(() => {
+            animateRandomSequence(i);
+        }, delayBetweenSequences * i * 1000);
+    }
+    
+    function animateRandomSequence(sequenceId) {
+        // Pick a number that's not currently animating
+        let availableNumbers = numbers.filter(num => !activeAnimations.numbers.has(num));
+        if (availableNumbers.length === 0) {
+            // If all numbers are animating, wait a bit and try again
+            setTimeout(() => animateRandomSequence(sequenceId), 200);
+            return;
+        }
+        const randomNum = availableNumbers[Math.floor(Math.random() * availableNumbers.length)];
+        activeAnimations.numbers.add(randomNum);
+        
+        const numElementSelector = `#interchange-animation #${randomNum}`;
+        const numPathSelector = `#interchange-animation #${randomNum}-path path`;
+        
+        // Get the color for this number
+        const appColor = numberColors[randomNum];
+        
+        // Pick a letter-number combination that's not currently animating
+        let availableLetterNumbers = [];
+        for (const letter of letters) {
+            const letterNumKey = `${letter}-${randomNum}`;
+            if (!activeAnimations.letterNumbers.has(letterNumKey)) {
+                availableLetterNumbers.push(letter);
+            }
+        }
+        
+        if (availableLetterNumbers.length === 0) {
+            // If all letter-number combinations are animating, wait a bit and try again
+            activeAnimations.numbers.delete(randomNum);
+            setTimeout(() => animateRandomSequence(sequenceId), 200);
+            return;
+        }
+        
+        const randomLetter = availableLetterNumbers[Math.floor(Math.random() * availableLetterNumbers.length)];
+        const letterNumKey = `${randomLetter}-${randomNum}`;
+        activeAnimations.letterNumbers.add(letterNumKey);
+        
+        const letterElementSelector = `#interchange-animation #${letterNumKey}`;
+        const letterPathSelector = `#interchange-animation #${randomLetter}-path path`;
+        
+        // Randomly pick an app number (1...4)
+        const randomApp = Math.floor(Math.random() * 4) + 1;
+        const appSelector = `#interchange-animation #${randomLetter}-app-${randomApp}`;
+        
+        // Get path elements to calculate lengths
+        const numPathElement = document.querySelector(numPathSelector);
+        const letterPathElement = document.querySelector(letterPathSelector);
+        
+        if (!numPathElement || !letterPathElement) {
+            setTimeout(animateRandomSequence, 500);
+            return;
+        }
+        
+        // Calculate path lengths
+        const numPathLength = numPathElement.getTotalLength();
+        const letterPathLength = letterPathElement.getTotalLength();
+        
+        // Constant speed: pixels per second (adjust this value to change overall speed)
+        const speed = 225; // pixels per second
+        
+        // Calculate durations based on path length
+        const numDuration = numPathLength / speed;
+        const letterDuration = letterPathLength / speed;
+        
+        // Source selector for flash animation (e.g., #source-one, #source-two)
+        const sourceSelector = `#interchange-animation #source-${randomNum}`;
+        
+        // Cloud selector - always restore to currentColor and 0.25 opacity
+        const cloudSelector = `#interchange-animation #cloud`;
+        
+        // Create timeline for this sequence
+        const tl = gsap.timeline({
+            onComplete: () => {
+                // Remove from active animations when complete
+                activeAnimations.numbers.delete(randomNum);
+                activeAnimations.letterNumbers.delete(letterNumKey);
+                
+                // After completion, start a new random sequence for this concurrent stream
+                setTimeout(() => {
+                    animateRandomSequence(sequenceId);
+                }, 500);
+            }
+        });
+        
+        // Source flash animation (e.g., #source-one) - starts at same time as number animation
+        tl.call(() => {
+            const sourceElement = document.querySelector(sourceSelector);
+            if (sourceElement) {
+                // Get child path elements (source groups contain paths)
+                const pathElements = sourceElement.querySelectorAll('path');
+                
+                // Get original values from the first path (or the group itself)
+                const targetElement = pathElements.length > 0 ? pathElements[0] : sourceElement;
+                let originalFill = targetElement.getAttribute('fill');
+                if (!originalFill || originalFill === 'currentColor' || originalFill === 'none') {
+                    // If fill is currentColor or not set, get computed style
+                    const computedStyle = window.getComputedStyle(targetElement);
+                    originalFill = computedStyle.fill || '#D4D4D4';
+                }
+                const originalOpacity = parseFloat(sourceElement.getAttribute('opacity')) || 0.25;
+                
+                const sourceTl = gsap.timeline();
+                // Animate the group opacity and child path fills
+                sourceTl.to(sourceSelector, {
+                    opacity: 1,
+                    duration: 0.1,
+                })
+                .to(pathElements.length > 0 ? `${sourceSelector} path` : sourceSelector, {
+                    fill: appColor,
+                    attr: { fill: appColor },
+                    duration: 0.1,
+                }, "<") // Start at same time as opacity
+                .to({}, { duration: 0.25 })
+                .to(sourceSelector, {
+                    opacity: originalOpacity,
+                    duration: 0.1,
+                })
+                .to(pathElements.length > 0 ? `${sourceSelector} path` : sourceSelector, {
+                    fill: originalFill,
+                    attr: { fill: originalFill },
+                    duration: 0.1,
+                }, "<"); // Start at same time as opacity restore
+            }
+        }, 0) // Start at time 0, same time as number animation
+        
+        // Number animation (e.g., #two)
+        // Fade in quickly at the same time path starts
+        tl.to(numElementSelector, {
+            opacity: 1,
+            duration: 0.15,
+        })
+        .to(numElementSelector, {
+            duration: numDuration,
+            ease: "none", // Linear easing for constant velocity
+            motionPath: {
+                path: numPathSelector,
+                align: numPathSelector,
+                alignOrigin: [0.5, 0.5],
+                autoRotate: true,
+                start: 0,
+                end: 1,
+            },
+        }, "<") // Start path animation at the same time as fade in
+        // Fade out quickly just before path ends
+        .to(numElementSelector, {
+            opacity: 0,
+            duration: 0.15,
+        }, "-=0.15") // Start fade out 0.15s before path completes, so it ends when path ends
+        
+        // Cloud flash animation - happens when number animation ends
+        .call(() => {
+            // Skip if cloud flash is already in progress
+            if (cloudFlashInProgress) {
+                return;
+            }
+            
+            cloudFlashInProgress = true;
+            
+            const cloudElement = document.querySelector(cloudSelector);
+            if (cloudElement) {
+                // Get computed style to resolve currentColor to actual color value (like app elements)
+                const computedStyle = window.getComputedStyle(cloudElement);
+                const originalStroke = computedStyle.stroke || '#D4D4D4';
+                const originalOpacity = parseFloat(cloudElement.getAttribute('opacity')) || 0.25;
+                
+                const cloudTl = gsap.timeline({
+                    onComplete: () => {
+                        cloudFlashInProgress = false;
+                    }
+                });
+                // Fade in opacity and transition color to appColor
+                cloudTl.to(cloudSelector, {
+                    opacity: 1,
+                    stroke: appColor,
+                    duration: 0.15,
+                })
+                .to({}, { duration: 0.25 })
+                // Fade out opacity and fade color back to original (computed value)
+                .to(cloudSelector, {
+                    opacity: originalOpacity,
+                    stroke: originalStroke,
+                    duration: 0.15,
+                });
+            } else {
+                cloudFlashInProgress = false;
+            }
+        })
+        
+        // Letter-number animation (e.g., #b-two) - reverse direction
+        .set(letterElementSelector, {
+            opacity: 0,
+            motionPath: {
+                path: letterPathSelector,
+                align: letterPathSelector,
+                alignOrigin: [0.5, 0.5],
+                autoRotate: true,
+                start: 1,
+            }
+        })
+        // Fade in quickly at the same time path starts
+        .to(letterElementSelector, {
+            opacity: 1,
+            duration: 0.15,
+        })
+        .to(letterElementSelector, {
+            duration: letterDuration,
+            ease: "none", // Linear easing for constant velocity
+            motionPath: {
+                path: letterPathSelector,
+                align: letterPathSelector,
+                alignOrigin: [0.5, 0.5],
+                autoRotate: true,
+                start: 1,
+                end: 0,
+            },
+        }, "<") // Start path animation at the same time as fade in
+        // Fade out quickly just before path ends
+        .to(letterElementSelector, {
+            opacity: 0,
+            duration: 0.15,
+        }, "-=0.15") // Start fade out 0.15s before path completes, so it ends when path ends
+        
+        // Flash app element for this letter when letter path ends
+        .call(() => {
+            // Flash the app element for this letter (e.g., #a-app, #b-app, #c-app)
+            const letterAppKey = `${randomLetter}-app`;
+            const letterAppSelector = `#interchange-animation #${letterAppKey}`;
+            
+            // Skip if THIS specific letter-app flash is already in progress
+            if (letterAppFlashInProgress === letterAppKey) {
+                return;
+            }
+            
+            letterAppFlashInProgress = letterAppKey;
+            
+            const letterAppElement = document.querySelector(letterAppSelector);
+            if (letterAppElement) {
+                // Get original values BEFORE starting animation (when element is in original state)
+                const computedStyle = window.getComputedStyle(letterAppElement);
+                const originalStroke = computedStyle.stroke || '#D4D4D4';
+                const originalOpacity = parseFloat(letterAppElement.getAttribute('opacity')) || 0.25;
+                
+                const letterAppTl = gsap.timeline({
+                    onComplete: () => {
+                        // Only clear if this is still the active flash
+                        if (letterAppFlashInProgress === letterAppKey) {
+                            letterAppFlashInProgress = null;
+                        }
+                    }
+                });
+                
+                letterAppTl.to(letterAppSelector, {
+                    opacity: 1,
+                    stroke: appColor,
+                    duration: 0.1,
+                })
+                .to({}, { duration: 0.25 })
+                .to(letterAppSelector, {
+                    opacity: originalOpacity,
+                    stroke: originalStroke,
+                    duration: 0.1,
+                })
+                .call(() => {
+                    // Ensure attribute is set to currentColor for theme changes
+                    gsap.set(letterAppSelector, {
+                        attr: { stroke: 'currentColor' }
+                    });
+                });
+            } else {
+                letterAppFlashInProgress = null;
+            }
+        })
+        
+        // App flash animation (e.g., #b-app-3) - use color matching the picked number
+        .call(() => {
+            const appElement = document.querySelector(appSelector);
+            if (appElement) {
+                // Get computed style to resolve currentColor to actual color value
+                const computedStyle = window.getComputedStyle(appElement);
+                const originalStroke = computedStyle.stroke || '#D4D4D4';
+                const originalOpacity = parseFloat(appElement.getAttribute('opacity')) || 0.25;
+                
+                const appTl = gsap.timeline();
+                appTl.to(appSelector, {
+                    opacity: 1,
+                    stroke: appColor,
+                    duration: 0.1,
+                })
+                .to({}, { duration: 0.25 })
+                .to(appSelector, {
+                    opacity: originalOpacity,
+                    stroke: originalStroke,
+                    duration: 0.1,
+                });
+            }
+        });
+    }
+    
+    // Start the first animation sequence
+    animateRandomSequence();
+}
 
 async function processFeed() {
     const loadingPlaceholder = document.querySelector("#news-loading-placeholder")
