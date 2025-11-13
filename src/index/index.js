@@ -62,9 +62,6 @@ function animateOne() {
         letterNumbers: new Set() // Track which letter-number combinations are currently animating (e.g., "a-one")
     };
     
-    // Track if cloud flash is currently in progress
-    let cloudFlashInProgress = false;
-    
     // Track which letter-app flash is currently in progress (e.g., "a-app", "b-app")
     let letterAppFlashInProgress = null;
     
@@ -233,40 +230,26 @@ function animateOne() {
         
         // Cloud flash animation - happens when number animation ends
         .call(() => {
-            // Skip if cloud flash is already in progress
-            if (cloudFlashInProgress) {
-                return;
-            }
-            
-            cloudFlashInProgress = true;
-            
             const cloudElement = document.querySelector(cloudSelector);
             if (cloudElement) {
-                // Get computed style to resolve currentColor to actual color value (like app elements)
-                const computedStyle = window.getComputedStyle(cloudElement);
-                const originalStroke = computedStyle.stroke || '#D4D4D4';
-                const originalOpacity = parseFloat(cloudElement.getAttribute('opacity')) || 0.25;
+                const originalOpacity = 0.25;
                 
-                const cloudTl = gsap.timeline({
-                    onComplete: () => {
-                        cloudFlashInProgress = false;
-                    }
-                });
-                // Fade in opacity and transition color to appColor
-                cloudTl.to(cloudSelector, {
+                const cloudTl = gsap.timeline();
+                // Flash opacity and transition color to appColor
+                cloudTl.set(cloudSelector, {
                     opacity: 1,
                     stroke: appColor,
-                    duration: 0.15,
                 })
-                .to({}, { duration: 0.25 })
-                // Fade out opacity and fade color back to original (computed value)
-                .to(cloudSelector, {
+                .to({}, { duration: 0.15 })
+                // Flash opacity back and restore to currentColor
+                .set(cloudSelector, {
                     opacity: originalOpacity,
-                    stroke: originalStroke,
-                    duration: 0.15,
+                    clearProps: 'stroke', // Clear GSAP-set stroke property
+                })
+                .call(() => {
+                    // Always restore to currentColor by directly setting the attribute
+                    cloudElement.setAttribute('stroke', 'currentColor');
                 });
-            } else {
-                cloudFlashInProgress = false;
             }
         })
         
