@@ -1,9 +1,11 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { watch, existsSync } from 'fs';
-import { join } from 'path';
+import { existsSync, createReadStream, statSync } from 'fs';
+import { join, extname } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { createServer } from 'http';
+import chokidar from 'chokidar';
 
 const execAsync = promisify(exec);
 const __filename = fileURLToPath(import.meta.url);
@@ -17,6 +19,9 @@ const building = {
   pages: false,
   protocol: false,
 };
+
+// Store preview process reference so it can be checked after builds
+let previewProcess = null;
 
 
 function log(message, project = '') {
@@ -175,79 +180,146 @@ function debounce(key, fn, delay = 500) {
   debounceTimers.set(key, timer);
 }
 
-// Watch a directory recursively
+// Watch a directory recursively using chokidar (more reliable than fs.watch on macOS)
 function watchDirectory(dir, onChange) {
   try {
-    const watcher = watch(dir, { recursive: true }, (eventType, filename) => {
-      if (filename && (eventType === 'change' || eventType === 'rename')) {
-        const filePath = join(dir, filename);
-        const normalizedPath = filePath.replace(/\\/g, '/');
-        
-        // First check: Must be within a source directory (src/index, src/legal, src/pages, src/protocol)
-        // This prevents watching S3 or any other directories
-        if (!normalizedPath.includes('/src/index/') && 
-            !normalizedPath.includes('/src/legal/') && 
-            !normalizedPath.includes('/src/pages/') && 
-            !normalizedPath.includes('/src/protocol/')) {
-          return;
-        }
-        
-        // Second check: Ignore node_modules, dist, and other non-source files
-        if (shouldIgnorePath(filePath)) {
-          return;
-        }
-        
-        // Third check: Only process actual source files (not build outputs)
-        // Ensure the path is actually within the watched directory
-        const relativePath = normalizedPath.replace(rootDir.replace(/\\/g, '/'), '').replace(/^\//, '');
-        if (!relativePath.startsWith('src/')) {
-          return;
-        }
-        
-        const project = determineProject(filePath);
-        if (project) {
-          debounce(project, () => onChange(project, filePath));
-        }
+    const watcher = chokidar.watch(dir, {
+      ignored: (path) => {
+        const normalizedPath = path.replace(/\\/g, '/');
+        return shouldIgnorePath(normalizedPath);
+      },
+      persistent: true,
+      ignoreInitial: true,
+      awaitWriteFinish: {
+        stabilityThreshold: 100,
+        pollInterval: 50
+      }
+    });
+
+    watcher.on('change', (filePath) => {
+      const normalizedPath = filePath.replace(/\\/g, '/');
+      
+      // First check: Must be within a source directory (src/index, src/legal, src/pages, src/protocol)
+      // This prevents watching S3 or any other directories
+      if (!normalizedPath.includes('/src/index/') && 
+          !normalizedPath.includes('/src/legal/') && 
+          !normalizedPath.includes('/src/pages/') && 
+          !normalizedPath.includes('/src/protocol/')) {
+        return;
+      }
+      
+      // Second check: Ignore node_modules, dist, and other non-source files
+      if (shouldIgnorePath(filePath)) {
+        return;
+      }
+      
+      // Third check: Only process actual source files (not build outputs)
+      // Ensure the path is actually within the watched directory
+      const relativePath = normalizedPath.replace(rootDir.replace(/\\/g, '/'), '').replace(/^\//, '');
+      if (!relativePath.startsWith('src/')) {
+        return;
+      }
+      
+      const project = determineProject(filePath);
+      if (project) {
+        debounce(project, () => onChange(project, filePath));
+      }
+    });
+
+    watcher.on('add', (filePath) => {
+      // Handle new files the same way as changes
+      const normalizedPath = filePath.replace(/\\/g, '/');
+      if (!normalizedPath.includes('/src/index/') && 
+          !normalizedPath.includes('/src/legal/') && 
+          !normalizedPath.includes('/src/pages/') && 
+          !normalizedPath.includes('/src/protocol/')) {
+        return;
+      }
+      if (shouldIgnorePath(filePath)) {
+        return;
+      }
+      const relativePath = normalizedPath.replace(rootDir.replace(/\\/g, '/'), '').replace(/^\//, '');
+      if (!relativePath.startsWith('src/')) {
+        return;
+      }
+      const project = determineProject(filePath);
+      if (project) {
+        debounce(project, () => onChange(project, filePath));
       }
     });
 
     watcher.on('error', (error) => {
-      console.error(`Watcher error for ${dir}:`, error);
+      log(`Watcher error for ${dir}: ${error.message}`, 'watch');
+      console.error(error);
+      // Note: chokidar is generally reliable, but if errors persist,
+      // the watcher will need to be restarted manually
+    });
+
+    watcher.on('ready', () => {
+      log(`Watching: ${dir}`, 'watch');
     });
 
     return watcher;
   } catch (error) {
-    console.error(`Failed to watch directory ${dir}:`, error);
+    log(`Failed to watch directory ${dir}: ${error.message}`, 'watch');
     return null;
   }
 }
 
-async function handleChange(project, filePath) {
-  log(`Change detected: ${filePath}`, project);
+// Helper to wait for file system to settle after writes
+function waitForFileSystem(ms = 200) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-  switch (project) {
-    case 'index':
-      await buildIndex();
-      break;
-    case 'legal':
-      await buildLegal();
-      break;
-    case 'pages':
-      // Pages change requires both pages and protocol rebuild (pages first, then protocol)
-      // Protocol depends on pages existing, so we must rebuild pages first
-      const pagesSuccess = await buildPages();
-      if (pagesSuccess) {
-        await buildProtocol();
+async function handleChange(project, filePath) {
+  try {
+    log(`Change detected: ${filePath}`, project);
+
+    switch (project) {
+      case 'index':
+        await buildIndex();
+        await waitForFileSystem();
+        break;
+      case 'legal':
+        await buildLegal();
+        await waitForFileSystem();
+        break;
+      case 'pages':
+        // Pages change requires both pages and protocol rebuild (pages first, then protocol)
+        // Protocol depends on pages existing, so we must rebuild pages first
+        const pagesSuccess = await buildPages();
+        if (pagesSuccess) {
+          await waitForFileSystem();
+          await buildProtocol();
+          await waitForFileSystem();
+        }
+        break;
+      case 'protocol':
+        // Protocol change requires both pages and protocol rebuild (pages first, then protocol)
+        // Protocol depends on pages existing, so we must rebuild pages first
+        const pagesSuccess2 = await buildPages();
+        if (pagesSuccess2) {
+          await waitForFileSystem();
+          await buildProtocol();
+          await waitForFileSystem();
+        }
+        break;
+    }
+    
+    // Check if preview server is still running after build
+    if (previewProcess) {
+      if (typeof previewProcess.close === 'function') {
+        // HTTP server - check if it's listening
+        if (!previewProcess.listening) {
+          log(`Preview server appears to have stopped after build.`, 'server');
+        }
+      } else if (previewProcess.killed || (previewProcess.exitCode !== null && previewProcess.exitCode !== 0)) {
+        log(`Preview server appears to have stopped after build. It should restart automatically.`, 'server');
       }
-      break;
-    case 'protocol':
-      // Protocol change requires both pages and protocol rebuild (pages first, then protocol)
-      // Protocol depends on pages existing, so we must rebuild pages first
-      const pagesSuccess2 = await buildPages();
-      if (pagesSuccess2) {
-        await buildProtocol();
-      }
-      break;
+    }
+  } catch (error) {
+    log(`Error handling change: ${error.message}`, project);
+    console.error(error);
   }
 }
 
@@ -276,10 +348,109 @@ async function main() {
   
   log('Starting preview server...');
 
-  // Start preview server in background (serve S3 without building)
-  const previewProcess = exec('npx vite S3 --open --port 5575', { cwd: rootDir });
-  previewProcess.stdout?.pipe(process.stdout);
-  previewProcess.stderr?.pipe(process.stderr);
+  // Use a simple Node.js HTTP server instead of vite to avoid crashes
+  // when files change in S3 directory
+  const S3_DIR = join(rootDir, 'S3');
+  const PORT = 5575;
+  
+  const mimeTypes = {
+    '.html': 'text/html',
+    '.js': 'text/javascript',
+    '.css': 'text/css',
+    '.json': 'application/json',
+    '.png': 'image/png',
+    '.jpg': 'image/jpg',
+    '.gif': 'image/gif',
+    '.svg': 'image/svg+xml',
+    '.woff': 'application/font-woff',
+    '.woff2': 'application/font-woff2',
+    '.ttf': 'application/font-ttf',
+    '.eot': 'application/vnd.ms-fontobject',
+    '.otf': 'application/font-otf',
+    '.wasm': 'application/wasm',
+    '.xml': 'application/xml',
+    '.md': 'text/markdown',
+  };
+
+  const httpServer = createServer((req, res) => {
+    let filePath = join(S3_DIR, req.url === '/' ? 'index.html' : req.url.split('?')[0]);
+    
+    // Security: prevent directory traversal
+    if (!filePath.startsWith(S3_DIR)) {
+      res.writeHead(403);
+      res.end('Forbidden');
+      return;
+    }
+    
+    // Check if file exists
+    if (!existsSync(filePath)) {
+      // Try index.html for directory requests
+      const indexPath = join(filePath, 'index.html');
+      if (existsSync(indexPath)) {
+        filePath = indexPath;
+      } else {
+        res.writeHead(404);
+        res.end('Not Found');
+        return;
+      }
+    }
+    
+    // Check if it's a directory
+    try {
+      const stats = statSync(filePath);
+      if (stats.isDirectory()) {
+        const indexPath = join(filePath, 'index.html');
+        if (existsSync(indexPath)) {
+          filePath = indexPath;
+        } else {
+          res.writeHead(404);
+          res.end('Not Found');
+          return;
+        }
+      }
+    } catch (err) {
+      res.writeHead(500);
+      res.end('Internal Server Error');
+      return;
+    }
+    
+    // Determine content type
+    const ext = extname(filePath).toLowerCase();
+    const contentType = mimeTypes[ext] || 'application/octet-stream';
+    
+    // Serve file
+    res.writeHead(200, { 'Content-Type': contentType });
+    const stream = createReadStream(filePath);
+    stream.pipe(res);
+    stream.on('error', (err) => {
+      log(`Error serving file ${filePath}: ${err.message}`, 'server');
+      if (!res.headersSent) {
+        res.writeHead(500);
+        res.end('Internal Server Error');
+      }
+    });
+  });
+
+  httpServer.on('error', (error) => {
+    if (error.code === 'EADDRINUSE') {
+      log(`Port ${PORT} is already in use. Trying to use a different approach...`, 'server');
+      // Try using vite as fallback
+      const proc = exec(`npx vite S3 --host --port ${PORT}`, { cwd: rootDir });
+      proc.stdout?.pipe(process.stdout);
+      proc.stderr?.pipe(process.stderr);
+      previewProcess = proc;
+    } else {
+      log(`HTTP server error: ${error.message}`, 'server');
+      console.error(error);
+    }
+  });
+
+  httpServer.listen(PORT, () => {
+    log(`Preview server running at http://localhost:${PORT}`, 'server');
+    log(`Serving files from: ${S3_DIR}`, 'server');
+  });
+
+  previewProcess = httpServer; // Store reference for cleanup
 
   // Watch all source directories
   log('Watching for changes...');
@@ -293,20 +464,45 @@ async function main() {
   ].filter(w => w !== null);
 
   // Handle cleanup on exit
-  process.on('SIGINT', () => {
+  const cleanup = () => {
     log('Shutting down...');
-    watchers.forEach(watcher => watcher.close());
-    previewProcess.kill();
+    watchers.forEach(watcher => {
+      if (watcher && typeof watcher.close === 'function') {
+        watcher.close();
+      }
+    });
+    if (previewProcess) {
+      if (typeof previewProcess.close === 'function') {
+        // HTTP server
+        previewProcess.close();
+      } else if (typeof previewProcess.kill === 'function' && !previewProcess.killed) {
+        // Child process
+        previewProcess.kill();
+      }
+    }
     process.exit(0);
-  });
+  };
 
-  process.on('SIGTERM', () => {
-    log('Shutting down...');
-    watchers.forEach(watcher => watcher.close());
-    previewProcess.kill();
-    process.exit(0);
+  process.on('SIGINT', cleanup);
+  process.on('SIGTERM', cleanup);
+  
+  // Handle unhandled promise rejections
+  process.on('unhandledRejection', (reason, promise) => {
+    log(`Unhandled rejection: ${reason}`, 'error');
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  });
+  
+  // Handle uncaught exceptions
+  process.on('uncaughtException', (error) => {
+    log(`Uncaught exception: ${error.message}`, 'error');
+    console.error(error);
+    cleanup();
   });
 }
 
-main().catch(console.error);
+main().catch((error) => {
+  log(`Fatal error: ${error.message}`, 'error');
+  console.error(error);
+  process.exit(1);
+});
 

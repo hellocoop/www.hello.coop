@@ -25,6 +25,7 @@
     "test:blog": "linkinator https://blog.hello.coop --config linkinator.config.json"
   },
   "devDependencies": {
+    "chokidar": "^3.6.0",
     "linkinator": "^5.0.2",
     "shx": "^0.3.4",
     "sitemap": "^8.0.0",
