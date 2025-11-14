@@ -7,6 +7,9 @@ export default defineConfig({
   },
   build: {
     outDir: '../../S3/',
+    // Don't empty the output directory - just overwrite files
+    // This prevents cleaning out the S3 directory which contains files from other builds
+    emptyOutDir: false,
     rollupOptions: {
       input: {
         main: './index.html',

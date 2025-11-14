@@ -5,6 +5,13 @@ export default {
     appearance: false,
     lang: 'en-US',
     outDir: '../../S3/',
+    vite: {
+        build: {
+            // Don't empty the output directory - just overwrite files
+            // This prevents cleaning out the S3 directory which contains files from other builds
+            emptyOutDir: false,
+        }
+    },
     head: [
         ['meta', { name: 'theme-color', content: '#303030' }],
         ['script', {'data-domain': 'hello.coop' , 'src': '/js/script.hash.js'}],

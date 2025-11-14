@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "preview": "npm run build && vite S3 --open --port 5575",
-    "dev": "npm run dev:index",
+    "dev": "node scripts/dev-watch.js",
     "dev:index": "cd src/index && npm run dev -- --open",
     "dev:proto": "cd src/protocol && vite --open",
     "dev:pages": "vitepress dev src/pages --open",
