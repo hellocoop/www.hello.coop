@@ -20,7 +20,10 @@
     "build:proto": "cd src/protocol && npm run build && cd ../../ && shx cp src/protocol/dist/index.html S3/pages/protocol.html && shx cp src/protocol/dist/assets/* S3/pages/assets/",
     "build:index": "cd src/index && npm run build",
     "build": "run-s build:*",
-    "postbuild": "node scripts/generate-sitemap.js",
+    "postbuild": "run-s postbuild:*",
+    "postbuild:markdown": "node scripts/copy-markdown.js",
+    "postbuild:sitemap": "node scripts/generate-sitemap.js",
+    "postbuild:llms": "node scripts/generate-llms-txt.js",
     "test": "linkinator ./S3 --config linkinator.config.json",
     "test:blog": "linkinator https://blog.hello.coop --config linkinator.config.json"
   },
@@ -29,6 +32,7 @@
     "linkinator": "^5.0.2",
     "shx": "^0.3.4",
     "sitemap": "^8.0.0",
+    "turndown": "^7.2.2",
     "vite": "^3.1.1",
     "vitepress": "^1.0.0-alpha.4",
     "vue": "^3.2.37"
