@@ -52,13 +52,18 @@
   display: none;
 }
 
+.VPNav {
+  display: none !important;
+}
+
 .VPNavBar {
   border: none !important;
   height: 48px !important;
 }
 
-.VPLocalNav{
-  top: 48px !important;
+.VPLocalNav {
+  display: none !important;
+  /* top: 48px !important; */
 }
 
 .VPNavBarExtra, .hamburger{
