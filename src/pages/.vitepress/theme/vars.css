@@ -82,3 +82,26 @@
     backdrop-filter: none !important;
   }
 }
+
+p:has(> .in-progress),
+p:has(> .completed) {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 12px;
+}
+
+p:has(> .completed) {
+  color: #22c55e;
+}
+
+p:has(> .completed)::before {
+  content: "Completed: ";
+}
+
+p:has(> .in-progress) {
+  color: #eab308;
+}
+
+p:has(> .in-progress)::before {
+  content: "In Progress: ";
+}

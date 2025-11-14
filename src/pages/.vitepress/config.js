@@ -18,6 +18,7 @@ export default {
                 items: [
                     { text: 'Hellō Approach', link: '/approach' },
                     { text: 'Hello Identity Co-op', link: '/cooperative' },
+                    { text: 'Standards', link: '/standards' },
                     { text: 'Guiding Tenets', link: '/tenets' },
                     { text: 'Protecting Privacy', link: '/laws-of-identity' },
                     { text: 'Computing Architecture', link: '/architecture' },
