@@ -20,20 +20,30 @@ function setupVideoAutoplay(wrapperId) {
 
     const overlay = wrapper.querySelector('.play-overlay');
     const iframe = wrapper.querySelector('iframe');
+    const originalSrc = iframe.src;
 
     overlay.addEventListener('click', () => {
-        // Add autoplay=1 to its URL
-        const url = new URL(iframe.src);
+        // Build new autoplay URL
+        const url = new URL(originalSrc);
         url.searchParams.set("autoplay", "1");
-        iframe.src = url.toString();
+        url.searchParams.set("mute", "0"); // allow sound on first tap
+        url.searchParams.set("playsinline", "1");
 
-        // Remove overlay so user can interact with player
-        requestAnimationFrame(() => {
-            overlay.remove();
-        });
+        // Create new iframe (fresh one)
+        const newIframe = document.createElement("iframe");
+        newIframe.className = iframe.className;
+        newIframe.src = url.toString();
+        newIframe.title = iframe.title;
+        newIframe.setAttribute("allowfullscreen", "");
+        newIframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+
+        // Replace old iframe
+        iframe.replaceWith(newIframe);
+
+        // Remove overlay after creating new iframe
+        overlay.remove();
     });
 }
-
 function interchangeAnimation() {
     // Set initial opacity to 0 for all numbered elements
     const numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven'];
