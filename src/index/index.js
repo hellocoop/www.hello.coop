@@ -7,7 +7,30 @@ window.addEventListener('load', () => {
     processFeed();
     gsap.registerPlugin(MotionPathPlugin);
     interchangeAnimation();
+
+    // we do this so we can track video plays
+    // so we capture click -- send event to plausible -- then autoplay the video
+    setupVideoAutoplay('video-mobile');
+    setupVideoAutoplay('video-desktop');
 });
+
+function setupVideoAutoplay(wrapperId) {
+    const wrapper = document.getElementById(wrapperId);
+    if (!wrapper) return;
+
+    const overlay = wrapper.querySelector('.play-overlay');
+    const iframe = wrapper.querySelector('iframe');
+
+    overlay.addEventListener('click', () => {
+        // Add autoplay=1 to its URL
+        const url = new URL(iframe.src);
+        url.searchParams.set("autoplay", "1");
+        iframe.src = url.toString();
+
+        // Remove overlay so user can interact with player
+        overlay.remove();
+    });
+}
 
 function interchangeAnimation() {
     // Set initial opacity to 0 for all numbered elements
