@@ -10,11 +10,11 @@ window.addEventListener('load', () => {
 
     // we do this so we can track video plays
     // so we capture click -- send event to plausible -- then autoplay the video
-    setupVideoAutoplay('video-mobile', true);
+    setupVideoAutoplay('video-mobile');
     setupVideoAutoplay('video-desktop');
 });
 
-function setupVideoAutoplay(wrapperId, muted = false) {
+function setupVideoAutoplay(wrapperId) {
     const wrapper = document.getElementById(wrapperId);
     if (!wrapper) return;
 
@@ -25,14 +25,12 @@ function setupVideoAutoplay(wrapperId, muted = false) {
         // Add autoplay=1 to its URL
         const url = new URL(iframe.src);
         url.searchParams.set("autoplay", "1");
-        // ios blocks autoplay if not muted (since touch does not happen within iframe and triggered programmatically)
-        if (muted) {
-            url.searchParams.set("muted", "1");
-        }
         iframe.src = url.toString();
 
         // Remove overlay so user can interact with player
-        overlay.remove();
+        requestAnimationFrame(() => {
+            overlay.remove();
+        });
     });
 }
 
