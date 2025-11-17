@@ -4,11 +4,17 @@ import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 window.addEventListener('load', () => {
+    initPlausible();
     gsap.registerPlugin(MotionPathPlugin);
     lifecycleAnimation();
     offboardingAnimation();
     handleNavMenu();
 });
+
+function initPlausible() {
+    window.plausible = window.plausible || function () { (plausible.q = plausible.q || []).push(arguments) }, plausible.init = plausible.init || function (i) { plausible.o = i || {} };
+    plausible.init()
+}
 
 function lifecycleAnimation() {
     // Set initial states for green, blue, and yellow
