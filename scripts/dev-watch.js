@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { createServer } from 'http';
 import chokidar from 'chokidar';
+import open from 'open';
 
 const execAsync = promisify(exec);
 const __filename = fileURLToPath(import.meta.url);
@@ -445,9 +446,23 @@ async function main() {
     }
   });
 
-  httpServer.listen(PORT, () => {
-    log(`Preview server running at http://localhost:${PORT}`, 'server');
+  httpServer.listen(PORT, async () => {
+    const url = `http://localhost:${PORT}`;
+    // Display URL in green and bold
+    const greenBold = '\x1b[1m\x1b[32m';
+    const reset = '\x1b[0m';
+    console.log(`\n${greenBold}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${reset}`);
+    console.log(`${greenBold}  Preview server running at: ${url}${reset}`);
+    console.log(`${greenBold}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${reset}\n`);
     log(`Serving files from: ${S3_DIR}`, 'server');
+    
+    // Auto-open the browser
+    try {
+      await open(url);
+      log(`Browser opened automatically`, 'server');
+    } catch (error) {
+      log(`Failed to open browser automatically: ${error.message}`, 'server');
+    }
   });
 
   previewProcess = httpServer; // Store reference for cleanup
