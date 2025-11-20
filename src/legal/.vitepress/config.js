@@ -1,7 +1,7 @@
 export default {
     title: 'Hellō',
     titleTemplate: false,
-    description: "Co-operatively Building the Internet Identity Layer",
+    description: "Goodbye SSO tax. Hyperscale security for all.",
     appearance: false,
     lang: 'en-US',
     outDir: '../../S3/',
