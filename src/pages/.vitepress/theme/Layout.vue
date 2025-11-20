@@ -200,52 +200,34 @@ onUnmounted(() => {
                 <div class="nav-dropdown">
                   <div class="nav-dropdown-content">
                     <ul class="nav-dropdown-list">
-                      <li class="nav-dropdown-item">
-                        <a href="/pages/approach.html" class="vp-raw nav-dropdown-link">
-                          <span>Approach</span>
-                          <span class="nav-dropdown-desc">Our identity solution explained</span>
+                      <!-- <li class="nav-dropdown-item">
+                        <a href="/resources/about.html" class="vp-raw nav-dropdown-link">
+                          <span>About</span>
+                          <span class="nav-dropdown-desc">Placeholder text</span>
                         </a>
-                      </li>
+                      </li> -->
                       <li class="nav-dropdown-item">
                         <a href="/pages/cooperative.html" class="vp-raw nav-dropdown-link">
-                          <span>Cooperative</span>
-                          <span class="nav-dropdown-desc">Distributed governance structure</span>
-                        </a>
-                      </li>
-                      <li class="nav-dropdown-item">
-                        <a href="/pages/standards.html" class="vp-raw nav-dropdown-link">
-                          <span>Standards</span>
-                          <span class="nav-dropdown-desc">Open identity standards leadership</span>
-                        </a>
-                      </li>
-                      <li class="nav-dropdown-item">
-                        <a href="/pages/tenets.html" class="vp-raw nav-dropdown-link">
-                          <span>Tenets</span>
-                          <span class="nav-dropdown-desc">Our guiding principle</span>
+                          <span>Cooperative Approach</span>
+                          <span class="nav-dropdown-desc">Our identity solution explained</span>
                         </a>
                       </li>
                       <li class="nav-dropdown-item">
                         <a href="/pages/laws-of-identity.html" class="vp-raw nav-dropdown-link">
                           <span>Protecting Privacy</span>
-                          <span class="nav-dropdown-desc">Privacy-first design approach</span>
+                          <span class="nav-dropdown-desc">Following the Laws of Identity</span>
                         </a>
                       </li>
                       <li class="nav-dropdown-item">
-                        <a href="/pages/architecture.html" class="vp-raw nav-dropdown-link">
-                          <span>Computing Architecture</span>
-                          <span class="nav-dropdown-desc">Secure technical infrastructure</span>
+                        <a href="/resources/standards.html" class="vp-raw nav-dropdown-link">
+                          <span>Open Standards</span>
+                          <span class="nav-dropdown-desc">Creating a #BetterInternet</span>
                         </a>
                       </li>
                       <li class="nav-dropdown-item">
-                        <a href="/pages/data-governance.html" class="vp-raw nav-dropdown-link">
-                          <span>Data Governance</span>
-                          <span class="nav-dropdown-desc">Jurisdictional data protection</span>
-                        </a>
-                      </li>
-                      <li class="nav-dropdown-item">
-                        <a href="/pages/protocol.html" class="vp-raw nav-dropdown-link">
-                          <span>Hellō Protocol</span>
-                          <span class="nav-dropdown-desc">Future cryptographic privacy</span>
+                        <a href="https://blog.hello.coop/" target="_blank" class="vp-raw nav-dropdown-link">
+                          <span class="ext-link-icon">Hellō News</span>
+                          <span class="nav-dropdown-desc">blog.hello.coop</span>
                         </a>
                       </li>
                     </ul>
@@ -365,14 +347,11 @@ onUnmounted(() => {
             <div class="mobile-nav-section">
               <span class="mobile-nav-title">Company</span>
               <ul class="mobile-nav-list">
-                <li><a href="/pages/approach.html" class="vp-raw">Approach</a></li>
-                <li><a href="/pages/cooperative.html" class="vp-raw">Cooperative</a></li>
-                <li><a href="/pages/standards.html" class="vp-raw">Standards</a></li>
-                <li><a href="/pages/tenets.html" class="vp-raw">Tenets</a></li>
+                <!-- <li><a href="/resources/about.html" class="vp-raw">About</a></li> -->
+                <li><a href="/pages/cooperative.html" class="vp-raw">Cooperative Approach</a></li>
                 <li><a href="/pages/laws-of-identity.html" class="vp-raw">Protecting Privacy</a></li>
-                <li><a href="/pages/architecture.html" class="vp-raw">Computing Architecture</a></li>
-                <li><a href="/pages/data-governance.html" class="vp-raw">Data Governance</a></li>
-                <li><a href="/pages/protocol.html" class="vp-raw">Hellō Protocol</a></li>
+                <li><a href="/resources/standards.html" class="vp-raw">Open Standards</a></li>
+                <li><a href="https://blog.hello.coop/" target="_blank" class="vp-raw ext-link-icon">Hellō News</a></li>
               </ul>
             </div>
             <div class="mobile-nav-section">

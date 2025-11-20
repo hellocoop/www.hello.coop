@@ -164,52 +164,34 @@
           <div class="invisible group-hover/li:visible absolute top-6 left-0 w-[17.5rem]">
             <div class="bg-[#434343] p-4 mt-6 opacity-0 group-hover/li:opacity-100 rounded-b-sm rounded-tr-sm perspective-1000 perspective-origin-top rotate-x-75 origin-top group-hover/li:-rotate-x-0 transition-all">
               <ul class="space-y-4">
-                <li class="flex flex-col">
-                  <a href="/pages/approach.html" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                    <span>Approach</span>
-                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Our identity solution explained</span>
+                <!-- <li class="flex flex-col">
+                  <a href="/resources/about.html" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
+                    <span>About</span>
+                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder text</span>
                   </a>
-                </li>
+                </li> -->
                 <li class="flex flex-col">
                   <a href="/pages/cooperative.html" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                    <span>Cooperative</span>
-                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Distributed governance structure</span>
-                  </a>
-                </li>
-                <li class="flex flex-col">
-                  <a href="/pages/standards.html" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                    <span>Standards</span>
-                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Open identity standards leadership</span>
-                  </a>
-                </li>
-                <li class="flex flex-col">
-                  <a href="/pages/tenets.html" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                    <span>Tenets</span>
-                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Our guiding principle</span>
+                    <span>Cooperative Approach</span>
+                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Our identity solution explained</span>
                   </a>
                 </li>
                 <li class="flex flex-col">
                   <a href="/pages/laws-of-identity.html" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
                     <span>Protecting Privacy</span>
-                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Privacy-first design approach</span>
+                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Following the Laws of Identity</span>
                   </a>
                 </li>
                 <li class="flex flex-col">
-                  <a href="/pages/architecture.html" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                    <span>Computing Architecture</span>
-                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Secure technical infrastructure</span>
+                  <a href="/resources/standards.html" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
+                    <span>Open Standards</span>
+                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Creating a #BetterInternet</span>
                   </a>
                 </li>
                 <li class="flex flex-col">
-                  <a href="/pages/data-governance.html" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                    <span>Data Governance</span>
-                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Jurisdictional data protection</span>
-                  </a>
-                </li>
-                <li class="flex flex-col">
-                  <a href="/pages/protocol.html" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                    <span>Hellō Protocol</span>
-                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Future cryptographic privacy</span>
+                  <a href="https://blog.hello.coop/" target="_blank" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
+                    <span class="ext-link-icon">Hellō News</span>
+                    <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">blog.hello.coop</span>
                   </a>
                 </li>
               </ul>
@@ -332,14 +314,11 @@
         <div>
           <span>Company</span>
           <ul class="space-y-2 mt-2">
-            <li><a href="/pages/approach.html">Approach</a></li>
-            <li><a href="/pages/cooperative.html">Cooperative</a></li>
-            <li><a href="/pages/standards.html">Standards</a></li>
-            <li><a href="/pages/tenets.html">Tenets</a></li>
+            <!-- <li><a href="/resources/about.html">About</a></li> -->
+            <li><a href="/pages/cooperative.html">Cooperative Approach</a></li>
             <li><a href="/pages/laws-of-identity.html">Protecting Privacy</a></li>
-            <li><a href="/pages/architecture.html">Computing Architecture</a></li>
-            <li><a href="/pages/data-governance.html">Data Governance</a></li>
-            <li><a href="/pages/protocol.html">Hellō Protocol</a></li>
+            <li><a href="/resources/standards.html">Open Standards</a></li>
+            <li><a href="https://blog.hello.coop/" target="_blank" class="ext-link-icon">Hellō News</a></li>
           </ul>
         </div>
         <div>
