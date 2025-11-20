@@ -122,7 +122,7 @@
               <ul class="space-y-4">
                 <li>
                   <a href="https://hello.dev/" target="_blank" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                    <span class="ext-link-icon">Developer Documentation</span>
+                    <span class="ext-link-icon">Developer Docs</span>
                     <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">Guides, APIs, and tutorials</span>
                   </a>
                 </li>
@@ -304,7 +304,7 @@
         <div>
           <span>Dev Resources</span>
           <ul class="space-y-2 mt-2">
-            <li><a href="https://hello.dev/" target="_blank" class="ext-link-icon">Developer <span class="sm:hidden">Docs</span> <span class="sm:inline-block hidden">Documentation</span></a></li>
+            <li><a href="https://hello.dev/" target="_blank" class="ext-link-icon">Developer Docs</a></li>
             <li><a href="https://console.hello.coop/" target="_blank" class="ext-link-icon">Developer Console</a></li>
             <li><a href="https://playground.hello.dev/" target="_blank" class="ext-link-icon">Playground</a></li>
             <li><a href="https://www.hello.dev/docs/admin-mcp/" target="_blank" class="ext-link-icon">MCP Server</a></li>

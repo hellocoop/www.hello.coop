@@ -303,7 +303,7 @@ function generateLlmsTxt() {
   
   content += `## External Resources\n\n`;
   content += `The site references the following external resources:\n`;
-  content += `- Developer Documentation: https://hello.dev/\n`;
+  content += `- Developer Docs: https://hello.dev/\n`;
   content += `- Developer Console: https://console.hello.coop/\n`;
   content += `- Playground: https://playground.hello.dev/\n`;
   content += `- Status Page: https://status.hello.coop/\n\n`;

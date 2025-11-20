@@ -158,7 +158,7 @@ onUnmounted(() => {
                     <ul class="nav-dropdown-list">
                       <li class="nav-dropdown-item">
                         <a href="https://hello.dev/" target="_blank" class="vp-raw nav-dropdown-link">
-                          <span class="ext-link-icon">Developer Documentation</span>
+                          <span class="ext-link-icon">Developer Docs</span>
                           <span class="nav-dropdown-desc">Guides, APIs, and tutorials</span>
                         </a>
                       </li>
@@ -337,7 +337,7 @@ onUnmounted(() => {
             <div class="mobile-nav-section">
               <span class="mobile-nav-title">Dev Resources</span>
               <ul class="mobile-nav-list">
-                <li><a href="https://hello.dev/" target="_blank" class="vp-raw ext-link-icon">Developer Documentation</a></li>
+                <li><a href="https://hello.dev/" target="_blank" class="vp-raw ext-link-icon">Developer Docs</a></li>
                 <li><a href="https://console.hello.coop/" target="_blank" class="vp-raw ext-link-icon">Developer Console</a></li>
                 <li><a href="https://playground.hello.dev/" target="_blank" class="vp-raw ext-link-icon">Playground</a></li>
                 <li><a href="https://www.hello.dev/docs/admin-mcp/" target="_blank" class="vp-raw ext-link-icon">MCP Server</a></li>
