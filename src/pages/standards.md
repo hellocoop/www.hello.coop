@@ -4,9 +4,16 @@ editLink: true
 
 # Open Standards
 
-Hellō's founder, Dick Hardt, has been at the forefront of internet identity standards since the early 2000s. He co-founded the (OpenID Foundation)[] and led the design of two foundational technologies: OAuth 2.0 and JSON Web Token (JWT) — standards used by billions of people every day.
+Hellō's founder, Dick Hardt, has been at the forefront of internet identity standards since the early 2000s. He co-founded the (OpenID Foundation)[https://openid.net/foundation/] and led the design of two foundational technologies: [OAuth 2.0](https://datatracker.ietf.org/doc/rfc6749/) and JSON Web Token (JWT) — standards used by billions of people every day.
 
 Dick continues his work to create a #BetterInternet through open, user-centric identity protocols. Following are some of the standards being actively developed:
+
+
+## Email Verification Protocol (EVP)
+Verifying control of an email is a hassle for users, and is a source of friction for web sites. EVP allows a user to prove they control an email address without leaving the website. 
+
+Dick Hardt is one of the authors of the [EVP](https://github.com/WICG/email-verification-protocol)
+
 
 ## Interoperability Profiling for Secure Identity in the Enterprise (IPSIE)
 
@@ -37,7 +44,7 @@ Dick Hardt is one of the authors of [OpenID Connect Key Binding](https://github.
 
 Guiding implementors in the best practices when working with JSON Web Tokens improves the security of the internet. This is an update to the earlier BCP.
 
-Dick Hardt is one of the authors of the (JWT BCP)[https://datatracker.ietf.org/doc/draft-ietf-oauth-rfc8725bis/]
+Dick Hardt is one of the authors of the [JWT BCP](https://datatracker.ietf.org/doc/draft-ietf-oauth-rfc8725bis/)
 
 
 ## OAuth 2.1
@@ -48,8 +55,3 @@ Hellō is OAuth 2.1 compliant.
 
 Dick Hardt is one of the authors of [OAuth 2.1](https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/)
 
-
-## Email Verification Protocol (EVP)
-Verifying control of an email is a hassle for users, and is a source of friction for web sites. EVP allows a user to prove they control an email address without leaving the website. 
-
-Dick Hardt is one of the authors of the [EVP](https://github.com/WICG/email-verification-protocol)
