@@ -1,7 +1,7 @@
 export default {
     title: 'Hellō Pages',
     titleTemplate: false,
-    description: "Co-operatively Building the Internet Identity Layer",
+    description: "Goodbye SSO tax. Hyperscale security for all.",
     base: '/pages/',
     appearance: false,
     lang: 'en-US',
