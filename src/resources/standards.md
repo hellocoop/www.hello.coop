@@ -39,7 +39,7 @@ Dick is one of the authors of [OPC](https://github.com/openid/openid-provider-co
 
 ## OpenID Connect Key Binding
 
-Relying Parties may be composed of a number of components. Demonstrating proof of possession (DPoP0  of a cryptographic key when sharing an ID Token between components improves security. This specification defines how a relying party can have its key bound to an ID Token by the OpenID Provider.
+Relying Parties may be composed of a number of components. Demonstrating proof of possession (DPoP)  of a cryptographic key when sharing an ID Token between components improves security. This specification defines how a relying party can have its key bound to an ID Token by the OpenID Provider.
 
 Dick is one of the authors of [OpenID Connect Key Binding](https://github.com/openid/connect-key-binding).
 
