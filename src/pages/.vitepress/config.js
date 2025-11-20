@@ -6,6 +6,13 @@ export default {
     appearance: false,
     lang: 'en-US',
     outDir: '../../S3/pages/',
+    vite: {
+        build: {
+            // Don't empty the output directory - just overwrite files
+            // This prevents cleaning out the S3/pages directory which contains files from other builds
+            emptyOutDir: false,
+        }
+    },
     head: [
         ['meta', { name: 'theme-color', content: '#303030' }],
         ['script', { src: 'https://cdn.hello.coop/js/relative-wc-footer.js'}],

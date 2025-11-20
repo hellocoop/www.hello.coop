@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   server: {
-    port: 5172,
+    port: 5178,
   },
   build: {
     // Don't empty the output directory - just overwrite files
