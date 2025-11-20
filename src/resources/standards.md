@@ -1,10 +1,10 @@
 ---
-editLink: true
+editLink: false
 ---
 
 # Open Standards
 
-Hellō's founder, Dick Hardt, has been at the forefront of internet identity standards since the early 2000s. He co-founded the (OpenID Foundation)[https://openid.net/foundation/] and led the design of two foundational technologies: [OAuth 2.0](https://datatracker.ietf.org/doc/rfc6749/) and JSON Web Token (JWT) — standards used by billions of people every day.
+Hellō's founder, Dick Hardt, has been at the forefront of internet identity standards since the early 2000s. He co-founded the [OpenID Foundation](https://openid.net/foundation/) and led the design of two foundational technologies: [OAuth 2.0](https://datatracker.ietf.org/doc/rfc6749/) and JSON Web Token (JWT) — standards used by billions of people every day.
 
 Dick continues his work to create a #BetterInternet through open, user-centric identity protocols. Following are some of the standards being actively developed:
 

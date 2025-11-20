@@ -2,10 +2,10 @@ export default {
     title: 'Hellō Pages',
     titleTemplate: false,
     description: "Goodbye SSO tax. Hyperscale security for all.",
-    base: '/pages/',
+    base: '/resources/',
     appearance: false,
     lang: 'en-US',
-    outDir: '../../S3/pages/',
+    outDir: '../../S3/resources/',
     vite: {
         build: {
             // Don't empty the output directory - just overwrite files
@@ -20,19 +20,8 @@ export default {
         ['link', { rel: 'icon', media: '(prefers-color-scheme: dark)', href: 'https://cdn.hello.coop/images/favicon-dark.png' }]
     ],
     themeConfig: {
-        sidebar: [
-            {
-                items: [
-                    { text: 'Hellō Approach', link: '/approach' },
-                    { text: 'Hello Identity Co-op', link: '/cooperative' },
-                    { text: 'Guiding Tenets', link: '/tenets' },
-                    { text: 'Protecting Privacy', link: '/laws-of-identity' },
-                    { text: 'Computing Architecture', link: '/architecture' },
-                    { text: 'Data Governance', link: '/data-governance' },
-                    { text: 'Hellō Protocol', link: '/protocol' },
-                ]
-            }
-        ],
+        siteTitle: false,
+        sidebar: false,
         editLink: {
             pattern: 'https://github.com/hellocoop/www.hello.coop/edit/main/src/pages/:path',
             text: 'Propose changes to this page'

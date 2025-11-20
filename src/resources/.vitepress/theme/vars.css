@@ -1,0 +1,112 @@
+:root {
+  --vp-c-brand: #303030;
+  --vp-c-brand-dark: #303030;
+  --vp-c-black-soft: white;
+}
+
+:root.dark {
+  --vp-c-brand: white;
+  --vp-c-brand-dark: white;
+  --vp-c-black-soft: #151515;
+  --vp-c-bg-alt: #303030;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #151515;
+  }
+}
+
+.vp-doc a, .btn-link{
+  text-decoration: underline;
+  text-decoration-style: solid;
+}
+
+.btn-link{
+  font-weight: 500;
+  color: var(--vp-c-brand);
+  font-size: inherit;
+}
+
+.header-anchor{
+  visibility: hidden;
+}
+
+.VPSidebar {
+  background-color: #303030 !important;
+}
+
+.VPSidebar .link {
+  color: #ebebeb99 !important;
+}
+
+.VPSidebar .link:hover, .VPSidebar .link:focus-visible, .VPLink.active{
+  color: white !important;
+}
+
+.VPNavBarTitle{
+  display: none;
+}
+
+.aside-curtain{
+  display: none;
+}
+
+.VPNav {
+  display: none !important;
+}
+
+.VPNavBar {
+  border: none !important;
+  height: 48px !important;
+}
+
+.VPLocalNav {
+  display: none !important;
+  /* top: 48px !important; */
+}
+
+.VPNavBarExtra, .hamburger{
+  /* weird appearance menu in top-right */
+  display: none !important;
+}
+
+.vp-doc h2 {
+  border-top-width: 0px;
+  padding-top: 0;
+}
+
+@media (min-width: 960px) {
+  .VPDoc {
+    margin-top: -20px;
+  }
+
+  .VPNavBar.has-sidebar, .VPNavBar.has-sidebar .content {
+    background: transparent !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+p:has(> .in-progress),
+p:has(> .completed) {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 12px;
+}
+
+p:has(> .completed) {
+  color: #22c55e;
+}
+
+p:has(> .completed)::before {
+  content: "Completed: ";
+}
+
+p:has(> .in-progress) {
+  color: #eab308;
+}
+
+p:has(> .in-progress)::before {
+  content: "In Progress: ";
+}

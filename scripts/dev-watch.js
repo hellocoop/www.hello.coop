@@ -19,6 +19,7 @@ const building = {
   legal: false,
   pages: false,
   protocol: false,
+  resources: false,
 };
 
 // Store preview process reference so it can be checked after builds
@@ -69,6 +70,21 @@ async function buildLegal() {
   building.legal = false;
   if (success) {
     log('Legal build complete', 'legal');
+  }
+  return success;
+}
+
+async function buildResources() {
+  if (building.resources) {
+    log('Resources build already in progress, skipping...', 'resources');
+    return;
+  }
+  building.resources = true;
+  log('Building resources...', 'resources');
+  const success = await runCommand('npm run build:resources');
+  building.resources = false;
+  if (success) {
+    log('Resources build complete', 'resources');
   }
   return success;
 }
@@ -164,6 +180,9 @@ function determineProject(filePath) {
   if (normalizedPath.includes('/src/protocol/')) {
     return 'protocol';
   }
+  if (normalizedPath.includes('/src/resources/')) {
+    return 'resources';
+  }
   return null;
 }
 
@@ -200,12 +219,13 @@ function watchDirectory(dir, onChange) {
     watcher.on('change', (filePath) => {
       const normalizedPath = filePath.replace(/\\/g, '/');
       
-      // First check: Must be within a source directory (src/index, src/legal, src/pages, src/protocol)
+      // First check: Must be within a source directory (src/index, src/legal, src/pages, src/protocol, src/resources)
       // This prevents watching S3 or any other directories
       if (!normalizedPath.includes('/src/index/') && 
           !normalizedPath.includes('/src/legal/') && 
           !normalizedPath.includes('/src/pages/') && 
-          !normalizedPath.includes('/src/protocol/')) {
+          !normalizedPath.includes('/src/protocol/') &&
+          !normalizedPath.includes('/src/resources/')) {
         return;
       }
       
@@ -233,7 +253,8 @@ function watchDirectory(dir, onChange) {
       if (!normalizedPath.includes('/src/index/') && 
           !normalizedPath.includes('/src/legal/') && 
           !normalizedPath.includes('/src/pages/') && 
-          !normalizedPath.includes('/src/protocol/')) {
+          !normalizedPath.includes('/src/protocol/') &&
+          !normalizedPath.includes('/src/resources/')) {
         return;
       }
       if (shouldIgnorePath(filePath)) {
@@ -285,6 +306,10 @@ async function handleChange(project, filePath) {
         await buildLegal();
         await waitForFileSystem();
         break;
+      case 'resources':
+        await buildResources();
+        await waitForFileSystem();
+        break;
       case 'pages':
         // Pages change requires both pages and protocol rebuild (pages first, then protocol)
         // Protocol depends on pages existing, so we must rebuild pages first
@@ -332,6 +357,7 @@ async function main() {
   await Promise.all([
     buildIndex(),
     buildLegal(),
+    buildResources(),
     buildPages(),
   ]);
   
@@ -469,11 +495,12 @@ async function main() {
 
   // Watch all source directories
   log('Watching for changes...');
-  log('Watching: src/index/, src/legal/, src/pages/, src/protocol/');
+  log('Watching: src/index/, src/legal/, src/resources/, src/pages/, src/protocol/');
 
   const watchers = [
     watchDirectory(join(rootDir, 'src/index'), handleChange),
     watchDirectory(join(rootDir, 'src/legal'), handleChange),
+    watchDirectory(join(rootDir, 'src/resources'), handleChange),
     watchDirectory(join(rootDir, 'src/pages'), handleChange),
     watchDirectory(join(rootDir, 'src/protocol'), handleChange),
   ].filter(w => w !== null);
