@@ -1,6 +1,6 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { existsSync, createReadStream, statSync } from 'fs';
+import { existsSync, createReadStream, statSync, rmSync } from 'fs';
 import { join, extname } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -349,8 +349,26 @@ async function handleChange(project, filePath) {
   }
 }
 
+async function cleanS3() {
+  const S3_DIR = join(rootDir, 'S3');
+  if (existsSync(S3_DIR)) {
+    log('Cleaning S3 directory...', 'cleanup');
+    try {
+      rmSync(S3_DIR, { recursive: true, force: true });
+      log('S3 directory cleaned', 'cleanup');
+    } catch (error) {
+      log(`Warning: Failed to clean S3 directory: ${error.message}`, 'cleanup');
+      // Continue anyway - the build process will overwrite files
+    }
+  }
+}
+
 async function main() {
   log('Starting dev mode...');
+  
+  // Clean S3 directory first
+  await cleanS3();
+  
   log('Building all projects first...');
 
   // Build everything first
