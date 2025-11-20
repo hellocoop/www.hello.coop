@@ -226,7 +226,7 @@ onUnmounted(() => {
                       </li>
                       <li class="nav-dropdown-item">
                         <a href="https://blog.hello.coop/" target="_blank" class="vp-raw nav-dropdown-link">
-                          <span class="ext-link-icon">Hellō News</span>
+                          <span class="ext-link-icon">Hellō Blog</span>
                           <span class="nav-dropdown-desc">blog.hello.coop</span>
                         </a>
                       </li>
@@ -351,7 +351,7 @@ onUnmounted(() => {
                 <li><a href="/pages/approach.html" class="vp-raw">Cooperative Approach</a></li>
                 <li><a href="/pages/laws-of-identity.html" class="vp-raw">Protecting Privacy</a></li>
                 <li><a href="/resources/standards.html" class="vp-raw">Open Standards</a></li>
-                <li><a href="https://blog.hello.coop/" target="_blank" class="vp-raw ext-link-icon">Hellō News</a></li>
+                <li><a href="https://blog.hello.coop/" target="_blank" class="vp-raw ext-link-icon">Hellō Blog</a></li>
               </ul>
             </div>
             <div class="mobile-nav-section">

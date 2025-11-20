@@ -190,7 +190,7 @@
                 </li>
                 <li class="flex flex-col">
                   <a href="https://blog.hello.coop/" target="_blank" class="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
-                    <span class="ext-link-icon">Hellō News</span>
+                    <span class="ext-link-icon">Hellō Blog</span>
                     <span class="text-sm opacity-50 group-hover:opacity-100 transition-all">blog.hello.coop</span>
                   </a>
                 </li>
@@ -318,7 +318,7 @@
             <li><a href="/pages/approach.html">Cooperative Approach</a></li>
             <li><a href="/pages/laws-of-identity.html">Protecting Privacy</a></li>
             <li><a href="/resources/standards.html">Open Standards</a></li>
-            <li><a href="https://blog.hello.coop/" target="_blank" class="ext-link-icon">Hellō News</a></li>
+            <li><a href="https://blog.hello.coop/" target="_blank" class="ext-link-icon">Hellō Blog</a></li>
           </ul>
         </div>
         <div>
