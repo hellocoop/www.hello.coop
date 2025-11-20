@@ -9,13 +9,15 @@ Hellō's founder, Dick Hardt, has been at the forefront of internet identity sta
 Dick continues his work to create a #BetterInternet through open, user-centric identity protocols. Following are some of the standards being actively developed:
 
 
-## Email Verification Protocol (EVP)
+## EVP
+#### Email Verification Protocol
 Verifying control of an email is a hassle for users, and is a source of friction for web sites. EVP allows a user to prove they control an email address without leaving the website. 
 
 Dick is one of the authors of the [EVP](https://github.com/WICG/email-verification-protocol)
 
 
-## Interoperability Profiling for Secure Identity in the Enterprise (IPSIE)
+## IPSIE
+#### Interoperability Profiling for Secure Identity in the Enterprise
 
 Existing enterprise identity standards are typically frameworks that have significant optionality. This creates friction in deployment and security risk. IPSIE is creating profiles of existing standards to meet different levels of functionality in session lifecycle and account lifecycle. The goal is for customers to ask for the IPSIE level they require, rather than SAML and bespoke security criteria
 
@@ -27,7 +29,8 @@ There are some gaps in OpenID Connect for it to be compliant with IPSIE. Creatin
 
 Dick is one of the authors [OpenID Enterprise Extensions](https://github.com/openid/connect-enterprise-extensions)
 
-## OpenID Provider Commands (OPC)
+## OPC
+#### OpenID Provider Commands
 
 Offboarding users is 80% of the value in synchronizing accounts between the enterprise and their SaaS applications, and there is no standard for invalidating existing sessions. OPC is a simpler approach that builds on the OpenID Connect schema. 
 
@@ -40,7 +43,8 @@ Relying Parties may be composed of a number of components. Demonstrating proof o
 
 Dick is one of the authors of [OpenID Connect Key Binding](https://github.com/openid/connect-key-binding)
 
-## JSON Web Token Best Current Practices (JWT BCP)
+## JWT BCP
+#### JSON Web Token Best Current Practices
 
 Guiding implementors in the best practices when working with JSON Web Tokens improves the security of the internet. This is an update to the earlier BCP.
 

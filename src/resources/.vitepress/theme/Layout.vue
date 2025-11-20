@@ -207,7 +207,7 @@ onUnmounted(() => {
                         </a>
                       </li> -->
                       <li class="nav-dropdown-item">
-                        <a href="/pages/cooperative.html" class="vp-raw nav-dropdown-link">
+                        <a href="/pages/approach.html" class="vp-raw nav-dropdown-link">
                           <span>Cooperative Approach</span>
                           <span class="nav-dropdown-desc">Our identity solution explained</span>
                         </a>
@@ -348,7 +348,7 @@ onUnmounted(() => {
               <span class="mobile-nav-title">Company</span>
               <ul class="mobile-nav-list">
                 <!-- <li><a href="/resources/about.html" class="vp-raw">About</a></li> -->
-                <li><a href="/pages/cooperative.html" class="vp-raw">Cooperative Approach</a></li>
+                <li><a href="/pages/approach.html" class="vp-raw">Cooperative Approach</a></li>
                 <li><a href="/pages/laws-of-identity.html" class="vp-raw">Protecting Privacy</a></li>
                 <li><a href="/resources/standards.html" class="vp-raw">Open Standards</a></li>
                 <li><a href="https://blog.hello.coop/" target="_blank" class="vp-raw ext-link-icon">Hellō News</a></li>
