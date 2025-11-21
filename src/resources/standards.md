@@ -23,7 +23,8 @@ Existing enterprise identity standards are typically frameworks that have signif
 
 Dick is one of the co-chairs of the [IPSIE working group](https://openid.net/wg/ipsie/).
 
-## OpenID Enterprise Extensions
+## Enterprise Extensions
+#### OpenID Connect Enterprise Extensions
 
 There are some gaps in OpenID Connect for it to be compliant with IPSIE. Creating new specifications is not within the IPSIE charter. OpenID Enterprise Extensions fills those gaps. 
 
@@ -37,7 +38,8 @@ Offboarding users is 80% of the value in synchronizing accounts between the ente
 Dick is one of the authors of [OPC](https://github.com/openid/openid-provider-commands).
 
 
-## OpenID Connect Key Binding
+## Key Binding
+#### OpenID Connect Key Binding
 
 Relying Parties may be composed of a number of components. Demonstrating proof of possession (DPoP)  of a cryptographic key when sharing an ID Token between components improves security. This specification defines how a relying party can have its key bound to an ID Token by the OpenID Provider.
 
