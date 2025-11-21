@@ -890,7 +890,7 @@ onUnmounted(() => {
     font-size: 1rem;
     line-height: 1.5rem;
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-weight: 500;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -923,7 +923,7 @@ onUnmounted(() => {
   }
 
   .footer-title {
-    font-weight: 500;
+    font-weight: 400;
     display: block;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -952,7 +952,7 @@ onUnmounted(() => {
     text-decoration: none !important;
     opacity: 0.5;
     transition: opacity 0.2s;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
     line-height: 1.5rem;
     font-family: inherit;
@@ -971,7 +971,7 @@ onUnmounted(() => {
     text-decoration: none !important;
     opacity: 0.5;
     transition: opacity 0.2s;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
     line-height: 1.5rem;
     font-family: inherit;
@@ -1003,7 +1003,7 @@ onUnmounted(() => {
     justify-content: center;
     border-top: 1px solid rgba(48, 48, 48, 0.15);
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: inherit;
     font-family: inherit;
   }
@@ -1038,7 +1038,7 @@ onUnmounted(() => {
   .footer-bottom-links a {
     color: inherit;
     text-decoration: none !important;
-    font-weight: 500;
+    font-weight: 400;
     font-size: inherit;
     line-height: inherit;
     opacity: 0.5;
