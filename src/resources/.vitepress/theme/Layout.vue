@@ -885,7 +885,7 @@ onUnmounted(() => {
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 0rem;
     color: inherit;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -898,7 +898,7 @@ onUnmounted(() => {
 
   @media (min-width: 768px) {
     .footer {
-      margin-top: 6rem;
+      margin-top: 0rem;
     }
   }
 
