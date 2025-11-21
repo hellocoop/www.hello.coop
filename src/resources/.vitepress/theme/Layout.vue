@@ -893,7 +893,6 @@ onUnmounted(() => {
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
   }
 
   @media (min-width: 768px) {
