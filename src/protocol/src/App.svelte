@@ -286,7 +286,7 @@
     </div>
   </div>
   {#if showHeaderMobileMenu}
-    <div class="md:hidden px-4 max-w-6xl mx-auto pb-12 pt-0 bg-charcoal fixed h-screen w-full overflow-y-auto top-12 left-0 right-0 z-40">
+    <div class="md:hidden px-4 max-w-[88rem] mx-auto pb-12 pt-0 bg-charcoal fixed h-screen w-full overflow-y-auto top-12 left-0 right-0 z-40">
       <div class="text-right">
         <a href="mailto:contact@hello.coop?subject=Hellō Inquiry" class="text-right !opacity-100">Contact</a>
       </div>
