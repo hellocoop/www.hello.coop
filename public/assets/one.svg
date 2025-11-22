@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="4738.7 -1294.5 836.5294 485.6812" width="836.5294" height="485.6812">
+  <defs>
+    <filter id="Shadow" filterUnits="userSpaceOnUse" x="4655.047" y="-1343.0681">
+      <feOffset in="SourceAlpha" result="offset" dx="0" dy="2"/>
+      <feFlood flood-color="#919191" flood-opacity=".25" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="UMLInheritance_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 7 8" markerWidth="7" markerHeight="8" color="black">
+      <g>
+        <path d="M 4.8 0 L 0 -2.8 L 0 2.8 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.20\n2022-09-21 19:06:03 +0000</metadata>
+  <g id="Canvas_1" fill-opacity="1" fill="none" stroke-opacity="1" stroke="none" stroke-dasharray="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_main">
+      <title>main</title>
+      <g id="Graphic_8236" filter="url(#Shadow)">
+        <title>Node</title>
+        <path d="M 4739.2 -904.2959 L 4739.2 -971.7959 L 4752.2 -979.2959 L 4869.2 -979.2959 L 4869.2 -911.7959 L 4856.2 -904.2959 Z" fill="#c0ffc0"/>
+        <path d="M 4739.2 -904.2959 L 4739.2 -971.7959 L 4752.2 -979.2959 L 4869.2 -979.2959 L 4869.2 -911.7959 L 4856.2 -904.2959 L 4739.2 -904.2959 M 4739.2 -971.7959 L 4856.2 -971.7959 L 4869.2 -979.2959 M 4856.2 -971.7959 L 4856.2 -904.2959" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(4745.2 -949.0459)" fill="black">
+          <tspan font-family="Avenir" font-weight="bold" font-size="16" fill="black" x="3.9" y="16">example.app</tspan>
+        </text>
+      </g>
+      <g id="Line_7302">
+        <line x1="4863.2353" y1="-1256.3724" x2="5101.0294" y2="-1256.3724" marker-end="url(#UMLInheritance_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Group_7293">
+        <g id="Graphic_7300">
+          <title>Attributes</title>
+          <rect x="4938" y="-1243.5" width="50" height="30" fill="#c0ffc0"/>
+          <rect x="4938" y="-1243.5" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4944 -1237.5)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">iss</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7299">
+          <title>Class Name</title>
+          <rect x="4938" y="-1269.5" width="145" height="26" fill="#c0ffc0"/>
+          <rect x="4938" y="-1269.5" width="145" height="26" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4944 -1265.5)" fill="black">
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="black" x="21.8515" y="13">Request Token</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7298">
+          <title>Attributes</title>
+          <rect x="4988.2656" y="-1243.5" width="94.73444" height="30" fill="#c0ffc0"/>
+          <rect x="4988.2656" y="-1243.5" width="94.73444" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4994.2656 -1237.5)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">example.app</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7297">
+          <title>Attributes</title>
+          <rect x="4938" y="-1213.5" width="50" height="30" fill="#c0ffc0"/>
+          <rect x="4938" y="-1213.5" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4944 -1207.5)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">aud</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7296">
+          <title>Attributes</title>
+          <rect x="4988.2656" y="-1213.5" width="94.73444" height="30" fill="#c0ffc0"/>
+          <rect x="4988.2656" y="-1213.5" width="94.73444" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4994.2656 -1207.5)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">hello.coop</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7295">
+          <title>Attributes</title>
+          <rect x="4938" y="-1183.5" width="50" height="30" fill="#c0ffc0"/>
+          <rect x="4938" y="-1183.5" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4944 -1177.5)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">nonce</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7294">
+          <title>Attributes</title>
+          <rect x="4988.2656" y="-1183.5" width="94.73444" height="30" fill="#c0ffc0"/>
+          <rect x="4988.2656" y="-1183.5" width="94.73444" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4994.2656 -1177.5)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">1212121212</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_7292">
+        <line x1="5139" y1="-942.1683" x2="4892.9" y2="-942.1683" marker-end="url(#UMLInheritance_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Group_7282">
+        <g id="Graphic_7291">
+          <title>Attributes</title>
+          <rect x="4936.3795" y="-929.3188" width="50" height="30" fill="#b6cdff"/>
+          <rect x="4936.3795" y="-929.3188" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4942.3795 -923.3188)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">iss</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7290">
+          <title>Class Name</title>
+          <rect x="4936.3795" y="-955.3188" width="145" height="26" fill="#b6cdff"/>
+          <rect x="4936.3795" y="-955.3188" width="145" height="26" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4942.3795 -951.3188)" fill="black">
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="black" x="39.9085" y="13">ID Token</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7289">
+          <title>Attributes</title>
+          <rect x="4985.3795" y="-929.3188" width="96" height="30" fill="#b6cdff"/>
+          <rect x="4985.3795" y="-929.3188" width="96" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4991.3795 -923.3188)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">hello.coop</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7288">
+          <title>Attributes</title>
+          <rect x="4936.3795" y="-869.3188" width="50" height="30" fill="#b6cdff"/>
+          <rect x="4936.3795" y="-869.3188" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4942.3795 -863.3188)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">aud</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7287">
+          <title>Attributes</title>
+          <rect x="4985.3795" y="-869.3188" width="96" height="30" fill="#b6cdff"/>
+          <rect x="4985.3795" y="-869.3188" width="96" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4991.3795 -863.3188)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">example.app</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7286">
+          <title>Attributes</title>
+          <rect x="4936.3795" y="-899.3188" width="50" height="30" fill="#b6cdff"/>
+          <rect x="4936.3795" y="-899.3188" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4942.3795 -893.3188)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">sub</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7285">
+          <title>Attributes</title>
+          <rect x="4985.3795" y="-899.3188" width="96" height="30" fill="#b6cdff"/>
+          <rect x="4985.3795" y="-899.3188" width="96" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4991.3795 -893.3188)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">ABCD-0123</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7284">
+          <title>Attributes</title>
+          <rect x="4936.3795" y="-839.3188" width="50" height="30" fill="#b6cdff"/>
+          <rect x="4936.3795" y="-839.3188" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4942.3795 -833.3188)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">nonce</tspan>
+          </text>
+        </g>
+        <g id="Graphic_7283">
+          <title>Attributes</title>
+          <rect x="4985.3795" y="-839.3188" width="96" height="30" fill="#b6cdff"/>
+          <rect x="4985.3795" y="-839.3188" width="96" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4991.3795 -833.3188)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">1212121212</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Graphic_7129" filter="url(#Shadow)">
+        <title>Node</title>
+        <path d="M 4739.2 -1219 L 4739.2 -1286.5 L 4752.2 -1294 L 4869.2 -1294 L 4869.2 -1226.5 L 4856.2 -1219 Z" fill="#c0ffc0"/>
+        <path d="M 4739.2 -1219 L 4739.2 -1286.5 L 4752.2 -1294 L 4869.2 -1294 L 4869.2 -1226.5 L 4856.2 -1219 L 4739.2 -1219 M 4739.2 -1286.5 L 4856.2 -1286.5 L 4869.2 -1294 M 4856.2 -1286.5 L 4856.2 -1219" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(4745.2 -1263.75)" fill="black">
+          <tspan font-family="Avenir" font-weight="bold" font-size="16" fill="black" x="3.9" y="16">example.app</tspan>
+        </text>
+      </g>
+      <g id="Line_8421">
+        <line x1="4869.2" y1="-1086.2708" x2="5101.0294" y2="-1086.2708" marker-end="url(#UMLInheritance_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Graphic_8420" filter="url(#Shadow)">
+        <title>Node</title>
+        <path d="M 4739.2 -1049.6486 L 4739.2 -1145.3649 L 4752.2 -1156 L 4869.2 -1156 L 4869.2 -1060.2837 L 4856.2 -1049.6486 Z" fill="#ffc0c0"/>
+        <path d="M 4739.2 -1049.6486 L 4739.2 -1145.3649 L 4752.2 -1156 L 4869.2 -1156 L 4869.2 -1060.2837 L 4856.2 -1049.6486 L 4739.2 -1049.6486 M 4739.2 -1145.3649 L 4856.2 -1145.3649 L 4869.2 -1156 M 4856.2 -1145.3649 L 4856.2 -1049.6486" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(4745.2 -1130.5067)" fill="black">
+          <tspan font-family="Avenir" font-weight="bold" font-size="16" fill="black" x="23.316" y="16">OpenID</tspan>
+          <tspan font-family="Avenir" font-weight="bold" font-size="16" fill="black" x="20.788" y="38">Provider</tspan>
+          <tspan font-family="Avenir" font-weight="bold" font-size="16" fill="black" x="8.356" y="60">op.example</tspan>
+        </text>
+      </g>
+      <g id="Group_8412">
+        <g id="Graphic_8419">
+          <title>Attributes</title>
+          <rect x="4936.3795" y="-1074.6075" width="50" height="30" fill="#ffc0c0"/>
+          <rect x="4936.3795" y="-1074.6075" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4942.3795 -1068.6075)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">iss</tspan>
+          </text>
+        </g>
+        <g id="Graphic_8418">
+          <title>Class Name</title>
+          <rect x="4936.3795" y="-1100.6075" width="145" height="26" fill="#ffc0c0"/>
+          <rect x="4936.3795" y="-1100.6075" width="145" height="26" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4942.3795 -1096.6075)" fill="black">
+            <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="black" x="39.9085" y="13">ID Token</tspan>
+          </text>
+        </g>
+        <g id="Graphic_8417">
+          <title>Attributes</title>
+          <rect x="4984.8795" y="-1074.6075" width="96.5" height="30" fill="#ffc0c0"/>
+          <rect x="4984.8795" y="-1074.6075" width="96.5" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4990.8795 -1068.6075)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">op.example</tspan>
+          </text>
+        </g>
+        <g id="Graphic_8416">
+          <title>Attributes</title>
+          <rect x="4936.3795" y="-1014.6075" width="50" height="30" fill="#ffc0c0"/>
+          <rect x="4936.3795" y="-1014.6075" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4942.3795 -1008.6075)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">aud</tspan>
+          </text>
+        </g>
+        <g id="Graphic_8415">
+          <title>Attributes</title>
+          <rect x="4984.8795" y="-1014.6075" width="96.50003" height="30" fill="#ffc0c0"/>
+          <rect x="4984.8795" y="-1014.6075" width="96.50003" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4990.8795 -1008.6075)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">hello.coop</tspan>
+          </text>
+        </g>
+        <g id="Graphic_8414">
+          <title>Attributes</title>
+          <rect x="4936.3795" y="-1044.6075" width="50" height="30" fill="#ffc0c0"/>
+          <rect x="4936.3795" y="-1044.6075" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4942.3795 -1038.6075)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">sub</tspan>
+          </text>
+        </g>
+        <g id="Graphic_8413">
+          <title>Attributes</title>
+          <rect x="4984.8795" y="-1044.6075" width="96.5" height="30" fill="#ffc0c0"/>
+          <rect x="4984.8795" y="-1044.6075" width="96.5" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(4990.8795 -1038.6075)" fill="black">
+            <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">OP-123456</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_8411">
+        <line x1="5139.1224" y1="-1118.2945" x2="4892.9" y2="-1118.2945" marker-end="url(#UMLInheritance_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+      </g>
+      <g id="Graphic_7127">
+        <rect x="5124.7294" y="-1293" width="450" height="456" fill="#b6cdff"/>
+        <rect x="5124.7294" y="-1293" width="450" height="456" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(5129.7294 -1087.0221)" fill="black">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="36" fill="black" x="176.044" y="35">Hellō </tspan>
+        </text>
+      </g>
+    </g>
+    <g id="Canvas_1_circles">
+      <title>circles</title>
+      <g id="Graphic_8602">
+        <circle cx="5103.6" cy="-941" r="16.0000255664301" fill="#333"/>
+        <circle cx="5103.6" cy="-941" r="16.0000255664301" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(5095.8 -948.674)" fill="white">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" x="1.1280002" y="12">99</tspan>
+        </text>
+      </g>
+      <g id="Graphic_8601">
+        <circle cx="4916" cy="-1101.235" r="16.0000255664299" fill="#333"/>
+        <circle cx="4916" cy="-1101.235" r="16.0000255664299" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(4908.2 -1108.9091)" fill="white">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" x="1.1280002" y="12">10</tspan>
+        </text>
+      </g>
+      <g id="Graphic_8600">
+        <circle cx="4916" cy="-1256" r="16.00002556643" fill="#333"/>
+        <circle cx="4916" cy="-1256" r="16.00002556643" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(4908.2 -1263.674)" fill="white">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="12" fill="white" x="1.1280002" y="12">01</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

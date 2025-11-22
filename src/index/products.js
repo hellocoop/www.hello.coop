@@ -1,1 +1,0 @@
-// products page specific scripts
