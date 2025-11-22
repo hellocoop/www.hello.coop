@@ -306,7 +306,7 @@ export default function Home() {
                     <h1 className="text-4xl md:text-6xl font-bold italic">Building a #BetterInternet</h1>
                     <div className="mt-8 md:mt-16 gap-10">
                         <div
-                            className="flex-1 flex items-center text-base md:text-lg lg:text-2xl font-light text-charcoal/50 dark:text-gray/50">
+                            className="flex-1 flex items-center text-base md:text-lg lg:text-2xl font-normal text-charcoal/50 dark:text-gray/50">
                             <div className="space-y-3 md:space-y-5">
                                 <p><span className="text-charcoal/75 dark:text-gray/75"><a
                                     href="https://www.linkedin.com/in/dickhardt/" className="no-global-hover">Dick
