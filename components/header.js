@@ -281,7 +281,7 @@ export default function Header() {
                                             className={item.icon ? "inline-flex items-center space-x-2" : item.external ? "ext-link-icon" : ""}
                                         >
                                             {item.icon && socialIcons[item.icon]}
-                                            <span className={item.external ? "ext-link-icon" : ""}>{item.title}</span>
+                                            <span>{item.title}</span>
                                         </a>
                                     </li>
                                 ))}
