@@ -68,7 +68,7 @@ article.nextra-body-typesetting-article h1 {
 }
 
 .card-description {
-    @apply h-full w-full md:w-1/2 text-base md:text-lg lg:text-[1.275rem] text-charcoal/50 dark:text-gray/50 flex flex-col justify-between space-y-5 relative z-10;
+    @apply h-full w-full md:w-1/2 text-base md:text-lg lg:text-[1.275rem] text-charcoal/50 dark:text-gray/50 flex flex-col justify-between space-y-5 relative z-10 font-normal;
 }
 
 .card-description ol {
