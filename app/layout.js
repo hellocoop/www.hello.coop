@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Head } from 'nextra/components'
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -9,7 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
+            <Head/>
             <body
                 className="bg-white text-charcoal dark:bg-[#151515] dark:text-gray overflow-x-hidden"
             >
