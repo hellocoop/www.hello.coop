@@ -8,9 +8,34 @@ import LifecycleAnimation from "@/components/lifecycle-anim";
 import OffboardingAnimation from "@/components/offboarding-anim";
 import BlogFeed from "@/components/blog-feed";
 
+function setupVideoAutoplay(wrapperId) {
+    const wrapper = document.getElementById(wrapperId);
+    if (!wrapper) return;
+
+    const overlay = wrapper.querySelector('.play-overlay');
+    const iframe = wrapper.querySelector('iframe');
+
+    if (!overlay || !iframe) return;
+
+    overlay.addEventListener('click', () => {
+        // Add autoplay=1 to its URL
+        const url = new URL(iframe.src);
+        url.searchParams.set("autoplay", "1");
+        iframe.src = url.toString();
+
+        // Remove overlay so user can interact with player
+        overlay.remove();
+    });
+}
+
 export default function Home() {
     useEffect(() => {
         gsap.registerPlugin(MotionPathPlugin);
+    }, []);
+
+    useEffect(() => {
+        setupVideoAutoplay('video-mobile');
+        setupVideoAutoplay('video-desktop');
     }, []);
 
     return (
@@ -281,7 +306,7 @@ export default function Home() {
                     <h1 className="text-4xl md:text-6xl font-bold italic">Building a #BetterInternet</h1>
                     <div className="mt-8 md:mt-16 gap-10">
                         <div
-                            className="flex-1 flex text-base md:text-lg lg:text-2xl font-light text-charcoal/50 dark:text-gray/50">
+                            className="flex-1 flex items-center text-base md:text-lg lg:text-2xl font-light text-charcoal/50 dark:text-gray/50">
                             <div className="space-y-3 md:space-y-5">
                                 <p><span className="text-charcoal/75 dark:text-gray/75"><a
                                     href="https://www.linkedin.com/in/dickhardt/" className="no-global-hover">Dick
