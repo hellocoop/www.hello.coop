@@ -13,7 +13,7 @@ export default function Products() {
                         complexity through a single OpenID Connect integration.
                     </h2>
                 </div>
-                <div id="hello-b2c-sso" className="px-4 scroll-mt-24">
+                <div id="hello-b2c-sso" className="px-4 scroll-mt-6">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         Hellō B2C SSO
                     </h1>
@@ -80,7 +80,7 @@ export default function Products() {
                         </picture>
                     </div>
                 </div>
-                <div id="hello-b2b-sso" className="px-4 scroll-mt-24">
+                <div id="hello-b2b-sso" className="px-4 scroll-mt-6">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         Hellō B2B SSO
                     </h1>
@@ -147,7 +147,7 @@ export default function Products() {
                         </picture>
                     </div>
                 </div>
-                <div id="hello-lifecycle" className="px-4 scroll-mt-24">
+                <div id="hello-lifecycle" className="px-4 scroll-mt-6">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         Hellō Lifecycle
                     </h1>
@@ -196,7 +196,7 @@ export default function Products() {
                         </div>
                     </div>
                 </div>
-                <div id="github-offboarding" className="px-4 scroll-mt-24">
+                <div id="github-offboarding" className="px-4 scroll-mt-6">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         GitHub Offboarding
                     </h1>
@@ -245,7 +245,7 @@ export default function Products() {
                         </div>
                     </div>
                 </div>
-                <div id="coding-platforms" className="px-4 scroll-mt-24">
+                <div id="coding-platforms" className="px-4 scroll-mt-6">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         Coding Platforms
                     </h1>

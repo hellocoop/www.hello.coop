@@ -138,7 +138,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div id="hello-lifecycle" className="px-4 scroll-mt-24">
+                <div id="hello-lifecycle" className="px-4 scroll-mt-6">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         Hellō Lifecycle
                     </h1>
@@ -172,7 +172,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div id="github-offboarding" className="px-4 scroll-mt-24">
+                <div id="github-offboarding" className="px-4 scroll-mt-6">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         GitHub Offboarding
                     </h1>
