@@ -1,7 +1,15 @@
+'use client';
+
+import { gsap } from "gsap";
+import { useEffect } from "react";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import LifecycleAnimation from "@/components/lifecycle-anim";
 import OffboardingAnimation from "@/components/offboarding-anim";
 
 export default function Products() {
+    useEffect(() => {
+        gsap.registerPlugin(MotionPathPlugin);
+    }, []);
     return (
         <main id="products-page">
             <section className="max-w-6xl mx-auto mt-6 md:mt-14 space-y-16 md:space-y-20 mb-20">
