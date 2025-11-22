@@ -22,7 +22,7 @@ export default function Home() {
                     <picture>
                         <source srcSet="/hero-dark.png" media="(prefers-color-scheme: dark)" />
                         <img src="/hero-light.png" alt="phone with continue with hello button"
-                            className="z-10 h-auto max-h-[600px] w-auto -mb-4 md:-mb-12" style={{ animation: "float 5s infinite;" }} />
+                            className="z-10 h-auto max-h-[600px] w-auto -mb-4 md:-mb-12" style={{ animation: "float 5s infinite" }} />
                     </picture>
                 </div>
                 <h2 className="text-2xl sm:text-[3.95vw] xl:text-[49px] font-semibold relative z-10 -mb-6 sm:-mb-0">
@@ -81,7 +81,7 @@ export default function Home() {
                             <source srcSet="/b2c-dark.png" media="(prefers-color-scheme: dark)" />
                             <img src="/b2c-light.png" alt="phone showing continue with apple, google, and email buttons"
                                 className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[110%] md:absolute md:right-10 md:-bottom-12 lg:-bottom-16"
-                                style={{ animation: "float 3s infinite;" }} />
+                                style={{ animation: "float 3s infinite" }} />
                         </picture>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ export default function Home() {
                             <source srcSet="/b2b-dark.png" media="(prefers-color-scheme: dark)" />
                             <img src="/b2b-light.png" alt="phone showing continue with apple, google, and email buttons"
                                 className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[110%] md:absolute md:right-10 md:-bottom-12 lg:-bottom-16"
-                                style={{ animation: "float 3s infinite;" }} />
+                                style={{ animation: "float 3s infinite" }} />
                         </picture>
                     </div>
                 </div>
@@ -252,7 +252,7 @@ export default function Home() {
                             <picture className="absolute inset-0 flex items-center justify-center card-phone-shadow-bottom">
                                 <source srcSet="/vibe-robot-dark.png" media="(prefers-color-scheme: dark)" />
                                 <img src="/vibe-robot-light.png" alt="overlayed phone elements" className="w-full h-auto z-10"
-                                    style={{ animation: "fadeSlideLoop 3s ease-in-out infinite;" }} />
+                                    style={{ animation: "fadeSlideLoop 3s ease-in-out infinite" }} />
                             </picture>
                         </div>
                         <div className="hidden md:block">
@@ -262,7 +262,7 @@ export default function Home() {
                                 <img src="/vibe-robot-light.png"
                                     alt="phone showing continue with apple, google, and email buttons"
                                     className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[110%] md:absolute md:right-10 md:-bottom-12 lg:-bottom-16 z-10"
-                                    style={{ animation: "fadeSlideLoop 3s infinite;" }} />
+                                    style={{ animation: "fadeSlideLoop 3s infinite" }} />
                             </picture>
                             <picture
                                 className="card-phone-shadow-bottom h-full relative md:static pt-2 md:pt-0 overflow-hidden md:overflow-auto mb-2">
