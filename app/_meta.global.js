@@ -33,6 +33,9 @@ export default {
     },
     pages: {
         type: 'page',
+        theme: {
+            breadcrumb: false,
+        },
         items: {
             "approach": "Hello Approach",
             "cooperative": "Hello Identity Co-op",

@@ -190,3 +190,7 @@ header a:not(#mobile-nav-dropdown a):not(.no-global-hover),
 #github-offboarding svg:not(a svg) {
     opacity: 0;
 }
+
+article main h1 {
+    margin-top: 0 !important;
+}
