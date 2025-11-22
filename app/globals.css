@@ -146,6 +146,10 @@ header a:not(#mobile-nav-dropdown a):not(.no-global-hover),
     @apply opacity-75 hover:opacity-100 transition-all;
 }
 
+#mobile-nav-dropdown a {
+    @apply opacity-50 hover:opacity-100 transition-all;
+}
+
 .callout {
     @apply bg-[#e8e8e8] dark:bg-[#212121] text-charcoal dark:text-gray mt-16 md:mt-20;
 }

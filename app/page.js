@@ -294,7 +294,7 @@ export default function Home() {
                                         href="https://youtu.be/JzuCE7lDYrM" className="no-global-hover">"Identity
                                         2.0"</a></span> talk introduced a user-centric vision that shaped modern
                                     identity and the <span className="text-charcoal/75 dark:text-gray/75"><a
-                                        href="/pages/approach.html" className="no-global-hover">Hellō Approach</a></span>.
+                                        href="/pages/approach" className="no-global-hover">Hellō Approach</a></span>.
                                 </p>
                                 <div id="video-mobile"
                                     className="flex md:hidden float-right w-full md:w-2/5 h-[260px] inset-shadow-sm items-end justify-center rounded-md relative overflow-hidden">
@@ -309,7 +309,7 @@ export default function Home() {
                                 </div>
                                 <p>
                                     Dick led the design of OAuth 2.0 and JWTs and continues to lead the development of <span
-                                        className="text-charcoal/75 dark:text-gray/75"><a href="/resources/standards.html"
+                                        className="text-charcoal/75 dark:text-gray/75"><a href="/resources/standards"
                                             className="no-global-hover">open
                                             identity standards</a></span>.
                                 </p>

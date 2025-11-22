@@ -176,7 +176,7 @@ export default function Products() {
                                 </span>
                                 <div className="gap-2 flex flex-col md:flex-row items-start">
                                     <a
-                                        href="https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle&return_uri=https%3A%2F%2Fwww.hello.coop%2Fproducts.html%23hello-lifecycle"
+                                        href="https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle&return_uri=https%3A%2F%2Fwww.hello.coop%2Fproducts%23hello-lifecycle"
                                         id="hello-lifecycle-join-waitlist-btn"
                                         className="card-link-primary no-global-hover cursor-pointer"
                                     >
@@ -225,7 +225,7 @@ export default function Products() {
                                 </span>
                                 <div className="gap-2 flex flex-col md:flex-row items-start">
                                     <a
-                                        href="https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding&return_uri=https%3A%2F%2Fwww.hello.coop%2Fproducts.html%23github-offboarding"
+                                        href="https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding&return_uri=https%3A%2F%2Fwww.hello.coop%2Fproducts%23github-offboarding"
                                         id="github-offboarding-join-waitlist-btn"
                                         className="card-link-primary no-global-hover cursor-pointer"
                                     >

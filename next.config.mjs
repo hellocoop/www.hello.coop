@@ -8,14 +8,13 @@ const withNextra = nextra({
 
 // Export the final Next.js config with Nextra included
 export default withNextra({
-    async rewrites() {
-        return [
-            {
-                // Match any path ending with .html
-                source: '/:path*.html',
-                // Map to the corresponding page without .html
-                destination: '/:path*',
-            },
-        ];
+    async redirects() {
+      return [
+        {
+          source: '/:path*.html',
+          destination: '/:path*',
+          permanent: false,
+        },
+      ]
     },
-})
+  })

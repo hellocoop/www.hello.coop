@@ -39,7 +39,7 @@ export default function Header() {
                             className="relative cursor-pointer h-full flex items-center justify-center transition-all group/li"
                         >
                             <a
-                                href="/products.html"
+                                href="/products"
                                 className="no-global-hover opacity-75 flex items-center space-x-1 group-hover/li:opacity-100 transition-all rounded-t-md group-hover/li:bg-[#434343] px-3 pb-3 -mb-2 pt-1 z-60"
                             >
                                 <span>Products</span>
@@ -66,7 +66,7 @@ export default function Header() {
                                     <ul className="space-y-4">
                                         <li className="flex flex-col">
                                             <a
-                                                href="/products.html#hello-b2c-sso"
+                                                href="/products#hello-b2c-sso"
                                                 className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all"
                                             >
                                                 <span>Hellō B2C SSO</span>
@@ -77,7 +77,7 @@ export default function Header() {
                                         </li>
                                         <li className="flex flex-col">
                                             <a
-                                                href="/products.html#hello-b2b-sso"
+                                                href="/products#hello-b2b-sso"
                                                 className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all"
                                             >
                                                 <span>Hellō B2B SSO</span>
@@ -88,7 +88,7 @@ export default function Header() {
                                         </li>
                                         <li className="flex flex-col">
                                             <a
-                                                href="/products.html#hello-lifecycle"
+                                                href="/products#hello-lifecycle"
                                                 className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all"
                                             >
                                                 <span>Hellō Lifecycle</span>
@@ -99,7 +99,7 @@ export default function Header() {
                                         </li>
                                         <li className="flex flex-col">
                                             <a
-                                                href="/products.html#github-offboarding"
+                                                href="/products#github-offboarding"
                                                 className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all"
                                             >
                                                 <span>GitHub Offboarding</span>
@@ -110,7 +110,7 @@ export default function Header() {
                                         </li>
                                         <li className="flex flex-col">
                                             <a
-                                                href="/products.html#coding-platforms"
+                                                href="/products#coding-platforms"
                                                 className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all"
                                             >
                                                 <span>Coding Platforms</span>
@@ -242,7 +242,7 @@ export default function Header() {
                                 <div className="bg-[#434343] p-4 mt-6 opacity-0 group-hover/li:opacity-100 rounded-b-sm rounded-tr-sm perspective-1000 perspective-origin-top rotate-x-75 origin-top group-hover/li:-rotate-x-0 transition-all">
                                     <ul className="space-y-4">
                                         {/* <li className="flex flex-col">
-                                  <a href="/resources/about.html"
+                                  <a href="/resources/about"
                                       className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all">
                                       <span>About</span>
                                       <span className="text-sm opacity-50 group-hover:opacity-100 transition-all">Placeholder text</span>
@@ -250,7 +250,7 @@ export default function Header() {
                               </li> */}
                                         <li className="flex flex-col">
                                             <a
-                                                href="/pages/approach.html"
+                                                href="/pages/approach"
                                                 className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all"
                                             >
                                                 <span>Cooperative Approach</span>
@@ -261,7 +261,7 @@ export default function Header() {
                                         </li>
                                         <li className="flex flex-col">
                                             <a
-                                                href="/pages/laws-of-identity.html"
+                                                href="/pages/laws-of-identity"
                                                 className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all"
                                             >
                                                 <span>Protecting Privacy</span>
@@ -272,7 +272,7 @@ export default function Header() {
                                         </li>
                                         <li className="flex flex-col">
                                             <a
-                                                href="/resources/standards.html"
+                                                href="/resources/standards"
                                                 className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all"
                                             >
                                                 <span>Open Standards</span>
@@ -496,19 +496,19 @@ export default function Header() {
                         <span>Products</span>
                         <ul className="space-y-2 mt-2">
                             <li>
-                                <a href="/products.html#hello-b2c-sso">Hellō B2C SSO</a>
+                                <a href="/products#hello-b2c-sso">Hellō B2C SSO</a>
                             </li>
                             <li>
-                                <a href="/products.html#hello-b2b-sso">Hellō B2B SSO</a>
+                                <a href="/products#hello-b2b-sso">Hellō B2B SSO</a>
                             </li>
                             <li>
-                                <a href="/products.html#hello-lifecycle">Hellō Lifecycle</a>
+                                <a href="/products#hello-lifecycle">Hellō Lifecycle</a>
                             </li>
                             <li>
-                                <a href="/products.html#github-offboarding">GitHub Offboarding</a>
+                                <a href="/products#github-offboarding">GitHub Offboarding</a>
                             </li>
                             <li>
-                                <a href="/products.html#coding-platforms">Coding Platforms</a>
+                                <a href="/products#coding-platforms">Coding Platforms</a>
                             </li>
                         </ul>
                     </div>
@@ -566,16 +566,16 @@ export default function Header() {
                         <span>Company</span>
                         <ul className="space-y-2 mt-2">
                             {/* <li>
-                      <a href="/resources/about.html">About</a>
+                      <a href="/resources/about">About</a>
                   </li> */}
                             <li>
-                                <a href="/pages/approach.html">Cooperative Approach</a>
+                                <a href="/pages/approach">Cooperative Approach</a>
                             </li>
                             <li>
-                                <a href="/pages/laws-of-identity.html">Protecting Privacy</a>
+                                <a href="/pages/laws-of-identity">Protecting Privacy</a>
                             </li>
                             <li>
-                                <a href="/resources/standards.html">Open Standards</a>
+                                <a href="/resources/standards">Open Standards</a>
                             </li>
                             <li>
                                 <a

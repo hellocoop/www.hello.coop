@@ -5,11 +5,11 @@ export default function Footer() {
                 <div>
                     <span>Products</span>
                     <ul className="space-y-2 mt-2">
-                        <li><a href="/products.html#hello-b2c-sso">Hellō B2C SSO</a></li>
-                        <li><a href="/products.html#hello-b2b-sso">Hellō B2B SSO</a></li>
-                        <li><a href="/products.html#hello-lifecycle">Hellō Lifecycle</a></li>
-                        <li><a href="/products.html#github-offboarding">GitHub Offboarding</a></li>
-                        <li><a href="/products.html#coding-platforms">Coding Platforms</a></li>
+                        <li><a href="/products#hello-b2c-sso">Hellō B2C SSO</a></li>
+                        <li><a href="/products#hello-b2b-sso">Hellō B2B SSO</a></li>
+                        <li><a href="/products#hello-lifecycle">Hellō Lifecycle</a></li>
+                        <li><a href="/products#github-offboarding">GitHub Offboarding</a></li>
+                        <li><a href="/products#coding-platforms">Coding Platforms</a></li>
                     </ul>
                 </div>
 
@@ -39,16 +39,16 @@ export default function Footer() {
                     <span>Company</span>
                     <ul className="space-y-2 mt-2">
                         {/* <li>
-                            <a href="/resources/about.html">About</a>
+                            <a href="/resources/about">About</a>
                         </li> */}
                         <li>
-                            <a href="/pages/approach.html">Cooperative Approach</a>
+                            <a href="/pages/approach">Cooperative Approach</a>
                         </li>
                         <li>
-                            <a href="/pages/laws-of-identity.html">Protecting Privacy</a>
+                            <a href="/pages/laws-of-identity">Protecting Privacy</a>
                         </li>
                         <li>
-                            <a href="/resources/standards.html">Open Standards</a>
+                            <a href="/resources/standards">Open Standards</a>
                         </li>
                         <li>
                             <a href="https://blog.hello.coop/" target="_blank" className="ext-link-icon">Hellō Blog</a>
@@ -124,9 +124,9 @@ export default function Footer() {
             <div
                 className="max-w-6xl w-full h-12 flex items-center justify-center border-t border-charcoal/15 dark:border-gray/15 text-xs md:text-sm space-x-2">
                 <div className="flex items-center space-x-4 py-2 md:py-0">
-                    <a href="/terms-of-service.html">Terms of Service</a>
-                    <a href="/privacy-policy.html">Privacy Policy</a>
-                    <a href="/trademark-disclaimer.html">Trademark Disclaimer</a>
+                    <a href="/terms-of-service">Terms of Service</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/trademark-disclaimer">Trademark Disclaimer</a>
                 </div>
             </div>
         </footer>
