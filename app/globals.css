@@ -6,6 +6,12 @@
     --color-gray: #d4d4d4;
 }
 
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+}
+
 article.nextra-body-typesetting-article h1 {
     text-align: left !important;
 }
