@@ -33,7 +33,7 @@ article.nextra-body-typesetting-article h1 {
 }
 
 .card {
-    @apply mt-4 p-4 lg:p-10 flex flex-col-reverse md:flex-row items-start justify-between min-h-56 md:h-auto lg:h-[500px] text-charcoal dark:text-gray rounded-xl relative font-light overflow-hidden;
+    @apply mt-4 p-4 lg:p-10 flex flex-col-reverse md:flex-row items-start justify-between min-h-56 md:h-auto lg:min-h-[500px] rounded-xl relative overflow-hidden;
 }
 
 .hero-img::after {
@@ -53,7 +53,8 @@ article.nextra-body-typesetting-article h1 {
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    height: 100px;
+    height: 50px;
+    /* background: rgba(255, 0, 0, 0.44); */
     background: linear-gradient(#ffffff00, #ffffff);
     margin-top: auto;
 }
@@ -69,7 +70,7 @@ article.nextra-body-typesetting-article h1 {
 }
 
 .card-description {
-    @apply h-full w-full md:w-1/2 text-base md:text-lg lg:text-[1.275rem] text-charcoal/50 dark:text-gray/50 flex flex-col justify-between space-y-5 relative z-10 font-normal;
+    @apply h-full w-full md:w-1/3 text-base flex flex-col justify-between space-y-5 relative z-10;
 }
 
 .card-description ol {

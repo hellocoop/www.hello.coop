@@ -100,7 +100,7 @@ export default function CodingPlatforms({showTitle = true}) {
                                 <img
                                     src="/vibe-robot-light.png"
                                     alt="phone showing continue with apple, google, and email buttons"
-                                    className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[450px] md:absolute md:right-0 z-20 md:bottom-0"
+                                    className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[450px] md:absolute md:right-0 md:top-0 z-20 md:bottom-0"
                                     style={{ animation: "fadeSlideLoop 3s infinite" }}
                                 />
                             </picture>
@@ -112,7 +112,7 @@ export default function CodingPlatforms({showTitle = true}) {
                                 <img
                                     src="/vibe-bg-light.png"
                                     alt="phone showing continue with apple, google, and email buttons"
-                                    className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[450px] md:absolute md:right-0 md:bottom-0"
+                                    className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[450px] md:absolute md:right-0 md:top-0 md:bottom-0"
                                 />
                             </picture>
                         </div>
