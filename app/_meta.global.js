@@ -31,24 +31,19 @@ export default {
             toc: false,
         }
     },
-    pages: {
+    approach: {
         type: 'page',
         theme: {
             breadcrumb: false,
         },
         items: {
-            "approach": "Hello Approach",
+            "index": "Hello Approach",
             "cooperative": "Hello Identity Co-op",
             "tenets": "Guiding Tenets",
             "laws-of-identity": "Protecting Privacy",
             "architecture": "Computing Architecture",
             "data-governance": "Data Governance",
             "protocol": "Protocol",
-        }
-    },
-    resources: {
-        type: 'page',
-        items: {
             "standards": {
                 type: 'page',
                 display: 'hidden',
