@@ -5,11 +5,15 @@
 @theme {
     --color-charcoal: #303030;
     --color-gray: #d4d4d4;
+    --x-color-slate-100: #303030;
+    --x-color-slate-200: #303030;
 }
 
 @media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;
+        --x-color-slate-100: #d4d4d4;
+        --x-color-slate-200: #d4d4d4;
     }
 }
 
