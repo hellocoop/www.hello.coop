@@ -1,4 +1,4 @@
-import LifecycleAnimation from "@/components/lifecycle-anim";
+import LifecycleAnimation from "@/components/animations/lifecycle-anim";
 
 export default function HelloLifecycle({showTitle = true}) {
     return (

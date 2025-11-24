@@ -2,10 +2,12 @@
 
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 export default function InterchangeAnimation() {
     useEffect(() => {
         // TBD: React-ify this component instead of DOM manipulation
+        gsap.registerPlugin(MotionPathPlugin);
         interchangeAnimation();
     }, []);
 

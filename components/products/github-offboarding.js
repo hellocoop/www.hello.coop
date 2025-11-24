@@ -1,4 +1,4 @@
-import OffboardingAnimation from "@/components/offboarding-anim";
+import OffboardingAnimation from "@/components/animations/offboarding-anim";
 
 export default function GitHubOffboarding({showTitle = true}) {
     return (

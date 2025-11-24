@@ -3,8 +3,8 @@
 import { gsap } from "gsap";
 import { useEffect } from "react";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import LifecycleAnimation from "@/components/lifecycle-anim";
-import OffboardingAnimation from "@/components/offboarding-anim";
+import LifecycleAnimation from "@/components/animations/lifecycle-anim";
+import OffboardingAnimation from "@/components/animations/offboarding-anim";
 
 export default function Products() {
     useEffect(() => {

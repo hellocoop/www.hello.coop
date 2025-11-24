@@ -1,9 +1,7 @@
 'use client';
 
-import { gsap } from "gsap";
 import { useEffect } from "react";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import InterchangeAnimation from "@/components/interchange-anim";
+import InterchangeAnimation from "@/components/animations/interchange-anim";
 import BlogFeed from "@/components/blog-feed";
 import { handleConfetti } from "@/lib/confetti";
 import HelloB2BSSO from "@/components/products/hello-b2b-sso";
@@ -33,10 +31,6 @@ function setupVideoAutoplay(wrapperId) {
 }
 
 export default function Home() {
-    useEffect(() => {
-        gsap.registerPlugin(MotionPathPlugin);
-    }, []);
-
     useEffect(() => {
         setupVideoAutoplay('video-mobile');
         setupVideoAutoplay('video-desktop');

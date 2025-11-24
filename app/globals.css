@@ -88,6 +88,11 @@ article.nextra-body-typesetting-article h1 {
     @apply uppercase text-sm font-semibold border border-charcoal dark:border-gray inline-flex items-center justify-center rounded-full px-4 py-1 text-charcoal dark:text-gray;
 }
 
+.card-link-primary:hover,
+.card-link-secondary:hover {
+    text-decoration-line: none !important;
+}
+
 @keyframes float {
 
     0%,
@@ -116,25 +121,13 @@ article.nextra-body-typesetting-article h1 {
     fill: transparent
 }
 
-header button:hover .line,
-header a:hover .line,
-footer button:hover .line,
-footer a:hover .line,
-#home-page button:hover .line,
-#home-page a:hover .line,
-#products-page button:hover .line,
-#products-page a:hover .line {
+.card-link-primary:hover .line,
+.card-link-secondary:hover .line {
     opacity: 1;
 }
 
-header button:hover .tip,
-header a:hover .tip,
-footer button:hover .tip,
-footer a:hover .tip,
-#home-page button:hover .tip,
-#home-page a:hover .tip,
-#products-page button:hover .tip,
-#products-page a:hover .tip {
+.card-link-primary:hover .tip, 
+.card-link-secondary:hover .tip {
     transform: translate(-2px, 0);
 }
 
