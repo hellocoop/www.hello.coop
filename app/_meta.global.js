@@ -9,7 +9,6 @@ export default {
         theme: {
             typesetting: 'article',
             layout: 'full',
-            toc: true
         }
     },
     'privacy-policy': {
@@ -17,7 +16,7 @@ export default {
         display: 'hidden',
         theme: {
             typesetting: 'article',
-            toc: false,
+            layout: 'full'
         }
     },
     'terms-of-service': {
@@ -25,7 +24,7 @@ export default {
         display: 'hidden',
         theme: {
             typesetting: 'article',
-            toc: false,
+            layout: 'full'
         }
     },
     'trademark-disclaimer': {
@@ -33,7 +32,7 @@ export default {
         display: 'hidden',
         theme: {
             typesetting: 'article',
-            toc: false,
+            layout: 'full'
         }
     },
     approach: {
@@ -54,9 +53,7 @@ export default {
                 display: 'hidden',
                 theme: {
                     typesetting: 'article',
-                    // toc: {
-                    //     depth: 2
-                    // }
+                    layout: 'full'
                 }
             }
         }
