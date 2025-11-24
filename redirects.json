@@ -1,0 +1,14 @@
+{
+  "/privacy-policy.html": "/privacy-policy/",
+  "/terms-of-service.html": "/terms-of-service/",
+  "/trademark-disclaimer.html": "/trademark-disclaimer/",
+  "/resources/standards.html": "/approach/standards/",
+  "/products.html": "/products/",
+  "/pages/index.html": "/approach/",
+  "/pages/approach.html": "/approach/",
+  "/pages/architecture.html": "/approach/architecture/",
+  "/pages/cooperative.html": "/approach/cooperative/",
+  "/pages/data-governance.html": "/approach/data-governance/",
+  "/pages/laws-of-identity.html": "/approach/laws-of-identity/",
+  "/pages/tenets.html": "/approach/tenets/"
+}
