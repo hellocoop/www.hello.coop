@@ -2,6 +2,7 @@ import "./globals.css";
 import { Head } from 'nextra/components'
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Plausible from "@/components/plausible";
 
 export const metadata = {
     title: "Hellō",
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
             <body
                 className="bg-white text-charcoal dark:bg-[#151515] dark:text-gray overflow-x-hidden font-sans"
             >
+                <Plausible />
                 <Header />
                 {children}
                 <Footer />
