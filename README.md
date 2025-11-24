@@ -11,7 +11,7 @@ This repo contains the source code and documentation powering [https://www.hello
 1. A fork of the repo (for any contributions)
 1. A clone of the [www.hello.coop repo](https://github.com/hellocoop/www.hello.coop) on your local machine
 
-### Installation 
+### Installation
 
 1. `cd www.hello.coop` to go into the project root
 1. `npm i` to install the npm dependencies
