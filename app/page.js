@@ -7,7 +7,8 @@ import InterchangeAnimation from "@/components/interchange-anim";
 import LifecycleAnimation from "@/components/lifecycle-anim";
 import OffboardingAnimation from "@/components/offboarding-anim";
 import BlogFeed from "@/components/blog-feed";
-import confetti from "canvas-confetti";
+import { handleConfetti } from "@/lib/confetti";
+
 
 function setupVideoAutoplay(wrapperId) {
     const wrapper = document.getElementById(wrapperId);
@@ -39,35 +40,6 @@ export default function Home() {
         setupVideoAutoplay('video-desktop');
     }, []);
 
-    const handleClick = () => {
-        const duration = 5 * 1000
-        const animationEnd = Date.now() + duration
-        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0, scalar: 2 }
-        const ocron = confetti.shapeFromPath({
-            path: "M0 43.6027C0 39.4691 0.633385 35.7355 1.90013 32.402C3.16687 29.0018 4.96697 26.1349 7.30044 23.8014C9.63392 21.4013 12.4341 19.5679 15.701 18.3011C18.9678 16.9677 22.6347 16.301 26.7016 16.301C30.7685 16.301 34.4354 16.9677 37.7023 18.3011C41.0358 19.5679 43.8693 21.4013 46.2028 23.8014C48.5363 26.1349 50.3364 29.0018 51.6032 32.402C52.8699 35.7355 53.5033 39.4691 53.5033 43.6027C53.5033 47.7362 52.8699 51.4698 51.6032 54.8033C50.3364 58.1369 48.5363 61.0037 46.2028 63.4039C43.8693 65.7373 41.0358 67.5708 37.7023 68.9042C34.4354 70.1709 30.7685 70.8043 26.7016 70.8043C22.6347 70.8043 18.9678 70.1709 15.701 68.9042C12.4341 67.5708 9.63392 65.7373 7.30044 63.4039C4.96697 61.0037 3.16687 58.1369 1.90013 54.8033C0.633385 51.4698 0 47.7362 0 43.6027ZM14.2009 43.6027C14.2009 45.6694 14.4009 47.7029 14.8009 49.703C15.2009 51.6365 15.8676 53.4032 16.801 55.0033C17.8011 56.5368 19.1012 57.7702 20.7013 58.7036C22.3014 59.637 24.3015 60.1037 26.7016 60.1037C29.1018 60.1037 31.1019 59.637 32.702 58.7036C34.3688 57.7702 35.6689 56.5368 36.6022 55.0033C37.6023 53.4032 38.3023 51.6365 38.7024 49.703C39.1024 47.7029 39.3024 45.6694 39.3024 43.6027C39.3024 41.5359 39.1024 39.5024 38.7024 37.5023C38.3023 35.5022 37.6023 33.7354 36.6022 32.202C35.6689 30.6685 34.3688 29.4351 32.702 28.5017C31.1019 27.5017 29.1018 27.0016 26.7016 27.0016C24.3015 27.0016 22.3014 27.5017 20.7013 28.5017C19.1012 29.4351 17.8011 30.6685 16.801 32.202C15.8676 33.7354 15.2009 35.5022 14.8009 37.5023C14.4009 39.5024 14.2009 41.5359 14.2009 43.6027ZM9.20057 0H44.5027V7.50045H9.20057V0Z"
-        }) 
-        const randomInRange = (min, max) =>
-            Math.random() * (max - min) + min
-        const interval = window.setInterval(() => {
-            const timeLeft = animationEnd - Date.now()
-            if (timeLeft <= 0) {
-                return clearInterval(interval)
-            }
-            const particleCount = 50 * (timeLeft / duration)
-            confetti({
-                ...defaults,
-                particleCount,
-                shapes: [ocron],
-                origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-            })
-            confetti({
-                ...defaults,
-                particleCount,
-                shapes: [ocron],
-                origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-            })
-        }, 250)
-    }
 
     return (
         <main id="home-page">
@@ -75,7 +47,7 @@ export default function Home() {
                 <h1 className="text-[9.75vw] xl:text-[120px] font-bold -ml-1 relative z-10 pt-4 sm:pt-0 md:-mb-6 -mt-0 md:-mt-6">
                     Hellō&nbsp;&nbsp;<span className="text-charcoal/50 dark:text-gray/50 text-[13vw] xl:text-[159px]">[</span> Free SSO <span className="text-charcoal/50 dark:text-gray/50 text-[13vw] xl:text-[159px]">]</span></h1>
                 <div className="hero-img relative overflow-hidden pt-2 sm:pt-0 md:ml-32">
-                    <button onClick={handleClick} className="cursor-pointer w-1/2 left-[20%] h-[25%] opacity-0 absolute z-20 bottom-[11.5%]" style={{ animation: "float 5s infinite" }}>Testing</button>
+                    <button onClick={handleConfetti} className="cursor-pointer w-1/2 left-[20%] h-[25%] opacity-0 absolute z-20 bottom-[11.5%]" style={{ animation: "float 5s infinite" }}>Testing</button>
                     <picture>
                         <source srcSet="/hero-dark.png" media="(prefers-color-scheme: dark)" />
                         <img src="/hero-light.png" alt="phone with continue with hello button"

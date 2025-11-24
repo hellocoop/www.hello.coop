@@ -223,7 +223,6 @@ article main h1 {
 }
 
 @media (prefers-color-scheme: dark) {
-
     .protocol-diagram line,
     .protocol-diagram path,
     .protocol-diagram rect,
