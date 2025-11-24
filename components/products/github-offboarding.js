@@ -20,10 +20,10 @@ export default function GitHubOffboarding({showTitle = true}) {
                     GitHub Offboarding
                 </h1>
             )}
-            <h2 className="text-xl md:text-3xl opacity-50 mt-0 md:mt-4">
+            {/* <h2 className="text-xl md:text-3xl opacity-50 mt-0 md:mt-4">
                 Simplify &amp; automate compliance
-            </h2>
-                    <div className="card !p-0 !py-4">
+            </h2> */}
+                    <div className="card !p-0 !py-[1.125rem] !my-0">
                         <div className="card-description">
                             <div className="mt-6 space-y-4">
                                 <p>
@@ -40,7 +40,7 @@ export default function GitHubOffboarding({showTitle = true}) {
                                 </p>
                             </div>
                             <div className="flex flex-col space-y-4">
-                                <span className="text-base font-medium text-charcoal/75 dark:text-gray/75">
+                                <span className="text-base font-semibold">
                                     Coming Q1 2026
                                 </span>
                                 <div className="gap-2 flex flex-col md:flex-row items-start">

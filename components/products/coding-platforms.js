@@ -6,14 +6,14 @@ export default function CodingPlatforms({showTitle = true}) {
                     Coding Platforms
                 </h1>
             )}
-            <h2 className="text-xl md:text-3xl opacity-50 mt-0 md:mt-4">
+            {/* <h2 className="text-xl md:text-3xl opacity-50 mt-0 md:mt-4">
                 Let devs add identity in seconds
-            </h2>
-                    <div className="card !p-0 !py-4">
+            </h2> */}
+                    <div className="card !p-0 !py-[1.125rem] !my-0">
                         <div className="card-description">
                             <div className="mt-6 space-y-4">
                                 <p>
-                                    <span className="text-charcoal/75 dark:text-gray/75 mb-2 block">
+                                    <span className="font-semibold mb-2 block">
                                         For developers:
                                     </span>
                                     Use our Admin MCP server with AI coding assistants to create and
@@ -21,7 +21,7 @@ export default function CodingPlatforms({showTitle = true}) {
                                     just natural language commands.
                                 </p>
                                 <p>
-                                    <span className="text-charcoal/75 dark:text-gray/75 mb-2 block">
+                                    <span className="font-semibold mb-2 block">
                                         For platforms:
                                     </span>
                                     Integrate our Admin APIs to manage Hellō applications for your
@@ -31,7 +31,7 @@ export default function CodingPlatforms({showTitle = true}) {
                                 </p>
                             </div>
                             <div className="flex flex-col space-y-4">
-                                <span className="text-base font-medium text-charcoal/75 dark:text-gray/75">
+                                <span className="text-base font-semibold">
                                     Price: FREE
                                 </span>
                                 <div className="gap-2 flex flex-col items-start">
