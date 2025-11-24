@@ -56,12 +56,9 @@ export default function Home() {
                                 onClick={handleConfetti}
                                 src="/hero-light-btn.png"
                                 alt="overlay button"
-                                className="w-full h-auto"
+                                className="w-full h-auto hover:-translate-y-[2.5px] transition-all duration-300"
                             />
                         </picture>
-
-                        {/* Shine overlay */}
-                        <div className="shine-overlay"></div>
                     </div>
                 </div>
                 <h2 className="text-2xl sm:text-[3.95vw] xl:text-[49px] font-semibold relative z-10 -mb-6 sm:-mb-0">
