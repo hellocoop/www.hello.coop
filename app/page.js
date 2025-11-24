@@ -118,7 +118,7 @@ export default function Home() {
                     <h1 className="text-4xl md:text-5xl font-bold italic">Building a #BetterInternet</h1>
                     <div className="mt-8 md:mt-16 gap-10">
                         <div
-                            className="flex-1 flex items-center text-base md:text-lg lg:text-2xl font-normal">
+                            className="flex-1 flex items-center text-base md:text-lg lg:text-xl font-normal">
                             <div className="space-y-3 md:space-y-5">
                                 <p><span className="font-semibold"><a
                                     href="https://www.linkedin.com/in/dickhardt/" className="no-global-hover">Dick
@@ -130,7 +130,7 @@ export default function Home() {
                                     His groundbreaking <span className="font-semibold"><a
                                         href="https://youtu.be/JzuCE7lDYrM" className="no-global-hover">"Identity
                                         2.0"</a></span> talk introduced a user-centric vision that shaped modern
-                                    identity and the<br/><span className="font-semibold"><a
+                                    identity and the <span className="font-semibold"><a
                                         href="/approach/" className="no-global-hover">Hellō Approach</a></span>.
                                 </p>
                                 <div id="video-mobile"
