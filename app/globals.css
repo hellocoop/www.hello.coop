@@ -126,7 +126,7 @@ article.nextra-body-typesetting-article h1 {
     opacity: 1;
 }
 
-.card-link-primary:hover .tip, 
+.card-link-primary:hover .tip,
 .card-link-secondary:hover .tip {
     transform: translate(-2px, 0);
 }
@@ -216,6 +216,7 @@ article main h1 {
 }
 
 @media (prefers-color-scheme: dark) {
+
     .protocol-diagram line,
     .protocol-diagram path,
     .protocol-diagram rect,
@@ -231,38 +232,43 @@ article main h1 {
 /* Container for shine (does NOT change layout) */
 .shine-pointer-events {
     pointer-events: none;
-    overflow: hidden; /* ensures shine stays inside PNG shape */
-  }
-  
-  /* The moving shine band */
-  .shine-glint {
+    overflow: hidden;
+    /* ensures shine stays inside PNG shape */
+}
+
+/* The moving shine band */
+.shine-glint {
     position: absolute;
     top: -100%;
     left: -100%;
     width: 200%;
     height: 300%;
     transform: rotate(30deg);
-    background: linear-gradient(
-      115deg,
-      rgba(255, 255, 255, 0) 40%,
-      rgba(255, 255, 255, 0.35) 50%,
-      rgba(255, 255, 255, 0) 60%
-    );
-    mix-blend-mode: screen; /* Key: only brighten opaque areas */
+    background: linear-gradient(115deg,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(255, 255, 255, 0.35) 50%,
+            rgba(255, 255, 255, 0) 60%);
+    mix-blend-mode: screen;
+    /* Key: only brighten opaque areas */
     animation: shineMove 1s ease-out forwards;
     opacity: 0;
-  }
-  
-  .group:hover .shine-glint {
+}
+
+.group:hover .shine-glint {
     opacity: 1;
     animation: shineMove 0.9s ease-out forwards;
-  }
-  
-  @keyframes shineMove {
+}
+
+@keyframes shineMove {
     0% {
-      transform: translateX(-150%) rotate(30deg);
+        transform: translateX(-150%) rotate(30deg);
     }
+
     100% {
-      transform: translateX(150%) rotate(30deg);
+        transform: translateX(150%) rotate(30deg);
     }
-  }
+}
+
+.nextra-body-typesetting-article {
+    @apply !px-4 xl:!ml-32;
+}
