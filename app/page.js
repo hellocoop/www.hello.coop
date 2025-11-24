@@ -70,7 +70,7 @@ export default function Home() {
             <section className="callout">
                 <div className="max-w-6xl mx-auto py-10 px-4">
                     <h1 className="text-4xl md:text-5xl font-bold italic">The Hellō Identity Interchange</h1>
-                    <h2 className="text-xl md:text-3xl font-semibold italic text-charcoal/50 dark:text-gray/50 mt-4">
+                    <h2 className="text-xl md:text-4xl font-semibold italic text-charcoal/50 dark:text-gray/50 mt-4">
                         Abstracting all identity providers into a single OpenID Connect<br className="hidden sm:block" />
                         integration removes complexity and costs for everyone, enabling<br /><span
                             className="text-charcoal dark:text-gray">Hellō to provide&nbsp;&nbsp;<span className="not-italic"><span className="text-charcoal/50 dark:text-gray/50 text-[26.5px] md:text-[39px]">[</span> Free
@@ -82,33 +82,33 @@ export default function Home() {
 
             <section className="max-w-6xl mx-auto mt-16 md:mt-20 space-y-16 md:space-y-20">
                 <div className="px-4">
-                    <h1 className="text-[1.35rem] md:text-3xl font-semibold">Free Social Login for B2C Apps</h1>
+                    <h1 className="text-[1.35rem] md:text-4xl font-semibold">Free Social Login for B2C Apps</h1>
                     <HelloB2CSSO showTitle={false} />
                 </div>
 
                 <div className="px-4">
-                    <h1 className="text-[1.35rem] md:text-3xl font-semibold">
+                    <h1 className="text-[1.35rem] md:text-4xl font-semibold">
                         Free Enterprise SSO for B2B Apps
                     </h1>
                     <HelloB2BSSO showTitle={false} />
                 </div>
 
                 <div id="hello-lifecycle" className="px-4 scroll-mt-6">
-                    <h1 className="text-[1.35rem] md:text-3xl font-semibold">
+                    <h1 className="text-[1.35rem] md:text-4xl font-semibold">
                         Hellō Lifecycle
                     </h1>
                     <HelloLifecycle showTitle={false} />
                 </div>
 
                 <div id="github-offboarding" className="px-4 scroll-mt-6">
-                    <h1 className="text-[1.35rem] md:text-3xl font-semibold">
+                    <h1 className="text-[1.35rem] md:text-4xl font-semibold">
                         GitHub Offboarding
                     </h1>
                     <GitHubOffboarding showTitle={false} />
                 </div>
 
                 <div className="px-4">
-                    <h1 className="text-[1.35rem] md:text-3xl font-semibold">Zero Config Agentic Coding</h1>
+                    <h1 className="text-[1.35rem] md:text-4xl font-semibold">Zero Config Agentic Coding</h1>
                     <CodingPlatforms showTitle={false} />
                 </div>
             </section>
