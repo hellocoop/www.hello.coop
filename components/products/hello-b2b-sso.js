@@ -63,7 +63,7 @@ export default function HelloB2BSSO({showTitle = true}) {
                 <img
                     src="/b2b-light.png"
                     alt="phone showing continue with apple, google, and email buttons"
-                    className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[500px] md:absolute md:right-0"
+                    className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[500px] md:absolute md:right-0 mask-b-from-50% mask-b-to-90%"
                     style={{ animation: "float 3s infinite" }}
                 />
             </picture>

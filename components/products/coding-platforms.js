@@ -67,7 +67,7 @@ export default function CodingPlatforms({showTitle = true}) {
                         {/* THIS IS A HACK TO GET ROBOT POSITIONED CORRECTLY ON MOBILE
                         FIGURING OUT THE POSITION WAS A NIGHTMARE HENCE DUPLICATED CODE */}
                         <div className="relative w-full overflow-hidden md:hidden">
-                            <picture className="card-phone-shadow-bottom">
+                            <picture>
                                 <source
                                     srcSet="/vibe-bg-dark.png"
                                     media="(prefers-color-scheme: dark)"
@@ -75,10 +75,10 @@ export default function CodingPlatforms({showTitle = true}) {
                                 <img
                                     src="/vibe-bg-light.png"
                                     alt="background phone"
-                                    className="w-full h-auto block"
+                                    className="w-full h-auto block mask-b-from-20% mask-b-to-90%"
                                 />
                             </picture>
-                            <picture className="absolute inset-0 flex items-center justify-center card-phone-shadow-bottom">
+                            <picture className="absolute inset-0 flex items-center justify-center">
                                 <source
                                     srcSet="/vibe-robot-dark.png"
                                     media="(prefers-color-scheme: dark)"
@@ -92,7 +92,7 @@ export default function CodingPlatforms({showTitle = true}) {
                             </picture>
                         </div>
                         <div className="hidden md:block">
-                            <picture className="card-phone-shadow-bottom h-full relative md:static pt-2 md:pt-0 overflow-hidden md:overflow-auto mb-2">
+                            <picture className="h-full relative md:static pt-2 md:pt-0 overflow-hidden md:overflow-auto mb-2">
                                 <source
                                     srcSet="/vibe-robot-dark.png"
                                     media="(prefers-color-scheme: dark)"
@@ -104,7 +104,7 @@ export default function CodingPlatforms({showTitle = true}) {
                                     style={{ animation: "fadeSlideLoop 3s infinite" }}
                                 />
                             </picture>
-                            <picture className="card-phone-shadow-bottom h-full relative md:static pt-2 md:pt-0 overflow-hidden md:overflow-auto mb-2">
+                            <picture className="h-full relative md:static pt-2 md:pt-0 overflow-hidden md:overflow-auto mb-2">
                                 <source
                                     srcSet="/vibe-bg-dark.png"
                                     media="(prefers-color-scheme: dark)"
@@ -112,7 +112,7 @@ export default function CodingPlatforms({showTitle = true}) {
                                 <img
                                     src="/vibe-bg-light.png"
                                     alt="phone showing continue with apple, google, and email buttons"
-                                    className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[450px] md:absolute md:right-0 md:top-0 md:bottom-0"
+                                    className="mask-b-from-20% mask-b-to-90% w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[450px] md:absolute md:right-0 md:top-0 md:bottom-0"
                                 />
                             </picture>
                         </div>
