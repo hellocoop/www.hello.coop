@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import LifecycleAnimation from "@/components/animations/lifecycle-anim";
 
 export default function HelloLifecycle({showTitle = true}) {
-    const [waitlistUrl, setWaitlistUrl] = useState('https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle');
+    const [waitlistUrl, setWaitlistUrl] = useState(null);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {

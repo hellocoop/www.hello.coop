@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import OffboardingAnimation from "@/components/animations/offboarding-anim";
 
 export default function GitHubOffboarding({showTitle = true}) {
-    const [waitlistUrl, setWaitlistUrl] = useState('https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding');
+    const [waitlistUrl, setWaitlistUrl] = useState(null);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
