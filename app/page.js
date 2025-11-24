@@ -42,13 +42,27 @@ export default function Home() {
             <section className="max-w-6xl mx-auto px-4 md:py-0">
                 <h1 className="text-[9.75vw] xl:text-[120px] font-bold -ml-1 relative z-10 pt-4 sm:pt-0 md:-mb-6 -mt-0 md:-mt-6">
                     Hellō&nbsp;&nbsp;<span className="text-charcoal/50 dark:text-gray/50 text-[13vw] xl:text-[159px]">[</span> Free SSO <span className="text-charcoal/50 dark:text-gray/50 text-[13vw] xl:text-[159px]">]</span></h1>
-                <div className="hero-img relative overflow-hidden pt-2 sm:pt-0 md:ml-32">
-                    <button onClick={handleConfetti} className="cursor-pointer w-1/2 left-[20%] h-[25%] opacity-0 absolute z-20 bottom-[11.5%]" style={{ animation: "float 5s infinite" }}>Testing</button>
+                <div className="hero-img relative max-w-[400px] mx-auto md:max-w-[600px]">
                     <picture>
                         <source srcSet="/hero-dark.png" media="(prefers-color-scheme: dark)" />
-                        <img src="/hero-light.png" alt="phone with continue with hello button"
-                            className="z-10 h-auto max-h-[600px] w-auto -mb-4 md:-mb-12" style={{ animation: "float 5s infinite" }} />
+                        <img src="/hero-light.png" alt="phone mockup" className="w-full h-auto" />
                     </picture>
+
+                    {/* Button overlay container */}
+                    <div className="absolute top-[59%] left-[24.95%] w-[43.5%] cursor-pointer group">
+                        <picture>
+                            <source srcSet="/hero-dark-btn.png" media="(prefers-color-scheme: dark)" />
+                            <img
+                                onClick={handleConfetti}
+                                src="/hero-light-btn.png"
+                                alt="overlay button"
+                                className="w-full h-auto"
+                            />
+                        </picture>
+
+                        {/* Shine overlay */}
+                        <div className="shine-overlay"></div>
+                    </div>
                 </div>
                 <h2 className="text-2xl sm:text-[3.95vw] xl:text-[49px] font-semibold relative z-10 -mb-6 sm:-mb-0">
                     Goodbye SSO tax.<br className="sm:hidden" /> Hyperscale security for all.
@@ -71,33 +85,33 @@ export default function Home() {
             <section className="max-w-6xl mx-auto mt-16 md:mt-20 space-y-16 md:space-y-20">
                 <div className="px-4">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">Free Social Login for B2C Apps</h1>
-                    <HelloB2BSSO showTitle={false}/>
+                    <HelloB2BSSO showTitle={false} />
                 </div>
 
                 <div className="px-4">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         Free Enterprise SSO for B2B Apps
                     </h1>
-                    <HelloB2CSSO showTitle={false}/>
+                    <HelloB2CSSO showTitle={false} />
                 </div>
 
                 <div id="hello-lifecycle" className="px-4 scroll-mt-6">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         Hellō Lifecycle
                     </h1>
-                    <HelloLifecycle showTitle={false}/>
+                    <HelloLifecycle showTitle={false} />
                 </div>
 
                 <div id="github-offboarding" className="px-4 scroll-mt-6">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         GitHub Offboarding
                     </h1>
-                    <GitHubOffboarding showTitle={false}/>
+                    <GitHubOffboarding showTitle={false} />
                 </div>
 
                 <div className="px-4">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">Zero Config Agentic Coding</h1>
-                    <CodingPlatforms showTitle={false}/>
+                    <CodingPlatforms showTitle={false} />
                 </div>
             </section>
 
