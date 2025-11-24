@@ -69,7 +69,7 @@ export default function Home() {
 
             <section className="callout">
                 <div className="max-w-6xl mx-auto py-10 px-4">
-                    <h1 className="text-4xl md:text-6xl font-bold italic">The Hellō Identity Interchange</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold italic">The Hellō Identity Interchange</h1>
                     <h2 className="text-xl md:text-3xl font-semibold italic text-charcoal/50 dark:text-gray/50 mt-4">
                         Abstracting all identity providers into a single OpenID Connect<br className="hidden sm:block" />
                         integration removes complexity and costs for everyone, enabling<br /><span
@@ -82,55 +82,55 @@ export default function Home() {
 
             <section className="max-w-6xl mx-auto mt-16 md:mt-20 space-y-16 md:space-y-20">
                 <div className="px-4">
-                    <h1 className="text-[1.35rem] md:text-5xl font-semibold">Free Social Login for B2C Apps</h1>
+                    <h1 className="text-[1.35rem] md:text-3xl font-semibold">Free Social Login for B2C Apps</h1>
                     <HelloB2CSSO showTitle={false} />
                 </div>
 
                 <div className="px-4">
-                    <h1 className="text-[1.35rem] md:text-5xl font-semibold">
+                    <h1 className="text-[1.35rem] md:text-3xl font-semibold">
                         Free Enterprise SSO for B2B Apps
                     </h1>
                     <HelloB2BSSO showTitle={false} />
                 </div>
 
                 <div id="hello-lifecycle" className="px-4 scroll-mt-6">
-                    <h1 className="text-[1.35rem] md:text-5xl font-semibold">
+                    <h1 className="text-[1.35rem] md:text-3xl font-semibold">
                         Hellō Lifecycle
                     </h1>
                     <HelloLifecycle showTitle={false} />
                 </div>
 
                 <div id="github-offboarding" className="px-4 scroll-mt-6">
-                    <h1 className="text-[1.35rem] md:text-5xl font-semibold">
+                    <h1 className="text-[1.35rem] md:text-3xl font-semibold">
                         GitHub Offboarding
                     </h1>
                     <GitHubOffboarding showTitle={false} />
                 </div>
 
                 <div className="px-4">
-                    <h1 className="text-[1.35rem] md:text-5xl font-semibold">Zero Config Agentic Coding</h1>
+                    <h1 className="text-[1.35rem] md:text-3xl font-semibold">Zero Config Agentic Coding</h1>
                     <CodingPlatforms showTitle={false} />
                 </div>
             </section>
 
             <section className="callout">
                 <div className="max-w-6xl mx-auto py-10 px-4">
-                    <h1 className="text-4xl md:text-6xl font-bold italic">Building a #BetterInternet</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold italic">Building a #BetterInternet</h1>
                     <div className="mt-8 md:mt-16 gap-10">
                         <div
-                            className="flex-1 flex items-center text-base md:text-lg lg:text-2xl font-normal text-charcoal/50 dark:text-gray/50">
+                            className="flex-1 flex items-center text-base md:text-lg lg:text-2xl font-normal">
                             <div className="space-y-3 md:space-y-5">
-                                <p><span className="text-charcoal/75 dark:text-gray/75"><a
+                                <p><span className="font-semibold"><a
                                     href="https://www.linkedin.com/in/dickhardt/" className="no-global-hover">Dick
                                     Hardt</a></span>,
                                     Founder & CEO of Hellō, has been a leading voice in internet identity since the early
                                     2000s.
                                 </p>
                                 <p>
-                                    His groundbreaking <span className="text-charcoal/75 dark:text-gray/75"><a
+                                    His groundbreaking <span className="font-semibold"><a
                                         href="https://youtu.be/JzuCE7lDYrM" className="no-global-hover">"Identity
                                         2.0"</a></span> talk introduced a user-centric vision that shaped modern
-                                    identity and the <span className="text-charcoal/75 dark:text-gray/75"><a
+                                    identity and the<br/><span className="font-semibold"><a
                                         href="/approach/" className="no-global-hover">Hellō Approach</a></span>.
                                 </p>
                                 <div id="video-mobile"
@@ -146,7 +146,7 @@ export default function Home() {
                                 </div>
                                 <p>
                                     Dick led the design of OAuth 2.0 and JWTs and continues to lead the development of <span
-                                        className="text-charcoal/75 dark:text-gray/75"><a href="/approach/standards"
+                                        className="font-semibold"><a href="/approach/standards"
                                             className="no-global-hover">open
                                             identity standards</a></span>.
                                 </p>
@@ -166,7 +166,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="max-w-6xl mx-auto pt-4 pb-12 md:py-16 px-4">
-                    <h1 className="text-4xl md:text-6xl font-bold">Latest Blog Posts</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold">Latest Blog Posts</h1>
                     <BlogFeed />
                     <div className="text-center mt-10 md:mt-16">
                         <a href="https://blog.hello.coop/" target="_blank"

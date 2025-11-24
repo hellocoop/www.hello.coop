@@ -78,10 +78,10 @@ export default function BlogFeed() {
                                 />
                                 <div>
                                     <span className="text-base md:text-xl opacity-50">{p.date}</span>
-                                    <h3 className="text-xl md:text-3xl font-semibold my-3 md:my-4">
+                                    <h3 className="text-xl md:text-2xl font-semibold my-3 md:my-4">
                                         {p.title}
                                     </h3>
-                                    <p className="text-base md:text-lg lg:text-2xl opacity-50 line-clamp-3">
+                                    <p className="text-base md:text-lg lg:text-xl line-clamp-3">
                                         {p.description}
                                     </p>
                                 </div>
