@@ -1,8 +1,10 @@
+'use client';
+
 import OffboardingAnimation from "@/components/animations/offboarding-anim";
 
 export default function GitHubOffboarding({showTitle = true}) {
     return (
-        <div id="github-offboarding">
+        <div id="github-offboarding" className="scroll-mt-20">
             {showTitle && (
                 <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                     GitHub Offboarding
@@ -33,7 +35,7 @@ export default function GitHubOffboarding({showTitle = true}) {
                                 </span>
                                 <div className="gap-2 flex flex-col md:flex-row items-start">
                                     <a
-                                        href="https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding&return_uri=https%3A%2F%2Fwww.hello.coop%2Fproducts%23github-offboarding"
+                                        href={`https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding&return_uri=${window.location.origin + window.location.pathname}%23github-offboarding`}
                                         id="github-offboarding-join-waitlist-btn"
                                         className="card-link-primary no-global-hover cursor-pointer"
                                     >

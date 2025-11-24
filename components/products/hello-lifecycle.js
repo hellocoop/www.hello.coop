@@ -1,8 +1,10 @@
+'use client';
+
 import LifecycleAnimation from "@/components/animations/lifecycle-anim";
 
 export default function HelloLifecycle({showTitle = true}) {
     return (
-        <div id="hello-lifecycle">
+        <div id="hello-lifecycle" className="scroll-mt-20">
             {showTitle && (
                 <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                     Hellō Lifecycle
@@ -33,7 +35,7 @@ export default function HelloLifecycle({showTitle = true}) {
                                 </span>
                                 <div className="gap-2 flex flex-col md:flex-row items-start">
                                     <a
-                                        href="https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle&return_uri=https%3A%2F%2Fwww.hello.coop%2Fproducts%23hello-lifecycle"
+                                        href={`https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle&return_uri=${window.location.origin + window.location.pathname}%23hello-lifecycle`}
                                         id="hello-lifecycle-join-waitlist-btn"
                                         className="card-link-primary no-global-hover cursor-pointer"
                                     >
