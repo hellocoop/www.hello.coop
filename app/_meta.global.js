@@ -5,7 +5,12 @@ export default {
     },
     products: {
         type: 'page',
-        display: 'hidden'
+        display: 'hidden',
+        theme: {
+            typesetting: 'article',
+            layout: 'full',
+            toc: true,
+        }
     },
     'privacy-policy': {
         type: 'page',
