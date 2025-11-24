@@ -19,6 +19,12 @@ export default function TooltipSVG({ svg: initialSvg = "", data = {} }) {
   const [currentTooltip, setCurrentTooltip] = useState(null);
   const [scrollTooltip, setScrollTooltip] = useState(null);
 
+  useEffect(() => {
+    // remove toc for extra space
+    const toc = document.querySelector(".nextra-toc");
+    toc.style.display = "none";
+  }, []);
+
   const tooltipsJSON = { ...tooltipsCopy, ...data };
 
   // Update tooltips positions
