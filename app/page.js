@@ -42,7 +42,7 @@ export default function Home() {
             <section className="max-w-6xl mx-auto px-4 md:py-0">
                 <h1 className="text-[9.75vw] xl:text-[120px] font-bold -ml-1 relative z-10 pt-4 sm:pt-0 md:-mb-6 -mt-0 md:-mt-6">
                     Hellō&nbsp;&nbsp;<span className="text-charcoal/50 dark:text-gray/50 text-[13vw] xl:text-[159px]">[</span> Free SSO <span className="text-charcoal/50 dark:text-gray/50 text-[13vw] xl:text-[159px]">]</span></h1>
-                <div className="hero-img relative max-w-[400px] mx-auto md:max-w-[600px]">
+                <div className="hero-img relative max-w-[400px] mx-auto md:max-w-[900px]">
                     <picture>
                         <source srcSet="/hero-dark.png" media="(prefers-color-scheme: dark)" />
                         <img src="/hero-light.png" alt="phone mockup" className="w-full h-auto" style={{ animation: "float 5s infinite" }}/>
