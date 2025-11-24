@@ -1,8 +1,18 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import LifecycleAnimation from "@/components/animations/lifecycle-anim";
 
 export default function HelloLifecycle({showTitle = true}) {
+    const [waitlistUrl, setWaitlistUrl] = useState('https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle');
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const returnUri = encodeURIComponent(`${window.location.origin}${window.location.pathname}#hello-lifecycle`);
+            setWaitlistUrl(`https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle&return_uri=${returnUri}`);
+        }
+    }, []);
+
     return (
         <div id="hello-lifecycle" className="scroll-mt-20">
             {showTitle && (
@@ -35,7 +45,7 @@ export default function HelloLifecycle({showTitle = true}) {
                                 </span>
                                 <div className="gap-2 flex flex-col md:flex-row items-start">
                                     <a
-                                        href={`https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle&return_uri=${window.location.origin + window.location.pathname}%23hello-lifecycle`}
+                                        href={waitlistUrl}
                                         id="hello-lifecycle-join-waitlist-btn"
                                         className="card-link-primary no-global-hover cursor-pointer"
                                     >

@@ -1,8 +1,18 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import OffboardingAnimation from "@/components/animations/offboarding-anim";
 
 export default function GitHubOffboarding({showTitle = true}) {
+    const [waitlistUrl, setWaitlistUrl] = useState('https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding');
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const returnUri = encodeURIComponent(`${window.location.origin}${window.location.pathname}#github-offboarding`);
+            setWaitlistUrl(`https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding&return_uri=${returnUri}`);
+        }
+    }, []);
+
     return (
         <div id="github-offboarding" className="scroll-mt-20">
             {showTitle && (
@@ -35,7 +45,7 @@ export default function GitHubOffboarding({showTitle = true}) {
                                 </span>
                                 <div className="gap-2 flex flex-col md:flex-row items-start">
                                     <a
-                                        href={`https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding&return_uri=${window.location.origin + window.location.pathname}%23github-offboarding`}
+                                        href={waitlistUrl}
                                         id="github-offboarding-join-waitlist-btn"
                                         className="card-link-primary no-global-hover cursor-pointer"
                                     >
