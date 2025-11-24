@@ -9,7 +9,7 @@ export default {
         theme: {
             typesetting: 'article',
             layout: 'full',
-            toc: true,
+            toc: true
         }
     },
     'privacy-policy': {
