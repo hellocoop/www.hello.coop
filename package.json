@@ -7,7 +7,8 @@
     "open-browser": "open http://localhost:3000",
     "build": "next build",
     "start": "next start",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "test": "echo \"No tests to run\" && exit 0"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
