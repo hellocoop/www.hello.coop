@@ -70,12 +70,6 @@ export default function TooltipSVG({ svg: initialSvg = "", data = {} }) {
     // Remove any unwanted SVG url references
     setSvg(svg.replaceAll("url(#Shadow)", ""));
 
-    const ref = containerRef.current.querySelector("svg");
-    if (ref) {
-      ref.setAttribute("width", "100%");
-      ref.setAttribute("height", "100%");
-    }
-
     addTooltips();
 
     // Initialize tippy on buttons

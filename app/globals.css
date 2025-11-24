@@ -204,7 +204,7 @@ article main h1 {
 }
 
 .protocol-diagram svg {
-    @apply my-4 pointer-events-none;
+    @apply w-full h-full my-4 pointer-events-none;
 }
 
 .protocol-diagram .tippy-svg-arrow {
