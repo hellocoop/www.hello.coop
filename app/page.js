@@ -43,21 +43,12 @@ export default function Home() {
             <section className="max-w-6xl mx-auto px-4 md:py-0">
                 <h1 className="text-[9.75vw] xl:text-[120px] font-bold -ml-1 relative z-10 pt-4 sm:pt-0 md:-mb-6 -mt-0 md:-mt-6">
                     Hellō&nbsp;&nbsp;<span className="text-charcoal/50 dark:text-gray/50 text-[13vw] xl:text-[159px]">[</span> Free SSO <span className="text-charcoal/50 dark:text-gray/50 text-[13vw] xl:text-[159px]">]</span></h1>
-                <div className="hero-img relative overflow-hidden pt-2 sm:pt-0 md:ml-32 h-[535px]">
+                <div className="hero-img relative overflow-hidden pt-2 sm:pt-0 md:ml-32">
                     <picture>
                         <source srcSet="/hero-dark.png" media="(prefers-color-scheme: dark)" />
                         <img src="/hero-light.png" alt="phone with continue with hello button"
-                            className="z-10 h-auto max-h-[600px] w-auto -mb-4 md:-mb-12" style={{ animation: "float 5s infinite" }} />
+                            className="z-10 h-auto max-h-[600px] w-auto -mb-4 md:-mb-12" style={{animation: "float 5s infinite"}} />
                     </picture>
-                    <button className="hello-btn absolute z-20 bg-charcoal dark:bg-gray text-white dark:text-charcoal px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold text-sm md:text-base uppercase border border-charcoal dark:border-gray hover:opacity-90 transition-opacity"
-                        style={{
-                            bottom: 'clamp(80px, 15%, 120px)',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            minWidth: 'clamp(140px, 20vw, 200px)'
-                        }}>
-                        Continue with Hellō
-                    </button>
                 </div>
                 <h2 className="text-2xl sm:text-[3.95vw] xl:text-[49px] font-semibold relative z-10 -mb-6 sm:-mb-0">
                     Goodbye SSO tax.<br className="sm:hidden" /> Hyperscale security for all.
