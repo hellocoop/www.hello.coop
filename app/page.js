@@ -85,14 +85,14 @@ export default function Home() {
             <section className="max-w-6xl mx-auto mt-16 md:mt-20 space-y-16 md:space-y-20">
                 <div className="px-4">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">Free Social Login for B2C Apps</h1>
-                    <HelloB2BSSO showTitle={false} />
+                    <HelloB2CSSO showTitle={false} />
                 </div>
 
                 <div className="px-4">
                     <h1 className="text-[1.35rem] md:text-5xl font-semibold">
                         Free Enterprise SSO for B2B Apps
                     </h1>
-                    <HelloB2CSSO showTitle={false} />
+                    <HelloB2BSSO showTitle={false} />
                 </div>
 
                 <div id="hello-lifecycle" className="px-4 scroll-mt-6">
