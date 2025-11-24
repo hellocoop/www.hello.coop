@@ -8,175 +8,105 @@ import { customAlphabet } from "nanoid"
 import tippy, { hideAll } from "tippy.js"
 import "tippy.js/dist/tippy.css"
 import "tippy.js/animations/scale-subtle.css"
-// import { Arrow } from "@/lib/svg-loader"
 
 const nanoid = customAlphabet("abcdefghijklmnopqr", 5)
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Diagram({ svg = "", data = {} }) {
-  const [circles, setCircles] = useState([])
-  const [currentTooltip, setCurrentTooltip] = useState(null)
-  const [scrollTooltip, setScrollTooltip] = useState(null)
-  const [processedSvg, setProcessedSvg] = useState("")
-  const containerRef = useRef(null)
-  const idRef = useRef(nanoid())
+    const [id, setId] = useState(null)               // client-only ID
+    const [circles, setCircles] = useState([])       // tooltip hotspots
+    const [processedSvg, setProcessedSvg] = useState("")
+    const [currentTooltip, setCurrentTooltip] = useState(null)
+    const [scrollTooltip, setScrollTooltip] = useState(null)
 
-  const tooltipsJSON = {
-    ...tooltipsCopy,
-    ...data,
-  }
+    const containerRef = useRef(null)
 
-  const showTooltip = useCallback((tip) => {
-    if (!tip) return
-    hideAll() //this hides all instances of tippy
-    // https://atomiks.github.io/tippyjs/v6/tippy-instance/#-property
-    const element = document.querySelector("#" + tip)
-    if (element && element._tippy) {
-      element._tippy.show() //only show selected
-    }
-  }, [])
+    // merged tooltips
+    const tooltipsJSON = { ...tooltipsCopy, ...data }
 
-  const addTooltips = useCallback(() => {
-    if (!containerRef.current) return
-    const ref = containerRef.current
-    /*
-      TBD: This is a brittle/fuzzy way of finding the circles in the svg.
-      Omnigraffle does not consistently export circles as svg circles, instead 
-      exports as svg paths. 
-    */
-    const nodes = [...ref.querySelectorAll("tspan")].filter(
-      (i) =>
-        Object.keys(tooltipsJSON).includes(i.innerHTML) &&
-        tooltipsJSON[i.innerHTML].length
-    )
-    const _circles = []
-    for (const node of nodes) {
-      const circle = node.closest("g").getBoundingClientRect()
-      const key = node.innerHTML //text inside svg circle, eg: 01, 99
-      _circles.push({
-        key,
-        tooltipText: tooltipsJSON[key],
-        x: circle.x + window.scrollX,
-        y: circle.y + window.scrollY,
-        width: circle.width, //only need to use width cause its a circle
-        height: circle.height, //getting height in case shape in design file changes
-      })
-    }
-    //sort by tooltip keys (01, 10, 99) for keyboard tabbing
-    const sortedCircles = _circles.sort((a, b) => a.key - b.key)
-    setCircles(sortedCircles)
-  }, [tooltipsJSON])
+    // -- tooltip show helper ---------------------------------------------------
+    const showTooltip = useCallback((tip) => {
+        if (!tip) return
+        hideAll()
+        const el = document.querySelector("#" + tip)
+        if (el && el._tippy) el._tippy.show()
+    }, [])
 
-  useEffect(() => {
-    if (!svg) return
-    setProcessedSvg(svg.replaceAll("url(#Shadow)", ""))
-  }, [svg])
-
-  useEffect(() => {
-    if (!processedSvg || !containerRef.current) return
-    
-    // Wait for DOM to be ready
-    const timer = setTimeout(() => {
-      if (!containerRef.current) return
-      const ref = containerRef.current.querySelector(`svg`)
-      if (ref) {
-        ref.setAttribute("width", "100%")
-        ref.setAttribute("height", "100%")
-      }
-      addTooltips()
-      
-      //attach tippy to tooltips
-      setTimeout(() => {
+    // -- find circles in SVG ---------------------------------------------------
+    const addTooltips = useCallback(() => {
         if (!containerRef.current) return
-        containerRef.current.querySelectorAll(`button`).forEach((ele) => {
-          tippy(ele, {
-            animation: "scale-subtle",
-            allowHTML: true,
-            zIndex: 40,
-            // arrow: Arrow,
-            popperOptions: {
-              modifiers: [
-                {
-                  name: 'flip',
-                  enabled: false
-                },
-              ],
-            },
-          })
-        })
-        
-        const circles = gsap.utils.toArray(".circle")
-        circles.forEach((elem) => {
-          gsap.timeline({
-            scrollTrigger: {
-              trigger: elem,
-              start: "top center",
-              end: "bottom center",
-              markers: false,
-              onEnter: () => {
-                setScrollTooltip(elem.id)
-                setCurrentTooltip(elem.id)
-              },
-              onEnterBack: () => {
-                setScrollTooltip(elem.id)
-                setCurrentTooltip(elem.id)
-              },
-            },
-          })
-        })
-      }, 100)
-    }, 100)
+        const ref = containerRef.current
 
-    const handleScroll = () => addTooltips()
-    const handleResize = () => addTooltips()
-    
-    window.addEventListener("scroll", handleScroll)
-    window.addEventListener("resize", handleResize)
-
-    return () => {
-      clearTimeout(timer)
-      window.removeEventListener("scroll", handleScroll)
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [processedSvg, addTooltips])
-
-  useEffect(() => {
-    showTooltip(currentTooltip)
-  }, [currentTooltip, showTooltip])
-
-//   if (!processedSvg) return null
-
-  return (
-    <div id={idRef.current} ref={containerRef} className="flex justify-center">
-      {circles.map((circle, index) => {
-        const circleId = `${idRef.current}-${index}`
-        return (
-          <button
-            key={circleId}
-            id={circleId}
-            data-tippy-content={`(${circle.key}) ${circle.tooltipText}`}
-            onMouseEnter={() => setCurrentTooltip(circleId)}
-            onMouseLeave={() => {
-              setCurrentTooltip(scrollTooltip)
-              showTooltip(scrollTooltip)
-            }}
-            onFocus={() => setCurrentTooltip(circleId)}
-            onBlur={() => {
-              setCurrentTooltip(scrollTooltip)
-              showTooltip(scrollTooltip)
-            }}
-            className="circle absolute rounded-full flex items-center justify-center z-50"
-            style={{
-              left: `${circle.x}px`,
-              top: `${circle.y}px`,
-              width: `${circle.width}px`,
-              height: `${circle.height}px`
-            }}
-          />
+        const nodes = [...ref.querySelectorAll("tspan")].filter(
+            (n) => tooltipsJSON[n.innerHTML]
         )
-      })}
-      <div dangerouslySetInnerHTML={{ __html: processedSvg }} />
-    </div>
-  )
-}
 
+        const list = []
+        for (const node of nodes) {
+            const g = node.closest("g")
+            if (!g) continue
+            const rect = g.getBoundingClientRect()
+            const key = node.innerHTML
+
+            list.push({
+                key,
+                tooltipText: tooltipsJSON[key],
+                x: rect.x + window.scrollX,
+                y: rect.y + window.scrollY,
+                width: rect.width,
+                height: rect.height,
+            })
+        }
+
+        setCircles(list.sort((a, b) => a.key - b.key))
+    }, [tooltipsJSON])
+
+    // -- preprocess SVG --------------------------------------------------------
+    useEffect(() => {
+        if (!svg) return
+        setProcessedSvg(svg.replaceAll("url(#Shadow)", ""))
+    }, [svg])
+
+    // -- assign client-only ID -------------------------------------------------
+    useEffect(() => {
+        setId(nanoid())     // runs only in browser → no hydration mismatch
+    }, [])
+
+    // if ID is not ready yet, don't render anything (avoids mismatch)
+    if (!id) return null
+
+    return (
+        <div id={id} ref={containerRef} className="flex justify-center">
+
+            {circles.map((circle, index) => {
+                const circleId = `${id}-${index}`
+                return (
+                    <button
+                        key={circleId}
+                        id={circleId}
+                        data-tippy-content={`(${circle.key}) ${circle.tooltipText}`}
+                        onMouseEnter={() => setCurrentTooltip(circleId)}
+                        onMouseLeave={() => {
+                            setCurrentTooltip(scrollTooltip)
+                            showTooltip(scrollTooltip)
+                        }}
+                        onFocus={() => setCurrentTooltip(circleId)}
+                        onBlur={() => {
+                            setCurrentTooltip(scrollTooltip)
+                            showTooltip(scrollTooltip)
+                        }}
+                        className="circle absolute rounded-full flex items-center justify-center z-50"
+                        style={{
+                            left: `${circle.x}px`,
+                            top: `${circle.y}px`,
+                            width: `${circle.width}px`,
+                            height: `${circle.height}px`,
+                        }}
+                    />
+                )
+            })}
+
+            <div dangerouslySetInnerHTML={{ __html: processedSvg }} />
+        </div>
+    )
+}
