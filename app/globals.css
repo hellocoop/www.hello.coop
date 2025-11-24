@@ -152,7 +152,7 @@ header a:not(#mobile-nav-dropdown a):not(.no-global-hover),
 }
 
 .callout {
-    @apply bg-[#e8e8e8]/65 dark:bg-[#212121] text-charcoal dark:text-gray mt-16 md:mt-20;
+    @apply bg-[#e8e8e8]/50 dark:bg-[#212121] text-charcoal dark:text-gray mt-16 md:mt-20;
 }
 
 .ext-link-icon::after {

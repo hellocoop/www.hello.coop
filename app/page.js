@@ -45,7 +45,7 @@ export default function Home() {
                 <div className="hero-img relative max-w-[400px] mx-auto md:max-w-[600px]">
                     <picture>
                         <source srcSet="/hero-dark.png" media="(prefers-color-scheme: dark)" />
-                        <img src="/hero-light.png" alt="phone mockup" className="w-full h-auto" />
+                        <img src="/hero-light.png" alt="phone mockup" className="w-full h-auto" style={{ animation: "float 5s infinite" }}/>
                     </picture>
 
                     {/* Button overlay container */}
@@ -57,6 +57,7 @@ export default function Home() {
                                 src="/hero-light-btn.png"
                                 alt="overlay button"
                                 className="w-full h-auto hover:-translate-y-[2.5px] transition-all duration-300"
+                                style={{ animation: "float 5s infinite" }}
                             />
                         </picture>
                     </div>
