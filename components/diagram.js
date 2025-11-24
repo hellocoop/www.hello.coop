@@ -67,6 +67,8 @@ export default function Diagram({ svg = "", data = {} }) {
         setProcessedSvg(svg.replaceAll("url(#Shadow)", ""))
     }, [svg])
 
+    useEffect(() => { showTooltip(currentTooltip) }, [currentTooltip, showTooltip])
+
     // -- assign client-only ID -------------------------------------------------
     useEffect(() => {
         setId(nanoid())     // runs only in browser → no hydration mismatch
@@ -76,7 +78,7 @@ export default function Diagram({ svg = "", data = {} }) {
     if (!id) return null
 
     return (
-        <div id={id} ref={containerRef} className="flex justify-center">
+        <div id={id} ref={containerRef} className="protocol-diagram flex justify-center">
 
             {circles.map((circle, index) => {
                 const circleId = `${id}-${index}`
