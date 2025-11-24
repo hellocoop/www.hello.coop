@@ -123,7 +123,7 @@ export default function TooltipSVG({ svg: initialSvg = "", data = {} }) {
   }, [svg]);
 
   return (
-    <div ref={containerRef} id={id} className="flex justify-center relative">
+    <div ref={containerRef} id={id} className="protocol-diagram flex justify-center relative">
       {circles.map((circle, index) => {
         const circleId = `${id}-${index}`;
         return (
