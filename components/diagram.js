@@ -1,114 +1,151 @@
-'use client';
+"use client";
 
-import { useEffect, useState, useRef, useCallback } from "react"
-import tooltipsCopy from "../data/tooltips.json"
-import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
-import { customAlphabet } from "nanoid"
-import tippy, { hideAll } from "tippy.js"
-import "tippy.js/dist/tippy.css"
-import "tippy.js/animations/scale-subtle.css"
+import { useEffect, useState, useRef, useId } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import tippy, { hideAll } from "tippy.js";
+import "tippy.js/dist/tippy.css";
+import "tippy.js/animations/scale-subtle.css";
+// import Arrow from "../assets/arrow.svg?raw";
+import tooltipsCopy from "../public/protocol/tooltips.json";
 
-const nanoid = customAlphabet("abcdefghijklmnopqr", 5)
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-export default function Diagram({ svg = "", data = {} }) {
-    const [id, setId] = useState(null)               // client-only ID
-    const [circles, setCircles] = useState([])       // tooltip hotspots
-    const [processedSvg, setProcessedSvg] = useState("")
-    const [currentTooltip, setCurrentTooltip] = useState(null)
-    const [scrollTooltip, setScrollTooltip] = useState(null)
+export default function TooltipSVG({ svg: initialSvg = "", data = {} }) {
+  const id = useId(); // SSR-safe unique ID
+  const containerRef = useRef(null);
+  const [svg, setSvg] = useState(initialSvg);
+  const [circles, setCircles] = useState([]);
+  const [currentTooltip, setCurrentTooltip] = useState(null);
+  const [scrollTooltip, setScrollTooltip] = useState(null);
 
-    const containerRef = useRef(null)
+  const tooltipsJSON = { ...tooltipsCopy, ...data };
 
-    // merged tooltips
-    const tooltipsJSON = { ...tooltipsCopy, ...data }
+  // Update tooltips positions
+  const addTooltips = () => {
+    if (!containerRef.current) return;
+  
+    const containerRect = containerRef.current.getBoundingClientRect();
+  
+    const nodes = Array.from(containerRef.current.querySelectorAll("tspan")).filter(
+      (i) => Object.keys(tooltipsJSON).includes(i.textContent) && tooltipsJSON[i.textContent].length
+    );
+  
+    const _circles = nodes
+      .map((node) => {
+        const g = node.closest("g");
+        if (!g) return null;
+        const rect = g.getBoundingClientRect();
+        const key = node.textContent;
+        return key
+          ? {
+              key,
+              tooltipText: tooltipsJSON[key],
+              // position relative to container
+              x: rect.x - containerRect.x,
+              y: rect.y - containerRect.y,
+              width: rect.width,
+              height: rect.height,
+            }
+          : null;
+      })
+      .filter(Boolean);
+  
+    _circles.sort((a, b) => a.key - b.key);
+    setCircles(_circles);
+  };
 
-    // -- tooltip show helper ---------------------------------------------------
-    const showTooltip = useCallback((tip) => {
-        if (!tip) return
-        hideAll()
-        const el = document.querySelector("#" + tip)
-        if (el && el._tippy) el._tippy.show()
-    }, [])
+  // Show only the selected tooltip
+  useEffect(() => {
+    if (!currentTooltip) return;
+    hideAll();
+    const tip = document.getElementById(currentTooltip);
+    tip?._tippy?.show();
+  }, [currentTooltip]);
 
-    // -- find circles in SVG ---------------------------------------------------
-    const addTooltips = useCallback(() => {
-        if (!containerRef.current) return
-        const ref = containerRef.current
+  // Initialize SVG, tooltips, and GSAP
+  useEffect(() => {
+    if (!svg || !containerRef.current) return;
 
-        const nodes = [...ref.querySelectorAll("tspan")].filter(
-            (n) => tooltipsJSON[n.innerHTML]
-        )
+    // Remove any unwanted SVG url references
+    setSvg(svg.replaceAll("url(#Shadow)", ""));
 
-        const list = []
-        for (const node of nodes) {
-            const g = node.closest("g")
-            if (!g) continue
-            const rect = g.getBoundingClientRect()
-            const key = node.innerHTML
+    const ref = containerRef.current.querySelector("svg");
+    if (ref) {
+      ref.setAttribute("width", "100%");
+      ref.setAttribute("height", "100%");
+    }
 
-            list.push({
-                key,
-                tooltipText: tooltipsJSON[key],
-                x: rect.x + window.scrollX,
-                y: rect.y + window.scrollY,
-                width: rect.width,
-                height: rect.height,
-            })
-        }
+    addTooltips();
 
-        setCircles(list.sort((a, b) => a.key - b.key))
-    }, [tooltipsJSON])
+    // Initialize tippy on buttons
+    const buttons = containerRef.current.querySelectorAll("button");
+    buttons.forEach((ele) => {
+      tippy(ele, {
+        animation: "scale-subtle",
+        allowHTML: true,
+        zIndex: 40,
+        // arrow: Arrow,
+        popperOptions: { modifiers: [{ name: "flip", enabled: false }] },
+      });
+    });
 
-    // -- preprocess SVG --------------------------------------------------------
-    useEffect(() => {
-        if (!svg) return
-        setProcessedSvg(svg.replaceAll("url(#Shadow)", ""))
-    }, [svg])
+    // GSAP scroll triggers
+    const circleElems = gsap.utils.toArray(".circle");
+    circleElems.forEach((elem) => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: elem,
+          start: "top center",
+          end: "bottom center",
+          markers: false,
+          onEnter: () => {
+            setScrollTooltip(elem.id);
+            setCurrentTooltip(elem.id);
+          },
+          onEnterBack: () => {
+            setScrollTooltip(elem.id);
+            setCurrentTooltip(elem.id);
+          },
+        },
+      });
+    });
 
-    useEffect(() => { showTooltip(currentTooltip) }, [currentTooltip, showTooltip])
+    // Recalculate on resize/scroll
+    const handleResizeScroll = () => addTooltips();
+    window.addEventListener("resize", handleResizeScroll);
+    window.addEventListener("scroll", handleResizeScroll);
 
-    // -- assign client-only ID -------------------------------------------------
-    useEffect(() => {
-        setId(nanoid())     // runs only in browser → no hydration mismatch
-    }, [])
+    return () => {
+      window.removeEventListener("resize", handleResizeScroll);
+      window.removeEventListener("scroll", handleResizeScroll);
+    };
+  }, [svg]);
 
-    // if ID is not ready yet, don't render anything (avoids mismatch)
-    if (!id) return null
-
-    return (
-        <div id={id} ref={containerRef} className="protocol-diagram flex justify-center">
-
-            {circles.map((circle, index) => {
-                const circleId = `${id}-${index}`
-                return (
-                    <button
-                        key={circleId}
-                        id={circleId}
-                        data-tippy-content={`(${circle.key}) ${circle.tooltipText}`}
-                        onMouseEnter={() => setCurrentTooltip(circleId)}
-                        onMouseLeave={() => {
-                            setCurrentTooltip(scrollTooltip)
-                            showTooltip(scrollTooltip)
-                        }}
-                        onFocus={() => setCurrentTooltip(circleId)}
-                        onBlur={() => {
-                            setCurrentTooltip(scrollTooltip)
-                            showTooltip(scrollTooltip)
-                        }}
-                        className="circle absolute rounded-full flex items-center justify-center z-50"
-                        style={{
-                            left: `${circle.x}px`,
-                            top: `${circle.y}px`,
-                            width: `${circle.width}px`,
-                            height: `${circle.height}px`,
-                        }}
-                    />
-                )
-            })}
-
-            <div dangerouslySetInnerHTML={{ __html: processedSvg }} />
-        </div>
-    )
+  return (
+    <div ref={containerRef} id={id} className="flex justify-center relative">
+      {circles.map((circle, index) => {
+        const circleId = `${id}-${index}`;
+        return (
+          <button
+            key={circleId}
+            id={circleId}
+            data-tippy-content={`(${circle.key}) ${circle.tooltipText}`}
+            onMouseEnter={() => setCurrentTooltip(circleId)}
+            onMouseLeave={() => setCurrentTooltip(scrollTooltip)}
+            onFocus={() => setCurrentTooltip(circleId)}
+            onBlur={() => setCurrentTooltip(scrollTooltip)}
+            className="circle absolute rounded-full flex items-center justify-center z-50"
+            style={{
+              left: circle.x,
+              top: circle.y,
+              width: circle.width,
+              height: circle.height,
+            }}
+          />
+        );
+      })}
+      <div dangerouslySetInnerHTML={{ __html: svg }} />
+    </div>
+  );
 }
