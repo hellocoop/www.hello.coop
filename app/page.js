@@ -49,6 +49,15 @@ export default function Home() {
                         <img src="/hero-light.png" alt="phone with continue with hello button"
                             className="z-10 h-auto max-h-[600px] w-auto -mb-4 md:-mb-12" style={{ animation: "float 5s infinite" }} />
                     </picture>
+                    <button className="hello-btn absolute z-20 bg-charcoal dark:bg-gray text-white dark:text-charcoal px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold text-sm md:text-base uppercase border border-charcoal dark:border-gray hover:opacity-90 transition-opacity"
+                        style={{
+                            bottom: 'clamp(80px, 15%, 120px)',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            minWidth: 'clamp(140px, 20vw, 200px)'
+                        }}>
+                        Continue with Hellō
+                    </button>
                 </div>
                 <h2 className="text-2xl sm:text-[3.95vw] xl:text-[49px] font-semibold relative z-10 -mb-6 sm:-mb-0">
                     Goodbye SSO tax.<br className="sm:hidden" /> Hyperscale security for all.

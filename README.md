@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# www.hello.coop
 
-## Getting Started
+This repo contains the source code and documentation powering [https://www.hello.coop/](https://www.hello.coop/).
 
-First, run the development server:
+## Getting started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Git
+1. Node (~18), npm (~9)
+1. A fork of the repo (for any contributions)
+1. A clone of the [www.hello.coop repo](https://github.com/hellocoop/www.hello.coop) on your local machine
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. `cd www.hello.coop` to go into the project root
+1. `npm i` to install the npm dependencies
 
-## Learn More
+### Running locally
+`npm run dev`
 
-To learn more about Next.js, take a look at the following resources:
+### Building for production
+`npm run build`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prevewing the built files
+`npm run start` #This needs to be run after `npm run build`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<a href="LICENSE">![CC0](https://cdn.hello.coop/images/cc-zero.svg)</a>
