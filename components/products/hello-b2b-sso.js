@@ -21,7 +21,7 @@ export default function HelloB2BSSO({showTitle = true}) {
                     <p>
                         The first user from a company helps establish branding, then
                         subsequent users enjoy a seamless, branded login experience. No
-                        SAML configuration, no IT tickets, no waiting—it just works.
+                        SAML configuration, no IT tickets, no waiting — it just works.
                     </p>
                 </div>
                 <div className="flex flex-col space-y-4">
