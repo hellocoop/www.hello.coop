@@ -1,4 +1,4 @@
-export default function HelloB2BSSO({ showTitle = true, children = null }) {
+export default function HelloB2BSSO({ showTitle = true, compact = false }) {
     return (
         <div id="hello-b2c-sso" className="text-[17px]">
             {showTitle && (
@@ -11,19 +11,22 @@ export default function HelloB2BSSO({ showTitle = true, children = null }) {
                     </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    <div className="mt-6 space-y-4">
-                        <p>
-                            One integration that gives your users the freedom to choose from
-                            17 different login providers including Google, Apple, Microsoft,
-                            GitHub, and more. Get verified emails and profile pictures without
-                            complex account linking.
-                        </p>
-                        <p>
-                            Perfect for consumer-facing applications that want to eliminate
-                            passwords while giving users control over their preferred
-                            authentication method.
-                        </p>
-                    </div>
+                    {compact ? <p className="py-4 md:py-12 text-lg opacity-65 font-medium"> You choose which providers are promoted.<br />
+                        Users choose their preferred login provider.</p> :
+                        <div className="mt-6 space-y-4">
+                            <p>
+                                One integration that gives your users the freedom to choose from
+                                17 different login providers including Google, Apple, Microsoft,
+                                GitHub, and more. Get verified emails and profile pictures without
+                                complex account linking.
+                            </p>
+                            <p>
+                                Perfect for consumer-facing applications that want to eliminate
+                                passwords while giving users control over their preferred
+                                authentication method.
+                            </p>
+                        </div>
+                    }
                     <div className="flex flex-col space-y-4">
                         <span className="text-base font-semibold">
                             Price: FREE

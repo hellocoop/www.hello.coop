@@ -1,4 +1,4 @@
-export default function HelloB2BSSO({ showTitle = true }) {
+export default function HelloB2BSSO({ showTitle = true, compact = false }) {
     return (
         <div id="hello-b2c-sso" className="text-[17px]">
             {showTitle && (
@@ -11,19 +11,31 @@ export default function HelloB2BSSO({ showTitle = true }) {
         </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    <div className="mt-6 space-y-4">
-                        <p>
-                            Enable enterprise SSO without any setup or configuration. Users
-                            simply enter their work email, and Hellō automatically routes them
-                            to their company's email provider (Microsoft, Google, Zoho, etc.),
-                            which handles authentication through their corporate SSO.
+                    {compact ? <div className="py-4 md:py-12 text-lg opacity-65 font-medium">
+                        <ol className="!space-y-2">
+                            <li>Add Hellō to your existing application.</li>
+                            <li>Prompt user for their work email.</li>
+                            <li>Process existing accounts as usual.</li>
+                            <li>Send all new users to Hellō.</li>
+                        </ol>
+                        <p class="mt-6">
+                            You get SSO with no configuration.
                         </p>
-                        <p>
-                            The first user from a company helps establish branding, then
-                            subsequent users enjoy a seamless, branded login experience. No
-                            SAML configuration, no IT tickets, no waiting — it just works.
-                        </p>
-                    </div>
+                    </div> :
+                        <div className="mt-6 space-y-4">
+                            <p>
+                                Enable enterprise SSO without any setup or configuration. Users
+                                simply enter their work email, and Hellō automatically routes them
+                                to their company's email provider (Microsoft, Google, Zoho, etc.),
+                                which handles authentication through their corporate SSO.
+                            </p>
+                            <p>
+                                The first user from a company helps establish branding, then
+                                subsequent users enjoy a seamless, branded login experience. No
+                                SAML configuration, no IT tickets, no waiting — it just works.
+                            </p>
+                        </div>
+                    }
                     <div className="flex flex-col space-y-4">
                         <span className="text-base font-semibold">
                             Price: FREE

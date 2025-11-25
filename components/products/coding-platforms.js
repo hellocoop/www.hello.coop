@@ -1,4 +1,4 @@
-export default function CodingPlatforms({ showTitle = true }) {
+export default function CodingPlatforms({ showTitle = true, compact = false }) {
     return (
         <div id="coding-platforms" className="text-[17px]">
             {showTitle && (
@@ -11,25 +11,31 @@ export default function CodingPlatforms({ showTitle = true }) {
             </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    <div className="mt-6 space-y-4">
-                        <p>
-                            <span className="font-semibold mb-2 block">
-                                For developers:
-                            </span>
-                            Use our Admin MCP server with AI coding assistants to create and
-                            manage Hellō applications from your IDE. No context switching,
-                            just natural language commands.
-                        </p>
-                        <p>
-                            <span className="font-semibold mb-2 block">
-                                For platforms:
-                            </span>
-                            Integrate our Admin APIs to manage Hellō applications for your
-                            customers. OAuth-based authorization lets you provision and
-                            configure apps programmatically, enabling zero-friction identity
-                            without users leaving your platform.
-                        </p>
-                    </div>
+                    {compact ? <div className="py-4 md:py-12 text-lg opacity-65 font-medium">
+                        <p>The Hellō Admin MCP Server enables app management from the IDE.</p>
+                        <p class="mt-6">The Hellō Admin APIs are available as OAuth 2.0 APIs, enabling integration
+                            with a coding platform.</p>
+                    </div> :
+                        <div className="mt-6 space-y-4">
+                            <p>
+                                <span className="font-semibold mb-2 block">
+                                    For developers:
+                                </span>
+                                Use our Admin MCP server with AI coding assistants to create and
+                                manage Hellō applications from your IDE. No context switching,
+                                just natural language commands.
+                            </p>
+                            <p>
+                                <span className="font-semibold mb-2 block">
+                                    For platforms:
+                                </span>
+                                Integrate our Admin APIs to manage Hellō applications for your
+                                customers. OAuth-based authorization lets you provision and
+                                configure apps programmatically, enabling zero-friction identity
+                                without users leaving your platform.
+                            </p>
+                        </div>
+                    }
                     <div className="flex flex-col space-y-4">
                         <span className="text-base font-semibold">
                             Price: FREE

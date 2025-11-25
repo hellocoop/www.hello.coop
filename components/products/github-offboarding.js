@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import OffboardingAnimation from "@/components/animations/offboarding-anim";
 
-export default function GitHubOffboarding({ showTitle = true }) {
+export default function GitHubOffboarding({ showTitle = true, compact = false }) {
     const [waitlistUrl, setWaitlistUrl] = useState(null);
 
     useEffect(() => {
@@ -25,20 +25,25 @@ export default function GitHubOffboarding({ showTitle = true }) {
             </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    <div className="mt-6 space-y-4">
-                        <p>
-                            Solve GitHub access management for your own organization. Hellō
-                            guides each GitHub org member through linking their personal
-                            GitHub account with their corporate identity in a custom
-                            repository.
-                        </p>
-                        <p>
-                            Connect your corporate directory, and when an employee is
-                            deprovisioned, their GitHub org access is automatically removed.
-                            See how Hellō Lifecycle works while solving a real compliance gap
-                            for your team.
-                        </p>
-                    </div>
+                    {compact ? <ol className="py-4 !space-y-2 md:py-12 text-lg opacity-65 font-medium">
+                            <li>Your team members link their GitHub accounts with their corporate identity.</li>
+                            <li>Access is automatically revoked<br/>when they leave.</li>
+                        </ol> :
+                        <div className="mt-6 space-y-4">
+                            <p>
+                                Solve GitHub access management for your own organization. Hellō
+                                guides each GitHub org member through linking their personal
+                                GitHub account with their corporate identity in a custom
+                                repository.
+                            </p>
+                            <p>
+                                Connect your corporate directory, and when an employee is
+                                deprovisioned, their GitHub org access is automatically removed.
+                                See how Hellō Lifecycle works while solving a real compliance gap
+                                for your team.
+                            </p>
+                        </div>
+                    }
                     <div className="flex flex-col space-y-4">
                         <span className="text-base font-semibold">
                             Coming Q1 2026

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import LifecycleAnimation from "@/components/animations/lifecycle-anim";
 
-export default function HelloLifecycle({ showTitle = true }) {
+export default function HelloLifecycle({ showTitle = true, compact = false }) {
     const [waitlistUrl, setWaitlistUrl] = useState(null);
 
     useEffect(() => {
@@ -25,20 +25,25 @@ export default function HelloLifecycle({ showTitle = true }) {
             </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    <div className="mt-6 space-y-4">
-                        <p>
-                            Automate user deprovisioning for your B2B SaaS application. Your
-                            customers' tenant admins connect their corporate directory
-                            (Microsoft Entra, Google Workspace, etc.) through Hellō.
-                        </p>
-                        <p>
-                            When an employee is deprovisioned in their directory, Hellō
-                            automatically notifies your application via OpenID Provider
-                            Command, allowing you to suspend or remove access immediately.
-                            Give your enterprise customers the automated offboarding they
-                            expect.
-                        </p>
-                    </div>
+                    {compact ? <ol class="py-4 !space-y-2 md:py-12 text-lg opacity-65 font-medium">
+                        <li>Your customers link their<br/>corporate directory.</li>
+                        <li>Hellō sends your app a notification<br/>when a user leaves.</li>
+                    </ol> :
+                        <div className="mt-6 space-y-4">
+                            <p>
+                                Automate user deprovisioning for your B2B SaaS application. Your
+                                customers' tenant admins connect their corporate directory
+                                (Microsoft Entra, Google Workspace, etc.) through Hellō.
+                            </p>
+                            <p>
+                                When an employee is deprovisioned in their directory, Hellō
+                                automatically notifies your application via OpenID Provider
+                                Command, allowing you to suspend or remove access immediately.
+                                Give your enterprise customers the automated offboarding they
+                                expect.
+                            </p>
+                        </div>
+                    }
                     <div className="flex flex-col space-y-4">
                         <span className="text-base font-semibold">
                             Coming Q1 2026
