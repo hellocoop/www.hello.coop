@@ -1,0 +1,99 @@
+---
+theme:
+    toc: false
+---
+
+import Diagram from '@/components/diagram'
+import { One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten } from '@/lib/svg-loader'
+
+# Hellō Protocol
+
+The Hellō Protocol ensures that Hellō can not impersonate a user, and that no component can arbitrarily access user data.
+
+These assurances are provided transparently to external systems.  
+Hellō provides a standard [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) interface to applications, and a standard relying party to issuers.
+
+The following sequence of diagrams incrementally show how the Hellō Protocol achieves its goals. The final diagram is a complete sequence of the protocol for a simple login operation. An understanding of the OpenID Connect protocol and ID Tokens is required to appreciate how the Hellō Protocol acheives its goals.
+
+> Currently, the Hellō service is a monolithic architecture operated directly by the cooperative. Once we have product market fit, we will migrate to using the protocol.
+
+## Legend
+
+<p className="mt-4 gap-4 flex flex-row flex-wrap">
+    <img src="/protocol/legend-exampleapp.svg" alt="Signed by example.app" />
+    <img src="/protocol/legend-opexample.svg" alt="Signed by op.example" />
+    <img src="/protocol/legend-tokenservice.svg" alt="Signed by Token Service" />
+    <img src="/protocol/legend-storageservice.svg" alt="Signed by Storage Service" />
+</p>
+
+## Diagram 1 - Interactions with External Systems
+
+The Hellō Protocol can be understood as a service that transforms a Request Token from an application and an ID Token from a user's preferred provider into a Hellō ID Token in a trusted and repeatable manner.
+
+In this diagram, we show how an application (example.app) requests a Hellō ID Token. Steps (01) and (99) are a standard OpenID Connect flow from the perspective of the application.
+
+In step (10), Hellō is acting as a standard RP / client from the perspective of the user's preferred login provider.
+
+Steps (01), (10), & (99) are the same in all diagrams.
+
+<Diagram svg={One} />
+
+## Diagram 2 - New User - Two Components
+
+We separate the functionality between the Orchestration Service and the Token Service. Only the Orchestration Service can interact with external systems. As it is a new user in this case, the Token Service generates a random identifier for the user and a subject record binding the OpenID Provider's identifiers to the Hellō user identifier, and mints an ID Token containing the new user identifier.
+
+<Diagram svg={Two} />
+
+## Diagram 3 - Returning User - Impersonation Not Possible
+
+The only way for the Token Service to generate an ID Token with the same user identifier is to be presented an OpenID Provider ID Token with the same identifiers and the subject record generated in Diagram 2.
+
+<Diagram svg={Three} />
+
+## Diagram 4 - New User - Three Components
+
+In Diagram 2, the Orchestration Service can access the database at will, and can choose to not present a subject record for an existing user, causing the Token Service to generate a new user. Introducing the Storage Service addresses these issues. The Orchestration can now only perform CRUD operations when it has acquired an access token, and can only have a user created if the Storage Service provides a token that there is no record for the user.
+
+<Diagram svg={Four} />
+
+## Diagram 5 - Returning User - Three Components
+
+Diagram 3 with the three components and access tokens.
+
+<Diagram svg={Five} />
+
+## Diagram 6 - New User - Directed Identifier
+
+So far, we have provided each application the same identifier for the same user. To address this, we create a layer of abstraction with a Release Record that links the Hellō identifier with a new, [directed identifier](/approach/laws-of-identity#_4-directed-identity) specific to the application and user.
+
+<Diagram svg={Six} />
+
+## Diagram 7 - Returning User - Directed Identifier
+
+Diagram 5 with a directed identifier. The extra layer of abstraction requires an additional request from the Orchestration Service to the Storage Service.
+
+<Diagram svg={Seven} />
+
+## Diagram 8 - Creating Hashed Keys and Encrypted Records
+
+While neither the Token Service, nor the Orchestration Service can arbitrarily access user data, the Storage Service can access data for all users. We address this issue by hashing all identifiers used to retrieve records, and encrypting the records with the fourth component, the Encryption Service.
+
+<Diagram svg={Eight} />
+
+## Diagram 9 - Reading Encrypted Records
+
+The Encryption Service decrypts records retrieved from the Storage Service.
+
+<Diagram svg={Nine} />
+
+## Diagram 10 - Four Components and Session Token
+
+Requiring the Orchestration Service to pass all tokens and records with each request to the Token Service does not scale to more complex requests. The Token Service can capture state in a Session Token so that the Orchestration only needs to pass newly acquired tokens or records when making a request of the Token Service.
+
+<Diagram svg={Ten} />
+
+## Other Transactions
+
+We have shown the building blocks for verifying token transformation, and ensuring no custodian has credentials that can be used to access user data without colluding with another custodian.
+
+Additional flows will support other transactions such as linking additional claims and subjects to the user, recoverying a Hellō wallet with recovery providers, and merging wallets.
