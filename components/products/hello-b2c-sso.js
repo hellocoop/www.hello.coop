@@ -11,8 +11,8 @@ export default function HelloB2BSSO({ showTitle = true, compact = false }) {
                     </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    {compact ? <p className="py-4 md:py-12 text-lg opacity-65 font-medium"> You choose which providers are promoted.<br />
-                        Users choose their preferred login provider.</p> :
+                    {compact ? <span className="py-4 md:py-12 text-lg opacity-65 font-medium"> You choose which providers are promoted.<br />
+                        Users choose their preferred login provider.</span> :
                         <div className="mt-6 space-y-4">
                             <p>
                                 One integration that gives your users the freedom to choose from

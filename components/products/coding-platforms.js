@@ -12,9 +12,9 @@ export default function CodingPlatforms({ showTitle = true, compact = false }) {
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
                     {compact ? <div className="py-4 md:py-12 text-lg opacity-65 font-medium">
-                        <p>The Hellō Admin MCP Server enables app management from the IDE.</p>
-                        <p class="mt-6">The Hellō Admin APIs are available as OAuth 2.0 APIs, enabling integration
-                            with a coding platform.</p>
+                        <span className="block">The Hellō Admin MCP Server enables app management from the IDE.</span>
+                        <span className="block mt-6">The Hellō Admin APIs are available as OAuth 2.0 APIs, enabling integration
+                            with a coding platform.</span>
                     </div> :
                         <div className="mt-6 space-y-4">
                             <p>

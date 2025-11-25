@@ -18,9 +18,9 @@ export default function HelloB2BSSO({ showTitle = true, compact = false }) {
                             <li>Process existing accounts as usual.</li>
                             <li>Send all new users to Hellō.</li>
                         </ol>
-                        <p class="mt-6">
+                        <span class="block mt-6">
                             You get SSO with no configuration.
-                        </p>
+                        </span>
                     </div> :
                         <div className="mt-6 space-y-4">
                             <p>
