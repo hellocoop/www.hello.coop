@@ -56,7 +56,7 @@ export default function Home() {
                             src="/hero-light.png"
                             alt="phone mockup"
                             className="w-full h-auto -mb-8"
-                            style={{ animation: 'float 0s infinite' }}
+                            style={{ animation: 'float 5s infinite' }}
                         />
                     </picture>
 
@@ -65,7 +65,7 @@ export default function Home() {
                         className="absolute cursor-pointer group top-[72%] left-[28.25%] w-[38%] md:top-[65%] md:left-[28.25%] md:w-[40%]"
                         style={{
                             transformOrigin: 'center',
-                            animation: 'float 0s infinite',
+                            animation: 'float 5s infinite',
                         }}
                     >
                         {/* Optional scale wrapper */}
