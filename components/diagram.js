@@ -1,130 +1,132 @@
-"use client";
+'use client'
 
-import { useEffect, useState, useRef, useId } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import tippy, { hideAll } from "tippy.js";
-import "tippy.js/dist/tippy.css";
-import "tippy.js/animations/scale-subtle.css";
-import tooltipsCopy from "../public/protocol/tooltips.json";
+import { useEffect, useState, useRef, useId } from 'react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import tippy, { hideAll } from 'tippy.js'
+import 'tippy.js/dist/tippy.css'
+import 'tippy.js/animations/scale-subtle.css'
+import tooltipsCopy from '../public/protocol/tooltips.json'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
-export default function TooltipSVG({ svg: initialSvg = "", data = {} }) {
-    const id = useId(); // SSR-safe unique ID
-    const containerRef = useRef(null);
-    const [svg, setSvg] = useState(initialSvg);
-    const [circles, setCircles] = useState([]);
-    const [currentTooltip, setCurrentTooltip] = useState(null);
-    const [scrollTooltip, setScrollTooltip] = useState(null);
+export default function TooltipSVG({ svg: initialSvg = '', data = {} }) {
+    const id = useId() // SSR-safe unique ID
+    const containerRef = useRef(null)
+    const [svg, setSvg] = useState(initialSvg)
+    const [circles, setCircles] = useState([])
+    const [currentTooltip, setCurrentTooltip] = useState(null)
+    const [scrollTooltip, setScrollTooltip] = useState(null)
 
     useEffect(() => {
         // remove toc for extra space
-        const toc = document.querySelector(".nextra-toc");
-        toc.style.display = "none";
-    }, []);
+        const toc = document.querySelector('.nextra-toc')
+        toc.style.display = 'none'
+    }, [])
 
-    const tooltipsJSON = { ...tooltipsCopy, ...data };
+    const tooltipsJSON = { ...tooltipsCopy, ...data }
 
     // Update tooltips positions
     const addTooltips = () => {
-        if (!containerRef.current) return;
+        if (!containerRef.current) return
 
-        const containerRect = containerRef.current.getBoundingClientRect();
+        const containerRect = containerRef.current.getBoundingClientRect()
 
-        const nodes = Array.from(containerRef.current.querySelectorAll("tspan")).filter(
-            (i) => Object.keys(tooltipsJSON).includes(i.textContent) && tooltipsJSON[i.textContent].length
-        );
+        const nodes = Array.from(containerRef.current.querySelectorAll('tspan')).filter(
+            i =>
+                Object.keys(tooltipsJSON).includes(i.textContent) &&
+                tooltipsJSON[i.textContent].length
+        )
 
         const _circles = nodes
-            .map((node) => {
-                const g = node.closest("g");
-                if (!g) return null;
-                const rect = g.getBoundingClientRect();
-                const key = node.textContent;
+            .map(node => {
+                const g = node.closest('g')
+                if (!g) return null
+                const rect = g.getBoundingClientRect()
+                const key = node.textContent
                 return key
                     ? {
-                        key,
-                        tooltipText: tooltipsJSON[key],
-                        // position relative to container
-                        x: rect.x - containerRect.x,
-                        y: rect.y - containerRect.y,
-                        width: rect.width,
-                        height: rect.height,
-                    }
-                    : null;
+                          key,
+                          tooltipText: tooltipsJSON[key],
+                          // position relative to container
+                          x: rect.x - containerRect.x,
+                          y: rect.y - containerRect.y,
+                          width: rect.width,
+                          height: rect.height,
+                      }
+                    : null
             })
-            .filter(Boolean);
+            .filter(Boolean)
 
-        _circles.sort((a, b) => a.key - b.key);
-        setCircles(_circles);
-    };
+        _circles.sort((a, b) => a.key - b.key)
+        setCircles(_circles)
+    }
 
     // Show only the selected tooltip
     useEffect(() => {
-        if (!currentTooltip) return;
-        hideAll();
-        const tip = document.getElementById(currentTooltip);
-        tip?._tippy?.show();
-    }, [currentTooltip]);
+        if (!currentTooltip) return
+        hideAll()
+        const tip = document.getElementById(currentTooltip)
+        tip?._tippy?.show()
+    }, [currentTooltip])
 
     // Initialize SVG, tooltips, and GSAP
     useEffect(() => {
-        if (!svg || !containerRef.current) return;
+        if (!svg || !containerRef.current) return
 
         // Remove any unwanted SVG url references
-        setSvg(svg.replaceAll("url(#Shadow)", ""));
+        setSvg(svg.replaceAll('url(#Shadow)', ''))
 
-        addTooltips();
+        addTooltips()
 
         // Initialize tippy on buttons
-        const buttons = containerRef.current.querySelectorAll("button");
-        buttons.forEach((ele) => {
+        const buttons = containerRef.current.querySelectorAll('button')
+        buttons.forEach(ele => {
             tippy(ele, {
-                animation: "scale-subtle",
+                animation: 'scale-subtle',
                 allowHTML: true,
                 zIndex: 40,
                 arrow: true,
-                popperOptions: { modifiers: [{ name: "flip", enabled: false }] },
-            });
-        });
+                popperOptions: { modifiers: [{ name: 'flip', enabled: false }] },
+            })
+        })
 
         // GSAP scroll triggers
-        const circleElems = gsap.utils.toArray(".circle");
-        circleElems.forEach((elem) => {
+        const circleElems = gsap.utils.toArray('.circle')
+        circleElems.forEach(elem => {
             gsap.timeline({
                 scrollTrigger: {
                     trigger: elem,
-                    start: "top center",
-                    end: "bottom center",
+                    start: 'top center',
+                    end: 'bottom center',
                     markers: false,
                     onEnter: () => {
-                        setScrollTooltip(elem.id);
-                        setCurrentTooltip(elem.id);
+                        setScrollTooltip(elem.id)
+                        setCurrentTooltip(elem.id)
                     },
                     onEnterBack: () => {
-                        setScrollTooltip(elem.id);
-                        setCurrentTooltip(elem.id);
+                        setScrollTooltip(elem.id)
+                        setCurrentTooltip(elem.id)
                     },
                 },
-            });
-        });
+            })
+        })
 
         // Recalculate on resize/scroll
-        const handleResizeScroll = () => addTooltips();
-        window.addEventListener("resize", handleResizeScroll);
-        window.addEventListener("scroll", handleResizeScroll);
+        const handleResizeScroll = () => addTooltips()
+        window.addEventListener('resize', handleResizeScroll)
+        window.addEventListener('scroll', handleResizeScroll)
 
         return () => {
-            window.removeEventListener("resize", handleResizeScroll);
-            window.removeEventListener("scroll", handleResizeScroll);
-        };
-    }, [svg]);
+            window.removeEventListener('resize', handleResizeScroll)
+            window.removeEventListener('scroll', handleResizeScroll)
+        }
+    }, [svg])
 
     return (
         <div ref={containerRef} id={id} className="protocol-diagram flex justify-center relative">
             {circles.map((circle, index) => {
-                const circleId = `${id}-${index}`;
+                const circleId = `${id}-${index}`
                 return (
                     <button
                         key={circleId}
@@ -142,9 +144,9 @@ export default function TooltipSVG({ svg: initialSvg = "", data = {} }) {
                             height: circle.height,
                         }}
                     />
-                );
+                )
             })}
             <div dangerouslySetInnerHTML={{ __html: svg }} />
         </div>
-    );
+    )
 }

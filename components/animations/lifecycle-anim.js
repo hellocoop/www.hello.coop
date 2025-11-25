@@ -1,495 +1,737 @@
-'use client';
+'use client'
 
-import { useEffect } from "react";
-import { gsap } from "gsap";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 
 export default function LifecycleAnimation() {
     useEffect(() => {
         // TBD: React-ify this component instead of DOM manipulation
-        gsap.registerPlugin(MotionPathPlugin);
-        lifecycleAnimation();
-    }, []);
+        gsap.registerPlugin(MotionPathPlugin)
+        lifecycleAnimation()
+    }, [])
 
     function lifecycleAnimation() {
         // Set initial states for green, blue, and yellow
-        ["#hello-lifecycle #cursor-1", "#hello-lifecycle #cursor-2", "#hello-lifecycle #cursor-3"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
-        gsap.set("#hello-lifecycle #green-1", { scale: 1, opacity: 1, x: 0, y: 0 });
-        gsap.set("#hello-lifecycle #green-2", { opacity: 1, x: 0, y: 0 });
-        gsap.set("#hello-lifecycle #green-3", { opacity: 1, x: 0, y: 0 });
-        gsap.set("#hello-lifecycle #blue-1", { scale: 1, opacity: 1, x: 0, y: 0 });
-        gsap.set("#hello-lifecycle #blue-2", { opacity: 1, x: 0, y: 0 });
-        gsap.set("#hello-lifecycle #blue-3", { opacity: 1, x: 0, y: 0 });
-        gsap.set("#hello-lifecycle #yellow-1", { scale: 1, opacity: 1, x: 0, y: 0 });
-        gsap.set("#hello-lifecycle #yellow-2", { opacity: 1, x: 0, y: 0 });
-        gsap.set("#hello-lifecycle #yellow-3", { opacity: 1, x: 0, y: 0 });
-        ["#hello-lifecycle #one", "#hello-lifecycle #two", "#hello-lifecycle #three"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
-        ["#hello-lifecycle #a", "#hello-lifecycle #b", "#hello-lifecycle #c"].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }));
+        ;[
+            '#hello-lifecycle #cursor-1',
+            '#hello-lifecycle #cursor-2',
+            '#hello-lifecycle #cursor-3',
+        ].forEach(id => gsap.set(id, { opacity: 0, x: 0, y: 0 }))
+        gsap.set('#hello-lifecycle #green-1', { scale: 1, opacity: 1, x: 0, y: 0 })
+        gsap.set('#hello-lifecycle #green-2', { opacity: 1, x: 0, y: 0 })
+        gsap.set('#hello-lifecycle #green-3', { opacity: 1, x: 0, y: 0 })
+        gsap.set('#hello-lifecycle #blue-1', { scale: 1, opacity: 1, x: 0, y: 0 })
+        gsap.set('#hello-lifecycle #blue-2', { opacity: 1, x: 0, y: 0 })
+        gsap.set('#hello-lifecycle #blue-3', { opacity: 1, x: 0, y: 0 })
+        gsap.set('#hello-lifecycle #yellow-1', { scale: 1, opacity: 1, x: 0, y: 0 })
+        gsap.set('#hello-lifecycle #yellow-2', { opacity: 1, x: 0, y: 0 })
+        gsap.set('#hello-lifecycle #yellow-3', { opacity: 1, x: 0, y: 0 })
+        ;['#hello-lifecycle #one', '#hello-lifecycle #two', '#hello-lifecycle #three'].forEach(id =>
+            gsap.set(id, { opacity: 0, x: 0, y: 0 })
+        )
+        ;['#hello-lifecycle #a', '#hello-lifecycle #b', '#hello-lifecycle #c'].forEach(id =>
+            gsap.set(id, { opacity: 0, x: 0, y: 0 })
+        )
         // Set initial states for overlay flash elements (opacity 0)
-        ["#hello-lifecycle #source-1", "#hello-lifecycle #source-2", "#hello-lifecycle #source-3"].forEach(id => gsap.set(id, { opacity: 0 }));
-        ["#hello-lifecycle #cloud-1", "#hello-lifecycle #cloud-2", "#hello-lifecycle #cloud-3"].forEach(id => gsap.set(id, { opacity: 0 }));
-        ["#hello-lifecycle #app-1", "#hello-lifecycle #app-2", "#hello-lifecycle #app-3"].forEach(id => gsap.set(id, { opacity: 0 }));
+        ;[
+            '#hello-lifecycle #source-1',
+            '#hello-lifecycle #source-2',
+            '#hello-lifecycle #source-3',
+        ].forEach(id => gsap.set(id, { opacity: 0 }))
+        ;[
+            '#hello-lifecycle #cloud-1',
+            '#hello-lifecycle #cloud-2',
+            '#hello-lifecycle #cloud-3',
+        ].forEach(id => gsap.set(id, { opacity: 0 }))
+        ;['#hello-lifecycle #app-1', '#hello-lifecycle #app-2', '#hello-lifecycle #app-3'].forEach(
+            id => gsap.set(id, { opacity: 0 })
+        )
         // Set initial states for text elements (opacity 0)
-        ["#hello-lifecycle #one-text", "#hello-lifecycle #two-text", "#hello-lifecycle #three-text"].forEach(id => gsap.set(id, { opacity: 0 }));
-        ["#hello-lifecycle #cloud-1-text", "#hello-lifecycle #cloud-2-text", "#hello-lifecycle #cloud-3-text"].forEach(id => gsap.set(id, { opacity: 0 }));
-        ["#hello-lifecycle #app-1-text", "#hello-lifecycle #app-2-text", "#hello-lifecycle #app-3-text"].forEach(id => gsap.set(id, { opacity: 0 }));
-        gsap.to("#hello-lifecycle svg", {
+        ;[
+            '#hello-lifecycle #one-text',
+            '#hello-lifecycle #two-text',
+            '#hello-lifecycle #three-text',
+        ].forEach(id => gsap.set(id, { opacity: 0 }))
+        ;[
+            '#hello-lifecycle #cloud-1-text',
+            '#hello-lifecycle #cloud-2-text',
+            '#hello-lifecycle #cloud-3-text',
+        ].forEach(id => gsap.set(id, { opacity: 0 }))
+        ;[
+            '#hello-lifecycle #app-1-text',
+            '#hello-lifecycle #app-2-text',
+            '#hello-lifecycle #app-3-text',
+        ].forEach(id => gsap.set(id, { opacity: 0 }))
+        gsap.to('#hello-lifecycle svg', {
             opacity: 1,
             duration: 1,
-        });
+        })
         const tl = gsap.timeline({
-            defaults: { ease: "power1.inOut" },
+            defaults: { ease: 'power1.inOut' },
             repeat: -1,
             repeatDelay: 0.75,
-        });
+        })
         // 1. Cursor-1 fades in
-        tl.addLabel("start")
+        tl.addLabel('start')
             // Cursor-1 and source-1 fade in at the same time
-            .to([
-                "#hello-lifecycle #cursor-1",
-                "#hello-lifecycle #source-1",
-                "#hello-lifecycle #one-text"
-            ], {
-                opacity: 1,
-                duration: 0.4,
-            }, "start")
+            .to(
+                [
+                    '#hello-lifecycle #cursor-1',
+                    '#hello-lifecycle #source-1',
+                    '#hello-lifecycle #one-text',
+                ],
+                {
+                    opacity: 1,
+                    duration: 0.4,
+                },
+                'start'
+            )
             // 2. Scale green-1
-            .to("#hello-lifecycle #green-1", {
-                scale: 1.2,
-                duration: 0.3,
-                transformOrigin: "center center",
-            }, ">+0.2")
+            .to(
+                '#hello-lifecycle #green-1',
+                {
+                    scale: 1.2,
+                    duration: 0.3,
+                    transformOrigin: 'center center',
+                },
+                '>+0.2'
+            )
             // 3. Move cursor and green-1 to 50 translate x and y
-            .to(["#hello-lifecycle #cursor-1", "#hello-lifecycle #green-1"], {
-                x: -120,
-                y: 25,
-                duration: 0.5,
-            }, ">+0.1")
+            .to(
+                ['#hello-lifecycle #cursor-1', '#hello-lifecycle #green-1'],
+                {
+                    x: -120,
+                    y: 25,
+                    duration: 0.5,
+                },
+                '>+0.1'
+            )
             // 4. Scale green-1 to 0 and fade out, start #one path animation at same time
-            .addLabel("greenFadeOut")
-            .to("#hello-lifecycle #green-1", {
-                scale: 0,
-                opacity: 0,
-                duration: 0.25,
-            }, "greenFadeOut")
-            .set("#hello-lifecycle #one", { opacity: 1 }, "greenFadeOut")
-            .to("#hello-lifecycle #one", {
-                duration: 0.4,
-                ease: "none",
-                motionPath: {
-                    path: "#hello-lifecycle #one-path",
-                    align: "#hello-lifecycle #one-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0,
-                    end: 0.7,
+            .addLabel('greenFadeOut')
+            .to(
+                '#hello-lifecycle #green-1',
+                {
+                    scale: 0,
+                    opacity: 0,
+                    duration: 0.25,
                 },
-            }, "greenFadeOut")
-            .to("#hello-lifecycle #one", {
-                duration: 0.25,
-                ease: "power1.out",
-                opacity: 0,
-                motionPath: {
-                    path: "#hello-lifecycle #one-path",
-                    align: "#hello-lifecycle #one-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0.7,
-                    end: 1,
+                'greenFadeOut'
+            )
+            .set('#hello-lifecycle #one', { opacity: 1 }, 'greenFadeOut')
+            .to(
+                '#hello-lifecycle #one',
+                {
+                    duration: 0.4,
+                    ease: 'none',
+                    motionPath: {
+                        path: '#hello-lifecycle #one-path',
+                        align: '#hello-lifecycle #one-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0,
+                        end: 0.7,
+                    },
                 },
-            }, "greenFadeOut+=0.4")
+                'greenFadeOut'
+            )
+            .to(
+                '#hello-lifecycle #one',
+                {
+                    duration: 0.25,
+                    ease: 'power1.out',
+                    opacity: 0,
+                    motionPath: {
+                        path: '#hello-lifecycle #one-path',
+                        align: '#hello-lifecycle #one-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0.7,
+                        end: 1,
+                    },
+                },
+                'greenFadeOut+=0.4'
+            )
             // Flash cloud before #one animation ends
-            .addLabel("greenCloudFlash")
-            .to(["#hello-lifecycle #cloud-1", "#hello-lifecycle #cloud-1-text"], {
-                opacity: 1,
-                duration: 0.16,
-            }, "greenFadeOut+=0.6")
+            .addLabel('greenCloudFlash')
+            .to(
+                ['#hello-lifecycle #cloud-1', '#hello-lifecycle #cloud-1-text'],
+                {
+                    opacity: 1,
+                    duration: 0.16,
+                },
+                'greenFadeOut+=0.6'
+            )
             // Fade out source and source-text when #one animation ends
-            .to(["#hello-lifecycle #source-1", "#hello-lifecycle #one-text"], {
-                opacity: 0,
-                duration: 0.16,
-            }, "greenFadeOut+=0.65")
+            .to(
+                ['#hello-lifecycle #source-1', '#hello-lifecycle #one-text'],
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'greenFadeOut+=0.65'
+            )
             // 5. Fade out cursor (almost immediately after green-1 starts fading)
-            .to("#hello-lifecycle #cursor-1", {
-                opacity: 0,
-                duration: 0.25,
-            }, "greenFadeOut+=0.1")
+            .to(
+                '#hello-lifecycle #cursor-1',
+                {
+                    opacity: 0,
+                    duration: 0.25,
+                },
+                'greenFadeOut+=0.1'
+            )
             // 6. At end of #one animation, fade out green-2
-            .addLabel("greenAPathStart")
-            .to("#hello-lifecycle #green-2", {
-                opacity: 0,
-                duration: 0.16,
-            }, "greenFadeOut+=0.65")
+            .addLabel('greenAPathStart')
+            .to(
+                '#hello-lifecycle #green-2',
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'greenFadeOut+=0.65'
+            )
             // 7. Start #a animation on #a-b-c-path
-            .set("#hello-lifecycle #a", { opacity: 1 }, "greenAPathStart")
-            .to("#hello-lifecycle #a", {
-                duration: 0.4,
-                ease: "none",
-                motionPath: {
-                    path: "#hello-lifecycle #a-b-c-path",
-                    align: "#hello-lifecycle #a-b-c-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0,
-                    end: 0.7,
+            .set('#hello-lifecycle #a', { opacity: 1 }, 'greenAPathStart')
+            .to(
+                '#hello-lifecycle #a',
+                {
+                    duration: 0.4,
+                    ease: 'none',
+                    motionPath: {
+                        path: '#hello-lifecycle #a-b-c-path',
+                        align: '#hello-lifecycle #a-b-c-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0,
+                        end: 0.7,
+                    },
                 },
-            }, "greenAPathStart")
+                'greenAPathStart'
+            )
             // Flash app before #a animation ends
-            .addLabel("greenAppFlash")
-            .to(["#hello-lifecycle #app-1", "#hello-lifecycle #app-1-text"], {
-                opacity: 1,
-                duration: 0.16,
-            }, "greenAPathStart+=0.6")
-            .to("#hello-lifecycle #a", {
-                duration: 0.25,
-                ease: "power1.out",
-                opacity: 0,
-                motionPath: {
-                    path: "#hello-lifecycle #a-b-c-path",
-                    align: "#hello-lifecycle #a-b-c-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0.7,
-                    end: 1,
+            .addLabel('greenAppFlash')
+            .to(
+                ['#hello-lifecycle #app-1', '#hello-lifecycle #app-1-text'],
+                {
+                    opacity: 1,
+                    duration: 0.16,
                 },
-            }, "greenAPathStart+=0.4")
+                'greenAPathStart+=0.6'
+            )
+            .to(
+                '#hello-lifecycle #a',
+                {
+                    duration: 0.25,
+                    ease: 'power1.out',
+                    opacity: 0,
+                    motionPath: {
+                        path: '#hello-lifecycle #a-b-c-path',
+                        align: '#hello-lifecycle #a-b-c-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0.7,
+                        end: 1,
+                    },
+                },
+                'greenAPathStart+=0.4'
+            )
             // Fade out cloud and cloud-text when #a animation ends
-            .to(["#hello-lifecycle #cloud-1", "#hello-lifecycle #cloud-1-text"], {
-                opacity: 0,
-                duration: 0.16,
-            }, "greenAPathStart+=0.65")
+            .to(
+                ['#hello-lifecycle #cloud-1', '#hello-lifecycle #cloud-1-text'],
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'greenAPathStart+=0.65'
+            )
             // 8. Once #a animation is done, fade out green-3
-            .to("#hello-lifecycle #green-3", {
-                opacity: 0,
-                duration: 0.16,
-            }, "greenAPathStart+=0.65")
+            .to(
+                '#hello-lifecycle #green-3',
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'greenAPathStart+=0.65'
+            )
             // BLUE SEQUENCE
             // 1. Cursor-2 fades in
             // Fade out app-1 and app-1-text, fade in cursor-2 and source-2 at the same time
-            .addLabel("cursor2Start", ">+0.5")
-            .to(["#hello-lifecycle #app-1", "#hello-lifecycle #app-1-text"], {
-                opacity: 0,
-                duration: 0.16,
-            }, "cursor2Start")
-            .to([
-                "#hello-lifecycle #cursor-2",
-                "#hello-lifecycle #source-2",
-                "#hello-lifecycle #two-text"
-            ], {
-                opacity: 1,
-                duration: 0.4,
-            }, "cursor2Start")
+            .addLabel('cursor2Start', '>+0.5')
+            .to(
+                ['#hello-lifecycle #app-1', '#hello-lifecycle #app-1-text'],
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'cursor2Start'
+            )
+            .to(
+                [
+                    '#hello-lifecycle #cursor-2',
+                    '#hello-lifecycle #source-2',
+                    '#hello-lifecycle #two-text',
+                ],
+                {
+                    opacity: 1,
+                    duration: 0.4,
+                },
+                'cursor2Start'
+            )
             // 2. Scale blue-1
-            .to("#hello-lifecycle #blue-1", {
-                scale: 1.2,
-                duration: 0.3,
-                transformOrigin: "center center",
-            }, ">+0.2")
+            .to(
+                '#hello-lifecycle #blue-1',
+                {
+                    scale: 1.2,
+                    duration: 0.3,
+                    transformOrigin: 'center center',
+                },
+                '>+0.2'
+            )
             // 3. Move cursor and blue-1 to 50 translate x and y
-            .to(["#hello-lifecycle #cursor-2", "#hello-lifecycle #blue-1"], {
-                x: -30,
-                y: 35,
-                duration: 0.5,
-            }, ">+0.1")
+            .to(
+                ['#hello-lifecycle #cursor-2', '#hello-lifecycle #blue-1'],
+                {
+                    x: -30,
+                    y: 35,
+                    duration: 0.5,
+                },
+                '>+0.1'
+            )
             // 4. Scale blue-1 to 0 and fade out, start #two path animation at same time
-            .addLabel("blueFadeOut")
-            .to("#hello-lifecycle #blue-1", {
-                scale: 0,
-                opacity: 0,
-                duration: 0.25,
-            }, "blueFadeOut")
-            .set("#hello-lifecycle #two", { opacity: 1 }, "blueFadeOut")
-            .to("#hello-lifecycle #two", {
-                duration: 0.4,
-                ease: "none",
-                motionPath: {
-                    path: "#hello-lifecycle #two-path",
-                    align: "#hello-lifecycle #two-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0,
-                    end: 0.7,
+            .addLabel('blueFadeOut')
+            .to(
+                '#hello-lifecycle #blue-1',
+                {
+                    scale: 0,
+                    opacity: 0,
+                    duration: 0.25,
                 },
-            }, "blueFadeOut")
-            .to("#hello-lifecycle #two", {
-                duration: 0.25,
-                ease: "power1.out",
-                opacity: 0,
-                motionPath: {
-                    path: "#hello-lifecycle #two-path",
-                    align: "#hello-lifecycle #two-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0.7,
-                    end: 1,
+                'blueFadeOut'
+            )
+            .set('#hello-lifecycle #two', { opacity: 1 }, 'blueFadeOut')
+            .to(
+                '#hello-lifecycle #two',
+                {
+                    duration: 0.4,
+                    ease: 'none',
+                    motionPath: {
+                        path: '#hello-lifecycle #two-path',
+                        align: '#hello-lifecycle #two-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0,
+                        end: 0.7,
+                    },
                 },
-            }, "blueFadeOut+=0.4")
+                'blueFadeOut'
+            )
+            .to(
+                '#hello-lifecycle #two',
+                {
+                    duration: 0.25,
+                    ease: 'power1.out',
+                    opacity: 0,
+                    motionPath: {
+                        path: '#hello-lifecycle #two-path',
+                        align: '#hello-lifecycle #two-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0.7,
+                        end: 1,
+                    },
+                },
+                'blueFadeOut+=0.4'
+            )
             // Flash cloud before #two animation ends
-            .addLabel("blueCloudFlash")
-            .to(["#hello-lifecycle #cloud-2", "#hello-lifecycle #cloud-2-text"], {
-                opacity: 1,
-                duration: 0.16,
-            }, "blueFadeOut+=0.6")
+            .addLabel('blueCloudFlash')
+            .to(
+                ['#hello-lifecycle #cloud-2', '#hello-lifecycle #cloud-2-text'],
+                {
+                    opacity: 1,
+                    duration: 0.16,
+                },
+                'blueFadeOut+=0.6'
+            )
             // Fade out source and source-text when #two animation ends
-            .to(["#hello-lifecycle #source-2", "#hello-lifecycle #two-text"], {
-                opacity: 0,
-                duration: 0.16,
-            }, "blueFadeOut+=0.65")
+            .to(
+                ['#hello-lifecycle #source-2', '#hello-lifecycle #two-text'],
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'blueFadeOut+=0.65'
+            )
             // 5. Fade out cursor-2 (almost immediately after blue-1 starts fading)
-            .to("#hello-lifecycle #cursor-2", {
-                opacity: 0,
-                duration: 0.25,
-            }, "blueFadeOut+=0.1")
+            .to(
+                '#hello-lifecycle #cursor-2',
+                {
+                    opacity: 0,
+                    duration: 0.25,
+                },
+                'blueFadeOut+=0.1'
+            )
             // 6. At end of #two animation, fade out blue-2
-            .addLabel("blueAPathStart")
-            .to("#hello-lifecycle #blue-2", {
-                opacity: 0,
-                duration: 0.16,
-            }, "blueFadeOut+=0.65")
+            .addLabel('blueAPathStart')
+            .to(
+                '#hello-lifecycle #blue-2',
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'blueFadeOut+=0.65'
+            )
             // 7. Start #b animation on #a-b-c-path
-            .set("#hello-lifecycle #b", { opacity: 1 }, "blueAPathStart")
-            .to("#hello-lifecycle #b", {
-                duration: 0.4,
-                ease: "none",
-                motionPath: {
-                    path: "#hello-lifecycle #a-b-c-path",
-                    align: "#hello-lifecycle #a-b-c-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0,
-                    end: 0.7,
+            .set('#hello-lifecycle #b', { opacity: 1 }, 'blueAPathStart')
+            .to(
+                '#hello-lifecycle #b',
+                {
+                    duration: 0.4,
+                    ease: 'none',
+                    motionPath: {
+                        path: '#hello-lifecycle #a-b-c-path',
+                        align: '#hello-lifecycle #a-b-c-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0,
+                        end: 0.7,
+                    },
                 },
-            }, "blueAPathStart")
+                'blueAPathStart'
+            )
             // Flash app before #b animation ends
-            .addLabel("blueAppFlash")
-            .to(["#hello-lifecycle #app-2", "#hello-lifecycle #app-2-text"], {
-                opacity: 1,
-                duration: 0.16,
-            }, "blueAPathStart+=0.6")
-            .to("#hello-lifecycle #b", {
-                duration: 0.25,
-                ease: "power1.out",
-                opacity: 0,
-                motionPath: {
-                    path: "#hello-lifecycle #a-b-c-path",
-                    align: "#hello-lifecycle #a-b-c-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0.7,
-                    end: 1,
+            .addLabel('blueAppFlash')
+            .to(
+                ['#hello-lifecycle #app-2', '#hello-lifecycle #app-2-text'],
+                {
+                    opacity: 1,
+                    duration: 0.16,
                 },
-            }, "blueAPathStart+=0.4")
+                'blueAPathStart+=0.6'
+            )
+            .to(
+                '#hello-lifecycle #b',
+                {
+                    duration: 0.25,
+                    ease: 'power1.out',
+                    opacity: 0,
+                    motionPath: {
+                        path: '#hello-lifecycle #a-b-c-path',
+                        align: '#hello-lifecycle #a-b-c-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0.7,
+                        end: 1,
+                    },
+                },
+                'blueAPathStart+=0.4'
+            )
             // Fade out cloud and cloud-text when #b animation ends
-            .to(["#hello-lifecycle #cloud-2", "#hello-lifecycle #cloud-2-text"], {
-                opacity: 0,
-                duration: 0.16,
-            }, "blueAPathStart+=0.65")
+            .to(
+                ['#hello-lifecycle #cloud-2', '#hello-lifecycle #cloud-2-text'],
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'blueAPathStart+=0.65'
+            )
             // 8. Once #b animation is done, fade out blue-3
-            .to("#hello-lifecycle #blue-3", {
-                opacity: 0,
-                duration: 0.16,
-            }, "blueAPathStart+=0.65")
+            .to(
+                '#hello-lifecycle #blue-3',
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'blueAPathStart+=0.65'
+            )
             // YELLOW SEQUENCE
             // 1. Cursor-3 fades in
             // Fade out app-2 and app-2-text, fade in cursor-3 and source-3 at the same time
-            .addLabel("cursor3Start", ">+0.5")
-            .to(["#hello-lifecycle #app-2", "#hello-lifecycle #app-2-text"], {
-                opacity: 0,
-                duration: 0.16,
-            }, "cursor3Start")
-            .to([
-                "#hello-lifecycle #cursor-3",
-                "#hello-lifecycle #source-3",
-                "#hello-lifecycle #three-text"
-            ], {
-                opacity: 1,
-                duration: 0.4,
-            }, "cursor3Start")
+            .addLabel('cursor3Start', '>+0.5')
+            .to(
+                ['#hello-lifecycle #app-2', '#hello-lifecycle #app-2-text'],
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'cursor3Start'
+            )
+            .to(
+                [
+                    '#hello-lifecycle #cursor-3',
+                    '#hello-lifecycle #source-3',
+                    '#hello-lifecycle #three-text',
+                ],
+                {
+                    opacity: 1,
+                    duration: 0.4,
+                },
+                'cursor3Start'
+            )
             // 2. Scale yellow-1
-            .to("#hello-lifecycle #yellow-1", {
-                scale: 1.2,
-                duration: 0.3,
-                transformOrigin: "center center",
-            }, ">+0.2")
+            .to(
+                '#hello-lifecycle #yellow-1',
+                {
+                    scale: 1.2,
+                    duration: 0.3,
+                    transformOrigin: 'center center',
+                },
+                '>+0.2'
+            )
             // 3. Move cursor and yellow-1 to 50 translate x and y
-            .to(["#hello-lifecycle #cursor-3", "#hello-lifecycle #yellow-1"], {
-                x: -90,
-                y: -65,
-                duration: 0.5,
-            }, ">+0.1")
+            .to(
+                ['#hello-lifecycle #cursor-3', '#hello-lifecycle #yellow-1'],
+                {
+                    x: -90,
+                    y: -65,
+                    duration: 0.5,
+                },
+                '>+0.1'
+            )
             // 4. Scale yellow-1 to 0 and fade out, start #three path animation at same time
-            .addLabel("yellowFadeOut")
-            .to("#hello-lifecycle #yellow-1", {
-                scale: 0,
-                opacity: 0,
-                duration: 0.25,
-            }, "yellowFadeOut")
-            .set("#hello-lifecycle #three", { opacity: 1 }, "yellowFadeOut")
-            .to("#hello-lifecycle #three", {
-                duration: 0.4,
-                ease: "none",
-                motionPath: {
-                    path: "#hello-lifecycle #three-path",
-                    align: "#hello-lifecycle #three-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0,
-                    end: 0.7,
+            .addLabel('yellowFadeOut')
+            .to(
+                '#hello-lifecycle #yellow-1',
+                {
+                    scale: 0,
+                    opacity: 0,
+                    duration: 0.25,
                 },
-            }, "yellowFadeOut")
-            .to("#hello-lifecycle #three", {
-                duration: 0.25,
-                ease: "power1.out",
-                opacity: 0,
-                motionPath: {
-                    path: "#hello-lifecycle #three-path",
-                    align: "#hello-lifecycle #three-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0.7,
-                    end: 1,
+                'yellowFadeOut'
+            )
+            .set('#hello-lifecycle #three', { opacity: 1 }, 'yellowFadeOut')
+            .to(
+                '#hello-lifecycle #three',
+                {
+                    duration: 0.4,
+                    ease: 'none',
+                    motionPath: {
+                        path: '#hello-lifecycle #three-path',
+                        align: '#hello-lifecycle #three-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0,
+                        end: 0.7,
+                    },
                 },
-            }, "yellowFadeOut+=0.4")
+                'yellowFadeOut'
+            )
+            .to(
+                '#hello-lifecycle #three',
+                {
+                    duration: 0.25,
+                    ease: 'power1.out',
+                    opacity: 0,
+                    motionPath: {
+                        path: '#hello-lifecycle #three-path',
+                        align: '#hello-lifecycle #three-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0.7,
+                        end: 1,
+                    },
+                },
+                'yellowFadeOut+=0.4'
+            )
             // Flash cloud before #three animation ends
-            .addLabel("yellowCloudFlash")
-            .to(["#hello-lifecycle #cloud-3", "#hello-lifecycle #cloud-3-text"], {
-                opacity: 1,
-                duration: 0.16,
-            }, "yellowFadeOut+=0.6")
+            .addLabel('yellowCloudFlash')
+            .to(
+                ['#hello-lifecycle #cloud-3', '#hello-lifecycle #cloud-3-text'],
+                {
+                    opacity: 1,
+                    duration: 0.16,
+                },
+                'yellowFadeOut+=0.6'
+            )
             // Fade out source and source-text when #three animation ends
-            .to(["#hello-lifecycle #source-3", "#hello-lifecycle #three-text"], {
-                opacity: 0,
-                duration: 0.16,
-            }, "yellowFadeOut+=0.65")
+            .to(
+                ['#hello-lifecycle #source-3', '#hello-lifecycle #three-text'],
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'yellowFadeOut+=0.65'
+            )
             // 5. Fade out cursor-3 (almost immediately after yellow-1 starts fading)
-            .to("#hello-lifecycle #cursor-3", {
-                opacity: 0,
-                duration: 0.25,
-            }, "yellowFadeOut+=0.1")
+            .to(
+                '#hello-lifecycle #cursor-3',
+                {
+                    opacity: 0,
+                    duration: 0.25,
+                },
+                'yellowFadeOut+=0.1'
+            )
             // 6. At end of #three animation, fade out yellow-2
-            .addLabel("yellowAPathStart")
-            .to("#hello-lifecycle #yellow-2", {
-                opacity: 0,
-                duration: 0.16,
-            }, "yellowFadeOut+=0.65")
+            .addLabel('yellowAPathStart')
+            .to(
+                '#hello-lifecycle #yellow-2',
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'yellowFadeOut+=0.65'
+            )
             // 7. Start #c animation on #a-b-c-path
-            .set("#hello-lifecycle #c", { opacity: 1 }, "yellowAPathStart")
-            .to("#hello-lifecycle #c", {
-                duration: 0.4,
-                ease: "none",
-                motionPath: {
-                    path: "#hello-lifecycle #a-b-c-path",
-                    align: "#hello-lifecycle #a-b-c-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0,
-                    end: 0.7,
+            .set('#hello-lifecycle #c', { opacity: 1 }, 'yellowAPathStart')
+            .to(
+                '#hello-lifecycle #c',
+                {
+                    duration: 0.4,
+                    ease: 'none',
+                    motionPath: {
+                        path: '#hello-lifecycle #a-b-c-path',
+                        align: '#hello-lifecycle #a-b-c-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0,
+                        end: 0.7,
+                    },
                 },
-            }, "yellowAPathStart")
+                'yellowAPathStart'
+            )
             // Flash app before #c animation ends
-            .addLabel("yellowAppFlash")
-            .to(["#hello-lifecycle #app-3", "#hello-lifecycle #app-3-text"], {
-                opacity: 1,
-                duration: 0.16,
-            }, "yellowAPathStart+=0.6")
-            .to("#hello-lifecycle #c", {
-                duration: 0.25,
-                ease: "power1.out",
-                opacity: 0,
-                motionPath: {
-                    path: "#hello-lifecycle #a-b-c-path",
-                    align: "#hello-lifecycle #a-b-c-path",
-                    alignOrigin: [0.5, 0.5],
-                    autoRotate: true,
-                    start: 0.7,
-                    end: 1,
+            .addLabel('yellowAppFlash')
+            .to(
+                ['#hello-lifecycle #app-3', '#hello-lifecycle #app-3-text'],
+                {
+                    opacity: 1,
+                    duration: 0.16,
                 },
-            }, "yellowAPathStart+=0.4")
+                'yellowAPathStart+=0.6'
+            )
+            .to(
+                '#hello-lifecycle #c',
+                {
+                    duration: 0.25,
+                    ease: 'power1.out',
+                    opacity: 0,
+                    motionPath: {
+                        path: '#hello-lifecycle #a-b-c-path',
+                        align: '#hello-lifecycle #a-b-c-path',
+                        alignOrigin: [0.5, 0.5],
+                        autoRotate: true,
+                        start: 0.7,
+                        end: 1,
+                    },
+                },
+                'yellowAPathStart+=0.4'
+            )
             // Fade out cloud and cloud-text when #c animation ends
-            .to(["#hello-lifecycle #cloud-3", "#hello-lifecycle #cloud-3-text"], {
-                opacity: 0,
-                duration: 0.16,
-            }, "yellowAPathStart+=0.65")
+            .to(
+                ['#hello-lifecycle #cloud-3', '#hello-lifecycle #cloud-3-text'],
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'yellowAPathStart+=0.65'
+            )
             // 8. Once #c animation is done, fade out yellow-3
-            .to("#hello-lifecycle #yellow-3", {
-                opacity: 0,
-                duration: 0.16,
-            }, "yellowAPathStart+=0.65")
+            .to(
+                '#hello-lifecycle #yellow-3',
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'yellowAPathStart+=0.65'
+            )
             // Reset: Fade in all users at the same time (consistent with offboarding animation)
-            .addLabel("reset", ">")
+            .addLabel('reset', '>')
             // Reset positions and states first
-            .set([
-                "#hello-lifecycle #cursor-1",
-                "#hello-lifecycle #cursor-2",
-                "#hello-lifecycle #cursor-3"
-            ], {
-                opacity: 0,
-                x: 0,
-                y: 0,
-            }, "reset")
-            .set([
-                "#hello-lifecycle #green-1",
-                "#hello-lifecycle #blue-1",
-                "#hello-lifecycle #yellow-1"
-            ], {
-                scale: 1,
-                opacity: 0,
-                x: 0,
-                y: 0,
-            }, "reset")
-            .set([
-                "#hello-lifecycle #green-2",
-                "#hello-lifecycle #green-3",
-                "#hello-lifecycle #blue-2",
-                "#hello-lifecycle #blue-3",
-                "#hello-lifecycle #yellow-2",
-                "#hello-lifecycle #yellow-3"
-            ], {
-                opacity: 0,
-                x: 0,
-                y: 0,
-            }, "reset")
+            .set(
+                [
+                    '#hello-lifecycle #cursor-1',
+                    '#hello-lifecycle #cursor-2',
+                    '#hello-lifecycle #cursor-3',
+                ],
+                {
+                    opacity: 0,
+                    x: 0,
+                    y: 0,
+                },
+                'reset'
+            )
+            .set(
+                [
+                    '#hello-lifecycle #green-1',
+                    '#hello-lifecycle #blue-1',
+                    '#hello-lifecycle #yellow-1',
+                ],
+                {
+                    scale: 1,
+                    opacity: 0,
+                    x: 0,
+                    y: 0,
+                },
+                'reset'
+            )
+            .set(
+                [
+                    '#hello-lifecycle #green-2',
+                    '#hello-lifecycle #green-3',
+                    '#hello-lifecycle #blue-2',
+                    '#hello-lifecycle #blue-3',
+                    '#hello-lifecycle #yellow-2',
+                    '#hello-lifecycle #yellow-3',
+                ],
+                {
+                    opacity: 0,
+                    x: 0,
+                    y: 0,
+                },
+                'reset'
+            )
             // Reset overlay flash elements to opacity 0 (app-3 and app-3-text fade out separately)
-            .set([
-                "#hello-lifecycle #source-1",
-                "#hello-lifecycle #source-2",
-                "#hello-lifecycle #source-3",
-                "#hello-lifecycle #cloud-1",
-                "#hello-lifecycle #cloud-2",
-                "#hello-lifecycle #cloud-3",
-                "#hello-lifecycle #app-1",
-                "#hello-lifecycle #app-2",
-                "#hello-lifecycle #one-text",
-                "#hello-lifecycle #two-text",
-                "#hello-lifecycle #three-text",
-                "#hello-lifecycle #cloud-1-text",
-                "#hello-lifecycle #cloud-2-text",
-                "#hello-lifecycle #cloud-3-text",
-                "#hello-lifecycle #app-1-text",
-                "#hello-lifecycle #app-2-text"
-            ], {
-                opacity: 0,
-            }, "reset")
+            .set(
+                [
+                    '#hello-lifecycle #source-1',
+                    '#hello-lifecycle #source-2',
+                    '#hello-lifecycle #source-3',
+                    '#hello-lifecycle #cloud-1',
+                    '#hello-lifecycle #cloud-2',
+                    '#hello-lifecycle #cloud-3',
+                    '#hello-lifecycle #app-1',
+                    '#hello-lifecycle #app-2',
+                    '#hello-lifecycle #one-text',
+                    '#hello-lifecycle #two-text',
+                    '#hello-lifecycle #three-text',
+                    '#hello-lifecycle #cloud-1-text',
+                    '#hello-lifecycle #cloud-2-text',
+                    '#hello-lifecycle #cloud-3-text',
+                    '#hello-lifecycle #app-1-text',
+                    '#hello-lifecycle #app-2-text',
+                ],
+                {
+                    opacity: 0,
+                },
+                'reset'
+            )
             // Fade in all users at the same time as app-3 fades out (with delay to let app-3 stay lit longer)
-            .to([
-                "#hello-lifecycle #green-1",
-                "#hello-lifecycle #green-2",
-                "#hello-lifecycle #green-3",
-                "#hello-lifecycle #blue-1",
-                "#hello-lifecycle #blue-2",
-                "#hello-lifecycle #blue-3",
-                "#hello-lifecycle #yellow-1",
-                "#hello-lifecycle #yellow-2",
-                "#hello-lifecycle #yellow-3"
-            ], {
-                opacity: 1,
-                duration: 0.3,
-            }, "reset+=0.5")
+            .to(
+                [
+                    '#hello-lifecycle #green-1',
+                    '#hello-lifecycle #green-2',
+                    '#hello-lifecycle #green-3',
+                    '#hello-lifecycle #blue-1',
+                    '#hello-lifecycle #blue-2',
+                    '#hello-lifecycle #blue-3',
+                    '#hello-lifecycle #yellow-1',
+                    '#hello-lifecycle #yellow-2',
+                    '#hello-lifecycle #yellow-3',
+                ],
+                {
+                    opacity: 1,
+                    duration: 0.3,
+                },
+                'reset+=0.5'
+            )
             // Fade out app-3 and app-3-text at the exact same time as users fade in
-            .to(["#hello-lifecycle #app-3", "#hello-lifecycle #app-3-text"], {
-                opacity: 0,
-                duration: 0.16,
-            }, "reset+=0.5")
+            .to(
+                ['#hello-lifecycle #app-3', '#hello-lifecycle #app-3-text'],
+                {
+                    opacity: 0,
+                    duration: 0.16,
+                },
+                'reset+=0.5'
+            )
     }
 
     return (
@@ -1109,5 +1351,5 @@ export default function LifecycleAnimation() {
                 </linearGradient>
             </defs>
         </svg>
-    );
+    )
 }

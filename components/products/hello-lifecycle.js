@@ -1,34 +1,46 @@
-'use client';
+'use client'
 
-import { useState, useEffect } from 'react';
-import LifecycleAnimation from "@/components/animations/lifecycle-anim";
+import { useState, useEffect } from 'react'
+import LifecycleAnimation from '@/components/animations/lifecycle-anim'
 
 export default function HelloLifecycle({ showTitle = true, compact = false }) {
-    const [waitlistUrl, setWaitlistUrl] = useState(null);
+    const [waitlistUrl, setWaitlistUrl] = useState(null)
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            const returnUri = encodeURIComponent(`${window.location.origin}${window.location.pathname}#hello-lifecycle`);
-            setWaitlistUrl(`https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle&return_uri=${returnUri}`);
+            const returnUri = encodeURIComponent(
+                `${window.location.origin}${window.location.pathname}#hello-lifecycle`
+            )
+            setWaitlistUrl(
+                `https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle&return_uri=${returnUri}`
+            )
         }
-    }, []);
+    }, [])
 
     return (
         <div id="hello-lifecycle" className="scroll-mt-20 text-[17px]">
             {showTitle && (
-                <h1 className="text-[1.35rem] md:text-5xl font-semibold">
-                    Hellō Lifecycle
-                </h1>
+                <h1 className="text-[1.35rem] md:text-5xl font-semibold">Hellō Lifecycle</h1>
             )}
             {/* <h2 className="text-xl md:text-3xl opacity-50 mt-0 md:mt-4">
                 Add offboarding to your B2B app
             </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    {compact ? <ol className="py-4 !space-y-2 md:py-12 text-lg opacity-65 font-medium">
-                        <li>Your customers link their<br/>corporate directory.</li>
-                        <li>Hellō sends your app a notification<br/>when a user leaves.</li>
-                    </ol> :
+                    {compact ? (
+                        <ol className="py-4 !space-y-2 md:py-12 text-lg opacity-65 font-medium">
+                            <li>
+                                Your customers link their
+                                <br />
+                                corporate directory.
+                            </li>
+                            <li>
+                                Hellō sends your app a notification
+                                <br />
+                                when a user leaves.
+                            </li>
+                        </ol>
+                    ) : (
                         <div className="mt-6 space-y-4">
                             <p>
                                 Automate user deprovisioning for your B2B SaaS application. Your
@@ -37,17 +49,14 @@ export default function HelloLifecycle({ showTitle = true, compact = false }) {
                             </p>
                             <p>
                                 When an employee is deprovisioned in their directory, Hellō
-                                automatically notifies your application via OpenID Provider
-                                Command, allowing you to suspend or remove access immediately.
-                                Give your enterprise customers the automated offboarding they
-                                expect.
+                                automatically notifies your application via OpenID Provider Command,
+                                allowing you to suspend or remove access immediately. Give your
+                                enterprise customers the automated offboarding they expect.
                             </p>
                         </div>
-                    }
+                    )}
                     <div className="flex flex-col space-y-4">
-                        <span className="text-base font-semibold">
-                            Coming Q1 2026
-                        </span>
+                        <span className="text-base font-semibold">Coming Q1 2026</span>
                         <div className="gap-2 flex flex-col md:flex-row items-start">
                             <a
                                 href={waitlistUrl}
@@ -70,5 +79,5 @@ export default function HelloLifecycle({ showTitle = true, compact = false }) {
                 </div>
             </div>
         </div>
-    );
+    )
 }

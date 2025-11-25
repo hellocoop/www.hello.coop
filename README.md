@@ -17,12 +17,15 @@ This repo contains the source code and documentation powering [https://www.hello
 1. `npm i` to install the npm dependencies
 
 ### Running locally
+
 `npm run dev`
 
 ### Building for production
+
 `npm run build`
 
 ### Prevewing the built files
+
 `npm run start` #This needs to be run after `npm run build`
 
 ## License

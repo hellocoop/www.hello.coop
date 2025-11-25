@@ -2,44 +2,42 @@ export default function CodingPlatforms({ showTitle = true, compact = false }) {
     return (
         <div id="coding-platforms" className="text-[17px]">
             {showTitle && (
-                <h1 className="text-[1.35rem] md:text-5xl font-semibold">
-                    Coding Platforms
-                </h1>
+                <h1 className="text-[1.35rem] md:text-5xl font-semibold">Coding Platforms</h1>
             )}
             {/* <h2 className="text-xl md:text-3xl opacity-50 mt-0 md:mt-4">
                 Let devs add identity in seconds
             </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    {compact ? <div className="py-4 md:py-12 text-lg opacity-65 font-medium">
-                        <span className="block">The Hellō Admin MCP Server enables app management from the IDE.</span>
-                        <span className="block mt-6">The Hellō Admin APIs are available as OAuth 2.0 APIs, enabling integration
-                            with a coding platform.</span>
-                    </div> :
+                    {compact ? (
+                        <div className="py-4 md:py-12 text-lg opacity-65 font-medium">
+                            <span className="block">
+                                The Hellō Admin MCP Server enables app management from the IDE.
+                            </span>
+                            <span className="block mt-6">
+                                The Hellō Admin APIs are available as OAuth 2.0 APIs, enabling
+                                integration with a coding platform.
+                            </span>
+                        </div>
+                    ) : (
                         <div className="mt-6 space-y-4">
                             <p>
-                                <span className="font-semibold mb-2 block">
-                                    For developers:
-                                </span>
+                                <span className="font-semibold mb-2 block">For developers:</span>
                                 Use our Admin MCP server with AI coding assistants to create and
-                                manage Hellō applications from your IDE. No context switching,
-                                just natural language commands.
+                                manage Hellō applications from your IDE. No context switching, just
+                                natural language commands.
                             </p>
                             <p>
-                                <span className="font-semibold mb-2 block">
-                                    For platforms:
-                                </span>
+                                <span className="font-semibold mb-2 block">For platforms:</span>
                                 Integrate our Admin APIs to manage Hellō applications for your
                                 customers. OAuth-based authorization lets you provision and
                                 configure apps programmatically, enabling zero-friction identity
                                 without users leaving your platform.
                             </p>
                         </div>
-                    }
+                    )}
                     <div className="flex flex-col space-y-4">
-                        <span className="text-base font-semibold">
-                            Price: FREE
-                        </span>
+                        <span className="text-base font-semibold">Price: FREE</span>
                         <div className="gap-2 flex flex-col items-start">
                             <a
                                 href="https://www.hello.dev/docs/admin-mcp/"
@@ -74,10 +72,7 @@ export default function CodingPlatforms({ showTitle = true, compact = false }) {
                         FIGURING OUT THE POSITION WAS A NIGHTMARE HENCE DUPLICATED CODE */}
                 <div className="relative w-full overflow-hidden md:hidden">
                     <picture>
-                        <source
-                            srcSet="/vibe-bg-dark.png"
-                            media="(prefers-color-scheme: dark)"
-                        />
+                        <source srcSet="/vibe-bg-dark.png" media="(prefers-color-scheme: dark)" />
                         <img
                             src="/vibe-bg-light.png"
                             alt="background phone"
@@ -93,7 +88,7 @@ export default function CodingPlatforms({ showTitle = true, compact = false }) {
                             src="/vibe-robot-light.png"
                             alt="overlayed phone elements"
                             className="w-full h-auto z-10"
-                            style={{ animation: "fadeSlideLoop 3s ease-in-out infinite" }}
+                            style={{ animation: 'fadeSlideLoop 3s ease-in-out infinite' }}
                         />
                     </picture>
                 </div>
@@ -107,14 +102,11 @@ export default function CodingPlatforms({ showTitle = true, compact = false }) {
                             src="/vibe-robot-light.png"
                             alt="phone showing continue with apple, google, and email buttons"
                             className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[450px] md:absolute md:right-0 md:top-0 z-20 md:bottom-0"
-                            style={{ animation: "fadeSlideLoop 3s infinite" }}
+                            style={{ animation: 'fadeSlideLoop 3s infinite' }}
                         />
                     </picture>
                     <picture className="h-full relative md:static pt-2 md:pt-0 overflow-hidden md:overflow-auto mb-2">
-                        <source
-                            srcSet="/vibe-bg-dark.png"
-                            media="(prefers-color-scheme: dark)"
-                        />
+                        <source srcSet="/vibe-bg-dark.png" media="(prefers-color-scheme: dark)" />
                         <img
                             src="/vibe-bg-light.png"
                             alt="phone showing continue with apple, google, and email buttons"
@@ -124,5 +116,5 @@ export default function CodingPlatforms({ showTitle = true, compact = false }) {
                 </div>
             </div>
         </div>
-    );
+    )
 }

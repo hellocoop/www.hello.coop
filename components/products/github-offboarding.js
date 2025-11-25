@@ -1,53 +1,61 @@
-'use client';
+'use client'
 
-import { useState, useEffect } from 'react';
-import OffboardingAnimation from "@/components/animations/offboarding-anim";
+import { useState, useEffect } from 'react'
+import OffboardingAnimation from '@/components/animations/offboarding-anim'
 
 export default function GitHubOffboarding({ showTitle = true, compact = false }) {
-    const [waitlistUrl, setWaitlistUrl] = useState(null);
+    const [waitlistUrl, setWaitlistUrl] = useState(null)
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            const returnUri = encodeURIComponent(`${window.location.origin}${window.location.pathname}#github-offboarding`);
-            setWaitlistUrl(`https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding&return_uri=${returnUri}`);
+            const returnUri = encodeURIComponent(
+                `${window.location.origin}${window.location.pathname}#github-offboarding`
+            )
+            setWaitlistUrl(
+                `https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding&return_uri=${returnUri}`
+            )
         }
-    }, []);
+    }, [])
 
     return (
         <div id="github-offboarding" className="scroll-mt-20 text-[17px]">
             {showTitle && (
-                <h1 className="text-[1.35rem] md:text-5xl font-semibold">
-                    GitHub Offboarding
-                </h1>
+                <h1 className="text-[1.35rem] md:text-5xl font-semibold">GitHub Offboarding</h1>
             )}
             {/* <h2 className="text-xl md:text-3xl opacity-50 mt-0 md:mt-4">
                 Simplify &amp; automate compliance
             </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    {compact ? <ol className="py-4 !space-y-1 md:py-12 text-lg opacity-65 font-medium">
-                            <li>Your team members link their GitHub accounts with their corporate identity.</li>
-                            <li>Access is automatically revoked<br/>when they leave.</li>
-                        </ol> :
+                    {compact ? (
+                        <ol className="py-4 !space-y-1 md:py-12 text-lg opacity-65 font-medium">
+                            <li>
+                                Your team members link their GitHub accounts with their corporate
+                                identity.
+                            </li>
+                            <li>
+                                Access is automatically revoked
+                                <br />
+                                when they leave.
+                            </li>
+                        </ol>
+                    ) : (
                         <div className="mt-6 space-y-4">
                             <p>
                                 Solve GitHub access management for your own organization. Hellō
-                                guides each GitHub org member through linking their personal
-                                GitHub account with their corporate identity in a custom
-                                repository.
+                                guides each GitHub org member through linking their personal GitHub
+                                account with their corporate identity in a custom repository.
                             </p>
                             <p>
                                 Connect your corporate directory, and when an employee is
-                                deprovisioned, their GitHub org access is automatically removed.
-                                See how Hellō Lifecycle works while solving a real compliance gap
-                                for your team.
+                                deprovisioned, their GitHub org access is automatically removed. See
+                                how Hellō Lifecycle works while solving a real compliance gap for
+                                your team.
                             </p>
                         </div>
-                    }
+                    )}
                     <div className="flex flex-col space-y-4">
-                        <span className="text-base font-semibold">
-                            Coming Q1 2026
-                        </span>
+                        <span className="text-base font-semibold">Coming Q1 2026</span>
                         <div className="gap-2 flex flex-col md:flex-row items-start">
                             <a
                                 href={waitlistUrl}
@@ -70,5 +78,5 @@ export default function GitHubOffboarding({ showTitle = true, compact = false })
                 </div>
             </div>
         </div>
-    );
+    )
 }

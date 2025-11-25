@@ -6,25 +6,25 @@ Hellō provides an abstraction layer between identity providers and applications
 
 ### Private Control and Misaligned Interests
 
-*Centralized identity systems are often controlled by private organizations that prioritize their own interests over those of users and developers. This dynamic has historically led to trust issues, exemplified by [Microsoft Passport][1], which faced significant criticism and was later [scaled back][2]. Similar concerns persist with modern social login providers like Google, Facebook, and Apple, where unilateral decisions can revoke access or limit functionality, causing disruptions for both [users][3] and [developers][4].*
+_Centralized identity systems are often controlled by private organizations that prioritize their own interests over those of users and developers. This dynamic has historically led to trust issues, exemplified by [Microsoft Passport][1], which faced significant criticism and was later [scaled back][2]. Similar concerns persist with modern social login providers like Google, Facebook, and Apple, where unilateral decisions can revoke access or limit functionality, causing disruptions for both [users][3] and [developers][4]._
 
 Hellō (the for-profit interchange operator) is governed by the [Hello Identity Co-op](cooperative), a multi-stakeholder cooperative that includes users, organizations, and employees. This distributed governance structure ensures that governance decisions are made in the best interests of all parties, not driven by private or profit-driven motives. All stakeholders have a voice in governing Hellō Operations, creating a more equitable and trustworthy identity system.
 
 ### Limited User Control
 
-*Centralized solutions, such as Microsoft Passport and modern social login services, often place control in the hands of private entities. Users can lose access to their accounts or data if a provider chooses to revoke access.*
+_Centralized solutions, such as Microsoft Passport and modern social login services, often place control in the hands of private entities. Users can lose access to their accounts or data if a provider chooses to revoke access._
 
 Hellō gives users control over their data by integrating with existing identity providers while anonymizing interactions between providers and applications. This ensures that user data is only shared with explicit consent and protects against unilateral revocation.
 
 ### Developer Lock-In
 
-*Developers relying on centralized systems risk lock-in. Providers can change APIs, discontinue services, or revoke access, leading to costly re-engineering efforts.*
+_Developers relying on centralized systems risk lock-in. Providers can change APIs, discontinue services, or revoke access, leading to costly re-engineering efforts._
 
 By acting as an abstraction layer, Hellō allows developers to integrate once and gain access to 30+ identity providers. This eliminates the dependency on any single provider and reduces the risk of future disruptions.
 
 ### Limited Scope
 
-*Centralized solutions focus primarily on authentication and do not address broader identity verification needs, such as citizenship or affiliations.*
+_Centralized solutions focus primarily on authentication and do not address broader identity verification needs, such as citizenship or affiliations._
 
 Hellō supports basic claims, like login and email verification, and in the future will support advanced claims, such as verified age and citizenship. This extensibility provides developers with more comprehensive identity capabilities.
 
@@ -32,19 +32,19 @@ Hellō supports basic claims, like login and email verification, and in the futu
 
 ### Adoption Barriers
 
-*Decentralized identity requires widespread adoption by users, issuers, and applications. Without critical mass, the ecosystem remains fragmented and underutilized.*
+_Decentralized identity requires widespread adoption by users, issuers, and applications. Without critical mass, the ecosystem remains fragmented and underutilized._
 
 Hellō removes many of the cold start problems by integrating with existing credentials and technologies, enabling users and issuers to participate without adopting new systems. Applications benefit from proven standards like [OpenID Connect][5], reducing friction.
 
 ### Wallet Fragmentation
 
-*Many digital wallets supporting decentralized identity are incompatible, creating additional complexity for users and developers.*
+_Many digital wallets supporting decentralized identity are incompatible, creating additional complexity for users and developers._
 
 Hellō acts as a bridge between various wallets and applications, providing developers with a unified integration point that abstracts away incompatibility issues.
 
 ### Issuer Business Model
 
-*Decentralized systems often prevent issuers from monetizing credentials, which discourages commercial participation.*
+_Decentralized systems often prevent issuers from monetizing credentials, which discourages commercial participation._
 
 Hellō will provide a marketplace for verified claims, allowing issuers to sell credentials to developers. Hellō anonymizes transactions to preserve user privacy while supporting a sustainable business model for issuers.
 
@@ -52,25 +52,25 @@ Hellō will provide a marketplace for verified claims, allowing issuers to sell 
 
 ### Federation Complexity
 
-*Setting up federations with enterprise IdPs from Google, Microsoft, Okta, or Ping is time-consuming and technically complex. Developers must configure and maintain separate integrations for each enterprise customer.*
+_Setting up federations with enterprise IdPs from Google, Microsoft, Okta, or Ping is time-consuming and technically complex. Developers must configure and maintain separate integrations for each enterprise customer._
 
 With Hellō, developers integrate once and gain access to all supported enterprise IdPs. This single integration removes the need for repetitive setup, reducing time-to-market for B2B SaaS applications to be enterprise ready.
 
 ### Management Overhead
 
-*Maintaining federations for hundreds or thousands of enterprise customers is a significant burden.*
+_Maintaining federations for hundreds or thousands of enterprise customers is a significant burden._
 
 Hellō abstracts away the need to manage individual federations, enabling developers to focus on building and scaling their applications.
 
 ### High Costs
 
-*Existing CIAM vendors charge premium fees for B2B functionality, making SSO inaccessible for smaller enterprises or startups.*
+_Existing CIAM vendors charge premium fees for B2B functionality, making SSO inaccessible for smaller enterprises or startups._
 
 Hellō provides basic SSO functionality for free, allowing developers to offer SSO to enterprise customers of any size. Enhanced features, such as managed app access and de-provisioning, are available at competitive rates.
 
 ### Unified View of Identity
 
-*B2B and B2C identity systems are often siloed, limiting their ability to provide a holistic understanding of users.*
+_B2B and B2C identity systems are often siloed, limiting their ability to provide a holistic understanding of users._
 
 By supporting both B2C and B2B identity, Hellō offers a unified view of users, integrating personal and workforce identities into a single, scalable solution.
 
@@ -78,19 +78,19 @@ By supporting both B2C and B2B identity, Hellō offers a unified view of users, 
 
 ### Data Confidentiality
 
-*Centralized systems raise concerns about data confidentiality and potential misuse.*
+_Centralized systems raise concerns about data confidentiality and potential misuse._
 
 Hellō will use the [Hellō Protocol](./protocol) to ensure that only users can access and release their data. Anonymized interactions between providers and applications further protect user information.
 
 ### Surveillance Risks
 
-*Centralized services are vulnerable to state surveillance and abuse.*
+_Centralized services are vulnerable to state surveillance and abuse._
 
 Hellō’s [Data Governance](data-governance) model requires subpoenas from two independent geopolitical jurisdictions for lawful data access. This ensures that no single entity can unilaterally demand user data.
 
 ### Secure Operations
 
-*Ensuring the integrity and availability of a centralized service is critical.*
+_Ensuring the integrity and availability of a centralized service is critical._
 
 Hellō’s architecture is resilient to failures and designed to prevent impersonation or unauthorized access. This ensures reliable and secure operations for developers and users.
 
@@ -98,7 +98,7 @@ Hellō’s architecture is resilient to failures and designed to prevent imperso
 
 Hellō bridges the gap between identity providers and applications, solving the challenges of both personal and workforce identity. Its single integration point simplifies developer workflows, while its privacy-first design ensures user trust. By supporting both B2C and B2B identity, Hellō provides a comprehensive and scalable solution that benefits users, developers, and enterprises alike.
 
-----
+---
 
 ## FAQs
 
@@ -150,8 +150,8 @@ Hellō's architecture ensures user data remains private and secure, while its go
 
 Hellō combines the convenience of social logins with enhanced privacy and flexibility. Users avoid vendor lock-in and benefit from a seamless experience across personal and work contexts.
 
-[1]: <https://news.microsoft.com/1999/10/11/microsoft-passport-streamlining-commerce-and-communication-on-the-web/> "Microsoft Passport: Streamlining Commerce and Communication on the Web"
-[2]: <https://www.computerworld.com/article/2567539/microsoft-scales-back-passport-plan.html> "Microsoft Scales Back Passport Plan"
-[3]: <https://www.kqed.org/news/11851695/facebook-deleted-your-account-good-luck-retrieving-your-data> "Facebook Deleted Your Account? Good Luck Retrieving Your Data"
-[4]: <https://www.reuters.com/article/us-apple-epic-games-idCAKBN2602YG> "Fortnite says gamers can no longer use Apple sign-in system"
-[5]: <https://en.wikipedia.org/wiki/OpenID> "OpenID entry on Wikipedia"
+[1]: https://news.microsoft.com/1999/10/11/microsoft-passport-streamlining-commerce-and-communication-on-the-web/ 'Microsoft Passport: Streamlining Commerce and Communication on the Web'
+[2]: https://www.computerworld.com/article/2567539/microsoft-scales-back-passport-plan.html 'Microsoft Scales Back Passport Plan'
+[3]: https://www.kqed.org/news/11851695/facebook-deleted-your-account-good-luck-retrieving-your-data 'Facebook Deleted Your Account? Good Luck Retrieving Your Data'
+[4]: https://www.reuters.com/article/us-apple-epic-games-idCAKBN2602YG 'Fortnite says gamers can no longer use Apple sign-in system'
+[5]: https://en.wikipedia.org/wiki/OpenID 'OpenID entry on Wikipedia'

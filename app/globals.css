@@ -1,6 +1,6 @@
 @import 'nextra-theme-docs/style.css';
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @theme {
     --color-charcoal: #303030;
@@ -27,12 +27,12 @@ article.nextra-body-typesetting-article h1 {
     display: none !important;
 }
 
-[data-aos="slide"] {
+[data-aos='slide'] {
     transform: translateY(20px);
     transition-property: transform, opacity;
 }
 
-[data-aos="slide"].aos-animate {
+[data-aos='slide'].aos-animate {
     transform: translateY(0);
 }
 
@@ -41,7 +41,7 @@ article.nextra-body-typesetting-article h1 {
 }
 
 .hero-img::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
@@ -52,7 +52,7 @@ article.nextra-body-typesetting-article h1 {
 }
 
 .card-phone-shadow-bottom::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
@@ -103,7 +103,6 @@ article.nextra-body-typesetting-article h1 {
 }
 
 @keyframes float {
-
     0%,
     100% {
         transform: translatey(0px);
@@ -127,7 +126,7 @@ article.nextra-body-typesetting-article h1 {
     transition: transform 100ms ease-out;
     stroke: currentColor;
     stroke-width: 2px;
-    fill: transparent
+    fill: transparent;
 }
 
 .card-link-primary:hover .line,
@@ -165,7 +164,7 @@ header a:not(#mobile-nav-dropdown a):not(.no-global-hover),
 }
 
 .ext-link-icon::after {
-    content: "↗";
+    content: '↗';
     display: inline-block;
     opacity: 0.5;
     font-size: 0.92em;
@@ -219,13 +218,12 @@ article main h1 {
 }
 
 .protocol-diagram .ext-link-icon::after {
-    content: "↗";
+    content: '↗';
     display: inline-block;
     margin-left: 2px;
 }
 
 @media (prefers-color-scheme: dark) {
-
     .protocol-diagram line,
     .protocol-diagram path,
     .protocol-diagram rect,
@@ -242,8 +240,9 @@ article main h1 {
     @apply !px-4 xl:!ml-32;
 }
 
-h3 a.subheading-anchor::after, h4 a.subheading-anchor::after {
- @apply opacity-0;
+h3 a.subheading-anchor::after,
+h4 a.subheading-anchor::after {
+    @apply opacity-0;
 }
 
 .overlay-btn {
@@ -253,5 +252,5 @@ h3 a.subheading-anchor::after, h4 a.subheading-anchor::after {
     [mask-size:400%]
     [mask-position:0]
     [transition:mask-position_0s,transform_300ms]
-    hover:[mask-position:100%] hover:[transition:mask-position_700ms,transform_300ms]
+    hover:[mask-position:100%] hover:[transition:mask-position_700ms,transform_300ms];
 }

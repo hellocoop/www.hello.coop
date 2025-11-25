@@ -1,26 +1,26 @@
-'use client';
+'use client'
 
-import { useEffect } from "react";
-import { navLinks, socialIcons } from "@/lib/nav-links";
+import { useEffect } from 'react'
+import { navLinks, socialIcons } from '@/lib/nav-links'
 
 export default function Header() {
     useEffect(() => {
-        handleNavMenu();
-    }, []);
+        handleNavMenu()
+    }, [])
     async function handleNavMenu() {
-        const mobileNavToggle = document.querySelector('#movile-nav-toggle');
-        const mobileNavDropdown = document.querySelector('#mobile-nav-dropdown');
+        const mobileNavToggle = document.querySelector('#movile-nav-toggle')
+        const mobileNavDropdown = document.querySelector('#mobile-nav-dropdown')
         mobileNavToggle.onclick = () => {
-            mobileNavDropdown.classList.toggle('hidden');
+            mobileNavDropdown.classList.toggle('hidden')
             if (mobileNavDropdown.classList.contains('hidden')) {
-                document.body.classList.remove('overflow-y-hidden');
+                document.body.classList.remove('overflow-y-hidden')
             } else {
-                document.body.classList.add('overflow-y-hidden');
+                document.body.classList.add('overflow-y-hidden')
             }
         }
         window.onresize = () => {
             if (window.innerWidth > 768) {
-                document.body.classList.remove('overflow-y-hidden');
+                document.body.classList.remove('overflow-y-hidden')
             }
         }
     }
@@ -113,11 +113,21 @@ export default function Header() {
                                             <li key={index} className="flex flex-col">
                                                 <a
                                                     href={item.href}
-                                                    target={item.external ? "_blank" : undefined}
-                                                    rel={item.external ? "noopener noreferrer" : undefined}
+                                                    target={item.external ? '_blank' : undefined}
+                                                    rel={
+                                                        item.external
+                                                            ? 'noopener noreferrer'
+                                                            : undefined
+                                                    }
                                                     className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all"
                                                 >
-                                                    <span className={item.external ? "ext-link-icon" : ""}>{item.title}</span>
+                                                    <span
+                                                        className={
+                                                            item.external ? 'ext-link-icon' : ''
+                                                        }
+                                                    >
+                                                        {item.title}
+                                                    </span>
                                                     <span className="text-sm opacity-50 group-hover:opacity-100 transition-all">
                                                         {item.subtitle}
                                                     </span>
@@ -159,11 +169,21 @@ export default function Header() {
                                             <li key={index} className="flex flex-col">
                                                 <a
                                                     href={item.href}
-                                                    target={item.external ? "_blank" : undefined}
-                                                    rel={item.external ? "noopener noreferrer" : undefined}
+                                                    target={item.external ? '_blank' : undefined}
+                                                    rel={
+                                                        item.external
+                                                            ? 'noopener noreferrer'
+                                                            : undefined
+                                                    }
                                                     className="flex flex-col no-global-hover group p-2 -m-2 hover:bg-charcoal rounded-sm transition-all"
                                                 >
-                                                    <span className={item.external ? "ext-link-icon" : ""}>{item.title}</span>
+                                                    <span
+                                                        className={
+                                                            item.external ? 'ext-link-icon' : ''
+                                                        }
+                                                    >
+                                                        {item.title}
+                                                    </span>
                                                     <span className="text-sm opacity-50 group-hover:opacity-100 transition-all">
                                                         {item.subtitle}
                                                     </span>
@@ -211,7 +231,9 @@ export default function Header() {
                                                 >
                                                     <div className="flex space-x-2">
                                                         {item.icon && socialIcons[item.icon]}
-                                                        <span className="ext-link-icon">{item.title}</span>
+                                                        <span className="ext-link-icon">
+                                                            {item.title}
+                                                        </span>
                                                     </div>
                                                     <span className="text-sm opacity-50 group-hover:opacity-100 transition-all">
                                                         {item.subtitle}
@@ -276,9 +298,15 @@ export default function Header() {
                                     <li key={itemIndex}>
                                         <a
                                             href={item.href}
-                                            target={item.external ? "_blank" : undefined}
-                                            rel={item.external ? "noopener noreferrer" : undefined}
-                                            className={item.icon ? "inline-flex items-center space-x-2" : item.external ? "ext-link-icon" : ""}
+                                            target={item.external ? '_blank' : undefined}
+                                            rel={item.external ? 'noopener noreferrer' : undefined}
+                                            className={
+                                                item.icon
+                                                    ? 'inline-flex items-center space-x-2'
+                                                    : item.external
+                                                      ? 'ext-link-icon'
+                                                      : ''
+                                            }
                                         >
                                             {item.icon && socialIcons[item.icon]}
                                             <span>{item.title}</span>
@@ -291,6 +319,5 @@ export default function Header() {
                 </div>
             </div>
         </header>
-
-    );
+    )
 }

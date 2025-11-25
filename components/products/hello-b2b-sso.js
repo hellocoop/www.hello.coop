@@ -2,26 +2,24 @@ export default function HelloB2BSSO({ showTitle = true, compact = false }) {
     return (
         <div id="hello-b2c-sso" className="text-[17px]">
             {showTitle && (
-                <h1 className="text-[1.35rem] md:text-5xl font-semibold">
-                    Hellō B2C SSO
-                </h1>
+                <h1 className="text-[1.35rem] md:text-5xl font-semibold">Hellō B2C SSO</h1>
             )}
             {/* <h2 className="text-xl md:text-3xl opacity-50 mt-0 md:mt-4">
             Give users choice of 17 providers
         </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    {compact ? <div className="py-4 md:py-12 text-lg opacity-65 font-medium">
-                        <ol className="!space-y-1">
-                            <li>Add Hellō to your existing application.</li>
-                            <li>Prompt user for their work email.</li>
-                            <li>Process existing accounts as usual.</li>
-                            <li>Send all new users to Hellō.</li>
-                        </ol>
-                        <span className="block mt-6">
-                            You get SSO with no configuration.
-                        </span>
-                    </div> :
+                    {compact ? (
+                        <div className="py-4 md:py-12 text-lg opacity-65 font-medium">
+                            <ol className="!space-y-1">
+                                <li>Add Hellō to your existing application.</li>
+                                <li>Prompt user for their work email.</li>
+                                <li>Process existing accounts as usual.</li>
+                                <li>Send all new users to Hellō.</li>
+                            </ol>
+                            <span className="block mt-6">You get SSO with no configuration.</span>
+                        </div>
+                    ) : (
                         <div className="mt-6 space-y-4">
                             <p>
                                 Enable enterprise SSO without any setup or configuration. Users
@@ -31,15 +29,13 @@ export default function HelloB2BSSO({ showTitle = true, compact = false }) {
                             </p>
                             <p>
                                 The first user from a company helps establish branding, then
-                                subsequent users enjoy a seamless, branded login experience. No
-                                SAML configuration, no IT tickets, no waiting — it just works.
+                                subsequent users enjoy a seamless, branded login experience. No SAML
+                                configuration, no IT tickets, no waiting — it just works.
                             </p>
                         </div>
-                    }
+                    )}
                     <div className="flex flex-col space-y-4">
-                        <span className="text-base font-semibold">
-                            Price: FREE
-                        </span>
+                        <span className="text-base font-semibold">Price: FREE</span>
                         <div className="gap-2 flex flex-col items-start">
                             <a
                                 href="https://www.hello.dev/docs/getting-started/"
@@ -76,10 +72,10 @@ export default function HelloB2BSSO({ showTitle = true, compact = false }) {
                         src="/b2b-light.png"
                         alt="phone showing continue with apple, google, and email buttons"
                         className="w-full md:w-auto -mb-4 md:-mb-0 md:mt-0 md:h-[500px] md:absolute md:right-0 mask-b-from-50% mask-b-to-90%"
-                        style={{ animation: "float 3s infinite" }}
+                        style={{ animation: 'float 3s infinite' }}
                     />
                 </picture>
             </div>
         </div>
-    );
+    )
 }

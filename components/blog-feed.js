@@ -1,52 +1,52 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from "react";
-import dayjs from "dayjs";
+import { useEffect, useState } from 'react'
+import dayjs from 'dayjs'
 
 export default function BlogFeed() {
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [posts, setPosts] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         async function processFeed() {
             try {
-                const res = await fetch("https://blog.hello.coop/feed");
-                const txt = await res.text();
-                const xml = new window.DOMParser().parseFromString(txt, "text/xml");
-                const allPosts = [...xml.querySelectorAll("item")];
+                const res = await fetch('https://blog.hello.coop/feed')
+                const txt = await res.text()
+                const xml = new window.DOMParser().parseFromString(txt, 'text/xml')
+                const allPosts = [...xml.querySelectorAll('item')]
 
-                const filtered = allPosts.slice(0, 3); // your current behaviour
+                const filtered = allPosts.slice(0, 3) // your current behaviour
 
                 const mapped = filtered.map(post => {
-                    const title = post.querySelector("title")?.textContent ?? "";
-                    const rawDescription = post.querySelector("description")?.textContent ?? "";
-                    const descPlaceholder = document.createElement("div");
-                    descPlaceholder.innerHTML = rawDescription;
-                    const description = descPlaceholder.textContent ?? "";
+                    const title = post.querySelector('title')?.textContent ?? ''
+                    const rawDescription = post.querySelector('description')?.textContent ?? ''
+                    const descPlaceholder = document.createElement('div')
+                    descPlaceholder.innerHTML = rawDescription
+                    const description = descPlaceholder.textContent ?? ''
 
                     return {
                         title,
                         description,
-                        url: post.querySelector("link")?.textContent,
-                        image: post.querySelector("content")?.getAttribute("url"),
-                        date: dayjs(post.querySelector("pubDate")?.textContent)
-                            .subtract(8, "hours")
-                            .format("ddd, DD MMM YYYY"),
-                    };
-                });
+                        url: post.querySelector('link')?.textContent,
+                        image: post.querySelector('content')?.getAttribute('url'),
+                        date: dayjs(post.querySelector('pubDate')?.textContent)
+                            .subtract(8, 'hours')
+                            .format('ddd, DD MMM YYYY'),
+                    }
+                })
 
-                setPosts(mapped);
+                setPosts(mapped)
             } catch (err) {
-                console.error(err);
-                setError("Oops! Failed to fetch latest feed from blog.hello.coop");
+                console.error(err)
+                setError('Oops! Failed to fetch latest feed from blog.hello.coop')
             } finally {
-                setLoading(false);
+                setLoading(false)
             }
         }
 
-        processFeed();
-    }, []);
+        processFeed()
+    }, [])
 
     return (
         <div>
@@ -63,7 +63,8 @@ export default function BlogFeed() {
                     </span>
                 )}
 
-                {!loading && !error &&
+                {!loading &&
+                    !error &&
                     posts.map((p, i) => (
                         <li key={i}>
                             <a
@@ -77,7 +78,9 @@ export default function BlogFeed() {
                                     className="w-full md:w-1/3 rounded-sm flex-shrink-0"
                                 />
                                 <div>
-                                    <span className="text-base md:text-xl opacity-50">{p.date}</span>
+                                    <span className="text-base md:text-xl opacity-50">
+                                        {p.date}
+                                    </span>
                                     <h3 className="text-xl md:text-2xl font-semibold my-3 md:my-4">
                                         {p.title}
                                     </h3>
@@ -87,9 +90,8 @@ export default function BlogFeed() {
                                 </div>
                             </a>
                         </li>
-                    ))
-                }
+                    ))}
             </ul>
         </div>
-    );
+    )
 }

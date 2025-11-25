@@ -2,9 +2,9 @@
 
 ## Goals
 
-It is a requirement that trusting the confidentiality, integrity, and availability of the Hellō service does not require trusting the Hello Identity Co-op or its vendors. 
+It is a requirement that trusting the confidentiality, integrity, and availability of the Hellō service does not require trusting the Hello Identity Co-op or its vendors.
 
->Currently, the Hellō service is a monolithic architecture operated directly by the cooperative. Once we have product market fit, we will migrate to the following computing architecture. 
+> Currently, the Hellō service is a monolithic architecture operated directly by the cooperative. Once we have product market fit, we will migrate to the following computing architecture.
 
 ## Separation of Concerns
 
@@ -21,7 +21,8 @@ The custodians are vendors of the cooperative and are compensated for their serv
 ## Independent Components
 
 The four components of the Hellō Computing Architecture are:
-1. The Orchestration Service interacts with external systems and contains all the business logic. 
+
+1. The Orchestration Service interacts with external systems and contains all the business logic.
 1. The Token Service verifies requests and tokens from the Orchestration Service and mints ID Tokens, Records, Access Tokens, and Session Tokens.
 1. The Encryption Service encrypts and decrypts records going to and from the Orchestration Service and the Storage Service.
 1. The Storage Service Creates, Reads, Updates, and Deletes records in an external database per Access Tokens presented to it.
@@ -31,20 +32,19 @@ The four components of the Hellō Computing Architecture are:
 In the following diagram, we show the relationship between all the parties. The application (example.app) and issuer (op.example) interact with the Hellō Service. The Orchestration Service is the only component that interacts with external systems. It interacts with the Token Service, and then the Encryption Service, which interacts with the Storage Service, which interacts with the external database. Independent custodians control the credentials for each of the components.
 
 <picture>
-  <source srcSet="/dark-mode-computing-architecture.svg" media="(prefers-color-scheme: dark)" />
-  <img src="/light-mode-computing-architecture.svg" className="my-10" />
+    <source srcSet="/dark-mode-computing-architecture.svg" media="(prefers-color-scheme: dark)" />
+    <img src="/light-mode-computing-architecture.svg" className="my-10" />
 </picture>
-
 
 For details on how the components interact with each other, see the [Hellō Protocol](protocol)
 
 ## Confidentiality
 
-Neither the cooperative, nor any custodian is able to arbitrarily access user information using the credentials they possess. The risk of exfiltrating user data while being processed is minimized by having redundant verification of the software being executed in each component. 
+Neither the cooperative, nor any custodian is able to arbitrarily access user information using the credentials they possess. The risk of exfiltrating user data while being processed is minimized by having redundant verification of the software being executed in each component.
 
 ## Integrity
 
-All changes to the users data require cooperation between the Orchestration Service and the Token Service. Any externally verified claims about a user are independently verified by the Orchestration Service and the Token Service. 
+All changes to the users data require cooperation between the Orchestration Service and the Token Service. Any externally verified claims about a user are independently verified by the Orchestration Service and the Token Service.
 
 ## Availability
 
