@@ -10,7 +10,6 @@ export default withNextra({
   output: 'export',
   distDir: 'S3',
   trailingSlash: true,
-  swcMinify: true,
   images: {
     // https://stackoverflow.com/a/74752466/9747630
     unoptimized: true
