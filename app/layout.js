@@ -48,6 +48,11 @@ export default function RootLayout({ children }) {
                     rel="icon"
                     media="(prefers-color-scheme: dark)"
                 />
+                <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://cdn.hello.coop/css/hello-btn.css"
+                />
                 {/* Plausible */}
                 <script defer data-domain="hello.coop" src="/plausible.js"></script>
             </Head>

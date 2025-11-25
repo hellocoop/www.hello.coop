@@ -56,25 +56,35 @@ export default function Home() {
                             src="/hero-light.png"
                             alt="phone mockup"
                             className="w-full h-auto -mb-8"
-                            style={{ animation: 'float 5s infinite' }}
+                            style={{ animation: 'float 0s infinite' }}
                         />
                     </picture>
 
                     {/* Button overlay container */}
-                    <div className="absolute top-[59%] left-[25.95%] w-[43.5%] cursor-pointer group">
-                        <picture>
-                            <source
-                                srcSet="/hero-dark-btn.png"
-                                media="(prefers-color-scheme: dark)"
-                            />
-                            <img
-                                onClick={handleConfetti}
-                                src="/hero-light-btn.png"
-                                alt="overlay button"
-                                className="overlay-btn"
-                                style={{ animation: 'float 5s infinite' }}
-                            />
-                        </picture>
+                    <div
+                        className="absolute cursor-pointer group top-[72%] left-[28.25%] w-[38%] md:top-[65%] md:left-[28.25%] md:w-[40%]"
+                        style={{
+                            transformOrigin: 'center',
+                            animation: 'float 0s infinite',
+                        }}
+                    >
+                        {/* Optional scale wrapper */}
+                        <div
+                            className="w-full"
+                            style={{
+                                transform: 'skew(334.5deg, 11.25deg)',
+                            }}
+                        >
+                            <button
+                                onClick={e => {
+                                    handleConfetti()
+                                    e.currentTarget.blur()
+                                }}
+                                className="hello-btn hello-btn-black-and-static hello-btn-hover-flare w-full !text-[12px] md:!text-2xl !p-0 h-8 md:h-14"
+                            >
+                                ō&nbsp;&nbsp;&nbsp;Continue with Hellō
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <h2 className="text-2xl sm:text-[3.95vw] xl:text-[49px] font-semibold relative z-10 -mb-6 sm:-mb-0">
