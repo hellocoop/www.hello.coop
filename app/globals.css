@@ -74,7 +74,7 @@ article.nextra-body-typesetting-article h1 {
 }
 
 .card-description {
-    @apply h-full w-full md:w-1/3 text-base flex flex-col justify-between space-y-5 relative z-10;
+    @apply h-full w-full md:w-1/3 flex flex-col justify-between space-y-5 relative z-10;
 }
 
 .card-description ol {
