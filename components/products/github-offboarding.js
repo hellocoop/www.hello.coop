@@ -25,7 +25,7 @@ export default function GitHubOffboarding({ showTitle = true, compact = false })
             </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    {compact ? <ol className="py-4 !space-y-2 md:py-12 text-lg opacity-65 font-medium">
+                    {compact ? <ol className="py-4 !space-y-1 md:py-12 text-lg opacity-65 font-medium">
                             <li>Your team members link their GitHub accounts with their corporate identity.</li>
                             <li>Access is automatically revoked<br/>when they leave.</li>
                         </ol> :

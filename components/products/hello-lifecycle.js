@@ -25,7 +25,7 @@ export default function HelloLifecycle({ showTitle = true, compact = false }) {
             </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
-                    {compact ? <ol class="py-4 !space-y-2 md:py-12 text-lg opacity-65 font-medium">
+                    {compact ? <ol className="py-4 !space-y-2 md:py-12 text-lg opacity-65 font-medium">
                         <li>Your customers link their<br/>corporate directory.</li>
                         <li>Hellō sends your app a notification<br/>when a user leaves.</li>
                     </ol> :

@@ -12,13 +12,13 @@ export default function HelloB2BSSO({ showTitle = true, compact = false }) {
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
                     {compact ? <div className="py-4 md:py-12 text-lg opacity-65 font-medium">
-                        <ol className="!space-y-2">
+                        <ol className="!space-y-1">
                             <li>Add Hellō to your existing application.</li>
                             <li>Prompt user for their work email.</li>
                             <li>Process existing accounts as usual.</li>
                             <li>Send all new users to Hellō.</li>
                         </ol>
-                        <span class="block mt-6">
+                        <span className="block mt-6">
                             You get SSO with no configuration.
                         </span>
                     </div> :

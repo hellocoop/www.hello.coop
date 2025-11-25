@@ -83,7 +83,7 @@ export default function Home() {
             <section className="max-w-6xl mx-auto mt-16 md:mt-20 space-y-16 md:space-y-20">
                 <div className="px-4">
                     <h1 className="text-[1.35rem] md:text-4xl font-semibold">Free Social Login for B2C Apps</h1>
-                    <h2 class="text-xl md:text-2xl font-medium opacity-65 mt-4">
+                    <h2 className="text-xl md:text-2xl font-medium opacity-65 mt-4">
                         One integration. Your users choose from 17 login providers with account recovery.<br />
                         You get a verified email and profile picture with no account linking.</h2>
                     <HelloB2CSSO showTitle={false} compact={true} />
@@ -93,7 +93,7 @@ export default function Home() {
                     <h1 className="text-[1.35rem] md:text-4xl font-semibold">
                         Free Enterprise SSO for B2B Apps
                     </h1>
-                    <h2 class="text-xl md:text-2xl font-medium opacity-65 mt-4">
+                    <h2 className="text-xl md:text-2xl font-medium opacity-65 mt-4">
                         One integration gives you zero config enterprise SSO for most organizations.<br />
                         No more SAML configuration. No more certificate management.</h2>
                     <HelloB2BSSO showTitle={false} compact={true} />
@@ -103,7 +103,7 @@ export default function Home() {
                     <h1 className="text-[1.35rem] md:text-4xl font-semibold">
                         Hellō Lifecycle
                     </h1>
-                    <h2 class="text-xl md:text-2xl font-medium opacity-65 mt-4">
+                    <h2 className="text-xl md:text-2xl font-medium opacity-65 mt-4">
                         Add offboarding to your B2B app.</h2>
                     <HelloLifecycle showTitle={false} compact={true} />
                 </div>
@@ -112,14 +112,14 @@ export default function Home() {
                     <h1 className="text-[1.35rem] md:text-4xl font-semibold">
                         GitHub Offboarding
                     </h1>
-                    <h2 class="text-xl md:text-2xl font-medium opacity-65 mt-4">
+                    <h2 className="text-xl md:text-2xl font-medium opacity-65 mt-4">
                         Simplify & automate compliance.</h2>
                     <GitHubOffboarding showTitle={false} compact={true} />
                 </div>
 
                 <div className="px-4">
                     <h1 className="text-[1.35rem] md:text-4xl font-semibold">Zero Config Agentic Coding</h1>
-                    <h2 class="text-xl md:text-2xl font-medium opacity-65 mt-4">
+                    <h2 className="text-xl md:text-2xl font-medium opacity-65 mt-4">
                         Stop breaking developer flow with identity configuration.</h2>
                     <CodingPlatforms showTitle={false} compact={true} />
                 </div>
