@@ -237,3 +237,7 @@ article main h1 {
 .nextra-body-typesetting-article {
     @apply !px-4 xl:!ml-32;
 }
+
+h3 a.subheading-anchor::after, h4 a.subheading-anchor::after {
+ @apply opacity-0;
+}
