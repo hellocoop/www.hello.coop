@@ -245,3 +245,13 @@ article main h1 {
 h3 a.subheading-anchor::after, h4 a.subheading-anchor::after {
  @apply opacity-0;
 }
+
+.overlay-btn {
+    @apply w-full h-auto
+    transition-transform duration-300
+    [mask-image:linear-gradient(60deg,#000_25%,rgba(0,0,0,.2)_50%,#000_75%)]
+    [mask-size:400%]
+    [mask-position:0]
+    [transition:mask-position_0s,transform_300ms]
+    hover:[mask-position:100%] hover:[transition:mask-position_700ms,transform_300ms]
+}

@@ -56,7 +56,7 @@ export default function Home() {
                                 onClick={handleConfetti}
                                 src="/hero-light-btn.png"
                                 alt="overlay button"
-                                className="w-full h-auto hover:-translate-y-[2.5px] transition-all duration-300"
+                                className="overlay-btn"
                                 style={{ animation: "float 5s infinite" }}
                             />
                         </picture>
