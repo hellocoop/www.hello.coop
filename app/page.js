@@ -55,7 +55,7 @@ export default function Home() {
                         <img
                             src="/hero-light.png"
                             alt="phone mockup"
-                            className="w-full h-auto -mb-8"
+                            className="w-full h-auto -mb-8 pt-2 md:pt-0"
                             style={{ animation: 'float 5s infinite' }}
                         />
                     </picture>
