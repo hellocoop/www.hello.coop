@@ -254,6 +254,7 @@ export default function Home() {
                             href="https://blog.hello.coop/"
                             target="_blank"
                             className="inline-block text-base md:text-lg xl:text-2xl opacity-50 hover:opacity-100 transition-all ext-link-icon"
+                            rel="noreferrer"
                         >
                             Read more at blog.hello.coop
                         </a>

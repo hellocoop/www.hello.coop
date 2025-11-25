@@ -38,9 +38,10 @@ export default function HelloB2BSSO({ showTitle = true, compact = false }) {
                                 href="https://www.hello.dev/docs/getting-started/"
                                 target="_blank"
                                 className="card-link-primary no-global-hover"
+                                rel="noreferrer"
                             >
                                 Get started
-                                <svg width={10} height={10} fil="currentColor" className="ml-2">
+                                <svg width={10} height={10} fill="currentColor" className="ml-2">
                                     <g>
                                         <path className="line" d="M 0 5 H 7" />
                                         <path className="tip" d="M 5 10 L 10 5 L 5 0" />
@@ -51,9 +52,10 @@ export default function HelloB2BSSO({ showTitle = true, compact = false }) {
                                 href="https://www.greenfielddemo.com/"
                                 target="_blank"
                                 className="card-link-secondary no-global-hover"
+                                rel="noreferrer"
                             >
                                 Try out the B2C demo
-                                <svg width={10} height={10} fil="currentColor" className="ml-2">
+                                <svg width={10} height={10} fill="currentColor" className="ml-2">
                                     <g>
                                         <path className="line" d="M 0 5 H 7" />
                                         <path className="tip" d="M 5 10 L 10 5 L 5 0" />

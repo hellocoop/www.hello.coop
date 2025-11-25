@@ -8,8 +8,6 @@
         "build": "next build",
         "start": "next start",
         "postbuild": "next-sitemap && node scripts/copy-markdown.js && node scripts/generate-llms-txt.js",
-        "lint": "next lint",
-        "lint:fix": "next lint --fix",
         "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md,mdx}\"",
         "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,md,mdx}\"",
         "test": "echo \"No tests to run\" && exit 0"

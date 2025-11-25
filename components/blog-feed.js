@@ -71,6 +71,7 @@ export default function BlogFeed() {
                                 href={p.url}
                                 target="_blank"
                                 className="no-global-hover flex flex-col md:flex-row items-center gap-5 md:gap-10 hover:bg-charcoal/10 dark:hover:bg-gray/10 rounded-md p-4 -m-4 transition-all"
+                                rel="noreferrer"
                             >
                                 <img
                                     src={p.image}

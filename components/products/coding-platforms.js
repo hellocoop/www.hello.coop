@@ -43,9 +43,10 @@ export default function CodingPlatforms({ showTitle = true, compact = false }) {
                                 href="https://www.hello.dev/docs/admin-mcp/"
                                 target="_blank"
                                 className="card-link-primary no-global-hover"
+                                rel="noreferrer"
                             >
                                 Try out the Admin MCP Server
-                                <svg width={10} height={10} fil="currentColor" className="ml-2">
+                                <svg width={10} height={10} fill="currentColor" className="ml-2">
                                     <g>
                                         <path className="line" d="M 0 5 H 7" />
                                         <path className="tip" d="M 5 10 L 10 5 L 5 0" />
@@ -56,9 +57,10 @@ export default function CodingPlatforms({ showTitle = true, compact = false }) {
                                 href="https://www.hello.dev/docs/apis/admin/"
                                 target="_blank"
                                 className="card-link-secondary no-global-hover"
+                                rel="noreferrer"
                             >
                                 Explore Admin API documentation
-                                <svg width={10} height={10} fil="currentColor" className="ml-2">
+                                <svg width={10} height={10} fill="currentColor" className="ml-2">
                                     <g>
                                         <path className="line" d="M 0 5 H 7" />
                                         <path className="tip" d="M 5 10 L 10 5 L 5 0" />

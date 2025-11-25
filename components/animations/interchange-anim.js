@@ -19,7 +19,7 @@ export default function InterchangeAnimation() {
         // Set opacity to 0 and position at start of path for #one through #seven
         numbers.forEach(num => {
             const elementSelector = `#interchange-animation #${num}`
-            const pathSelector = `#interchange-animation #${num}-path`
+            // const pathSelector = `#interchange-animation #${num}-path`
             gsap.set(elementSelector, {
                 opacity: 0,
             })

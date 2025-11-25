@@ -1,0 +1,10 @@
+node_modules
+.next
+S3
+*.lock
+package-lock.json
+build
+dist
+coverage
+.dev
+
