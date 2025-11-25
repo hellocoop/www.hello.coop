@@ -7,7 +7,7 @@
     "open-browser": "open http://localhost:3000",
     "build": "next build",
     "start": "next start",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap && node scripts/copy-markdown.js && node scripts/generate-llms-txt.js",
     "test": "echo \"No tests to run\" && exit 0"
   },
   "dependencies": {
