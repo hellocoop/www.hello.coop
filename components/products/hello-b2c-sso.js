@@ -8,13 +8,13 @@ export default function HelloB2BSSO({ showTitle = true, compact = false }) {
                         Give users choice of 17 providers
                     </h2> */}
             <div className="card !p-0 !py-[1.125rem] !my-0">
-                <div className="card-description">
+                <div className="card-description md:!w-[34%]">
                     {compact ? (
                         <span className="py-4 md:py-12 text-lg opacity-65 font-medium">
-                            {' '}
-                            You choose which providers are promoted.
-                            <br />
-                            Users choose their preferred login provider.
+                            <ol className="!space-y-1">
+                                <li>You choose which providers are promoted.</li>
+                                <li>Users choose their preferred login provider.</li>
+                            </ol>
                         </span>
                     ) : (
                         <div className="mt-6 space-y-4">
