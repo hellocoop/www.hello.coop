@@ -62,7 +62,7 @@ export default function Home() {
 
                     {/* Button overlay container */}
                     <div
-                        className="absolute cursor-pointer group top-[72%] left-[28.25%] w-[38%] md:top-[65%] md:left-[28.25%] md:w-[40%]"
+                        className="absolute cursor-pointer group top-[72%] left-[28.25%] w-[38%] md:top-[65%] md:left-[28.15%] md:w-[40%]"
                         style={{
                             transformOrigin: 'center',
                             animation: 'float 5s infinite',
