@@ -179,10 +179,10 @@ export default function Home() {
                         Building a #BetterInternet
                     </h1>
                     <div className="mt-8 md:mt-16 gap-10">
-                        <div className="flex-1 flex items-center text-base md:text-lg lg:text-xl font-normal">
+                        <div className="flex-1 flex items-center text-base md:text-lg lg:text-xl font-normal text-charcoal/65 dark:text-[#d4d4d4]/65">
                             <div className="space-y-3 md:space-y-5">
                                 <p>
-                                    <span className="font-semibold">
+                                    <span className="font-medium text-charcoal dark:text-[#d4d4d4]">
                                         <a
                                             href="https://www.linkedin.com/in/dickhardt/"
                                             className="no-global-hover"
@@ -195,7 +195,7 @@ export default function Home() {
                                 </p>
                                 <p>
                                     His groundbreaking{' '}
-                                    <span className="font-semibold">
+                                    <span className="font-medium text-charcoal dark:text-[#d4d4d4]">
                                         <a
                                             href="https://youtu.be/JzuCE7lDYrM"
                                             className="no-global-hover"
@@ -205,7 +205,7 @@ export default function Home() {
                                     </span>{' '}
                                     talk introduced a user-centric vision that shaped modern
                                     identity and the{' '}
-                                    <span className="font-semibold">
+                                    <span className="font-medium text-charcoal dark:text-[#d4d4d4]">
                                         <a href="/approach/" className="no-global-hover">
                                             Hellō Approach
                                         </a>
@@ -230,7 +230,7 @@ export default function Home() {
                                 <p>
                                     Dick led the design of OAuth 2.0 and JWTs and continues to lead
                                     the development of{' '}
-                                    <span className="font-semibold">
+                                    <span className="font-medium text-charcoal dark:text-[#d4d4d4]">
                                         <a href="/approach/standards" className="no-global-hover">
                                             open identity standards
                                         </a>
