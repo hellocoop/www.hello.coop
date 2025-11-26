@@ -80,6 +80,11 @@ export default function Home() {
                                     handleConfetti()
                                     e.currentTarget.blur()
                                 }}
+                                onMouseEnter={() => {
+                                    if (typeof window !== 'undefined' && window.plausible) {
+                                        window.plausible('Easter-Egg-Hover')
+                                    }
+                                }}
                                 className="hello-btn hello-btn-black-and-static hello-btn-hover-flare w-full !text-[12px] md:!text-2xl !p-0 h-8 md:h-14 plausible-event-name=Easter-Egg"
                             >
                                 ō&nbsp;&nbsp;&nbsp;Continue with Hellō
