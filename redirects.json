@@ -10,5 +10,6 @@
     "/pages/cooperative.html": "/approach/cooperative/",
     "/pages/data-governance.html": "/approach/data-governance/",
     "/pages/laws-of-identity.html": "/approach/laws-of-identity/",
-    "/pages/tenets.html": "/approach/tenets/"
+    "/pages/tenets.html": "/approach/tenets/",
+    "/pages/protocol.html": "/approach/protocol/"
 }
