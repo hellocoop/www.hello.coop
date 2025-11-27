@@ -12,5 +12,12 @@
     "/pages/data-governance.html": "/approach/data-governance/",
     "/pages/laws-of-identity.html": "/approach/laws-of-identity/",
     "/pages/tenets.html": "/approach/tenets/",
-    "/pages/protocol.html": "/approach/protocol/"
+    "/pages/protocol.html": "/approach/protocol/",
+    "/pages/approach": "/approach/",
+    "/pages/architecture": "/approach/architecture/",
+    "/pages/cooperative": "/approach/cooperative/",
+    "/pages/data-governance": "/approach/data-governance/",
+    "/pages/laws-of-identity": "/approach/laws-of-identity/",
+    "/pages/tenets": "/approach/tenets/",
+    "/pages/protocol": "/approach/protocol/"
 }
