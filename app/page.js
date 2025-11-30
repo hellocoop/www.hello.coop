@@ -80,11 +80,6 @@ export default function Home() {
                                     handleConfetti()
                                     e.currentTarget.blur()
                                 }}
-                                onMouseEnter={() => {
-                                    if (typeof window !== 'undefined' && window.plausible) {
-                                        window.plausible('Easter-Egg-Hover')
-                                    }
-                                }}
                                 className="hello-btn hello-btn-black-and-static hello-btn-hover-flare w-full !text-[12px] md:!text-2xl !p-0 h-8 md:h-14 plausible-event-name=Easter-Egg"
                             >
                                 ō&nbsp;&nbsp;&nbsp;Continue with Hellō
@@ -105,7 +100,6 @@ export default function Home() {
                     </h1>
                     <h2 className="text-xl md:text-4xl font-semibold italic text-charcoal/50 dark:text-gray/50 mt-4">
                         Abstracting all identity providers into a single OpenID Connect
-                        <br className="hidden sm:block" />
                         integration removes complexity and costs for everyone, enabling
                         <br />
                         <span className="text-charcoal dark:text-gray">
