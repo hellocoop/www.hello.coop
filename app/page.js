@@ -105,11 +105,11 @@ export default function Home() {
                         <span className="text-charcoal dark:text-gray">
                             Hellō to provide&nbsp;&nbsp;
                             <span className="not-italic">
-                                <span className="text-charcoal/50 dark:text-gray/50 text-[26.5px] md:text-[39px]">
+                                <span className="text-charcoal/50 dark:text-gray/50 text-[26.5px] md:text-[45px]">
                                     [
                                 </span>{' '}
                                 Free SSO{' '}
-                                <span className="text-charcoal/50 dark:text-gray/50 text-[26.5px] md:text-[39px]">
+                                <span className="text-charcoal/50 dark:text-gray/50 text-[26.5px] md:text-[45px]">
                                     ]
                                 </span>
                             </span>
