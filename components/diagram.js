@@ -123,6 +123,11 @@ export default function TooltipSVG({ svg: initialSvg = '', data = {} }) {
         }
     }, [svg])
 
+    // Convert SVG string to data URL for img tag
+    const svgDataUrl = svg 
+        ? `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg.replaceAll('url(#Shadow)', ''))}`
+        : ''
+
     return (
         <div ref={containerRef} id={id} className="protocol-diagram flex justify-center relative">
             {circles.map((circle, index) => {
@@ -146,7 +151,33 @@ export default function TooltipSVG({ svg: initialSvg = '', data = {} }) {
                     />
                 )
             })}
-            <div dangerouslySetInnerHTML={{ __html: svg }} />
+            <div className="relative inline-block">
+                {/* 
+                    Invisible img tag overlay to enable right-click functionality.
+                    When users right-click on the diagram, they can view the image in a new tab,
+                    save it, copy it, etc. The img is invisible (opacity: 0) but still receives
+                    pointer events, allowing the browser's native image context menu to appear.
+                    The interactive SVG features (tooltips, scroll animations) continue to work
+                    because the interactive buttons have a higher z-index (z-50).
+                */}
+                {svgDataUrl && (
+                    <img 
+                        src={svgDataUrl} 
+                        alt="Protocol diagram" 
+                        style={{ 
+                            opacity: 0, 
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            pointerEvents: 'auto',
+                            zIndex: 1
+                        }} 
+                    />
+                )}
+                <div dangerouslySetInnerHTML={{ __html: svg }} />
+            </div>
         </div>
     )
 }
