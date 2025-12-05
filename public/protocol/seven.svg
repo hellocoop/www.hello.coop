@@ -813,22 +813,22 @@
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="black" x="19.791" y="13">Release Record</tspan>
           </text>
         </g>
-        <g id="Graphic_7637">
+        <!-- <g id="Graphic_7637">
           <title>Attributes</title>
           <rect x="5612.0065" y="11053.88" width="50" height="30" fill="#b6cdff"/>
           <rect x="5612.0065" y="11053.88" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
           <text transform="translate(5618.0065 11059.88)" fill="black">
             <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">di</tspan>
           </text>
-        </g>
-        <g id="Graphic_7636">
+        </g> -->
+        <!-- <g id="Graphic_7636">
           <title>Attributes</title>
           <rect x="5662.0065" y="11053.88" width="95" height="30" fill="#b6cdff"/>
           <rect x="5662.0065" y="11053.88" width="95" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
           <text transform="translate(5668.0065 11059.88)" fill="black">
             <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">4567-899A</tspan>
           </text>
-        </g>
+        </g> -->
         <g id="Graphic_7635">
           <title>Attributes</title>
           <rect x="5612.0065" y="11023.88" width="50" height="30" fill="#b6cdff"/>

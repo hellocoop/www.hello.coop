@@ -1268,7 +1268,7 @@
             <tspan font-family="Avenir" font-weight="bold" font-size="13" fill="black" x="19.791" y="13">Release Record</tspan>
           </text>
         </g>
-        <g id="Graphic_7772">
+        <!-- <g id="Graphic_7772">
           <title>Attributes</title>
           <rect x="5580" y="8453.716" width="50" height="30" fill="#b6cdff"/>
           <rect x="5580" y="8453.716" width="50" height="30" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
@@ -1283,7 +1283,7 @@
           <text transform="translate(5635.8125 8459.716)" fill="black">
             <tspan font-family="Avenir" font-size="13" fill="black" x="0" y="13">4567-899A</tspan>
           </text>
-        </g>
+        </g> -->
         <g id="Graphic_7770">
           <title>Attributes</title>
           <rect x="5580" y="8423.716" width="50" height="30" fill="#b6cdff"/>
