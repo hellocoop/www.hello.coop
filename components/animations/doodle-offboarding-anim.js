@@ -12,17 +12,153 @@ export default function OffboardingAnimation() {
     }, [])
 
     function offboardingAnimation() {
+        // Set initial states
+        gsap.set('#doodle-offboarding #cursor', { opacity: 0, x: 0, y: 0 })
+        gsap.set('#doodle-offboarding #dep-user-0', { opacity: 1, x: 0, y: 0 })
+        gsap.set('#doodle-offboarding #dep-user-1', { opacity: 1, x: 0, y: 0 })
+        gsap.set('#doodle-offboarding #dep-user-2', { opacity: 1, x: 0, y: 0 })
+        // Set circles to invisible initially
+        ;['#doodle-offboarding #one', '#doodle-offboarding #two'].forEach(id =>
+            gsap.set(id, { opacity: 0 })
+        )
+
+        const tl = gsap.timeline({
+            defaults: { ease: 'power1.inOut' },
+            repeat: -1,
+            repeatDelay: 0.75,
+        })
+
+        // 1. Reset elements to starting state at beginning of each loop
+        tl.addLabel('start')
+            .set('#doodle-offboarding #cursor', {
+                opacity: 0,
+                x: 0,
+                y: 0,
+            }, 'start')
+            .set(['#doodle-offboarding #dep-user-0', '#doodle-offboarding #dep-user-1', '#doodle-offboarding #dep-user-2'], {
+                opacity: 0,
+                x: 0,
+                y: 0,
+            }, 'start')
+            // Fade in all dep-users quickly at the same time
+            .to(['#doodle-offboarding #dep-user-0', '#doodle-offboarding #dep-user-1', '#doodle-offboarding #dep-user-2'], {
+                opacity: 1,
+                duration: 0.3,
+            }, 'start')
+            // Cursor fades in
+            .to('#doodle-offboarding #cursor', {
+                opacity: 1,
+                duration: 0.4,
+            }, 'start')
+            // 2. Move cursor and dep-user-0 out (drag outside)
+            .to(['#doodle-offboarding #cursor', '#doodle-offboarding #dep-user-0'], {
+                x: -50,
+                y: 100,
+                duration: 0.5,
+            }, '>+0.2')
+            // 3. Fade out dep-user-0 and cursor, start path animation for "one"
+            .addLabel('pathStart')
+            .to('#doodle-offboarding #dep-user-0', {
+                opacity: 0,
+                duration: 0.25,
+            }, 'pathStart')
+            .to('#doodle-offboarding #cursor', {
+                opacity: 0,
+                duration: 0.25,
+            }, 'pathStart')
+            // Fade in "one" circle at the start of its path
+            .to('#doodle-offboarding #one', { 
+                opacity: 1,
+                duration: 0.3,
+            }, 'pathStart')
+            // Animate #one along #one-path from left to right
+            .to('#doodle-offboarding #one', {
+                duration: 0.6,
+                ease: 'none',
+                immediateRender: false,
+                motionPath: {
+                    path: '#doodle-offboarding #one-path',
+                    align: '#doodle-offboarding #one-path',
+                    alignOrigin: [0.5, 0.5],
+                    autoRotate: false,
+                    start: 0,
+                    end: 1,
+                },
+            }, 'pathStart+=0.01')
+            // 4. Fade out dep-user-1 just before #one animation ends
+            .to('#doodle-offboarding #dep-user-1', {
+                opacity: 0,
+                duration: 0.3,
+            }, 'pathStart+=0.5')
+            // 5. Start "two" animation on two-path (after dep-user-1 fades out)
+            .to('#doodle-offboarding #two', { 
+                opacity: 1,
+                duration: 0.3,
+            }, 'pathStart+=0.6')
+            .to('#doodle-offboarding #two', {
+                duration: 0.6,
+                ease: 'none',
+                motionPath: {
+                    path: '#doodle-offboarding #two-path',
+                    align: '#doodle-offboarding #two-path',
+                    alignOrigin: [0.5, 0.5],
+                    autoRotate: false,
+                    start: 0,
+                    end: 1,
+                },
+            }, 'pathStart+=0.6')
+            // 6. Fade out dep-user-2 just before #two animation ends
+            .to('#doodle-offboarding #dep-user-2', {
+                opacity: 0,
+                duration: 0.3,
+            }, 'pathStart+=1.0')
+            // Instantly disappear circles when they reach the end of their path animation
+            .set('#doodle-offboarding #one', {
+                opacity: 0,
+            }, 'pathStart+=0.6')
+            .set('#doodle-offboarding #two', {
+                opacity: 0,
+            }, 'pathStart+=1.2')
+            // Reset circles to starting positions (left side of paths) and opacity for next loop
+            .set('#doodle-offboarding #one', { 
+                opacity: 0,
+                clearProps: 'x,y,transform',
+                immediateRender: true,
+            }, 'pathStart+=1.4')
+            .set('#doodle-offboarding #one', {
+                motionPath: {
+                    path: '#doodle-offboarding #one-path',
+                    align: '#doodle-offboarding #one-path',
+                    alignOrigin: [0.5, 0.5],
+                    autoRotate: false,
+                    start: 0,
+                    end: 0,
+                },
+                immediateRender: true,
+            }, 'pathStart+=1.4')
+            .set('#doodle-offboarding #two', { 
+                opacity: 0,
+                motionPath: {
+                    path: '#doodle-offboarding #two-path',
+                    align: '#doodle-offboarding #two-path',
+                    alignOrigin: [0.5, 0.5],
+                    autoRotate: false,
+                    start: 0,
+                    end: 0,
+                },
+            }, 'pathStart+=1.4')
     }
 
     return (
         <svg
+            id='doodle-offboarding'
             xmlns="http://www.w3.org/2000/svg"
-            className='w-full h-full'
+            className='w-full h-full opacity-100!'
             viewBox="0 0 1668 578"
             fill="none"
         >
             <g id="Frame 446">
-                <rect width={1668} height={578} fill="white" />
+                {/* <rect width={1668} height={578} fill="white" /> */}
                 <g id="t-2">
                     <path
                         id="Vector"
