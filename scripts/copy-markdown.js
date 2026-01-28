@@ -71,6 +71,18 @@ function copyMarkdownFiles() {
     }
 
     console.log('✅ Markdown files copied to S3/markdown/')
+
+    // Copy legal HTML pages to root as .html files for backwards compatibility
+    // (Google app registrations still reference the old .html URLs)
+    const legalHtmlPages = ['privacy-policy', 'terms-of-service']
+    for (const page of legalHtmlPages) {
+        const htmlPath = path.join('S3', page, 'index.html')
+        if (existsSync(htmlPath)) {
+            const content = readFileSync(htmlPath, 'utf-8')
+            writeFileSync(path.join('S3', `${page}.html`), content, 'utf-8')
+            console.log(`✅ Copied ${page}/index.html to S3/${page}.html`)
+        }
+    }
 }
 
 copyMarkdownFiles()
