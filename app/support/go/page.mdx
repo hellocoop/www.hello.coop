@@ -1,0 +1,45 @@
+# Troubleshooting
+
+## GitHub Organization Not Showing Up During Setup
+
+When setting up Hellō Lifecycle at `/github`, you may find that your organization doesn't appear in the "Select Your Organization" step. This can happen for two different reasons:
+
+### Reason 1: You Skipped Granting Access During Installation
+
+During the GitHub OAuth app authorization flow, you may have skipped granting access to your organization.
+
+**Solution:**
+
+1. Go to the Hellō Lifecycle OAuth app settings page:
+   ```
+   https://github.com/settings/connections/applications/<APP_ID_TBD>
+   ```
+   *(App ID: TBD - Hellō Lifecycle in Prod)*
+
+2. On this page, you'll see all the organizations you belong to.
+
+3. Click **Grant** next to the organization you want to use with Hellō Lifecycle.
+
+4. Return to `/github`, log out, and go through the GitHub authorization flow again.
+
+### Reason 2: Your Organization Has Disabled Third-Party Access
+
+If you see a red cross beside your organization and the **Grant** button is not visible (either during installation or when visiting the OAuth app settings page above), this means someone in your organization has disabled third-party OAuth app access for Hellō Lifecycle.
+
+**Solution:**
+
+1. Go to your organization's OAuth application policy settings:
+   ```
+   https://github.com/organizations/<YOUR_ORG_NAME>/settings/oauth_application_policy
+   ```
+   Replace `<YOUR_ORG_NAME>` with your organization's name (e.g., `https://github.com/organizations/Bubbler/settings/oauth_application_policy`).
+
+2. Find Hellō Lifecycle in the list of apps. It will have a **Denied** label beside it.
+
+3. Click the **Edit** button next to Hellō Lifecycle.
+
+4. Click **Grant access**.
+
+5. Return to `/github`, log out, and go through the GitHub authorization flow again.
+
+> **Note:** You will need organization admin privileges to change OAuth application policies.

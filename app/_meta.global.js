@@ -35,6 +35,14 @@ export default {
             layout: 'full',
         },
     },
+    support: {
+        type: 'page',
+        display: 'hidden',
+        theme: {
+            typesetting: 'article',
+            layout: 'full',
+        },
+    },
     approach: {
         type: 'page',
         theme: {
