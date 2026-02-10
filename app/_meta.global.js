@@ -42,6 +42,16 @@ export default {
             typesetting: 'article',
             layout: 'full',
         },
+        items: {
+            go: {
+                type: 'page',
+                display: 'hidden',
+                theme: {
+                    typesetting: 'article',
+                    layout: 'full',
+                },
+            },
+        },
     },
     approach: {
         type: 'page',
