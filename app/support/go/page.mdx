@@ -2,7 +2,7 @@
 
 ## Removing a GitHub Org from Hellō
 
-To remove a GitHub Org from Hellō, complete both steps below.
+To remove a GitHub Org from Hellō, complete all three steps below.
 
 ### Step 1: Delete the Configured GitHub Org from the Hellō Dashboard
 
@@ -10,11 +10,18 @@ To remove a GitHub Org from Hellō, complete both steps below.
 2. Click **Delete** next to the org you want to remove.
 3. Type `DELETE` to confirm.
 
-This removes the connection configuration, account linking data, and the `Hello-Lifecycle` repository from your GitHub org. Automated offboarding will stop working for this org.
+This removes the offboarding data for your GitHub org from Hellō Lifecycle. Automated offboarding will stop working for this org.
 
 > If you are removing the entire organization from Hellō Lifecycle (not just GitHub Offboarding), see [Removing an Organization from Hellō](/support/lifecycle#removing-an-organization-from-hellō).
 
-### Step 2: Uninstall the Hellō GitHub App
+### Step 2: Delete the Hello-Lifecycle Repository
+
+During setup, Hellō created a repository named `Hello-Lifecycle` in your GitHub org. You can delete it if you no longer need the account linking history.
+
+1. Go to `https://github.com/<YOUR_ORG_NAME>/Hello-Lifecycle/settings`.
+2. Scroll to the bottom and click **Delete this repository**.
+
+### Step 3: Uninstall the Hellō GitHub App
 
 The Hellō Lifecycle GitHub App remains installed on your org until you manually remove it.
 
