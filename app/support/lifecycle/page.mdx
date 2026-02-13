@@ -2,7 +2,7 @@
 
 ## Removing an Organization from Hellō
 
-To fully remove an organization from Hellō Lifecycle, complete both steps below.
+To remove an organization from Hellō Lifecycle, complete both steps below.
 
 ### Step 1: Delete the Organization from the Hellō Dashboard
 
@@ -10,15 +10,17 @@ To fully remove an organization from Hellō Lifecycle, complete both steps below
 2. Click **Delete** next to the organization you want to remove.
 3. Type `DELETE` to confirm.
 
-This removes the connection configuration, synced user data, and all connected app settings. Automated offboarding will immediately stop working for this organization.
+This removes the connection configuration, synced user data, and all connected app settings. Automated offboarding will stop working for this organization.
 
-> If you have GitHub Offboarding connected, you will also need to [uninstall the Hellō GitHub App](/support/go#step-2-uninstall-the-hellō-github-app) from your organization.
+> If you have GitHub Offboarding connected, you will also need to [uninstall the Hellō GitHub App](/support/go#step-2-uninstall-the-hellō-github-app) from your GitHub org.
 
-### Step 2: Revoke Hellō's Access to Your Directory
+### Step 2: Revoke Hellō Lifecycle's Access to Your Directory
 
-After deleting from Hellō, the directory access grant remains until you manually revoke it.
+After deleting from Hellō Lifecycle, the directory access grant remains until you manually revoke it.
 
-#### Microsoft 365 / Entra ID
+> **Note:** You will need admin privileges in your directory to revoke access.
+
+#### Microsoft Entra ID
 
 1. Go to [Enterprise Applications](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/AppAppsPreview) in the Entra ID admin center.
 2. Find **Hellō Lifecycle** and click on it.
@@ -29,5 +31,3 @@ After deleting from Hellō, the directory access grant remains until you manuall
 1. Go to [Third-party app access](https://admin.google.com/ac/owl) in the Google Admin Console.
 2. Find **Hellō Lifecycle** and click on it.
 3. Click **Remove access** to revoke access for your entire domain.
-
-> **Note:** You will need admin privileges in your directory to revoke access.
