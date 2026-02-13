@@ -51,6 +51,14 @@ export default {
                     layout: 'full',
                 },
             },
+            lifecycle: {
+                type: 'page',
+                display: 'hidden',
+                theme: {
+                    typesetting: 'article',
+                    layout: 'full',
+                },
+            },
         },
     },
     approach: {
