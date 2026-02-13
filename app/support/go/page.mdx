@@ -1,10 +1,35 @@
-# Troubleshooting
+# GitHub Offboarding Support
 
-## GitHub Organization Not Showing Up During Setup
+## Removing a GitHub Organization from Hellō
 
-When setting up Hellō Lifecycle at `/github`, you may find that your organization doesn't appear in the "Select Your Organization" step. This can happen for two different reasons:
+To fully remove a GitHub organization from Hellō, complete both steps below.
 
-### Reason 1: You Skipped Granting Access During Installation
+### Step 1: Delete the Organization from the Hellō Dashboard
+
+1. Go to your [Hellō GitHub Offboarding dashboard](https://lifecycle.hello.coop/github).
+2. Click **Delete** next to the organization you want to remove.
+3. Type `DELETE` to confirm.
+
+This removes the connection configuration, account-linking data, and the `Hello-Lifecycle` repository from your GitHub organization. Offboarding will immediately stop working for this org.
+
+### Step 2: Uninstall the Hellō GitHub App
+
+The Hellō Lifecycle GitHub App remains installed on your organization until you manually remove it.
+
+1. Go to your organization's GitHub App settings:
+   ```
+   https://github.com/organizations/<YOUR_ORG_NAME>/settings/installations
+   ```
+2. Find **Hellō Lifecycle** and click **Configure**.
+3. Scroll to the bottom and click **Uninstall**.
+
+## Troubleshooting
+
+### GitHub Organization Not Showing Up During Setup
+
+When setting up Hellō Lifecycle at [lifecycle.hello.coop/github](https://lifecycle.hello.coop/github), you may find that your organization doesn't appear in the "Select Your Organization" step. This can happen for two different reasons:
+
+#### Reason 1: You Skipped Granting Access During Installation
 
 During the GitHub OAuth app authorization flow, you may have skipped granting access to your organization.
 
@@ -16,9 +41,9 @@ During the GitHub OAuth app authorization flow, you may have skipped granting ac
 
 3. Click **Grant** next to the organization you want to use with Hellō Lifecycle.
 
-4. Return to `/github`, log out, and go through the GitHub authorization flow again.
+4. Return to [lifecycle.hello.coop/github](https://lifecycle.hello.coop/github), log out, and go through the GitHub authorization flow again.
 
-### Reason 2: Your Organization Has Disabled Third-Party Access
+#### Reason 2: Your Organization Has Disabled Third-Party Access
 
 If you see a red cross beside your organization and the **Grant** button is not visible (either during installation or when visiting the OAuth app settings page above), this means someone in your organization has disabled third-party OAuth app access for Hellō Lifecycle.
 
@@ -36,6 +61,6 @@ If you see a red cross beside your organization and the **Grant** button is not 
 
 4. Click **Grant access**.
 
-5. Return to `/github`, log out, and go through the GitHub authorization flow again.
+5. Return to [lifecycle.hello.coop/github](https://lifecycle.hello.coop/github), log out, and go through the GitHub authorization flow again.
 
 > **Note:** You will need organization admin privileges to change OAuth application policies.
