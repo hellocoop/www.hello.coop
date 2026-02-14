@@ -43,14 +43,6 @@ export default {
             layout: 'full',
         },
         items: {
-            go: {
-                type: 'page',
-                display: 'hidden',
-                theme: {
-                    typesetting: 'article',
-                    layout: 'full',
-                },
-            },
             lifecycle: {
                 type: 'page',
                 display: 'hidden',
