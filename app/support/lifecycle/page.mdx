@@ -3,92 +3,31 @@ theme:
     toc: false
 ---
 
-import { Steps, Tabs } from 'nextra/components'
+import { Steps } from 'nextra/components'
 
 # Hellō Lifecycle Support
 
-- [I want to remove my organization from Hellō Lifecycle](#i-want-to-remove-my-organization-from-hellō-lifecycle)
-- [I want to remove my connected GitHub orgs from Hellō Lifecycle](#i-want-to-remove-my-connected-github-orgs-from-hellō-lifecycle)
 - [My GitHub org is not showing up during setup](#my-github-org-is-not-showing-up-during-setup)
+- [I want to disconnect my GitHub org from Hellō Lifecycle](#i-want-to-disconnect-my-github-org-from-hellō-lifecycle)
+- [I want to disconnect my organization from Hellō Lifecycle](#i-want-to-disconnect-my-organization-from-hellō-lifecycle)
 
 ---
-
-## I want to remove my organization from Hellō Lifecycle
-
-<Steps>
-
-### Delete your organization from the Hellō Dashboard
-
-1. Go to your [Hellō Lifecycle dashboard](https://lifecycle.hello.coop).
-2. Click **Delete** next to the organization you want to remove.
-3. Type `DELETE` to confirm.
-
-This removes the connection configuration, synced user data, and all connected app settings. Automated offboarding will stop working for this organization.
-
-### Revoke Hellō Lifecycle's access to your directory
-
-After deleting from Hellō Lifecycle, the directory access grant remains until you manually revoke it.
-
-<Tabs items={['Microsoft Entra ID', 'Google Workspace']}>
-<Tabs.Tab>
-1. Go to [Enterprise Applications](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/AppAppsPreview) in the Entra ID admin center.
-2. Find **Hellō Lifecycle** and click on it.
-3. Click **Delete** to remove the service principal and revoke all access.
-</Tabs.Tab>
-<Tabs.Tab>
-1. Go to [Third-party app access](https://admin.google.com/ac/owl) in the Google Admin Console.
-2. Find **Hellō Lifecycle** and click on it.
-3. Click **Remove access** to revoke access for your entire domain.
-</Tabs.Tab>
-</Tabs>
-
-</Steps>
-
-## I want to remove my connected GitHub orgs from Hellō Lifecycle
-
-If you have GitHub Offboarding connected, complete the following for each GitHub org.
-
-<Steps>
-
-### Delete the Hello-Lifecycle repository
-
-During setup, Hellō created a repository named `Hello-Lifecycle` in your GitHub org. You can delete it if you no longer need the account linking history.
-
-1. Go to `https://github.com/<YOUR_ORG_NAME>/Hello-Lifecycle/settings`.
-2. Scroll to the bottom and click **Delete this repository**.
-
-### Uninstall the Hellō GitHub App
-
-The Hellō Lifecycle GitHub App remains installed on your org until you manually remove it.
-
-1. Go to your org's GitHub App settings:
-   ```
-   https://github.com/organizations/<YOUR_ORG_NAME>/settings/installations
-   ```
-2. Find **Hellō Lifecycle** and click **Configure**.
-3. Scroll to the bottom and click **Uninstall**.
-
-</Steps>
 
 ## My GitHub org is not showing up during setup
 
 When setting up Hellō Lifecycle at [lifecycle.hello.coop/github](https://lifecycle.hello.coop/github), your org may not appear in the "Select Your Organization" step. This can happen for two reasons:
 
-**I skipped granting access during installation**
+**Access wasn't granted during setup**
 
-During the GitHub OAuth app authorization flow, you may have skipped granting access to your org.
+1. Go to the [Hellō Lifecycle OAuth app settings page](https://github.com/settings/connections/applications/lv23li3rZkORXbEiBVu9). You'll see all the orgs you belong to.
 
-1. Go to the [Hellō Lifecycle OAuth app settings page](https://github.com/settings/connections/applications/lv23li3rZkORXbEiBVu9).
+2. Click **Grant** next to the org you want to use with Hellō Lifecycle.
 
-2. You'll see all the orgs you belong to.
+3. Return to [lifecycle.hello.coop/github](https://lifecycle.hello.coop/github), log out and re-authorize with GitHub.
 
-3. Click **Grant** next to the org you want to use with Hellō Lifecycle.
+**An admin in my org disabled third-party access**
 
-4. Return to [lifecycle.hello.coop/github](https://lifecycle.hello.coop/github), log out, and go through the GitHub authorization flow again.
-
-**My org has disabled third-party access**
-
-If you see a red cross beside your org and the **Grant** button is not visible (either during installation or when visiting the OAuth app settings page above), someone in your org has disabled third-party OAuth app access for Hellō Lifecycle.
+If you see a red cross beside your org and the **Grant** button is not visible, an admin in your org has disabled third-party OAuth app access for Hellō Lifecycle.
 
 1. Go to your org's OAuth application policy settings:
    ```
@@ -98,8 +37,70 @@ If you see a red cross beside your org and the **Grant** button is not visible (
 
 2. Find **Hellō Lifecycle** in the list of apps. It will have a **Denied** label beside it.
 
-3. Click the **Edit** button next to Hellō Lifecycle.
+3. Click **Edit** next to Hellō Lifecycle.
 
 4. Click **Grant access**.
 
-5. Return to [lifecycle.hello.coop/github](https://lifecycle.hello.coop/github), log out, and go through the GitHub authorization flow again.
+5. Return to [lifecycle.hello.coop/github](https://lifecycle.hello.coop/github), log out and re-authorize with GitHub.
+
+## I want to disconnect my GitHub org from Hellō Lifecycle
+
+<Steps>
+
+### Disconnect your GitHub org from the Hellō GitHub Offboarding dashboard
+
+1. Go to your [Hellō GitHub Offboarding dashboard](https://lifecycle.hello.coop/github).
+2. Click **Disconnect** next to the GitHub org you want to disconnect.
+3. Type `DISCONNECT` to confirm.
+
+This removes the offboarding data for this GitHub org. Automated offboarding will stop working.
+
+### Uninstall the Hellō Lifecycle GitHub App
+
+The Hellō Lifecycle GitHub App requires manual removal from your org.
+
+1. Go to your org's GitHub App settings:
+   ```
+   https://github.com/organizations/<YOUR_ORG_NAME>/settings/installations
+   ```
+2. Find **Hellō Lifecycle** and click **Configure**.
+3. Scroll to the bottom and click **Uninstall**.
+
+### Delete the Hello-Lifecycle repository (optional)
+
+During setup, Hellō Lifecycle created a repository named `Hello-Lifecycle` in your GitHub org. You can delete it if you no longer need the account linking history.
+
+1. Go to `https://github.com/<YOUR_ORG_NAME>/Hello-Lifecycle/settings`.
+2. Scroll to the bottom and click **Delete this repository**.
+
+</Steps>
+
+## I want to disconnect my organization from Hellō Lifecycle
+
+<Steps>
+
+### Disconnect your organization from the Hellō Lifecycle dashboard
+
+1. Go to your [Hellō Lifecycle dashboard](https://lifecycle.hello.coop).
+2. Click **Disconnect** next to the organization you want to disconnect.
+3. Type `DISCONNECT` to confirm.
+
+This removes all Hellō Lifecycle data for this organization. Automated offboarding will stop for all connected applications.
+
+### Revoke Hellō Lifecycle's access to your directory
+
+Hellō Lifecycle's directory access requires manual revocation.
+
+**If you use Microsoft Entra ID:**
+
+1. Go to [Enterprise Applications](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/AppAppsPreview) in the Entra ID admin center.
+2. Find **Hellō Lifecycle** and click on it.
+3. Click **Delete** to remove the service principal and revoke all access.
+
+**If you use Google Workspace:**
+
+1. Go to [Third-party app access](https://admin.google.com/ac/owl) in the Google Admin Console.
+2. Find **Hellō Lifecycle** and click on it.
+3. Click **Remove access** to revoke access for your entire domain.
+
+</Steps>
