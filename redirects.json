@@ -17,5 +17,6 @@
     "/pages/data-governance": "/approach/data-governance/",
     "/pages/laws-of-identity": "/approach/laws-of-identity/",
     "/pages/tenets": "/approach/tenets/",
-    "/pages/protocol": "/approach/protocol/"
+    "/pages/protocol": "/approach/protocol/",
+    "/support/": "/support/lifecycle/"
 }
