@@ -18,5 +18,6 @@
     "/pages/laws-of-identity": "/approach/laws-of-identity/",
     "/pages/tenets": "/approach/tenets/",
     "/pages/protocol": "/approach/protocol/",
-    "/support/": "/support/lifecycle/"
+    "/support/": "/support/lifecycle/",
+    "/support/index.html": "/support/lifecycle/"
 }
