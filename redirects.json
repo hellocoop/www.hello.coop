@@ -19,5 +19,8 @@
     "/pages/tenets": "/approach/tenets/",
     "/pages/protocol": "/approach/protocol/",
     "/support/": "/support/lifecycle/",
-    "/go/": "/products/?utm_source=sticker&utm_medium=print&utm_campaign=git-off#github-offboarding"
+    "/support/index.html": "/support/lifecycle/",
+    "/go": "/products/?utm_source=sticker&utm_medium=print&utm_campaign=git-off#github-offboarding",
+    "/go/": "/products/?utm_source=sticker&utm_medium=print&utm_campaign=git-off#github-offboarding",
+    "/go/index.html": "/products/?utm_source=sticker&utm_medium=print&utm_campaign=git-off#github-offboarding"
 }
