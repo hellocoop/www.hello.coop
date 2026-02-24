@@ -19,5 +19,8 @@
     "/pages/tenets": "/approach/tenets/",
     "/pages/protocol": "/approach/protocol/",
     "/support/": "/support/lifecycle/",
-    "/support/index.html": "/support/lifecycle/"
+    "/support/index.html": "/support/lifecycle/",
+    "/go": "/products/#github-offboarding",
+    "/go/": "/products/#github-offboarding",
+    "/go/index.html": "/products/#github-offboarding"
 }
