@@ -8,6 +8,7 @@ import { Steps } from 'nextra/components'
 # Hellō Lifecycle Support
 
 - [My GitHub org is not showing up during setup](#my-github-org-is-not-showing-up-during-setup)
+- [I changed a user's admin role but Lifecycle doesn't reflect it](#i-changed-a-users-admin-role-but-lifecycle-doesnt-reflect-it)
 - [I want to disconnect my GitHub org from Hellō Lifecycle](#i-want-to-disconnect-my-github-org-from-hellō-lifecycle)
 - [I want to disconnect my organization from Hellō Lifecycle](#i-want-to-disconnect-my-organization-from-hellō-lifecycle)
 
@@ -42,6 +43,12 @@ If you see a red cross beside your org and the **Grant** button is not visible, 
 4. Click **Grant access**.
 
 5. Return to [lifecycle.hello.coop/github](https://lifecycle.hello.coop/github), log out and re-authorize with GitHub.
+
+## I changed a user's admin role but Lifecycle doesn't reflect it
+
+Directory providers like Google Workspace and Microsoft Entra do not always send webhook notifications for admin role changes. This means that changes such as granting or revoking admin privileges may not be reflected in Hellō Lifecycle immediately.
+
+These changes will be picked up automatically during the daily sync, or you can trigger an immediate sync from your [Hellō Lifecycle dashboard](https://lifecycle.hello.coop) by clicking the **Check Synchronization** button.
 
 ## I want to disconnect my GitHub org from Hellō Lifecycle
 
