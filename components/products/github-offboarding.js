@@ -1,21 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import OffboardingAnimation from '@/components/animations/offboarding-anim'
 
 export default function GitHubOffboarding({ showTitle = true, compact = false }) {
-    const [waitlistUrl, setWaitlistUrl] = useState(null)
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const returnUri = encodeURIComponent(
-                `${window.location.origin}${window.location.pathname}#github-offboarding`
-            )
-            setWaitlistUrl(
-                `https://wallet.hello.coop/waitlist?waitlist_label=GitHub+Offboarding&return_uri=${returnUri}`
-            )
-        }
-    }, [])
 
     return (
         <div id="github-offboarding" className="scroll-mt-20 text-[17px]">
@@ -55,14 +42,13 @@ export default function GitHubOffboarding({ showTitle = true, compact = false })
                         </div>
                     )}
                     <div className="flex flex-col space-y-4">
-                        <span className="text-base font-semibold">Coming Q1 2026</span>
                         <div className="gap-2 flex flex-col md:flex-row items-start">
                             <a
-                                href={waitlistUrl}
-                                id="github-offboarding-join-waitlist-btn"
+                                href="https://lifecycle.hello.coop/github?setup"
+                                id="github-offboarding-get-started-btn"
                                 className="card-link-primary no-global-hover cursor-pointer"
                             >
-                                Join the waitlist
+                                Get started
                                 <svg width={10} height={10} fill="currentColor" className="ml-2">
                                     <g>
                                         <path className="line" d="M 0 5 H 7" />
