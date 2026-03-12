@@ -42,6 +42,7 @@ export default function GitHubOffboarding({ showTitle = true, compact = false })
                         </div>
                     )}
                     <div className="flex flex-col space-y-4">
+                        <span className="text-base font-semibold">FREE for members of your directory</span>
                         <div className="gap-2 flex flex-col md:flex-row items-start">
                             <a
                                 href="https://lifecycle.hello.coop/github?setup"
