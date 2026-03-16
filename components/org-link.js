@@ -1,4 +1,5 @@
 'use client'
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 /**
@@ -6,10 +7,10 @@ import { useSearchParams } from 'next/navigation'
  * Used on the Lifecycle support page to provide direct links after disconnect.
  *
  * Usage in MDX:
- *   <OrgLink path="settings/installations" label="GitHub App installations page" />
- *   <OrgLink path="Hello-Lifecycle/settings" label="repository settings" />
+ *   <OrgLink path="settings/installations" />
+ *   <OrgLink path="<ORG>/Hello-Lifecycle/settings" />
  */
-export default function OrgLink({ path, label }) {
+function OrgLinkInner({ path }) {
     const searchParams = useSearchParams()
     const org = searchParams.get('org')
 
@@ -26,5 +27,13 @@ export default function OrgLink({ path, label }) {
                 Click here to open for <strong>{org}</strong> ↗
             </a>
         </p>
+    )
+}
+
+export default function OrgLink(props) {
+    return (
+        <Suspense fallback={null}>
+            <OrgLinkInner {...props} />
+        </Suspense>
     )
 }
