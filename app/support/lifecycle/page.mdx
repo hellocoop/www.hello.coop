@@ -4,6 +4,7 @@ theme:
 ---
 
 import { Steps } from 'nextra/components'
+import OrgLink from '@/components/org-link'
 
 # Hellō Lifecycle Support
 
@@ -72,6 +73,7 @@ The Hellō Lifecycle GitHub App requires manual removal from your org.
    ```
    https://github.com/organizations/<YOUR_ORG_NAME>/settings/installations
    ```
+   <OrgLink path="settings/installations" label="GitHub App installations page" />
 2. Find **Hellō Lifecycle** and click **Configure**.
 3. Scroll to the bottom and click **Uninstall**.
 
@@ -83,6 +85,7 @@ During setup, Hellō Lifecycle created a repository named `Hello-Lifecycle` in y
    ```
    https://github.com/<YOUR_ORG_NAME>/Hello-Lifecycle/settings
    ```
+   <OrgLink path="<ORG>/Hello-Lifecycle/settings" label="repository settings" />
 2. Scroll to the bottom and click **Delete this repository**.
 
 </Steps>
