@@ -258,11 +258,11 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto pt-4 pb-12 md:py-16 px-4">
                     <h1 className="text-4xl md:text-5xl font-bold">Latest Blog Posts</h1>
                     <BlogFeed />
-                    <div className="text-center mt-10 md:mt-16">
+                    <div className="mt-10 md:mt-16 md:pl-[calc(33.333%+2.5rem)]">
                         <a
                             href="https://blog.hello.coop/"
                             target="_blank"
-                            className="inline-block text-base md:text-lg xl:text-2xl opacity-50 hover:opacity-100 transition-all ext-link-icon"
+                            className="inline-block text-base md:text-lg lg:text-xl opacity-50 hover:opacity-100 transition-all ext-link-icon"
                             rel="noreferrer"
                         >
                             Read more at blog.hello.coop
