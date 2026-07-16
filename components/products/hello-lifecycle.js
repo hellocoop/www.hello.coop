@@ -56,7 +56,7 @@ export default function HelloLifecycle({ showTitle = true, compact = false }) {
                         </div>
                     )}
                     <div className="flex flex-col space-y-4">
-                        <span className="text-base font-semibold">Coming Q1 2026</span>
+                        <span className="text-base font-semibold">Coming Q3 2026</span>
                         <div className="gap-2 flex flex-col md:flex-row items-start">
                             <a
                                 href={waitlistUrl}
