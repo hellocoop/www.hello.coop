@@ -1,6 +1,6 @@
 export default function HelloB2BSSO({ showTitle = true, compact = false }) {
     return (
-        <div id="hello-b2c-sso" className="text-[17px]">
+        <div id="hello-b2b-sso" className="text-[17px]">
             {showTitle && (
                 <h1 className="text-[1.35rem] md:text-5xl font-semibold">Hellō B2C SSO</h1>
             )}

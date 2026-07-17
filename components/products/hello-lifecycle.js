@@ -9,7 +9,7 @@ export default function HelloLifecycle({ showTitle = true, compact = false }) {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const returnUri = encodeURIComponent(
-                `${window.location.origin}${window.location.pathname}#hellō-lifecycle`
+                `${window.location.origin}${window.location.pathname}#hello-lifecycle`
             )
             setWaitlistUrl(
                 `https://wallet.hello.coop/waitlist?waitlist_label=Hell%C5%8D+Lifecycle&return_uri=${returnUri}`

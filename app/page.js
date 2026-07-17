@@ -145,7 +145,7 @@ export default function Home() {
                     <HelloB2BSSO showTitle={false} compact={true} />
                 </div>
 
-                <div id="hellō-lifecycle" className="px-4 scroll-mt-6">
+                <div id="hello-lifecycle" className="px-4 scroll-mt-6">
                     <h1 className="text-[1.35rem] md:text-4xl font-semibold">Hellō Lifecycle</h1>
                     <h2 className="text-xl md:text-2xl font-medium opacity-65 mt-4">
                         Add offboarding to your B2B app.
