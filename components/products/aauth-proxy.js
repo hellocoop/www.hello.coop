@@ -2,7 +2,7 @@ export default function AauthProxy({ showTitle = true, compact = false }) {
     return (
         <div id="aauth-proxy" className="scroll-mt-20 text-[17px]">
             {showTitle && (
-                <h1 className="text-[1.35rem] md:text-5xl font-semibold">Hellō AAuth Proxy</h1>
+                <h1 className="text-[1.35rem] md:text-5xl font-semibold">Hellō AAuth Connector</h1>
             )}
             <div className="card !p-0 !py-[1.125rem] !my-0">
                 <div className="card-description">
@@ -104,7 +104,7 @@ function AauthProxyGraphic() {
                 <line x1="90" y1="75" x2="150" y2="75" />
                 <path d="M 145 70 L 152 75 L 145 80" />
 
-                {/* Hellō AAuth Proxy */}
+                {/* Hellō AAuth Connector */}
                 <rect x="158" y="40" width="70" height="70" rx="14" />
                 <text x="193" textAnchor="middle" fontSize="12" fill="currentColor" stroke="none">
                     <tspan x="193" y="70">
@@ -114,7 +114,7 @@ function AauthProxyGraphic() {
                         AAuth
                     </tspan>
                     <tspan x="193" y="96">
-                        Proxy
+                        Connector
                     </tspan>
                 </text>
 
